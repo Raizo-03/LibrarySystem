@@ -22,5 +22,14 @@ namespace LibrarySystem
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM COLORS #FDF7E4
 
         }
+
+        private void nightControlBox1_Click(object sender, EventArgs e)
+        {
+
+            // Disable the maximize/Minimize button
+            nightControlBox1.EnableMaximizeButton = false;
+
+            
+        }
     }
 }
