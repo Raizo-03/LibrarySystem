@@ -1,6 +1,6 @@
 ﻿namespace LibrarySystem
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
