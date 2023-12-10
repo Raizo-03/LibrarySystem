@@ -72,19 +72,19 @@
             // 
             this.proceedBtn.BackColor = System.Drawing.Color.White;
             this.proceedBtn.BackgroundColor = System.Drawing.Color.White;
-            this.proceedBtn.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.proceedBtn.BorderColor = System.Drawing.Color.DarkOliveGreen;
             this.proceedBtn.BorderRadius = 29;
             this.proceedBtn.BorderSize = 2;
             this.proceedBtn.FlatAppearance.BorderSize = 0;
             this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedBtn.ForeColor = System.Drawing.Color.Peru;
+            this.proceedBtn.ForeColor = System.Drawing.Color.LimeGreen;
             this.proceedBtn.Location = new System.Drawing.Point(78, 362);
             this.proceedBtn.Name = "proceedBtn";
             this.proceedBtn.Size = new System.Drawing.Size(224, 59);
             this.proceedBtn.TabIndex = 3;
             this.proceedBtn.Text = "PROCEED";
-            this.proceedBtn.TextColor = System.Drawing.Color.Peru;
+            this.proceedBtn.TextColor = System.Drawing.Color.LimeGreen;
             this.proceedBtn.UseVisualStyleBackColor = false;
             this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 

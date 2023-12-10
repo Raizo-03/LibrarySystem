@@ -50,6 +50,7 @@ namespace LibrarySystem
 
         private void proceedBtn_Click(object sender, EventArgs e)
         {
+            proceedBtn.BackColor = Color.White;
 
 
         }
