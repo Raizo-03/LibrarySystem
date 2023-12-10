@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AlphaGradientPanel, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AlphaGradientPanel.1.1.2.0\lib\net40\AlphaGradientPanel.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ReaLTaiizor, Version=3.7.9.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReaLTaiizor.3.7.9.7\lib\net48\ReaLTaiizor.dll</HintPath>

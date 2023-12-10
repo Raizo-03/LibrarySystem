@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
-using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.ComponentModel;
+using static LibrarySystem.FirstForm;
+
+
 
 namespace LibrarySystem
 {
@@ -25,11 +25,18 @@ namespace LibrarySystem
         private void FirstForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM COLORS #FDF7E4
-            
 
-            // Handle the button click event
+
+
+            //TO MAKE THE FORM ROUNDED ON EACH SIDE
+
+         
 
         }
+
+        //TO MAKE THE FORM ROUNDED ON EACH SIDE
+
+        // Custom control class
 
 
         private void nightControlBox1_Click(object sender, EventArgs e)
