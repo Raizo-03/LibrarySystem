@@ -49,7 +49,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = false;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(239, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(254, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -62,7 +62,7 @@
             // EternalLibPic
             // 
             this.EternalLibPic.Image = ((System.Drawing.Image)(resources.GetObject("EternalLibPic.Image")));
-            this.EternalLibPic.Location = new System.Drawing.Point(69, 73);
+            this.EternalLibPic.Location = new System.Drawing.Point(77, 73);
             this.EternalLibPic.Name = "EternalLibPic";
             this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
             this.EternalLibPic.TabIndex = 1;
