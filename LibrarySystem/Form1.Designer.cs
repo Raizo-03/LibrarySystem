@@ -32,6 +32,7 @@
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.EternalLibPic = new System.Windows.Forms.Label();
+            this.proceedBtn = new LibrarySystem.RJButton();
             this.SuspendLayout();
             // 
             // nightControlBox1
@@ -49,7 +50,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = false;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(239, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(238, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -62,10 +63,30 @@
             // EternalLibPic
             // 
             this.EternalLibPic.Image = ((System.Drawing.Image)(resources.GetObject("EternalLibPic.Image")));
-            this.EternalLibPic.Location = new System.Drawing.Point(69, 73);
+            this.EternalLibPic.Location = new System.Drawing.Point(77, 73);
             this.EternalLibPic.Name = "EternalLibPic";
             this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
             this.EternalLibPic.TabIndex = 1;
+            // 
+            // proceedBtn
+            // 
+            this.proceedBtn.BackColor = System.Drawing.Color.White;
+            this.proceedBtn.BackgroundColor = System.Drawing.Color.White;
+            this.proceedBtn.BorderColor = System.Drawing.Color.Olive;
+            this.proceedBtn.BorderRadius = 29;
+            this.proceedBtn.BorderSize = 2;
+            this.proceedBtn.FlatAppearance.BorderSize = 0;
+            this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proceedBtn.ForeColor = System.Drawing.Color.Olive;
+            this.proceedBtn.Location = new System.Drawing.Point(78, 362);
+            this.proceedBtn.Name = "proceedBtn";
+            this.proceedBtn.Size = new System.Drawing.Size(224, 59);
+            this.proceedBtn.TabIndex = 3;
+            this.proceedBtn.Text = "PROCEED";
+            this.proceedBtn.TextColor = System.Drawing.Color.Olive;
+            this.proceedBtn.UseVisualStyleBackColor = false;
+            this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 
             // FirstForm
             // 
@@ -73,6 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 531);
             this.ControlBox = false;
+            this.Controls.Add(this.proceedBtn);
             this.Controls.Add(this.EternalLibPic);
             this.Controls.Add(this.nightControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -88,6 +110,7 @@
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Label EternalLibPic;
+        private LibrarySystem.RJButton proceedBtn;
     }
 }
 
