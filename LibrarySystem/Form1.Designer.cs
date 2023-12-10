@@ -32,7 +32,7 @@
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.EternalLibPic = new System.Windows.Forms.Label();
-            this.airButton1 = new ReaLTaiizor.Controls.AirButton();
+            this.proceedBtn = new LibrarySystem.RJButton();
             this.SuspendLayout();
             // 
             // nightControlBox1
@@ -68,19 +68,25 @@
             this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
             this.EternalLibPic.TabIndex = 1;
             // 
-            // airButton1
+            // proceedBtn
             // 
-            this.airButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            this.airButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.airButton1.Image = null;
-            this.airButton1.Location = new System.Drawing.Point(97, 402);
-            this.airButton1.Name = "airButton1";
-            this.airButton1.NoRounding = false;
-            this.airButton1.Size = new System.Drawing.Size(180, 45);
-            this.airButton1.TabIndex = 2;
-            this.airButton1.Text = "START";
-            this.airButton1.Transparent = false;
+            this.proceedBtn.BackColor = System.Drawing.Color.White;
+            this.proceedBtn.BackgroundColor = System.Drawing.Color.White;
+            this.proceedBtn.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.proceedBtn.BorderRadius = 29;
+            this.proceedBtn.BorderSize = 2;
+            this.proceedBtn.FlatAppearance.BorderSize = 0;
+            this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proceedBtn.ForeColor = System.Drawing.Color.Peru;
+            this.proceedBtn.Location = new System.Drawing.Point(78, 362);
+            this.proceedBtn.Name = "proceedBtn";
+            this.proceedBtn.Size = new System.Drawing.Size(224, 59);
+            this.proceedBtn.TabIndex = 3;
+            this.proceedBtn.Text = "PROCEED";
+            this.proceedBtn.TextColor = System.Drawing.Color.Peru;
+            this.proceedBtn.UseVisualStyleBackColor = false;
+            this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 
             // FirstForm
             // 
@@ -88,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 531);
             this.ControlBox = false;
-            this.Controls.Add(this.airButton1);
+            this.Controls.Add(this.proceedBtn);
             this.Controls.Add(this.EternalLibPic);
             this.Controls.Add(this.nightControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -104,7 +110,7 @@
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Label EternalLibPic;
-        private ReaLTaiizor.Controls.AirButton airButton1;
+        private LibrarySystem.RJButton proceedBtn;
     }
 }
 
