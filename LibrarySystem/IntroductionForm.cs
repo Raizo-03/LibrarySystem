@@ -31,6 +31,9 @@ namespace LibrarySystem
         public FirstForm()
         {
             InitializeComponent();
+
+            //TO MAKE THE FORM ROUNDED ON EACH SIDE
+
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -38,18 +41,7 @@ namespace LibrarySystem
         private void FirstForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM COLORS #FDF7E4
-
-
-
-            //TO MAKE THE FORM ROUNDED ON EACH SIDE
-
-         
-
-        }
-
-        //TO MAKE THE FORM ROUNDED ON EACH SIDE
-  
-        
+        }  
 
             private void nightControlBox1_Click(object sender, EventArgs e)
         {
@@ -68,7 +60,6 @@ namespace LibrarySystem
         private void proceedBtn_Click(object sender, EventArgs e)
         {
             proceedBtn.BackColor = Color.White;
-
 
         }
 
