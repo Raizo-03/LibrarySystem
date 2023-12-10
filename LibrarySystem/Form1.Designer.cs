@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstForm));
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            this.EternalLibPic = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nightControlBox1
             // 
             this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.Red;
             this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nightControlBox1.DefaultLocation = true;
@@ -57,12 +59,21 @@
             this.nightControlBox1.TabIndex = 0;
             this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
+            // EternalLibPic
+            // 
+            this.EternalLibPic.Image = ((System.Drawing.Image)(resources.GetObject("EternalLibPic.Image")));
+            this.EternalLibPic.Location = new System.Drawing.Point(69, 73);
+            this.EternalLibPic.Name = "EternalLibPic";
+            this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
+            this.EternalLibPic.TabIndex = 1;
+            // 
             // FirstForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 531);
             this.ControlBox = false;
+            this.Controls.Add(this.EternalLibPic);
             this.Controls.Add(this.nightControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FirstForm";
@@ -76,6 +87,7 @@
 
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Label EternalLibPic;
     }
 }
 
