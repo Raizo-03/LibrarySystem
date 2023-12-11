@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Drawing.Drawing2D;
 
 
 namespace LibrarySystem
@@ -28,20 +29,50 @@ namespace LibrarySystem
         public Dashboard()
         {
             InitializeComponent();
+
+            //make the edges more round
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM COLORS #FDF7E4
+            this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+            //upperPanel.BackColor = Color.FromArgb(176, 146, 106, 106); // CUSTOM UPPER PANEL #B0926A
 
+            upperPanel.BackColor = Color.Transparent; // Make the upper panel transparent
+
+            // Attach the Paint event to handle custom painting for the upper panel
+            upperPanel.Paint += UpperPanel_Paint;
+
+
+
+        }
+
+        //GRADIENT FOR UPPERPANEL
+        private void UpperPanel_Paint(object sender, PaintEventArgs e)
+        {
+            // Create a LinearGradientBrush for the upper panel
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                upperPanel.ClientRectangle,
+                Color.FromArgb(0xB0, 0x92, 0x6A),
+                Color.Transparent, // Use Transparent to allow the form's background to show through
+                LinearGradientMode.Vertical))
+            {
+                // Paint the upper panel with the gradient background
+                e.Graphics.FillRectangle(brush, upperPanel.ClientRectangle);
+            }
         }
 
         private void nightControlBox1_Click(object sender, EventArgs e)
         {
             // Disable the maximize/Minimize button
-            nightControlBox1.EnableMaximizeButton = false;
+            //nightControlBox1.EnableMaximizeButton = false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
