@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.upperPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // upperPanel
             // 
-            this.upperPanel.Controls.Add(this.nightControlBox1);
+            this.upperPanel.Controls.Add(this.dashboardControlbx);
             this.upperPanel.Controls.Add(this.pictureBox1);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
@@ -56,30 +56,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // nightControlBox1
+            // dashboardControlbx
             // 
-            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.Red;
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(928, 0);
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
-            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox1.TabIndex = 1;
-            this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click_1);
+            this.dashboardControlbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboardControlbx.BackColor = System.Drawing.Color.Transparent;
+            this.dashboardControlbx.CloseHoverColor = System.Drawing.Color.Red;
+            this.dashboardControlbx.CloseHoverForeColor = System.Drawing.Color.White;
+            this.dashboardControlbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dashboardControlbx.DefaultLocation = true;
+            this.dashboardControlbx.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.dashboardControlbx.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.dashboardControlbx.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.dashboardControlbx.EnableMaximizeButton = true;
+            this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.dashboardControlbx.EnableMinimizeButton = true;
+            this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.dashboardControlbx.Location = new System.Drawing.Point(928, 0);
+            this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.White;
+            this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dashboardControlbx.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.dashboardControlbx.Name = "dashboardControlbx";
+            this.dashboardControlbx.Size = new System.Drawing.Size(139, 31);
+            this.dashboardControlbx.TabIndex = 1;
+            this.dashboardControlbx.Click += new System.EventHandler(this.nightControlBox1_Click_1);
             // 
             // Dashboard
             // 
@@ -104,6 +104,6 @@
         #endregion
         private System.Windows.Forms.Panel upperPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private ReaLTaiizor.Controls.NightControlBox dashboardControlbx;
     }
 }

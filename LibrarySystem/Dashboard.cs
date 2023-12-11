@@ -45,7 +45,8 @@ namespace LibrarySystem
             // Attach the Paint event to handle custom painting for the upper panel
             upperPanel.Paint += UpperPanel_Paint;
 
-
+            //Disable the maximize/Minimize button
+            dashboardControlbx.EnableMaximizeButton = false;
 
         }
 
@@ -64,12 +65,6 @@ namespace LibrarySystem
             }
         }
 
-        private void nightControlBox1_Click(object sender, EventArgs e)
-        {
-            // Disable the maximize/Minimize button
-            //nightControlBox1.EnableMaximizeButton = false;
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -77,6 +72,9 @@ namespace LibrarySystem
 
         private void nightControlBox1_Click_1(object sender, EventArgs e)
         {
+            
+
+            System.Windows.Forms.Application.ExitThread();
 
         }
     }
