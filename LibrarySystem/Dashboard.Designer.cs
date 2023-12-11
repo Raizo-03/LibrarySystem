@@ -36,7 +36,7 @@
             // 
             this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.Red;
             this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nightControlBox1.DefaultLocation = true;
@@ -55,6 +55,7 @@
             this.nightControlBox1.Name = "nightControlBox1";
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 0;
+            this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
             // Dashboard
             // 
@@ -69,6 +70,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
 
         }
