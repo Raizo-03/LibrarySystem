@@ -44,7 +44,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1067, 96);
+            this.upperPanel.Size = new System.Drawing.Size(1067, 113);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -85,9 +85,9 @@
             // dashboardFlowPnl
             // 
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 96);
+            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 113);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(263, 504);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(263, 487);
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // Dashboard
