@@ -53,9 +53,13 @@ namespace LibrarySystem
             dashboardFlowPnl.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             //dashboardFlowPnl.Paint += dashboardFlowPnl_Paint;
 
-
-
-
+            //PANEL BUTTONS
+            dashboardBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            dashboardBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            aboutBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            aboutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            exitBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            exitBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
 
 
 
@@ -84,6 +88,16 @@ namespace LibrarySystem
         private void nightControlBox1_Click_1(object sender, EventArgs e)
         {
           System.Windows.Forms.Application.ExitThread();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

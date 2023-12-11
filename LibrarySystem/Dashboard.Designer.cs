@@ -33,8 +33,17 @@
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dashboardFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
+            this.dashboardBtn2 = new System.Windows.Forms.Button();
+            this.dashboardBtn = new System.Windows.Forms.Panel();
+            this.aboutBtn2 = new System.Windows.Forms.Panel();
+            this.aboutBtn = new System.Windows.Forms.Button();
+            this.exitBtn2 = new System.Windows.Forms.Panel();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.dashboardBtn.SuspendLayout();
+            this.aboutBtn2.SuspendLayout();
+            this.exitBtn2.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -90,12 +99,80 @@
             this.dashboardFlowPnl.Size = new System.Drawing.Size(263, 487);
             this.dashboardFlowPnl.TabIndex = 2;
             // 
+            // dashboardBtn2
+            // 
+            this.dashboardBtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardBtn2.Image = ((System.Drawing.Image)(resources.GetObject("dashboardBtn2.Image")));
+            this.dashboardBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashboardBtn2.Location = new System.Drawing.Point(-10, -11);
+            this.dashboardBtn2.Name = "dashboardBtn2";
+            this.dashboardBtn2.Size = new System.Drawing.Size(285, 86);
+            this.dashboardBtn2.TabIndex = 3;
+            this.dashboardBtn2.Text = "          Dashboard";
+            this.dashboardBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashboardBtn2.UseVisualStyleBackColor = true;
+            this.dashboardBtn2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dashboardBtn
+            // 
+            this.dashboardBtn.Controls.Add(this.dashboardBtn2);
+            this.dashboardBtn.Location = new System.Drawing.Point(437, 298);
+            this.dashboardBtn.Name = "dashboardBtn";
+            this.dashboardBtn.Size = new System.Drawing.Size(260, 62);
+            this.dashboardBtn.TabIndex = 4;
+            // 
+            // aboutBtn2
+            // 
+            this.aboutBtn2.Controls.Add(this.aboutBtn);
+            this.aboutBtn2.Location = new System.Drawing.Point(437, 379);
+            this.aboutBtn2.Name = "aboutBtn2";
+            this.aboutBtn2.Size = new System.Drawing.Size(260, 62);
+            this.aboutBtn2.TabIndex = 5;
+            // 
+            // aboutBtn
+            // 
+            this.aboutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutBtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutBtn.Image")));
+            this.aboutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aboutBtn.Location = new System.Drawing.Point(-10, -11);
+            this.aboutBtn.Name = "aboutBtn";
+            this.aboutBtn.Size = new System.Drawing.Size(285, 86);
+            this.aboutBtn.TabIndex = 3;
+            this.aboutBtn.Text = "          About";
+            this.aboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aboutBtn.UseVisualStyleBackColor = true;
+            // 
+            // exitBtn2
+            // 
+            this.exitBtn2.Controls.Add(this.exitBtn);
+            this.exitBtn2.Location = new System.Drawing.Point(427, 460);
+            this.exitBtn2.Name = "exitBtn2";
+            this.exitBtn2.Size = new System.Drawing.Size(270, 62);
+            this.exitBtn2.TabIndex = 5;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
+            this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitBtn.Location = new System.Drawing.Point(-6, -13);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(291, 86);
+            this.exitBtn.TabIndex = 3;
+            this.exitBtn.Text = "          Exit";
+            this.exitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.exitBtn2);
+            this.Controls.Add(this.aboutBtn2);
+            this.Controls.Add(this.dashboardBtn);
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -107,6 +184,9 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.upperPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.dashboardBtn.ResumeLayout(false);
+            this.aboutBtn2.ResumeLayout(false);
+            this.exitBtn2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -116,5 +196,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.NightControlBox dashboardControlbx;
         private System.Windows.Forms.FlowLayoutPanel dashboardFlowPnl;
+        private System.Windows.Forms.Button dashboardBtn2;
+        private System.Windows.Forms.Panel dashboardBtn;
+        private System.Windows.Forms.Panel aboutBtn2;
+        private System.Windows.Forms.Button aboutBtn;
+        private System.Windows.Forms.Panel exitBtn2;
+        private System.Windows.Forms.Button exitBtn;
     }
 }
