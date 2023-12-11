@@ -55,11 +55,12 @@ namespace LibrarySystem
 
             //PANEL BUTTONS
             dashboardBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
-            dashboardBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            reserveBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             aboutBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             aboutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
-            exitBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
-            exitBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+           
+
+            
             dashboardbackPnl.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             booklistBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             booklistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
@@ -69,7 +70,7 @@ namespace LibrarySystem
             returnBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             reserveBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             reserveBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
-
+            
         }
 
         //GRADIENT FOR UPPERPANEL
@@ -99,7 +100,7 @@ namespace LibrarySystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            dashboardTransition.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -111,5 +112,62 @@ namespace LibrarySystem
         {
 
         }
+
+        private void dashboardTransition_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void booklistBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void dashboardBtn_Click(object sender, EventArgs e)
+        {
+            dashboardTransition.Start();
+        }
+
+        //DASHBOARD TRANSITION
+        bool menuExpand = false;
+        private void dashboardTransition_Tick_1(object sender, EventArgs e)
+        {
+            const int targetExpandedHeight = 365;
+            const int targetCollapsedHeight = 65;
+            const int step = 10;
+
+            if (!menuExpand)
+            {
+                // Expanding
+                dashboardbackPnl.Height += step;
+                if (dashboardbackPnl.Height >= targetExpandedHeight)
+                {
+                    dashboardbackPnl.Height = targetExpandedHeight;
+                    dashboardTransition.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                // Collapsing
+                dashboardbackPnl.Height -= step;
+                if (dashboardbackPnl.Height <= targetCollapsedHeight)
+                {
+                    dashboardbackPnl.Height = targetCollapsedHeight;
+                    dashboardTransition.Stop();
+                    menuExpand = false;
+                }
+            }
+        }
+
     }
 }
