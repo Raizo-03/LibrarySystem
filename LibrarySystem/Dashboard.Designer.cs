@@ -55,6 +55,7 @@
             this.nightControlBox1.Name = "nightControlBox1";
             this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
             this.nightControlBox1.TabIndex = 0;
+            this.nightControlBox1.Click += new System.EventHandler(this.nightControlBox1_Click);
             // 
             // Dashboard
             // 
