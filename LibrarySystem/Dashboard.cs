@@ -60,8 +60,15 @@ namespace LibrarySystem
             aboutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             exitBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             exitBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
-           
-
+            dashboardbackPnl.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            booklistBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            booklistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            borrowBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            borrowBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            returnBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            returnBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            reserveBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            reserveBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
 
         }
 
