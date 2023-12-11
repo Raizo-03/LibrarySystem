@@ -49,8 +49,14 @@ namespace LibrarySystem
             //Disable the maximize/Minimize button
             dashboardControlbx.EnableMaximizeButton = false;
 
-            //
-            dashboardFlowPnl.BackColor = Color.FromArgb(241, 214, 171, 171);
+            //SIDE PANEL COLOR
+            dashboardFlowPnl.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            //dashboardFlowPnl.Paint += dashboardFlowPnl_Paint;
+
+
+
+
+
 
 
         }
