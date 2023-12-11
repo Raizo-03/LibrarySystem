@@ -74,5 +74,10 @@ namespace LibrarySystem
         {
 
         }
+
+        private void nightControlBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
