@@ -41,13 +41,17 @@ namespace LibrarySystem
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
             //upperPanel.BackColor = Color.FromArgb(176, 146, 106, 106); // CUSTOM UPPER PANEL #B0926A
 
+            //UPPER PANEL COLOR
             upperPanel.BackColor = Color.Transparent; // Make the upper panel transparent
-
             // Attach the Paint event to handle custom painting for the upper panel
             upperPanel.Paint += UpperPanel_Paint;
 
             //Disable the maximize/Minimize button
             dashboardControlbx.EnableMaximizeButton = false;
+
+            //
+            dashboardFlowPnl.BackColor = Color.FromArgb(241, 214, 171, 171);
+
 
         }
 
