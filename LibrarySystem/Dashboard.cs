@@ -60,7 +60,7 @@ namespace LibrarySystem
             aboutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             exitBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             exitBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
-
+           
 
 
         }
@@ -96,6 +96,11 @@ namespace LibrarySystem
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutBtn_Click(object sender, EventArgs e)
         {
 
         }
