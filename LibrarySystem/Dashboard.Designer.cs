@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.upperPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,21 +47,12 @@
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 45);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // dashboardControlbx
             // 
             this.dashboardControlbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dashboardControlbx.BackColor = System.Drawing.Color.Transparent;
             this.dashboardControlbx.CloseHoverColor = System.Drawing.Color.Red;
-            this.dashboardControlbx.CloseHoverForeColor = System.Drawing.Color.White;
+            this.dashboardControlbx.CloseHoverForeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dashboardControlbx.DefaultLocation = true;
             this.dashboardControlbx.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
@@ -80,6 +71,15 @@
             this.dashboardControlbx.Size = new System.Drawing.Size(139, 31);
             this.dashboardControlbx.TabIndex = 1;
             this.dashboardControlbx.Click += new System.EventHandler(this.nightControlBox1_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 45);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Dashboard
             // 

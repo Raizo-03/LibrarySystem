@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
+using ReaLTaiizor.Controls;
 
 
 namespace LibrarySystem
@@ -72,10 +73,7 @@ namespace LibrarySystem
 
         private void nightControlBox1_Click_1(object sender, EventArgs e)
         {
-            
-
-            System.Windows.Forms.Application.ExitThread();
-
+          System.Windows.Forms.Application.ExitThread();
         }
     }
 }
