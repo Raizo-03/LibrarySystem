@@ -32,6 +32,7 @@
             this.upperPanel = new System.Windows.Forms.Panel();
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dashboardFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,22 +52,22 @@
             // 
             this.dashboardControlbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dashboardControlbx.BackColor = System.Drawing.Color.Transparent;
-            this.dashboardControlbx.CloseHoverColor = System.Drawing.Color.Red;
+            this.dashboardControlbx.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.dashboardControlbx.CloseHoverForeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dashboardControlbx.DefaultLocation = true;
-            this.dashboardControlbx.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.dashboardControlbx.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.dashboardControlbx.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.dashboardControlbx.DisableMaximizeColor = System.Drawing.Color.Black;
+            this.dashboardControlbx.DisableMinimizeColor = System.Drawing.Color.Black;
+            this.dashboardControlbx.EnableCloseColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMaximizeButton = true;
-            this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMinimizeButton = true;
-            this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.Location = new System.Drawing.Point(928, 0);
-            this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dashboardControlbx.MinimizeHoverForeColor = System.Drawing.Color.White;
+            this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.Olive;
+            this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dashboardControlbx.MinimizeHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dashboardControlbx.Name = "dashboardControlbx";
             this.dashboardControlbx.Size = new System.Drawing.Size(139, 31);
             this.dashboardControlbx.TabIndex = 1;
@@ -81,12 +82,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // dashboardFlowPnl
+            // 
+            this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 96);
+            this.dashboardFlowPnl.Name = "dashboardFlowPnl";
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(263, 504);
+            this.dashboardFlowPnl.TabIndex = 2;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -105,5 +115,6 @@
         private System.Windows.Forms.Panel upperPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ReaLTaiizor.Controls.NightControlBox dashboardControlbx;
+        private System.Windows.Forms.FlowLayoutPanel dashboardFlowPnl;
     }
 }
