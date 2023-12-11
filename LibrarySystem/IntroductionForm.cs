@@ -61,6 +61,20 @@ namespace LibrarySystem
         {
             proceedBtn.BackColor = Color.White;
 
+
+            //CLOSES THE FIRST FORM
+            FirstForm first = new FirstForm();
+
+            // Assuming FirstFormInstance is an instance of the form you want to close
+            this.Hide();
+
+            // Open the second form
+            Dashboard secondForm = new Dashboard();
+            secondForm.Show();
+            this.WindowState = FormWindowState.Normal;
+
+
+
         }
 
     }
