@@ -38,7 +38,7 @@
             this.rjButton1.BackgroundColor = System.Drawing.Color.Transparent;
             this.rjButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rjButton1.BackgroundImage")));
             this.rjButton1.BorderColor = System.Drawing.Color.Olive;
-            this.rjButton1.BorderRadius = 45;
+            this.rjButton1.BorderRadius = 46;
             this.rjButton1.BorderSize = 1;
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
