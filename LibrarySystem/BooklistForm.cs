@@ -16,5 +16,10 @@ namespace LibrarySystem
         {
             InitializeComponent();
         }
+
+        private void BooklistForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

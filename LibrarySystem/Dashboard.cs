@@ -50,9 +50,9 @@ namespace LibrarySystem
             //upperPanel.BackColor = Color.FromArgb(176, 146, 106, 106); // CUSTOM UPPER PANEL #B0926A
 
             //UPPER PANEL COLOR
-            upperPanel.BackColor = Color.Transparent; // Make the upper panel transparent
+            upperPanel.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);  // Make the upper panel transparent
             // Attach the Paint event to handle custom painting for the upper panel
-            upperPanel.Paint += UpperPanel_Paint;
+            //upperPanel.Paint += UpperPanel_Paint;
 
             //Disable the maximize/Minimize button
             dashboardControlbx.EnableMaximizeButton = false;
@@ -69,7 +69,7 @@ namespace LibrarySystem
            
 
             
-            dashboardbackPnl.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            dashboardbackPnl.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             booklistBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             booklistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             borrowBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
@@ -133,18 +133,49 @@ namespace LibrarySystem
         {
 
         }
-
+        //RESERVE BUTTON
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            if (reserve == null)
+            {
+                reserve = new ReserveForm();
+                reserve.FormClosed += reserve_FormClosed;
+                reserve.MdiParent = this;
+                reserve.Dock = DockStyle.Fill;
+                reserve.Show();
+            }
+            else
+            {
+                reserve.Activate();
+            }
+        }
+        private void reserve_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            returnForm = null;
         }
 
+        //RETURN BUTTON
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            if (returnForm == null)
+            {
+                returnForm = new ReturnForm();
+                returnForm.FormClosed += return_FormClosed;
+                returnForm.MdiParent = this;
+                returnForm.Dock = DockStyle.Fill;
+                returnForm.Show();
+            }
+            else
+            {
+                returnForm.Activate();
+            }
+        }
+        private void return_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            returnForm = null;
         }
 
-         //BURGER TRANSITION
+        //BURGER TRANSITION
         bool dashboardExpand = false;
         private void burgerTransition_Tick(object sender, EventArgs e)
         {
@@ -176,10 +207,20 @@ namespace LibrarySystem
             }
         }
 
+        //DASHBOARD BUTTON
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             dashboardTransition.Start();
+
+    
         }
+
+        private void Dashboard_FormClosed(object sender, EventArgs e)
+        {
+            dashboard = null;
+        }
+
+
 
         //DASHBOARD TRANSITION
         bool menuExpand = false;
@@ -217,6 +258,49 @@ namespace LibrarySystem
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             burgerTransition.Start();
+        }
+
+        //BOOK LIST BUTTON
+        private void booklistBtn_Click_1(object sender, EventArgs e)
+        {
+            if(booklist == null)
+            {
+                booklist = new BooklistForm();
+                booklist.FormClosed += booklist_FormClosed;
+                booklist.MdiParent = this;
+                booklist.Dock = DockStyle.Fill;
+                booklist.Show();
+            }
+            else
+            {
+                booklist.Activate();
+            }
+        }
+
+        private void booklist_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            booklist = null;
+        }
+
+        //BORROW BUTTON
+        private void borrowBtn_Click(object sender, EventArgs e)
+        {
+            if (borrow == null)
+            {
+                borrow = new BorrowForm();
+                borrow.FormClosed += borrow_FormClosed;
+                borrow.MdiParent = this;
+                borrow.Dock = DockStyle.Fill;
+                borrow.Show();
+            }
+            else
+            {
+                borrow.Activate();
+            }
+        }
+        private void borrow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            booklist = null;
         }
     }
 }
