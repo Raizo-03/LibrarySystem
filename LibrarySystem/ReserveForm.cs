@@ -16,5 +16,11 @@ namespace LibrarySystem
         {
             InitializeComponent();
         }
+
+        private void ReserveForm_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+
+        }
     }
 }

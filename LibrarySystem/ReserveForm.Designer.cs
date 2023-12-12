@@ -38,6 +38,7 @@
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReserveForm";
+            this.Load += new System.EventHandler(this.ReserveForm_Load);
             this.ResumeLayout(false);
 
         }

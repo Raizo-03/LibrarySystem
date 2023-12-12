@@ -302,5 +302,25 @@ namespace LibrarySystem
         {
             booklist = null;
         }
+
+        private void aboutBtn_Click_1(object sender, EventArgs e)
+        {
+            if (about == null)
+            {
+                about = new AboutForm();
+                about.FormClosed += about_FormClosed;
+                about.MdiParent = this;
+                about.Dock = DockStyle.Fill;
+                about.Show();
+            }
+            else
+            {
+                about.Activate();
+            }
+        }
+        private void about_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            booklist = null;
+        }
     }
 }
