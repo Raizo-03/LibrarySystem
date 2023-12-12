@@ -22,6 +22,7 @@ namespace LibrarySystem
         ReturnForm returnForm;
         ReserveForm reserve;
         AboutForm about;
+        BorrowerList borrowerList;
 
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -78,10 +79,12 @@ namespace LibrarySystem
             returnBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             reserveBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             reserveBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            borrowerlistBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            borrowerlistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
 
 
 
-            
+
         }
 
         //GRADIENT FOR UPPERPANEL
@@ -238,7 +241,7 @@ namespace LibrarySystem
         bool menuExpand = false;
         private void dashboardTransition_Tick_1(object sender, EventArgs e)
         {
-            const int targetExpandedHeight = 365;
+            const int targetExpandedHeight = 420;
             const int targetCollapsedHeight = 65;
             const int step = 200;
 
@@ -340,6 +343,30 @@ namespace LibrarySystem
 
         }
 
-       
+        private void dashboardbackPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void borrowerlistBtn_Click(object sender, EventArgs e)
+        {
+            if (borrowerList == null)
+            {
+                borrowerList = new BorrowerList();
+                borrowerList.FormClosed += borrowerList_FormClosed;
+                borrowerList.MdiParent = this;
+                borrowerList.Dock = DockStyle.Fill;
+                borrowerList.Show();
+            }
+            else
+            {
+                borrowerList.Activate();
+            }
+        }
+        private void borrowerList_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            borrowerList = null;
+        }
     }
 }

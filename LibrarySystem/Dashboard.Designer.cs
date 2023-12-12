@@ -51,6 +51,8 @@
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.borrowerlistBtn2 = new System.Windows.Forms.Panel();
+            this.borrowerlistBtn = new System.Windows.Forms.Button();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -63,6 +65,7 @@
             this.reserveBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.borrowerlistBtn2.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -128,11 +131,13 @@
             this.dashboardbackPnl.Controls.Add(this.borrowBtn2);
             this.dashboardbackPnl.Controls.Add(this.returnBtn2);
             this.dashboardbackPnl.Controls.Add(this.reserveBtn2);
+            this.dashboardbackPnl.Controls.Add(this.borrowerlistBtn2);
             this.dashboardbackPnl.Location = new System.Drawing.Point(0, 0);
             this.dashboardbackPnl.Margin = new System.Windows.Forms.Padding(0);
             this.dashboardbackPnl.Name = "dashboardbackPnl";
-            this.dashboardbackPnl.Size = new System.Drawing.Size(275, 72);
+            this.dashboardbackPnl.Size = new System.Drawing.Size(275, 73);
             this.dashboardbackPnl.TabIndex = 7;
+            this.dashboardbackPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.dashboardbackPnl_Paint);
             // 
             // dashboardBtn2
             // 
@@ -266,7 +271,7 @@
             // aboutBtn2
             // 
             this.aboutBtn2.Controls.Add(this.aboutBtn);
-            this.aboutBtn2.Location = new System.Drawing.Point(3, 75);
+            this.aboutBtn2.Location = new System.Drawing.Point(3, 76);
             this.aboutBtn2.Name = "aboutBtn2";
             this.aboutBtn2.Size = new System.Drawing.Size(275, 66);
             this.aboutBtn2.TabIndex = 5;
@@ -303,6 +308,29 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // borrowerlistBtn2
+            // 
+            this.borrowerlistBtn2.Controls.Add(this.borrowerlistBtn);
+            this.borrowerlistBtn2.Location = new System.Drawing.Point(3, 363);
+            this.borrowerlistBtn2.Name = "borrowerlistBtn2";
+            this.borrowerlistBtn2.Size = new System.Drawing.Size(275, 66);
+            this.borrowerlistBtn2.TabIndex = 6;
+            // 
+            // borrowerlistBtn
+            // 
+            this.borrowerlistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerlistBtn.Image = ((System.Drawing.Image)(resources.GetObject("borrowerlistBtn.Image")));
+            this.borrowerlistBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.borrowerlistBtn.Location = new System.Drawing.Point(-8, -21);
+            this.borrowerlistBtn.Name = "borrowerlistBtn";
+            this.borrowerlistBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.borrowerlistBtn.Size = new System.Drawing.Size(294, 95);
+            this.borrowerlistBtn.TabIndex = 3;
+            this.borrowerlistBtn.Text = "      Borrower List";
+            this.borrowerlistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.borrowerlistBtn.UseVisualStyleBackColor = true;
+            this.borrowerlistBtn.Click += new System.EventHandler(this.borrowerlistBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +360,7 @@
             this.reserveBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.borrowerlistBtn2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,5 +387,7 @@
         private System.Windows.Forms.Timer burgerTransition;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel borrowerlistBtn2;
+        private System.Windows.Forms.Button borrowerlistBtn;
     }
 }
