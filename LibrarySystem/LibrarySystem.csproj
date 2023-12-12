@@ -53,11 +53,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BooklistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BooklistForm.Designer.cs">
+      <DependentUpon>BooklistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowForm.Designer.cs">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReserveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReserveForm.Designer.cs">
+      <DependentUpon>ReserveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnForm.Designer.cs">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RJButton.cs">
       <SubType>Component</SubType>

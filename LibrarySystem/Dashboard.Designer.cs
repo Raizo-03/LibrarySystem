@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.upperPanel = new System.Windows.Forms.Panel();
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dashboardburgerIcon = new System.Windows.Forms.PictureBox();
             this.dashboardFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.dashboardbackPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.dashboardBtn2 = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
             this.upperPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
             this.dashboardbackPnl.SuspendLayout();
             this.dashboardBtn2.SuspendLayout();
@@ -64,11 +64,11 @@
             // upperPanel
             // 
             this.upperPanel.Controls.Add(this.dashboardControlbx);
-            this.upperPanel.Controls.Add(this.pictureBox1);
+            this.upperPanel.Controls.Add(this.dashboardburgerIcon);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1067, 113);
+            this.upperPanel.Size = new System.Drawing.Size(1067, 95);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -97,24 +97,24 @@
             this.dashboardControlbx.TabIndex = 1;
             this.dashboardControlbx.Click += new System.EventHandler(this.nightControlBox1_Click_1);
             // 
-            // pictureBox1
+            // dashboardburgerIcon
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 45);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.dashboardburgerIcon.Image = ((System.Drawing.Image)(resources.GetObject("dashboardburgerIcon.Image")));
+            this.dashboardburgerIcon.Location = new System.Drawing.Point(12, 22);
+            this.dashboardburgerIcon.Name = "dashboardburgerIcon";
+            this.dashboardburgerIcon.Size = new System.Drawing.Size(48, 45);
+            this.dashboardburgerIcon.TabIndex = 0;
+            this.dashboardburgerIcon.TabStop = false;
+            this.dashboardburgerIcon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dashboardFlowPnl
             // 
             this.dashboardFlowPnl.Controls.Add(this.dashboardbackPnl);
             this.dashboardFlowPnl.Controls.Add(this.aboutBtn2);
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 113);
+            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 95);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 487);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 505);
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // dashboardbackPnl
@@ -290,7 +290,7 @@
             this.Text = "DashboardForm";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.upperPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).EndInit();
             this.dashboardFlowPnl.ResumeLayout(false);
             this.dashboardbackPnl.ResumeLayout(false);
             this.dashboardBtn2.ResumeLayout(false);
@@ -305,7 +305,7 @@
 
         #endregion
         private System.Windows.Forms.Panel upperPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox dashboardburgerIcon;
         private ReaLTaiizor.Controls.NightControlBox dashboardControlbx;
         private System.Windows.Forms.FlowLayoutPanel dashboardFlowPnl;
         private System.Windows.Forms.Panel aboutBtn2;
