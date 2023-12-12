@@ -16,7 +16,7 @@ namespace LibrarySystem
 {
     public partial class Dashboard : Form
     {
-        Dashboard dashboard;
+        DashboardForm2 dashboard2;
         BooklistForm booklist;
         BorrowForm borrow;
         ReturnForm returnForm;
@@ -50,7 +50,7 @@ namespace LibrarySystem
             //upperPanel.BackColor = Color.FromArgb(176, 146, 106, 106); // CUSTOM UPPER PANEL #B0926A
 
             //UPPER PANEL COLOR
-            upperPanel.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);  // Make the upper panel transparent
+            upperPanel.BackColor = Color.FromArgb(0xB1, 0x92, 0x6A);  // Make the upper panel transparent
             // Attach the Paint event to handle custom painting for the upper panel
             //upperPanel.Paint += UpperPanel_Paint;
 
@@ -179,7 +179,7 @@ namespace LibrarySystem
         bool dashboardExpand = false;
         private void burgerTransition_Tick(object sender, EventArgs e)
         {
-            const int targetExpandedWidth = 274;
+            const int targetExpandedWidth = 220;
             const int targetCollapsedWidth = 71;
             const int step = 20;
 
@@ -211,13 +211,25 @@ namespace LibrarySystem
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             dashboardTransition.Start();
+            if (dashboard2 == null)
+            {
+                dashboard2 = new DashboardForm2();
+                dashboard2.FormClosed += dashboard2_FormClosed;
+                dashboard2.MdiParent = this;
+                dashboard2.Dock = DockStyle.Fill;
+                dashboard2.Show();
+            }
+            else
+            {
+                dashboard2.Activate();
+            }
 
-    
+
         }
 
-        private void Dashboard_FormClosed(object sender, EventArgs e)
+        private void dashboard2_FormClosed(object sender, EventArgs e)
         {
-            dashboard = null;
+            dashboard2 = null;
         }
 
 
@@ -322,5 +334,12 @@ namespace LibrarySystem
         {
             booklist = null;
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

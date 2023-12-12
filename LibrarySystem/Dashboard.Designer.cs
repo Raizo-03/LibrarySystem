@@ -37,6 +37,7 @@
             this.dashboardbackPnl = new System.Windows.Forms.FlowLayoutPanel();
             this.dashboardBtn2 = new System.Windows.Forms.Panel();
             this.dashboardBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.booklistBtn2 = new System.Windows.Forms.Panel();
             this.booklistBtn = new System.Windows.Forms.Button();
             this.borrowBtn2 = new System.Windows.Forms.Panel();
@@ -49,16 +50,19 @@
             this.aboutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
             this.dashboardbackPnl.SuspendLayout();
             this.dashboardBtn2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.booklistBtn2.SuspendLayout();
             this.borrowBtn2.SuspendLayout();
             this.returnBtn2.SuspendLayout();
             this.reserveBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -76,7 +80,7 @@
             // 
             this.dashboardControlbx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dashboardControlbx.BackColor = System.Drawing.Color.Transparent;
-            this.dashboardControlbx.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dashboardControlbx.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dashboardControlbx.CloseHoverForeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dashboardControlbx.DefaultLocation = true;
@@ -133,6 +137,7 @@
             // dashboardBtn2
             // 
             this.dashboardBtn2.Controls.Add(this.dashboardBtn);
+            this.dashboardBtn2.Controls.Add(this.pictureBox1);
             this.dashboardBtn2.Location = new System.Drawing.Point(3, 3);
             this.dashboardBtn2.Name = "dashboardBtn2";
             this.dashboardBtn2.Size = new System.Drawing.Size(275, 66);
@@ -152,6 +157,18 @@
             this.dashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardBtn.UseVisualStyleBackColor = true;
             this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(74, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(987, 526);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // booklistBtn2
             // 
@@ -278,12 +295,21 @@
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(1066, 150);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -299,11 +325,13 @@
             this.dashboardFlowPnl.ResumeLayout(false);
             this.dashboardbackPnl.ResumeLayout(false);
             this.dashboardBtn2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.booklistBtn2.ResumeLayout(false);
             this.borrowBtn2.ResumeLayout(false);
             this.returnBtn2.ResumeLayout(false);
             this.reserveBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +356,7 @@
         private System.Windows.Forms.Panel borrowBtn2;
         private System.Windows.Forms.Button borrowBtn;
         private System.Windows.Forms.Timer burgerTransition;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

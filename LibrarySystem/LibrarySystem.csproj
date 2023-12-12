@@ -77,6 +77,12 @@
     <Compile Include="BorrowForm.Designer.cs">
       <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashboardForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardForm2.Designer.cs">
+      <DependentUpon>DashboardForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReserveForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardForm2.resx">
+      <DependentUpon>DashboardForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntroductionForm.resx">
       <DependentUpon>IntroductionForm.cs</DependentUpon>
