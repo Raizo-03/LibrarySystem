@@ -267,6 +267,7 @@
             this.aboutBtn.Text = "      About";
             this.aboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.aboutBtn.UseVisualStyleBackColor = true;
+            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click_1);
             // 
             // dashboardTransition
             // 

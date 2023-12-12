@@ -38,6 +38,7 @@
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BorrowForm";
+            this.Load += new System.EventHandler(this.BorrowForm_Load);
             this.ResumeLayout(false);
 
         }

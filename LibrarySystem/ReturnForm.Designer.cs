@@ -38,6 +38,7 @@
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReturnForm";
+            this.Load += new System.EventHandler(this.ReturnForm_Load);
             this.ResumeLayout(false);
 
         }
