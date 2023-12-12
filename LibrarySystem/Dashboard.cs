@@ -143,7 +143,7 @@ namespace LibrarySystem
         {
             const int targetExpandedHeight = 365;
             const int targetCollapsedHeight = 65;
-            const int step = 10;
+            const int step = 200;
 
             if (!menuExpand)
             {
@@ -169,5 +169,41 @@ namespace LibrarySystem
             }
         }
 
+        //BURGER TRANSITION
+        bool dashboardExpand = false;
+        private void burgerTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 274;
+            const int targetCollapsedWidth = 71;
+            const int step = 20;
+
+            if (!dashboardExpand)
+            {
+                // Expanding
+                dashboardFlowPnl.Width += step;
+                if (dashboardFlowPnl.Width >= targetExpandedWidth)
+                {
+                    dashboardFlowPnl.Width = targetExpandedWidth;
+                    burgerTransition.Stop();
+                    dashboardExpand = true;
+                }
+            }
+            else
+            {
+                // Collapsing
+                dashboardFlowPnl.Width -= step;
+                if (dashboardFlowPnl.Width <= targetCollapsedWidth)
+                {
+                    dashboardFlowPnl.Width = targetCollapsedWidth;
+                    burgerTransition.Stop();
+                    dashboardExpand = false;
+                }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            burgerTransition.Start();
+        }
     }
 }
