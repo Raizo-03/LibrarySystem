@@ -16,6 +16,14 @@ namespace LibrarySystem
 {
     public partial class Dashboard : Form
     {
+        Dashboard dashboard;
+        BooklistForm booklist;
+        BorrowForm borrow;
+        ReturnForm returnForm;
+        ReserveForm reserve;
+        AboutForm about;
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
     (
@@ -70,6 +78,9 @@ namespace LibrarySystem
             returnBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             reserveBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             reserveBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+
+
+
             
         }
 
@@ -132,6 +143,39 @@ namespace LibrarySystem
         {
 
         }
+
+         //BURGER TRANSITION
+        bool dashboardExpand = false;
+        private void burgerTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 274;
+            const int targetCollapsedWidth = 71;
+            const int step = 20;
+
+            if (!dashboardExpand)
+            {
+                // Expanding
+                dashboardFlowPnl.Width += step;
+                if (dashboardFlowPnl.Width >= targetExpandedWidth)
+                {
+                    dashboardFlowPnl.Width = targetExpandedWidth;
+                    burgerTransition.Stop();
+                    dashboardExpand = true;
+                }
+            }
+            else
+            {
+                // Collapsing
+                dashboardFlowPnl.Width -= step;
+                if (dashboardFlowPnl.Width <= targetCollapsedWidth)
+                {
+                    dashboardFlowPnl.Width = targetCollapsedWidth;
+                    burgerTransition.Stop();
+                    dashboardExpand = false;
+                }
+            }
+        }
+
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             dashboardTransition.Start();
@@ -169,37 +213,6 @@ namespace LibrarySystem
             }
         }
 
-        //BURGER TRANSITION
-        bool dashboardExpand = false;
-        private void burgerTransition_Tick(object sender, EventArgs e)
-        {
-            const int targetExpandedWidth = 274;
-            const int targetCollapsedWidth = 71;
-            const int step = 20;
-
-            if (!dashboardExpand)
-            {
-                // Expanding
-                dashboardFlowPnl.Width += step;
-                if (dashboardFlowPnl.Width >= targetExpandedWidth)
-                {
-                    dashboardFlowPnl.Width = targetExpandedWidth;
-                    burgerTransition.Stop();
-                    dashboardExpand = true;
-                }
-            }
-            else
-            {
-                // Collapsing
-                dashboardFlowPnl.Width -= step;
-                if (dashboardFlowPnl.Width <= targetCollapsedWidth)
-                {
-                    dashboardFlowPnl.Width = targetCollapsedWidth;
-                    burgerTransition.Stop();
-                    dashboardExpand = false;
-                }
-            }
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
