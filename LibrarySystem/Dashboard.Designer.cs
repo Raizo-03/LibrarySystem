@@ -56,6 +56,8 @@
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.userIDLabel = new System.Windows.Forms.Label();
+            this.departmentLabel = new System.Windows.Forms.Label();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -74,6 +76,8 @@
             // 
             // upperPanel
             // 
+            this.upperPanel.Controls.Add(this.departmentLabel);
+            this.upperPanel.Controls.Add(this.userIDLabel);
             this.upperPanel.Controls.Add(this.userNameLabel);
             this.upperPanel.Controls.Add(this.dashboardControlbx);
             this.upperPanel.Controls.Add(this.dashboardburgerIcon);
@@ -89,9 +93,9 @@
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameLabel.Location = new System.Drawing.Point(731, 22);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(195, 35);
+            this.userNameLabel.Size = new System.Drawing.Size(195, 25);
             this.userNameLabel.TabIndex = 2;
-            this.userNameLabel.Text = "label1";
+            this.userNameLabel.Text = "name";
             // 
             // dashboardControlbx
             // 
@@ -369,6 +373,24 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // userIDLabel
+            // 
+            this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDLabel.Location = new System.Drawing.Point(731, 47);
+            this.userIDLabel.Name = "userIDLabel";
+            this.userIDLabel.Size = new System.Drawing.Size(125, 25);
+            this.userIDLabel.TabIndex = 3;
+            this.userIDLabel.Text = "id";
+            // 
+            // departmentLabel
+            // 
+            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentLabel.Location = new System.Drawing.Point(862, 46);
+            this.departmentLabel.Name = "departmentLabel";
+            this.departmentLabel.Size = new System.Drawing.Size(125, 25);
+            this.departmentLabel.TabIndex = 4;
+            this.departmentLabel.Text = "department";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,5 +453,7 @@
         private System.Windows.Forms.Panel logoutBtn2;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Label userNameLabel;
+        private System.Windows.Forms.Label departmentLabel;
+        private System.Windows.Forms.Label userIDLabel;
     }
 }
