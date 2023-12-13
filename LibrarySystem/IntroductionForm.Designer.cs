@@ -33,6 +33,8 @@
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.EternalLibPic = new System.Windows.Forms.Label();
             this.proceedBtn = new LibrarySystem.RJButton();
+            this.usernameBx = new System.Windows.Forms.TextBox();
+            this.passwordBx = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nightControlBox1
@@ -79,7 +81,7 @@
             this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proceedBtn.ForeColor = System.Drawing.Color.Olive;
-            this.proceedBtn.Location = new System.Drawing.Point(78, 362);
+            this.proceedBtn.Location = new System.Drawing.Point(78, 425);
             this.proceedBtn.Name = "proceedBtn";
             this.proceedBtn.Size = new System.Drawing.Size(224, 59);
             this.proceedBtn.TabIndex = 3;
@@ -88,12 +90,28 @@
             this.proceedBtn.UseVisualStyleBackColor = false;
             this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 
+            // usernameBx
+            // 
+            this.usernameBx.Location = new System.Drawing.Point(91, 337);
+            this.usernameBx.Name = "usernameBx";
+            this.usernameBx.Size = new System.Drawing.Size(179, 20);
+            this.usernameBx.TabIndex = 4;
+            // 
+            // passwordBx
+            // 
+            this.passwordBx.Location = new System.Drawing.Point(91, 381);
+            this.passwordBx.Name = "passwordBx";
+            this.passwordBx.Size = new System.Drawing.Size(179, 20);
+            this.passwordBx.TabIndex = 5;
+            // 
             // FirstForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 531);
             this.ControlBox = false;
+            this.Controls.Add(this.passwordBx);
+            this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.proceedBtn);
             this.Controls.Add(this.EternalLibPic);
             this.Controls.Add(this.nightControlBox1);
@@ -104,6 +122,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FirstForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,6 +132,8 @@
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Label EternalLibPic;
         private LibrarySystem.RJButton proceedBtn;
+        private System.Windows.Forms.TextBox usernameBx;
+        private System.Windows.Forms.TextBox passwordBx;
     }
 }
 
