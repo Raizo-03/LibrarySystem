@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.upperPanel = new System.Windows.Forms.Panel();
+            this.departmentLabel = new System.Windows.Forms.Label();
+            this.userIDLabel = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
             this.dashboardburgerIcon = new System.Windows.Forms.PictureBox();
@@ -56,8 +58,6 @@
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.userIDLabel = new System.Windows.Forms.Label();
-            this.departmentLabel = new System.Windows.Forms.Label();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -87,6 +87,24 @@
             this.upperPanel.Size = new System.Drawing.Size(1067, 74);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // departmentLabel
+            // 
+            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentLabel.Location = new System.Drawing.Point(862, 46);
+            this.departmentLabel.Name = "departmentLabel";
+            this.departmentLabel.Size = new System.Drawing.Size(125, 25);
+            this.departmentLabel.TabIndex = 4;
+            this.departmentLabel.Text = "department";
+            // 
+            // userIDLabel
+            // 
+            this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDLabel.Location = new System.Drawing.Point(731, 47);
+            this.userIDLabel.Name = "userIDLabel";
+            this.userIDLabel.Size = new System.Drawing.Size(125, 25);
+            this.userIDLabel.TabIndex = 3;
+            this.userIDLabel.Text = "id";
             // 
             // userNameLabel
             // 
@@ -120,6 +138,7 @@
             this.dashboardControlbx.Name = "dashboardControlbx";
             this.dashboardControlbx.Size = new System.Drawing.Size(139, 31);
             this.dashboardControlbx.TabIndex = 1;
+            this.dashboardControlbx.Visible = false;
             this.dashboardControlbx.Click += new System.EventHandler(this.nightControlBox1_Click_1);
             // 
             // dashboardburgerIcon
@@ -372,24 +391,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(100, 50);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
-            // 
-            // userIDLabel
-            // 
-            this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIDLabel.Location = new System.Drawing.Point(731, 47);
-            this.userIDLabel.Name = "userIDLabel";
-            this.userIDLabel.Size = new System.Drawing.Size(125, 25);
-            this.userIDLabel.TabIndex = 3;
-            this.userIDLabel.Text = "id";
-            // 
-            // departmentLabel
-            // 
-            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentLabel.Location = new System.Drawing.Point(862, 46);
-            this.departmentLabel.Name = "departmentLabel";
-            this.departmentLabel.Size = new System.Drawing.Size(125, 25);
-            this.departmentLabel.TabIndex = 4;
-            this.departmentLabel.Text = "department";
             // 
             // Dashboard
             // 
