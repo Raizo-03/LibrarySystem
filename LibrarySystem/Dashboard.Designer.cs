@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.upperPanel = new System.Windows.Forms.Panel();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
             this.dashboardburgerIcon = new System.Windows.Forms.PictureBox();
             this.dashboardFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,6 +74,7 @@
             // 
             // upperPanel
             // 
+            this.upperPanel.Controls.Add(this.userNameLabel);
             this.upperPanel.Controls.Add(this.dashboardControlbx);
             this.upperPanel.Controls.Add(this.dashboardburgerIcon);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -81,6 +83,15 @@
             this.upperPanel.Size = new System.Drawing.Size(1067, 74);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // userNameLabel
+            // 
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.Location = new System.Drawing.Point(731, 22);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(195, 35);
+            this.userNameLabel.TabIndex = 2;
+            this.userNameLabel.Text = "label1";
             // 
             // dashboardControlbx
             // 
@@ -419,5 +430,6 @@
         private System.Windows.Forms.Button borrowerlistBtn;
         private System.Windows.Forms.Panel logoutBtn2;
         private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.Label userNameLabel;
     }
 }

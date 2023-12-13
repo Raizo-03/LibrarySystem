@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
 using ReaLTaiizor.Controls;
 using static LibrarySystem.FirstForm;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace LibrarySystem
@@ -24,22 +25,11 @@ namespace LibrarySystem
         ReserveForm reserve;
         AboutForm about;
         BorrowerList borrowerList;
-        private Stud studentUser;
-        private Prof professorUser;
-
-        // Constructor for student
-        public Dashboard(Stud student)
-        {
-            InitializeComponent();
-            studentUser = student;
-        }
-
-        // Constructor for professor
-        public Dashboard(Prof professor)
-        {
-            InitializeComponent();
-            professorUser = professor;
-        }
+        // Fields to store user information
+        private string userName;
+        private string userId;
+        private string department;
+        private int bookLimit;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -52,13 +42,19 @@ namespace LibrarySystem
         int nHeightEllipse // width of ellipse
     );
 
-        public Dashboard()
+        public Dashboard(string userName, string userId, string department, int bookLimit)
         {
             InitializeComponent();
 
             //make the edges more round
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+
+            // Use this information as needed in the Dashboard form
+            // For example, update labels or perform other actions
+            userNameLabel.Text = $"{userName}";
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -388,8 +384,9 @@ namespace LibrarySystem
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            String name = userNameLabel.Text;
             // Display a confirmation dialog
-            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Are you sure you want to log out {name}?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Check the user's choice
             if (result == DialogResult.Yes)
