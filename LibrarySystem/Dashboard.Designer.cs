@@ -78,7 +78,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1067, 74);
+            this.upperPanel.Size = new System.Drawing.Size(1067, 95);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -93,6 +93,7 @@
             this.dashboardControlbx.DisableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.DisableMinimizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableCloseColor = System.Drawing.Color.Black;
+            this.dashboardControlbx.Enabled = false;
             this.dashboardControlbx.EnableMaximizeButton = true;
             this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMinimizeButton = true;
@@ -123,7 +124,7 @@
             this.dashboardFlowPnl.Controls.Add(this.aboutBtn2);
             this.dashboardFlowPnl.Controls.Add(this.logoutBtn2);
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 74);
+            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 95);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
             this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 572);
             this.dashboardFlowPnl.TabIndex = 2;
@@ -356,12 +357,13 @@
             this.logoutBtn.Text = "      Logout";
             this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 646);
+            this.ClientSize = new System.Drawing.Size(1067, 667);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dashboardFlowPnl);
