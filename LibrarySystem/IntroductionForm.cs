@@ -19,18 +19,18 @@ namespace LibrarySystem
         //LIST OF 10 STUDENT USERS
         private List<Stud> studentUsers = new List<Stud>
         {
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD")
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
 
             };
         //LIST OF 3 TEACHER USERS
 
         private List<Prof> profUsers = new List<Prof>
         {
-            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS")
+            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS",5 )
           };
         public class Stud
         {
-            public Stud(string studentId, string password, string name, string yearLevel, string section)
+            public Stud(string studentId, string password, string name, string yearLevel, string section, int bookLimit)
             {
                 Username = studentId;  // Set Username to StudentId
                 Password = password;
@@ -38,6 +38,7 @@ namespace LibrarySystem
                 Name = name;
                 YearLevel = yearLevel;
                 Section = section;
+                BookLimit = bookLimit;
             }
 
             public string Username { get; set; }
@@ -46,10 +47,11 @@ namespace LibrarySystem
             public string Name { get; set; }
             public string YearLevel { get; set; }
             public string Section { get; set; }
+            public int BookLimit { get; set; }
         }
         public class Prof
         {
-            public Prof(string employeeId, string password, string name, string department)
+            public Prof(string employeeId, string password, string name, string department, int bookLimit)
             {
                 Username = employeeId;  // Set Username to EmployeeId
                 Password = password;
@@ -62,6 +64,8 @@ namespace LibrarySystem
             public string Name { get; set; }
             public string EmployeeId { get; set; }
             public string Department { get; set; }
+            public int BookLimit { get; set; }
+
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -133,9 +137,8 @@ namespace LibrarySystem
             // If the entered credentials match a student user, proceed
             if (studentUser != null)
             {
-                // Do something specific for student authentication
-                // For example, you might want to pass the user information to the Dashboard form
-                Dashboard secondForm = new Dashboard(studentUser);
+                // Open the Dashboard form with the authenticated student user information
+                Dashboard secondForm = new Dashboard(studentUser.Name, studentUser.StudentId, studentUser.Section, studentUser.BookLimit);
                 secondForm.Show();
                 this.Hide();
                 this.WindowState = FormWindowState.Normal;
@@ -148,9 +151,8 @@ namespace LibrarySystem
             // If the entered credentials match a professor user, proceed
             if (professorUser != null)
             {
-                // Do something specific for professor authentication
-                // For example, you might want to pass the user information to the Dashboard form
-                Dashboard secondForm = new Dashboard(professorUser);
+                // Open the Dashboard form with the authenticated professor user information
+                Dashboard secondForm = new Dashboard(professorUser.Name, professorUser.EmployeeId, professorUser.Department, professorUser.BookLimit);
                 secondForm.Show();
                 this.Hide();
                 this.WindowState = FormWindowState.Normal;
@@ -159,6 +161,7 @@ namespace LibrarySystem
 
             // If no matching user is found, show an error message or take appropriate action
             MessageBox.Show("Invalid username or password. Please try again.");
+
         }
 
     }
