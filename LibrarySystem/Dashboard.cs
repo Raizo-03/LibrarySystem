@@ -54,6 +54,10 @@ namespace LibrarySystem
             // Use this information as needed in the Dashboard form
             // For example, update labels or perform other actions
             userNameLabel.Text = $"{userName}";
+            userIDLabel.Text = $"{userId}";
+            departmentLabel.Text = $"{department}";
+            //bookLimitLabel.Text = $"Book Limit: {bookLimit}";
+            //bookLimit = bookLimit;
 
         }
 
@@ -95,8 +99,6 @@ namespace LibrarySystem
             borrowerlistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             logoutBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             logoutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
-
-
 
         }
 
