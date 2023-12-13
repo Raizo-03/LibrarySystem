@@ -52,7 +52,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = false;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(254, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(269, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -65,7 +65,7 @@
             // EternalLibPic
             // 
             this.EternalLibPic.Image = ((System.Drawing.Image)(resources.GetObject("EternalLibPic.Image")));
-            this.EternalLibPic.Location = new System.Drawing.Point(77, 73);
+            this.EternalLibPic.Location = new System.Drawing.Point(88, 73);
             this.EternalLibPic.Name = "EternalLibPic";
             this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
             this.EternalLibPic.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proceedBtn.ForeColor = System.Drawing.Color.Olive;
-            this.proceedBtn.Location = new System.Drawing.Point(78, 425);
+            this.proceedBtn.Location = new System.Drawing.Point(89, 441);
             this.proceedBtn.Name = "proceedBtn";
             this.proceedBtn.Size = new System.Drawing.Size(224, 59);
             this.proceedBtn.TabIndex = 3;
@@ -92,14 +92,14 @@
             // 
             // usernameBx
             // 
-            this.usernameBx.Location = new System.Drawing.Point(91, 337);
+            this.usernameBx.Location = new System.Drawing.Point(106, 338);
             this.usernameBx.Name = "usernameBx";
             this.usernameBx.Size = new System.Drawing.Size(179, 20);
             this.usernameBx.TabIndex = 4;
             // 
             // passwordBx
             // 
-            this.passwordBx.Location = new System.Drawing.Point(91, 381);
+            this.passwordBx.Location = new System.Drawing.Point(106, 388);
             this.passwordBx.Name = "passwordBx";
             this.passwordBx.Size = new System.Drawing.Size(179, 20);
             this.passwordBx.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 531);
+            this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
             this.Controls.Add(this.passwordBx);
             this.Controls.Add(this.usernameBx);

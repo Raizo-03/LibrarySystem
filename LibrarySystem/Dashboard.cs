@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
 using ReaLTaiizor.Controls;
+using static LibrarySystem.FirstForm;
 
 
 namespace LibrarySystem
@@ -23,7 +24,22 @@ namespace LibrarySystem
         ReserveForm reserve;
         AboutForm about;
         BorrowerList borrowerList;
+        private Stud studentUser;
+        private Prof professorUser;
 
+        // Constructor for student
+        public Dashboard(Stud student)
+        {
+            InitializeComponent();
+            studentUser = student;
+        }
+
+        // Constructor for professor
+        public Dashboard(Prof professor)
+        {
+            InitializeComponent();
+            professorUser = professor;
+        }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn

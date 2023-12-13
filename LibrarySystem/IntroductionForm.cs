@@ -16,7 +16,53 @@ namespace LibrarySystem
 {
     public partial class FirstForm : Form
     {
-        private List<User> users;  // Assuming User, Student, and Teacher classes are defined as in the previous example
+        //LIST OF 10 STUDENT USERS
+        private List<Stud> studentUsers = new List<Stud>
+        {
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD")
+
+            };
+        //LIST OF 3 TEACHER USERS
+
+        private List<Prof> profUsers = new List<Prof>
+        {
+            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS")
+          };
+        public class Stud
+        {
+            public Stud(string studentId, string password, string name, string yearLevel, string section)
+            {
+                Username = studentId;  // Set Username to StudentId
+                Password = password;
+                StudentId = studentId;
+                Name = name;
+                YearLevel = yearLevel;
+                Section = section;
+            }
+
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public string StudentId { get; set; }
+            public string Name { get; set; }
+            public string YearLevel { get; set; }
+            public string Section { get; set; }
+        }
+        public class Prof
+        {
+            public Prof(string employeeId, string password, string name, string department)
+            {
+                Username = employeeId;  // Set Username to EmployeeId
+                Password = password;
+                EmployeeId = employeeId;
+                Name = name;
+                Department = department;
+            }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public string Name { get; set; }
+            public string EmployeeId { get; set; }
+            public string Department { get; set; }
+        }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -38,67 +84,6 @@ namespace LibrarySystem
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-            // Initialize the user list with predefined students and teachers
-            users = new List<User>
-            {
-                new Student("Student1", 1, 1, "SectionA"),
-                new Student("Student2", 2, 2, "SectionB"),
-                // Add more students as needed
-
-                new Teacher("Teacher1", 101, 1001, "Math"),
-                new Teacher("Teacher2", 102, 1002, "Science"),
-                // Add more teachers as needed
-            };
-        }
-
-        //GETTERS AND SETTERS FOR LOG IN
-        public class User
-        {
-            public string Name { get; set; }
-            public int UserId { get; set; }
-            public string Password { get; set; }
-
-            public User(string name, int userId, string password)
-            {
-                Name = name;
-                UserId = userId;
-                Password = password;
-            }
-        }
-
-        //GETTERS AND SETTERS FOR USERS
-        public class Student : User
-        {
-            public int YearLevel { get; set; }
-            public string Section { get; set; }
-
-            public Student(string name, int userId, int yearLevel, string section)
-                : base(name, userId, $"Student{userId}Password")  // Password generated based on user ID for simplicity
-            {
-                YearLevel = yearLevel;
-                Section = section;
-            }
-        }
-
-        //GETTERS AND SETTERS FOR TEACHERS
-        public class Teacher : User
-        {
-            public int EmployeeId { get; set; }
-            public string Department { get; set; }
-
-            public Teacher(string name, int userId, int employeeId, string department)
-                : base(name, userId, $"Teacher{userId}Password")  // Password generated based on user ID for simplicity
-            {
-                EmployeeId = employeeId;
-                Department = department;
-            }
-        }
-
-        //AUTH
-        private User AuthenticateUser(string username, string password)
-        {
-            // Simple authentication logic (check if username and password match any user)
-            return users.FirstOrDefault(user => user.Name == username && user.Password == password);
         }
 
         private void FirstForm_Load(object sender, EventArgs e)
@@ -112,7 +97,6 @@ namespace LibrarySystem
 
             // Disable the maximize/Minimize button
             nightControlBox1.EnableMaximizeButton = false;
-
             
         }
 
@@ -121,37 +105,60 @@ namespace LibrarySystem
 
         }
 
+        /*
         private void proceedBtn_Click(object sender, EventArgs e)
         {
             proceedBtn.BackColor = Color.White;
 
-            // Get entered username and password
-            string username = usernameBx.Text;
-            string password = passwordBx.Text;
+            //CLOSES THE FIRST FORM
+            FirstForm first = new FirstForm();
 
-            // Authenticate user
-            User authenticatedUser = AuthenticateUser(username, password);
+            // Assuming FirstFormInstance is an instance of the form you want to close
+            this.Hide();
+            // Open the second form
+            Dashboard secondForm = new Dashboard();
+            secondForm.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
+        */
+        private void proceedBtn_Click(object sender, EventArgs e)
+        {
+            // Get the entered username and password
+            string enteredUsername = usernameBx.Text;
+            string enteredPassword = passwordBx.Text;
 
-            if (authenticatedUser != null)
+            // Check if the entered credentials match a student user
+            Stud studentUser = studentUsers.FirstOrDefault(user => user.Username == enteredUsername && user.Password == enteredPassword);
+
+            // If the entered credentials match a student user, proceed
+            if (studentUser != null)
             {
-                MessageBox.Show($"Welcome, {authenticatedUser.Name}!");
-                //CLOSES THE FIRST FORM
-                FirstForm first = new FirstForm();
-
-                // Assuming FirstFormInstance is an instance of the form you want to close
-                this.Hide();
-                // Open the second form
-                Dashboard secondForm = new Dashboard();
+                // Do something specific for student authentication
+                // For example, you might want to pass the user information to the Dashboard form
+                Dashboard secondForm = new Dashboard(studentUser);
                 secondForm.Show();
+                this.Hide();
                 this.WindowState = FormWindowState.Normal;
+                return;
             }
-            else
+
+            // Check if the entered credentials match a professor user
+            Prof professorUser = profUsers.FirstOrDefault(user => user.Username == enteredUsername && user.Password == enteredPassword);
+
+            // If the entered credentials match a professor user, proceed
+            if (professorUser != null)
             {
-                MessageBox.Show("Invalid username or password. Please try again.");
+                // Do something specific for professor authentication
+                // For example, you might want to pass the user information to the Dashboard form
+                Dashboard secondForm = new Dashboard(professorUser);
+                secondForm.Show();
+                this.Hide();
+                this.WindowState = FormWindowState.Normal;
+                return;
             }
 
-
-
+            // If no matching user is found, show an error message or take appropriate action
+            MessageBox.Show("Invalid username or password. Please try again.");
         }
 
     }
