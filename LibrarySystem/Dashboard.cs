@@ -385,5 +385,24 @@ namespace LibrarySystem
         {
             borrowerList = null;
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's choice
+            if (result == DialogResult.Yes)
+            {
+                // Perform logout actions
+                // For example, close the current form and show the login form
+                this.Close();
+
+                // Assuming LoginForm is the name of your login form
+                FirstForm loginForm = new FirstForm();
+                loginForm.Show();
+            }
+            // If the user clicks "No", do nothing and keep the user in the current state
+        }
     }
 }

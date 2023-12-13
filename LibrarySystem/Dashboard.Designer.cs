@@ -50,11 +50,11 @@
             this.borrowerlistBtn = new System.Windows.Forms.Button();
             this.aboutBtn2 = new System.Windows.Forms.Panel();
             this.aboutBtn = new System.Windows.Forms.Button();
+            this.logoutBtn2 = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.logoutBtn2 = new System.Windows.Forms.Panel();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -67,8 +67,8 @@
             this.reserveBtn2.SuspendLayout();
             this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.logoutBtn2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -318,23 +318,6 @@
             this.aboutBtn.UseVisualStyleBackColor = true;
             this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click_1);
             // 
-            // dashboardTransition
-            // 
-            this.dashboardTransition.Tick += new System.EventHandler(this.dashboardTransition_Tick_1);
-            // 
-            // burgerTransition
-            // 
-            this.burgerTransition.Interval = 10;
-            this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(1066, 150);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // logoutBtn2
             // 
             this.logoutBtn2.Controls.Add(this.logoutBtn);
@@ -356,6 +339,24 @@
             this.logoutBtn.Text = "      Logout";
             this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
+            // dashboardTransition
+            // 
+            this.dashboardTransition.Tick += new System.EventHandler(this.dashboardTransition_Tick_1);
+            // 
+            // burgerTransition
+            // 
+            this.burgerTransition.Interval = 10;
+            this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(1066, 150);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // Dashboard
             // 
@@ -386,8 +387,8 @@
             this.reserveBtn2.ResumeLayout(false);
             this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.logoutBtn2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
