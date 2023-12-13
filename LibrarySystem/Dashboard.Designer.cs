@@ -46,13 +46,15 @@
             this.returnBtn = new System.Windows.Forms.Button();
             this.reserveBtn2 = new System.Windows.Forms.Panel();
             this.reserveBtn = new System.Windows.Forms.Button();
+            this.borrowerlistBtn2 = new System.Windows.Forms.Panel();
+            this.borrowerlistBtn = new System.Windows.Forms.Button();
             this.aboutBtn2 = new System.Windows.Forms.Panel();
             this.aboutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.borrowerlistBtn2 = new System.Windows.Forms.Panel();
-            this.borrowerlistBtn = new System.Windows.Forms.Button();
+            this.logoutBtn2 = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -63,9 +65,10 @@
             this.borrowBtn2.SuspendLayout();
             this.returnBtn2.SuspendLayout();
             this.reserveBtn2.SuspendLayout();
+            this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.borrowerlistBtn2.SuspendLayout();
+            this.logoutBtn2.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -118,10 +121,11 @@
             // 
             this.dashboardFlowPnl.Controls.Add(this.dashboardbackPnl);
             this.dashboardFlowPnl.Controls.Add(this.aboutBtn2);
+            this.dashboardFlowPnl.Controls.Add(this.logoutBtn2);
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 74);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 526);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 572);
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // dashboardbackPnl
@@ -268,6 +272,29 @@
             this.reserveBtn.UseVisualStyleBackColor = true;
             this.reserveBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // borrowerlistBtn2
+            // 
+            this.borrowerlistBtn2.Controls.Add(this.borrowerlistBtn);
+            this.borrowerlistBtn2.Location = new System.Drawing.Point(3, 363);
+            this.borrowerlistBtn2.Name = "borrowerlistBtn2";
+            this.borrowerlistBtn2.Size = new System.Drawing.Size(275, 66);
+            this.borrowerlistBtn2.TabIndex = 6;
+            // 
+            // borrowerlistBtn
+            // 
+            this.borrowerlistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerlistBtn.Image = ((System.Drawing.Image)(resources.GetObject("borrowerlistBtn.Image")));
+            this.borrowerlistBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.borrowerlistBtn.Location = new System.Drawing.Point(-8, -21);
+            this.borrowerlistBtn.Name = "borrowerlistBtn";
+            this.borrowerlistBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.borrowerlistBtn.Size = new System.Drawing.Size(294, 95);
+            this.borrowerlistBtn.TabIndex = 3;
+            this.borrowerlistBtn.Text = "      Borrower List";
+            this.borrowerlistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.borrowerlistBtn.UseVisualStyleBackColor = true;
+            this.borrowerlistBtn.Click += new System.EventHandler(this.borrowerlistBtn_Click);
+            // 
             // aboutBtn2
             // 
             this.aboutBtn2.Controls.Add(this.aboutBtn);
@@ -308,34 +335,33 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // borrowerlistBtn2
+            // logoutBtn2
             // 
-            this.borrowerlistBtn2.Controls.Add(this.borrowerlistBtn);
-            this.borrowerlistBtn2.Location = new System.Drawing.Point(3, 363);
-            this.borrowerlistBtn2.Name = "borrowerlistBtn2";
-            this.borrowerlistBtn2.Size = new System.Drawing.Size(275, 66);
-            this.borrowerlistBtn2.TabIndex = 6;
+            this.logoutBtn2.Controls.Add(this.logoutBtn);
+            this.logoutBtn2.Location = new System.Drawing.Point(3, 148);
+            this.logoutBtn2.Name = "logoutBtn2";
+            this.logoutBtn2.Size = new System.Drawing.Size(275, 66);
+            this.logoutBtn2.TabIndex = 6;
             // 
-            // borrowerlistBtn
+            // logoutBtn
             // 
-            this.borrowerlistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerlistBtn.Image = ((System.Drawing.Image)(resources.GetObject("borrowerlistBtn.Image")));
-            this.borrowerlistBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.borrowerlistBtn.Location = new System.Drawing.Point(-8, -21);
-            this.borrowerlistBtn.Name = "borrowerlistBtn";
-            this.borrowerlistBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.borrowerlistBtn.Size = new System.Drawing.Size(294, 95);
-            this.borrowerlistBtn.TabIndex = 3;
-            this.borrowerlistBtn.Text = "      Borrower List";
-            this.borrowerlistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.borrowerlistBtn.UseVisualStyleBackColor = true;
-            this.borrowerlistBtn.Click += new System.EventHandler(this.borrowerlistBtn_Click);
+            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutBtn.Image")));
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(-8, -11);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.logoutBtn.Size = new System.Drawing.Size(294, 95);
+            this.logoutBtn.TabIndex = 3;
+            this.logoutBtn.Text = "      Logout";
+            this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 600);
+            this.ClientSize = new System.Drawing.Size(1067, 646);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dashboardFlowPnl);
@@ -358,9 +384,10 @@
             this.borrowBtn2.ResumeLayout(false);
             this.returnBtn2.ResumeLayout(false);
             this.reserveBtn2.ResumeLayout(false);
+            this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.borrowerlistBtn2.ResumeLayout(false);
+            this.logoutBtn2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,5 +416,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel borrowerlistBtn2;
         private System.Windows.Forms.Button borrowerlistBtn;
+        private System.Windows.Forms.Panel logoutBtn2;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

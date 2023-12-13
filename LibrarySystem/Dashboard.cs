@@ -97,7 +97,8 @@ namespace LibrarySystem
             reserveBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             borrowerlistBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             borrowerlistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
-
+            logoutBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            logoutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
 
 
 
