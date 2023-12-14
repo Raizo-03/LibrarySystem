@@ -26,10 +26,10 @@ namespace LibrarySystem
         AboutForm about;
         BorrowerList borrowerList;
         // Fields to store user information
-        private string userName;
-        private string userId;
-        private string department;
-        private int bookLimit;
+        private string USERName;
+        private string USERID;
+        private string DEPARTMENT;
+        private int BOOKLIMIT;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -50,7 +50,11 @@ namespace LibrarySystem
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-
+            /*
+            userName = USERName;
+            userId = USERID;
+            BOOKLIMIT = bookLimit;
+            */
             // Use this information as needed in the Dashboard form
             // For example, update labels or perform other actions
             userNameLabel.Text = $"{userName}";
