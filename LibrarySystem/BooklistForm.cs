@@ -24,6 +24,7 @@ namespace LibrarySystem
         private void InitializeDataGridView()
         {
             bookTable.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+            bookTable.DefaultCellStyle.SelectionBackColor = Color.Black;
 
             // Customize DataGridView properties as needed
             bookTable.AutoGenerateColumns = false;
@@ -34,7 +35,7 @@ namespace LibrarySystem
             titleColumn.Name = "Title";
             titleColumn.HeaderText = "Title";
             titleColumn.DataPropertyName = "Title";
-            titleColumn.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Set font style
+            //titleColumn.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold); // Set font style
             bookTable.Columns.Add(titleColumn);
 
           
@@ -86,28 +87,30 @@ namespace LibrarySystem
             // Set the default selection back color to white
             bookTable.DefaultCellStyle.SelectionBackColor = Color.Transparent;
 
+            bookTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Transparent;
+
             bindingSource.DataSource = bookList;
             bookTable.DataSource = bindingSource;
 
             // Handle the RowStateChanged event to change the background color of the selected row
             bookTable.RowStateChanged += BookTableRowStateChanged;
 
+            bookTable.CellFormatting += BookTableCellFormatting;
 
         }
 
         private void BookTableRowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-            foreach (DataGridViewCell cell in e.Row.Cells)
+            
+        }
+        private void BookTableCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the cell is not a header cell
+            if (e.RowIndex >= 0)
             {
-                // Create a new style object with the desired color
-                var customStyle = new DataGridViewCellStyle()
-                {
-                    ForeColor = Color.Black, // Change this color as needed
-                };
-                cell.Style = customStyle;
+                // Set the font color for each cell in the row to black
+                e.CellStyle.ForeColor = Color.Black;
             }
-
-
         }
 
         public class Book
