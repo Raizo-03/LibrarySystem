@@ -145,7 +145,7 @@ namespace LibrarySystem
                 return;
             }
 
-            // Check if the entered credentials match a professor user
+            //Check if the entered credentials match a professor user
             Prof professorUser = profUsers.FirstOrDefault(user => user.Username == enteredUsername && user.Password == enteredPassword);
 
             // If the entered credentials match a professor user, proceed
