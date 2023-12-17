@@ -35,6 +35,7 @@
             this.proceedBtn = new LibrarySystem.RJButton();
             this.usernameBx = new System.Windows.Forms.TextBox();
             this.passwordBx = new System.Windows.Forms.TextBox();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nightControlBox1
@@ -104,12 +105,22 @@
             this.passwordBx.Size = new System.Drawing.Size(179, 20);
             this.passwordBx.TabIndex = 5;
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(103, 411);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(35, 13);
+            this.lblMessage.TabIndex = 7;
+            this.lblMessage.Text = "label1";
+            // 
             // FirstForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.passwordBx);
             this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.proceedBtn);
@@ -134,6 +145,7 @@
         private LibrarySystem.RJButton proceedBtn;
         private System.Windows.Forms.TextBox usernameBx;
         private System.Windows.Forms.TextBox passwordBx;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
 
