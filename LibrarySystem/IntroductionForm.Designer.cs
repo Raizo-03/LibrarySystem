@@ -32,9 +32,15 @@
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.EternalLibPic = new System.Windows.Forms.Label();
-            this.proceedBtn = new LibrarySystem.RJButton();
             this.usernameBx = new System.Windows.Forms.TextBox();
             this.passwordBx = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.userIcon = new System.Windows.Forms.PictureBox();
+            this.passIcon = new System.Windows.Forms.PictureBox();
+            this.proceedBtn = new LibrarySystem.RJButton();
+            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // nightControlBox1
@@ -70,6 +76,56 @@
             this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
             this.EternalLibPic.TabIndex = 1;
             // 
+            // usernameBx
+            // 
+            this.usernameBx.Location = new System.Drawing.Point(106, 338);
+            this.usernameBx.Name = "usernameBx";
+            this.usernameBx.Size = new System.Drawing.Size(179, 20);
+            this.usernameBx.TabIndex = 4;
+            // 
+            // passwordBx
+            // 
+            this.passwordBx.Location = new System.Drawing.Point(106, 388);
+            this.passwordBx.Name = "passwordBx";
+            this.passwordBx.Size = new System.Drawing.Size(179, 20);
+            this.passwordBx.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 421);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(103, 421);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(35, 13);
+            this.lblMessage.TabIndex = 7;
+            this.lblMessage.Text = "label2";
+            // 
+            // userIcon
+            // 
+            this.userIcon.Image = ((System.Drawing.Image)(resources.GetObject("userIcon.Image")));
+            this.userIcon.Location = new System.Drawing.Point(69, 327);
+            this.userIcon.Name = "userIcon";
+            this.userIcon.Size = new System.Drawing.Size(31, 31);
+            this.userIcon.TabIndex = 8;
+            this.userIcon.TabStop = false;
+            // 
+            // passIcon
+            // 
+            this.passIcon.Image = ((System.Drawing.Image)(resources.GetObject("passIcon.Image")));
+            this.passIcon.Location = new System.Drawing.Point(69, 374);
+            this.passIcon.Name = "passIcon";
+            this.passIcon.Size = new System.Drawing.Size(31, 34);
+            this.passIcon.TabIndex = 9;
+            this.passIcon.TabStop = false;
+            // 
             // proceedBtn
             // 
             this.proceedBtn.BackColor = System.Drawing.Color.White;
@@ -90,26 +146,16 @@
             this.proceedBtn.UseVisualStyleBackColor = false;
             this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 
-            // usernameBx
-            // 
-            this.usernameBx.Location = new System.Drawing.Point(106, 338);
-            this.usernameBx.Name = "usernameBx";
-            this.usernameBx.Size = new System.Drawing.Size(179, 20);
-            this.usernameBx.TabIndex = 4;
-            // 
-            // passwordBx
-            // 
-            this.passwordBx.Location = new System.Drawing.Point(106, 388);
-            this.passwordBx.Name = "passwordBx";
-            this.passwordBx.Size = new System.Drawing.Size(179, 20);
-            this.passwordBx.TabIndex = 5;
-            // 
             // FirstForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
+            this.Controls.Add(this.passIcon);
+            this.Controls.Add(this.userIcon);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordBx);
             this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.proceedBtn);
@@ -121,6 +167,8 @@
             this.Name = "FirstForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FirstForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +182,10 @@
         private LibrarySystem.RJButton proceedBtn;
         private System.Windows.Forms.TextBox usernameBx;
         private System.Windows.Forms.TextBox passwordBx;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.PictureBox userIcon;
+        private System.Windows.Forms.PictureBox passIcon;
     }
 }
 

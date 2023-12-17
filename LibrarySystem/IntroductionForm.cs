@@ -131,37 +131,57 @@ namespace LibrarySystem
             string enteredUsername = usernameBx.Text;
             string enteredPassword = passwordBx.Text;
 
-            // Check if the entered credentials match a student user
-            Stud studentUser = studentUsers.FirstOrDefault(user => user.Username == enteredUsername && user.Password == enteredPassword);
+            // Check if the entered username matches a student user, then proceed to pass check
+            Stud studentUser = studentUsers.FirstOrDefault(user => user.Username == enteredUsername);
 
-            // If the entered credentials match a student user, proceed
+            // If the entered username matches a student user, check the password
             if (studentUser != null)
             {
-                // Open the Dashboard form with the authenticated student user information
-                Dashboard secondForm = new Dashboard(studentUser.Name, studentUser.StudentId, studentUser.Section, studentUser.BookLimit);
-                secondForm.Show();
-                this.Hide();
-                this.WindowState = FormWindowState.Normal;
-                return;
+                if (studentUser.Password == enteredPassword)
+                {
+                    // Open the Dashboard form with the authenticated student user information
+                    Dashboard secondForm = new Dashboard(studentUser.Name, studentUser.StudentId, studentUser.Section, studentUser.BookLimit);
+                    secondForm.Show();
+                    this.Hide();
+                    this.WindowState = FormWindowState.Normal;
+                    return;
+                }
+                else
+                {
+                    // Show error message for invalid password
+                    lblMessage.ForeColor = Color.Red;
+                    lblMessage.Text = "Incorrect password or username. Please try again.";
+                    return;
+                }
             }
 
-            // Check if the entered credentials match a professor user
-            Prof professorUser = profUsers.FirstOrDefault(user => user.Username == enteredUsername && user.Password == enteredPassword);
+            // Check if the entered username matches a professor user,, proceed to check pass
+            Prof professorUser = profUsers.FirstOrDefault(user => user.Username == enteredUsername);
 
-            // If the entered credentials match a professor user, proceed
+            // If the entered username matches a professor user, check password
             if (professorUser != null)
             {
-                // Open the Dashboard form with the authenticated professor user information
-                Dashboard secondForm = new Dashboard(professorUser.Name, professorUser.EmployeeId, professorUser.Department, professorUser.BookLimit);
-                secondForm.Show();
-                this.Hide();
-                this.WindowState = FormWindowState.Normal;
-                return;
+                if (professorUser.Password == enteredPassword)
+                {
+                    // Open the Dashboard form with the authenticated professor user information
+                    Dashboard secondForm = new Dashboard(professorUser.Name, professorUser.EmployeeId, professorUser.Department, professorUser.BookLimit);
+                    secondForm.Show();
+                    this.Hide();
+                    this.WindowState = FormWindowState.Normal;
+                    return;
+                }
+                else
+                {
+                    // Show error message for invalid password
+                    lblMessage.ForeColor = Color.Red;
+                    lblMessage.Text = "Incorrect password or username. Please try again.";
+                    return;
+                }
             }
 
-            // If no matching user is found, show an error message or take appropriate action
-            MessageBox.Show("Invalid username or password. Please try again.");
-
+            // If no matching username is found, show error message for invalid username
+            lblMessage.ForeColor = Color.Red;
+            lblMessage.Text = "Incorrect password or username. Please try again.";
         }
 
     }
