@@ -101,9 +101,6 @@
     <Compile Include="ReturnForm.Designer.cs">
       <DependentUpon>ReturnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RJButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="IntroductionForm.cs">
       <SubType>Form</SubType>
     </Compile>
