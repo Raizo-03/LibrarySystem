@@ -82,7 +82,6 @@ namespace LibrarySystem
         {
             GraphicsPath path = new GraphicsPath();
             float curveSize = radius * 2F;
-
             path.StartFigure();
             path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
             path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
