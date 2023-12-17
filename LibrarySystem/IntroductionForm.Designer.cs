@@ -32,14 +32,13 @@
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.EternalLibPic = new System.Windows.Forms.Label();
-            this.usernameBx = new System.Windows.Forms.TextBox();
-            this.passwordBx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.userIcon = new System.Windows.Forms.PictureBox();
             this.passIcon = new System.Windows.Forms.PictureBox();
             this.proceedBtn = new LibrarySystem.RJButton();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            this.usernameBx = new CustomControls.RJControls.RJTextBox();
+            this.passwordBx = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passIcon)).BeginInit();
             this.SuspendLayout();
@@ -77,20 +76,6 @@
             this.EternalLibPic.Size = new System.Drawing.Size(225, 210);
             this.EternalLibPic.TabIndex = 1;
             // 
-            // usernameBx
-            // 
-            this.usernameBx.Location = new System.Drawing.Point(106, 338);
-            this.usernameBx.Name = "usernameBx";
-            this.usernameBx.Size = new System.Drawing.Size(179, 20);
-            this.usernameBx.TabIndex = 4;
-            // 
-            // passwordBx
-            // 
-            this.passwordBx.Location = new System.Drawing.Point(106, 388);
-            this.passwordBx.Name = "passwordBx";
-            this.passwordBx.Size = new System.Drawing.Size(179, 20);
-            this.passwordBx.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -103,9 +88,10 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(103, 421);
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.Location = new System.Drawing.Point(104, 421);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(35, 13);
+            this.lblMessage.Size = new System.Drawing.Size(38, 14);
             this.lblMessage.TabIndex = 7;
             this.lblMessage.Text = "label2";
             // 
@@ -147,27 +133,49 @@
             this.proceedBtn.UseVisualStyleBackColor = false;
             this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 
-            // rjTextBox1
+            // usernameBx
             // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 0;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(106, 287);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox1.TabIndex = 10;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
+            this.usernameBx.BackColor = System.Drawing.SystemColors.Window;
+            this.usernameBx.BorderColor = System.Drawing.Color.Olive;
+            this.usernameBx.BorderFocusColor = System.Drawing.Color.Lime;
+            this.usernameBx.BorderRadius = 0;
+            this.usernameBx.BorderSize = 2;
+            this.usernameBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.usernameBx.Location = new System.Drawing.Point(107, 327);
+            this.usernameBx.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameBx.Multiline = false;
+            this.usernameBx.Name = "usernameBx";
+            this.usernameBx.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.usernameBx.PasswordChar = false;
+            this.usernameBx.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.usernameBx.PlaceholderText = "";
+            this.usernameBx.Size = new System.Drawing.Size(206, 31);
+            this.usernameBx.TabIndex = 10;
+            this.usernameBx.Texts = "";
+            this.usernameBx.UnderlinedStyle = false;
+            // 
+            // passwordBx
+            // 
+            this.passwordBx.BackColor = System.Drawing.SystemColors.Window;
+            this.passwordBx.BorderColor = System.Drawing.Color.Olive;
+            this.passwordBx.BorderFocusColor = System.Drawing.Color.Lime;
+            this.passwordBx.BorderRadius = 0;
+            this.passwordBx.BorderSize = 2;
+            this.passwordBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.passwordBx.Location = new System.Drawing.Point(107, 377);
+            this.passwordBx.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordBx.Multiline = false;
+            this.passwordBx.Name = "passwordBx";
+            this.passwordBx.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.passwordBx.PasswordChar = false;
+            this.passwordBx.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.passwordBx.PlaceholderText = "";
+            this.passwordBx.Size = new System.Drawing.Size(206, 31);
+            this.passwordBx.TabIndex = 11;
+            this.passwordBx.Texts = "";
+            this.passwordBx.UnderlinedStyle = false;
             // 
             // FirstForm
             // 
@@ -175,13 +183,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
-            this.Controls.Add(this.rjTextBox1);
+            this.Controls.Add(this.passwordBx);
+            this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.passIcon);
             this.Controls.Add(this.userIcon);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.passwordBx);
-            this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.proceedBtn);
             this.Controls.Add(this.EternalLibPic);
             this.Controls.Add(this.nightControlBox1);
@@ -204,13 +211,12 @@
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Label EternalLibPic;
         private LibrarySystem.RJButton proceedBtn;
-        private System.Windows.Forms.TextBox usernameBx;
-        private System.Windows.Forms.TextBox passwordBx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.PictureBox userIcon;
         private System.Windows.Forms.PictureBox passIcon;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
+        private CustomControls.RJControls.RJTextBox usernameBx;
+        private CustomControls.RJControls.RJTextBox passwordBx;
     }
 }
 

@@ -128,8 +128,8 @@ namespace LibrarySystem
         private void proceedBtn_Click(object sender, EventArgs e)
         {
             // Get the entered username and password
-            string enteredUsername = usernameBx.Text;
-            string enteredPassword = passwordBx.Text;
+            string enteredUsername = usernameBx.Texts;
+            string enteredPassword = passwordBx.Texts;
 
             // Check if the entered username matches a student user, then proceed to pass check
             Stud studentUser = studentUsers.FirstOrDefault(user => user.Username == enteredUsername);
