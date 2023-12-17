@@ -35,6 +35,8 @@
             this.proceedBtn = new LibrarySystem.RJButton();
             this.usernameBx = new System.Windows.Forms.TextBox();
             this.passwordBx = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nightControlBox1
@@ -104,12 +106,32 @@
             this.passwordBx.Size = new System.Drawing.Size(179, 20);
             this.passwordBx.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 421);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(103, 421);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(35, 13);
+            this.lblMessage.TabIndex = 7;
+            this.lblMessage.Text = "label2";
+            // 
             // FirstForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordBx);
             this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.proceedBtn);
@@ -134,6 +156,8 @@
         private LibrarySystem.RJButton proceedBtn;
         private System.Windows.Forms.TextBox usernameBx;
         private System.Windows.Forms.TextBox passwordBx;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
 
