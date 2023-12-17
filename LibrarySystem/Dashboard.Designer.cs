@@ -159,7 +159,7 @@
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 74);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 572);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 644);
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // dashboardbackPnl
@@ -396,7 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 646);
+            this.ClientSize = new System.Drawing.Size(1067, 718);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dashboardFlowPnl);
