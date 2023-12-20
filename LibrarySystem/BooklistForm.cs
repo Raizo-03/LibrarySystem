@@ -15,7 +15,7 @@ namespace LibrarySystem
     {
 
 
-        // Add properties for user details
+        // Add properties for user detail
         public string UserName { get; private set; }
         public string UserID { get; private set; }
         public string UserDepartment { get; private set; }
