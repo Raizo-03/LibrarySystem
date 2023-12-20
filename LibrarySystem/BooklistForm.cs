@@ -23,7 +23,6 @@ namespace LibrarySystem
         public string UserDepartment { get; private set; }
         public string availability { get; private set; }
 
-        private List<Book> books = new List<Book>();
 
         public BooklistForm(string userName, string userID, string userDepartment)
         {
@@ -70,6 +69,11 @@ namespace LibrarySystem
         {
 
             
+        }
+
+        private void BooklistForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void fictionButton_Click(object sender, EventArgs e)

@@ -123,7 +123,6 @@
             this.structurePanel.SuspendLayout();
             this.originPanel.SuspendLayout();
 
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooklistForm));
             this.booklistLlbl = new ReaLTaiizor.Controls.FoxBigLabel();
             this.fictionBtn = new LibrarySystem.RJButton();
 
