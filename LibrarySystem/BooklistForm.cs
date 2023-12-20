@@ -1,69 +1,80 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
+using static LibrarySystem.FirstForm;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LibrarySystem
 {
+
     public partial class BooklistForm : Form
     {
-        private List<Book> books;
 
-        public BooklistForm()
+        // Add properties for user details
+        public string UserName { get; private set; }
+        public string UserID { get; private set; }
+        public string UserDepartment { get; private set; }
+        public string availability { get; private set; }
+
+        private List<Book> books = new List<Book>();
+
+        public BooklistForm(string userName, string userID, string userDepartment)
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLOR #FDF7E4
-            books = new List<Book>();
 
-            // Set DataGridView to read-only
-            dataGridView1.ReadOnly = true;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            this.UserName = userName;
+            this.UserID = userID;
+            this.UserDepartment = userDepartment;
 
-            // Initialize DataGridView columns
-            dataGridView1.ColumnCount = 3;
-            dataGridView1.Columns[0].Name = "Title";
-            dataGridView1.Columns[1].Name = "Genre";
-            dataGridView1.Columns[2].Name = "Availability";
+            fictionTransition2.Start();
+            nonficTransition2.Start();
+            acadTransition2.Start();
 
-            // Add DataGridViewComboBoxColumn for Genre
-            DataGridViewComboBoxColumn genreColumn = new DataGridViewComboBoxColumn();
-            genreColumn.HeaderText = "Genre";
-            genreColumn.Name = "Genre";
-            genreColumn.Items.AddRange("Fiction", "Non-Fiction", "Academic");
-            dataGridView1.Columns.Add(genreColumn);
 
-            // Add DataGridViewCheckBoxColumn for Availability
-            DataGridViewCheckBoxColumn availabilityColumn = new DataGridViewCheckBoxColumn();
-            availabilityColumn.HeaderText = "Availability";
-            availabilityColumn.Name = "Availability";
-            dataGridView1.Columns.Add(availabilityColumn);
-
-            // Attach the SortCompare event handler for Genre column sorting
-            dataGridView1.SortCompare += DataGridView1_SortCompare;
-        }
-
-        // Add a method to populate the DataGridView with books
-        private void PopulateDataGridView()
-        {
-            dataGridView1.Rows.Clear(); // Clear existing rows
-
-            foreach (var book in books)
+            //books
+            books = new List<Book>
             {
-                int rowIndex = dataGridView1.Rows.Add();
-                dataGridView1.Rows[rowIndex].Cells["Title"].Value = book.Title;
-                dataGridView1.Rows[rowIndex].Cells["Genre"].Value = book.Genre;
-                dataGridView1.Rows[rowIndex].Cells["Availability"].Value = book.IsAvailable;
-            }
+                new Book
+                {
+                    Title = "To Kill a Mockingbird",
+                    IsAvailable = true
+                },
+                 new Book
+                {
+                    Title = "Pride and Prejudice",
+                    IsAvailable = true
+                },
+                new Book
+                {
+                    Title = "The Great Gatsby",
+                    IsAvailable = true
+
+                },
+
+
+            };
+
+
         }
 
         private void BooklistForm_Load(object sender, EventArgs e)
         {
-            // Optional: You can load additional data or perform any setup when the form loads.
+            
         }
 
         private void fictionButton_Click(object sender, EventArgs e)
         {
-            // Optional: You can implement logic for handling the fictionButton click event.
+            fictionPanel.Location = new Point(47, 115);
+            nonfictionPanel.Location = new Point(47, 368);
+            academicPanel.Location = new Point(47, 623);
+            fictionTransition2.Start();
+            nonficTransition.Start();
+            acadTransition.Start();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
@@ -71,48 +82,196 @@ namespace LibrarySystem
             // Optional: You can implement logic for handling the rjButton1 click event.
         }
 
-        private void ShowBookDetails(Book book)
-        {
-            // Optional: You can implement logic for displaying book details.
-        }
 
-        private void availBtn_Click(object sender, EventArgs e)
-        {
-            // Add predefined books
-            books.Add(new Book { Title = "To Kill a Mockingbird", Genre = "Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "1984", Genre = "Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "Pride and Prejudice", Genre = "Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "The Great Gatsby", Genre = "Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "One Hundred Years of Solitude", Genre = "Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "Sapiens: A Brief History of Humankind", Genre = "Non-Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "The Immortal Life of Henrietta Lacks", Genre = "Non-Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "Educated", Genre = "Non-Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "The Diary of a Young Girl", Genre = "Non-Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "Thinking, Fast and Slow", Genre = "Non-Fiction", IsAvailable = true });
-            books.Add(new Book { Title = "A Brief History of Time", Genre = "Academic", IsAvailable = true });
-            books.Add(new Book { Title = "The Elements of Style", Genre = "Academic", IsAvailable = true });
-            books.Add(new Book { Title = "Principia Mathematica", Genre = "Academic", IsAvailable = true });
-            books.Add(new Book { Title = "The Structure of Scientific Revolutions", Genre = "Academic", IsAvailable = true });
-            books.Add(new Book { Title = "The Origin of Species", Genre = "Academic", IsAvailable = true });
 
-            // Populate the DataGridView with the updated list of books
-            PopulateDataGridView();
-        }
+    
         // Event handler for the SortCompare event to customize sorting for Genre column
-        private void DataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+  
+
+
+     
+
+        private void label4_Click(object sender, EventArgs e)
         {
-            if (e.Column.Name == "Genre") // Check if sorting is on the Genre column
+
+        }
+
+        bool fictionExpand = false;
+        //FICTION
+
+        //COLLAPSE
+        private void fictionTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetCollapsedWidth = 1;
+            const int step = 200;
+
+
+            // Collapsing
+            fictionPanel.Width -= step;
+            if (fictionPanel.Width <= targetCollapsedWidth)
             {
-                e.SortResult = String.Compare(e.CellValue1.ToString(), e.CellValue2.ToString());
-                e.Handled = true; // Handle the sorting
+                fictionPanel.Width = targetCollapsedWidth;
+                fictionTransition.Stop();
+                fictionExpand = false;
             }
         }
-        
-        public class Book
+        //EXPAND
+        private void fictionTransition2_Tick(object sender, EventArgs e)
         {
-            public string Title { get; set; }
-            public string Genre { get; set; }
-            public bool IsAvailable { get; set; }
+            const int targetExpandedWidth = 856;
+            const int step = 200;
+            fictionPanel.Width += step;
+
+            if (fictionPanel.Width >= targetExpandedWidth)
+            {
+                fictionPanel.Width = targetExpandedWidth;
+                fictionTransition2.Stop();
+                fictionExpand = true;
+            }
         }
+
+        private void nonfictionBtn_Click(object sender, EventArgs e)
+        {
+            nonfictionPanel.Location = new Point(47, 115);
+            academicPanel.Location = new Point(47, 368);
+            fictionPanel.Location = new Point(47, 623);
+            fictionTransition.Start();
+            nonficTransition2.Start();
+            acadTransition.Start();
+        }
+        //NONFICTION
+        //COLLAPSE
+
+        bool nonfictionExpand = false;
+
+        private void nonficTransition_Tick_1(object sender, EventArgs e)
+        {
+            const int targetCollapsedWidth = 1;
+            const int step = 200;
+
+
+            // Collapsing
+            nonfictionPanel.Width -= step;
+            if (nonfictionPanel.Width <= targetCollapsedWidth)
+            {
+                nonfictionPanel.Width = targetCollapsedWidth;
+                nonficTransition.Stop();
+                nonfictionExpand = false;
+            }
+        }
+        //EXPAND
+
+        private void nonficTransition2_Tick_1(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 856;
+            const int step = 200;
+            nonfictionPanel.Width += step;
+
+            if (nonfictionPanel.Width >= targetExpandedWidth)
+            {
+                nonfictionPanel.Width = targetExpandedWidth;
+                nonficTransition2.Stop();
+                nonfictionExpand = true;
+            }
+        }
+
+        private void booklistLlbl_Click(object sender, EventArgs e)
+        {
+            fictionPanel.Location = new Point(47, 115);
+            nonfictionPanel.Location = new Point(47, 368);
+            academicPanel.Location = new Point(47, 623);
+            fictionTransition2.Start();
+            nonficTransition2.Start();
+            acadTransition2.Start();
+            
+        }
+
+        //ACADEMIC
+        bool acadExpand = false;
+        //COLLAPSE
+        private void acadTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetCollapsedWidth = 1;
+            const int step = 200;
+
+
+            // Collapsing
+            academicPanel.Width -= step;
+            if (academicPanel.Width <= targetCollapsedWidth)
+            {
+                academicPanel.Width = targetCollapsedWidth;
+                acadTransition.Stop();
+                acadExpand = false;
+            }
+        }
+
+        private void acadTransition2_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 856;
+            const int step = 200;
+            academicPanel.Width += step;
+
+            if (academicPanel.Width >= targetExpandedWidth)
+            {
+                academicPanel.Width = targetExpandedWidth;
+                acadTransition2.Stop();
+                acadExpand = true;
+            }
+        }
+
+        private void acadBtn_Click(object sender, EventArgs e)
+        {
+            academicPanel.Location = new Point(47, 115);
+            fictionPanel.Location = new Point(47, 368);
+            nonfictionPanel.Location = new Point(47, 623);
+            fictionTransition.Start();
+            nonficTransition.Start();
+            acadTransition2.Start();
+        }
+
+   
+    }
+
+
+    //FICTION TRANSITION
+
+    /*
+    bool menuExpand = false;
+    private void fictionTransition_Tick_1(object sender, EventArgs e)
+    {
+        const int targetExpandedWidth = 851;
+        const int targetCollapsedWidth = 26;
+        const int step = 200;
+
+        if (!fictionExpand)
+        {
+            // Expanding
+            fictionPanel.Width += step;
+            if (fictionPanel.Height >= targetExpandedWidth)
+            {
+                fictionPanel.Height = targetExpandedWidth;
+                fictionTransition.Stop();
+                fictionExpand = true;
+            }
+        }
+        else
+        {
+            // Collapsing
+            fictionPanel.Height -= step;
+            if (fictionPanel.Height <= targetCollapsedWidth)
+            {
+                fictionPanel.Height = targetCollapsedWidth;
+                fictionTransition.Stop();
+                fictionExpand = false;
+            }
+        }
+    }
+
+    */
+
+    public class Book
+    {
+        public string Title { get; set; }
+        public bool IsAvailable { get; set; }
     }
 }

@@ -299,7 +299,7 @@ namespace LibrarySystem
         {
             if(booklist == null)
             {
-                booklist = new BooklistForm();
+                booklist = new BooklistForm(USERName, USERID, DEPARTMENT);
                 booklist.FormClosed += booklist_FormClosed;
                 booklist.MdiParent = this;
                 booklist.Dock = DockStyle.Fill;

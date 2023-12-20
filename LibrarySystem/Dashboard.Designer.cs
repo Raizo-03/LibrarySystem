@@ -57,7 +57,6 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -71,7 +70,6 @@
             this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             this.logoutBtn2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -84,7 +82,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1067, 74);
+            this.upperPanel.Size = new System.Drawing.Size(1081, 47);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -130,7 +128,7 @@
             this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMinimizeButton = true;
             this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.Black;
-            this.dashboardControlbx.Location = new System.Drawing.Point(928, 0);
+            this.dashboardControlbx.Location = new System.Drawing.Point(939, 3);
             this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.Olive;
             this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -157,9 +155,9 @@
             this.dashboardFlowPnl.Controls.Add(this.aboutBtn2);
             this.dashboardFlowPnl.Controls.Add(this.logoutBtn2);
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 74);
+            this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 47);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 644);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 883);
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // dashboardbackPnl
@@ -384,21 +382,12 @@
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(1066, 150);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 718);
+            this.ClientSize = new System.Drawing.Size(1081, 930);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -422,7 +411,6 @@
             this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             this.logoutBtn2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,7 +436,6 @@
         private System.Windows.Forms.Button borrowBtn;
         private System.Windows.Forms.Timer burgerTransition;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel borrowerlistBtn2;
         private System.Windows.Forms.Button borrowerlistBtn;
         private System.Windows.Forms.Panel logoutBtn2;
