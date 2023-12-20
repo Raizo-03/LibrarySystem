@@ -50,10 +50,10 @@ namespace LibrarySystem
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
+            this.BOOKLIMIT = bookLimit;
             /*
             userName = USERName;
             userId = USERID;
-            BOOKLIMIT = bookLimit;
             */
             // Use this information as needed in the Dashboard form
             // For example, update labels or perform other actions
@@ -319,9 +319,10 @@ namespace LibrarySystem
         //BORROW BUTTON
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+            int limit = BOOKLIMIT;
             if (borrow == null)
             {
-                borrow = new BorrowForm();
+                borrow = new BorrowForm(limit);
                 borrow.FormClosed += borrow_FormClosed;
                 borrow.MdiParent = this;
                 borrow.Dock = DockStyle.Fill;
