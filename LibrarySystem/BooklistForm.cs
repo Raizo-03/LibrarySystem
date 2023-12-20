@@ -65,9 +65,9 @@ namespace LibrarySystem
         }
 
         // Add a method to populate the DataGridView with books
-        private void PopulateDataGridView()
+        private void BooklistForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void fictionButton_Click(object sender, EventArgs e)
