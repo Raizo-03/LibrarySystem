@@ -14,6 +14,7 @@ namespace LibrarySystem
     public partial class BooklistForm : Form
     {
 
+
         // Add properties for user details
         public string UserName { get; private set; }
         public string UserID { get; private set; }
@@ -60,9 +61,11 @@ namespace LibrarySystem
             };
 
 
+
         }
 
-        private void BooklistForm_Load(object sender, EventArgs e)
+        // Add a method to populate the DataGridView with books
+        private void PopulateDataGridView()
         {
             
         }
@@ -273,5 +276,6 @@ namespace LibrarySystem
     {
         public string Title { get; set; }
         public bool IsAvailable { get; set; }
+
     }
 }
