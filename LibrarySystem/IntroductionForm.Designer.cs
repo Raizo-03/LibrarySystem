@@ -36,9 +36,10 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.userIcon = new System.Windows.Forms.PictureBox();
             this.passIcon = new System.Windows.Forms.PictureBox();
-            this.proceedBtn = new LibrarySystem.RJButton();
-            this.usernameBx = new CustomControls.RJControls.RJTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.passwordBx = new CustomControls.RJControls.RJTextBox();
+            this.usernameBx = new CustomControls.RJControls.RJTextBox();
+            this.proceedBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passIcon)).BeginInit();
             this.SuspendLayout();
@@ -112,26 +113,41 @@
             this.passIcon.Size = new System.Drawing.Size(31, 34);
             this.passIcon.TabIndex = 9;
             this.passIcon.TabStop = false;
+            this.passIcon.Click += new System.EventHandler(this.passIcon_Click);
             // 
-            // proceedBtn
+            // label2
             // 
-            this.proceedBtn.BackColor = System.Drawing.Color.White;
-            this.proceedBtn.BackgroundColor = System.Drawing.Color.White;
-            this.proceedBtn.BorderColor = System.Drawing.Color.Olive;
-            this.proceedBtn.BorderRadius = 29;
-            this.proceedBtn.BorderSize = 2;
-            this.proceedBtn.FlatAppearance.BorderSize = 0;
-            this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedBtn.ForeColor = System.Drawing.Color.Olive;
-            this.proceedBtn.Location = new System.Drawing.Point(89, 441);
-            this.proceedBtn.Name = "proceedBtn";
-            this.proceedBtn.Size = new System.Drawing.Size(224, 59);
-            this.proceedBtn.TabIndex = 3;
-            this.proceedBtn.Text = "PROCEED";
-            this.proceedBtn.TextColor = System.Drawing.Color.Olive;
-            this.proceedBtn.UseVisualStyleBackColor = false;
-            this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(315, 428);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "label2";
+            // 
+            // passwordBx
+            // 
+            this.passwordBx.BackColor = System.Drawing.SystemColors.Window;
+            this.passwordBx.BorderColor = System.Drawing.Color.Olive;
+            this.passwordBx.BorderFocusColor = System.Drawing.Color.Lime;
+            this.passwordBx.BorderRadius = 0;
+            this.passwordBx.BorderSize = 2;
+            this.passwordBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.passwordBx.Location = new System.Drawing.Point(107, 377);
+            this.passwordBx.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordBx.Multiline = false;
+            this.passwordBx.Name = "passwordBx";
+            this.passwordBx.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.passwordBx.PasswordChar = false;
+            this.passwordBx.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.passwordBx.PlaceholderText = "";
+            this.passwordBx.Size = new System.Drawing.Size(206, 31);
+            this.passwordBx.TabIndex = 11;
+            this.passwordBx.Texts = "";
+            this.passwordBx.UnderlinedStyle = false;
+            this.passwordBx._TextChanged += new System.EventHandler(this.passwordBx__TextChanged);
             // 
             // usernameBx
             // 
@@ -155,27 +171,25 @@
             this.usernameBx.Texts = "";
             this.usernameBx.UnderlinedStyle = false;
             // 
-            // passwordBx
+            // proceedBtn
             // 
-            this.passwordBx.BackColor = System.Drawing.SystemColors.Window;
-            this.passwordBx.BorderColor = System.Drawing.Color.Olive;
-            this.passwordBx.BorderFocusColor = System.Drawing.Color.Lime;
-            this.passwordBx.BorderRadius = 0;
-            this.passwordBx.BorderSize = 2;
-            this.passwordBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.passwordBx.Location = new System.Drawing.Point(107, 377);
-            this.passwordBx.Margin = new System.Windows.Forms.Padding(4);
-            this.passwordBx.Multiline = false;
-            this.passwordBx.Name = "passwordBx";
-            this.passwordBx.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.passwordBx.PasswordChar = false;
-            this.passwordBx.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.passwordBx.PlaceholderText = "";
-            this.passwordBx.Size = new System.Drawing.Size(206, 31);
-            this.passwordBx.TabIndex = 11;
-            this.passwordBx.Texts = "";
-            this.passwordBx.UnderlinedStyle = false;
+            this.proceedBtn.BackColor = System.Drawing.Color.White;
+            this.proceedBtn.BackgroundColor = System.Drawing.Color.White;
+            this.proceedBtn.BorderColor = System.Drawing.Color.Olive;
+            this.proceedBtn.BorderRadius = 29;
+            this.proceedBtn.BorderSize = 2;
+            this.proceedBtn.FlatAppearance.BorderSize = 0;
+            this.proceedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.proceedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proceedBtn.ForeColor = System.Drawing.Color.Olive;
+            this.proceedBtn.Location = new System.Drawing.Point(89, 441);
+            this.proceedBtn.Name = "proceedBtn";
+            this.proceedBtn.Size = new System.Drawing.Size(224, 59);
+            this.proceedBtn.TabIndex = 3;
+            this.proceedBtn.Text = "PROCEED";
+            this.proceedBtn.TextColor = System.Drawing.Color.Olive;
+            this.proceedBtn.UseVisualStyleBackColor = false;
+            this.proceedBtn.Click += new System.EventHandler(this.proceedBtn_Click);
             // 
             // FirstForm
             // 
@@ -183,6 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.passwordBx);
             this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.passIcon);
@@ -217,6 +232,7 @@
         private System.Windows.Forms.PictureBox passIcon;
         private CustomControls.RJControls.RJTextBox usernameBx;
         private CustomControls.RJControls.RJTextBox passwordBx;
+        private System.Windows.Forms.Label label2;
     }
 }
 

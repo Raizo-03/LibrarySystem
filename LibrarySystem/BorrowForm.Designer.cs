@@ -29,32 +29,33 @@
         private void InitializeComponent()
         {
             this.fictiongroupBx = new System.Windows.Forms.GroupBox();
-            this.mockingchechBx = new System.Windows.Forms.CheckBox();
-            this.checkBx1984 = new System.Windows.Forms.CheckBox();
-            this.pridecheckBx = new System.Windows.Forms.CheckBox();
-            this.gatsbycheckBx = new System.Windows.Forms.CheckBox();
             this.solitudecheckBx = new System.Windows.Forms.CheckBox();
+            this.gatsbycheckBx = new System.Windows.Forms.CheckBox();
+            this.pridecheckBx = new System.Windows.Forms.CheckBox();
+            this.checkBx1984 = new System.Windows.Forms.CheckBox();
+            this.mockingchechBx = new System.Windows.Forms.CheckBox();
             this.nonficgroupBx = new System.Windows.Forms.GroupBox();
             this.thinkingcheckBx = new System.Windows.Forms.CheckBox();
             this.diarycheckBx = new System.Windows.Forms.CheckBox();
             this.educatedcheckBx = new System.Windows.Forms.CheckBox();
             this.immortalcheckBx = new System.Windows.Forms.CheckBox();
             this.sapienscheckBx = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.acadgroupBx = new System.Windows.Forms.GroupBox();
             this.origincheckBx = new System.Windows.Forms.CheckBox();
             this.structurecheckBx = new System.Windows.Forms.CheckBox();
             this.principiacheckBx = new System.Windows.Forms.CheckBox();
             this.elementscheckBx = new System.Windows.Forms.CheckBox();
             this.briefcheckBx = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.fictiongroupBx.SuspendLayout();
             this.nonficgroupBx.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.acadgroupBx.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,36 +74,16 @@
             this.fictiongroupBx.Text = "FICTION";
             this.fictiongroupBx.Enter += new System.EventHandler(this.fictiongroupBx_Enter);
             // 
-            // mockingchechBx
+            // solitudecheckBx
             // 
-            this.mockingchechBx.AutoSize = true;
-            this.mockingchechBx.Location = new System.Drawing.Point(19, 40);
-            this.mockingchechBx.Name = "mockingchechBx";
-            this.mockingchechBx.Size = new System.Drawing.Size(126, 17);
-            this.mockingchechBx.TabIndex = 0;
-            this.mockingchechBx.Text = "To Kill A Mockingbird";
-            this.mockingchechBx.UseVisualStyleBackColor = true;
-            // 
-            // checkBx1984
-            // 
-            this.checkBx1984.AutoSize = true;
-            this.checkBx1984.Location = new System.Drawing.Point(19, 78);
-            this.checkBx1984.Name = "checkBx1984";
-            this.checkBx1984.Size = new System.Drawing.Size(50, 17);
-            this.checkBx1984.TabIndex = 1;
-            this.checkBx1984.Text = "1984";
-            this.checkBx1984.UseVisualStyleBackColor = true;
-            // 
-            // pridecheckBx
-            // 
-            this.pridecheckBx.AutoSize = true;
-            this.pridecheckBx.Location = new System.Drawing.Point(19, 115);
-            this.pridecheckBx.Name = "pridecheckBx";
-            this.pridecheckBx.Size = new System.Drawing.Size(118, 17);
-            this.pridecheckBx.TabIndex = 2;
-            this.pridecheckBx.Text = "Pride and Prejudice";
-            this.pridecheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.pridecheckBx.UseVisualStyleBackColor = true;
+            this.solitudecheckBx.AutoSize = true;
+            this.solitudecheckBx.Location = new System.Drawing.Point(19, 187);
+            this.solitudecheckBx.Name = "solitudecheckBx";
+            this.solitudecheckBx.Size = new System.Drawing.Size(173, 17);
+            this.solitudecheckBx.TabIndex = 4;
+            this.solitudecheckBx.Text = "One Hundred Years of Solitude";
+            this.solitudecheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.solitudecheckBx.UseVisualStyleBackColor = true;
             // 
             // gatsbycheckBx
             // 
@@ -115,16 +96,36 @@
             this.gatsbycheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.gatsbycheckBx.UseVisualStyleBackColor = true;
             // 
-            // solitudecheckBx
+            // pridecheckBx
             // 
-            this.solitudecheckBx.AutoSize = true;
-            this.solitudecheckBx.Location = new System.Drawing.Point(19, 187);
-            this.solitudecheckBx.Name = "solitudecheckBx";
-            this.solitudecheckBx.Size = new System.Drawing.Size(173, 17);
-            this.solitudecheckBx.TabIndex = 4;
-            this.solitudecheckBx.Text = "One Hundred Years of Solitude";
-            this.solitudecheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.solitudecheckBx.UseVisualStyleBackColor = true;
+            this.pridecheckBx.AutoSize = true;
+            this.pridecheckBx.Location = new System.Drawing.Point(19, 115);
+            this.pridecheckBx.Name = "pridecheckBx";
+            this.pridecheckBx.Size = new System.Drawing.Size(118, 17);
+            this.pridecheckBx.TabIndex = 2;
+            this.pridecheckBx.Text = "Pride and Prejudice";
+            this.pridecheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pridecheckBx.UseVisualStyleBackColor = true;
+            // 
+            // checkBx1984
+            // 
+            this.checkBx1984.AutoSize = true;
+            this.checkBx1984.Location = new System.Drawing.Point(19, 78);
+            this.checkBx1984.Name = "checkBx1984";
+            this.checkBx1984.Size = new System.Drawing.Size(50, 17);
+            this.checkBx1984.TabIndex = 1;
+            this.checkBx1984.Text = "1984";
+            this.checkBx1984.UseVisualStyleBackColor = true;
+            // 
+            // mockingchechBx
+            // 
+            this.mockingchechBx.AutoSize = true;
+            this.mockingchechBx.Location = new System.Drawing.Point(19, 40);
+            this.mockingchechBx.Name = "mockingchechBx";
+            this.mockingchechBx.Size = new System.Drawing.Size(126, 17);
+            this.mockingchechBx.TabIndex = 0;
+            this.mockingchechBx.Text = "To Kill A Mockingbird";
+            this.mockingchechBx.UseVisualStyleBackColor = true;
             // 
             // nonficgroupBx
             // 
@@ -194,19 +195,19 @@
             this.sapienscheckBx.Text = "Sapiens: A Brief History of Humankind";
             this.sapienscheckBx.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // acadgroupBx
             // 
-            this.groupBox2.Controls.Add(this.origincheckBx);
-            this.groupBox2.Controls.Add(this.structurecheckBx);
-            this.groupBox2.Controls.Add(this.principiacheckBx);
-            this.groupBox2.Controls.Add(this.elementscheckBx);
-            this.groupBox2.Controls.Add(this.briefcheckBx);
-            this.groupBox2.Location = new System.Drawing.Point(633, 178);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 235);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ACADEMIC";
+            this.acadgroupBx.Controls.Add(this.origincheckBx);
+            this.acadgroupBx.Controls.Add(this.structurecheckBx);
+            this.acadgroupBx.Controls.Add(this.principiacheckBx);
+            this.acadgroupBx.Controls.Add(this.elementscheckBx);
+            this.acadgroupBx.Controls.Add(this.briefcheckBx);
+            this.acadgroupBx.Location = new System.Drawing.Point(633, 178);
+            this.acadgroupBx.Name = "acadgroupBx";
+            this.acadgroupBx.Size = new System.Drawing.Size(251, 235);
+            this.acadgroupBx.TabIndex = 6;
+            this.acadgroupBx.TabStop = false;
+            this.acadgroupBx.Text = "ACADEMIC";
             // 
             // origincheckBx
             // 
@@ -275,35 +276,15 @@
             this.panel1.Size = new System.Drawing.Size(499, 161);
             this.panel1.TabIndex = 7;
             // 
-            // label1
+            // label5
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(496, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(0, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(496, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(496, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(0, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(496, 32);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "label5";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -315,15 +296,44 @@
             this.label4.Text = "label4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // label3
             // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(496, 32);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(0, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(496, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(0, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(496, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(496, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(336, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "label6";
             // 
             // BorrowForm
             // 
@@ -331,8 +341,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.acadgroupBx);
             this.Controls.Add(this.nonficgroupBx);
             this.Controls.Add(this.fictiongroupBx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -342,10 +353,11 @@
             this.fictiongroupBx.PerformLayout();
             this.nonficgroupBx.ResumeLayout(false);
             this.nonficgroupBx.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.acadgroupBx.ResumeLayout(false);
+            this.acadgroupBx.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -363,7 +375,7 @@
         private System.Windows.Forms.CheckBox educatedcheckBx;
         private System.Windows.Forms.CheckBox immortalcheckBx;
         private System.Windows.Forms.CheckBox sapienscheckBx;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox acadgroupBx;
         private System.Windows.Forms.CheckBox origincheckBx;
         private System.Windows.Forms.CheckBox structurecheckBx;
         private System.Windows.Forms.CheckBox principiacheckBx;
@@ -375,5 +387,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
     }
 }
