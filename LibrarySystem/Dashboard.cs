@@ -45,7 +45,7 @@ namespace LibrarySystem
         public Dashboard(string userName, string userId, string department, int bookLimit)
         {
             InitializeComponent();
-
+            
             //make the edges more round
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));

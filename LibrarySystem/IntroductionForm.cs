@@ -11,22 +11,33 @@ using System.Drawing.Drawing2D;
 using static LibrarySystem.FirstForm;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Runtime.CompilerServices;
 
 namespace LibrarySystem
 {
     public partial class FirstForm : Form
     {
+        private const char PrivacyChar = '●';
+
         //LIST OF 10 STUDENT USERS
         private List<Stud> studentUsers = new List<Stud>
         {
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
+            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
             new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
-
             };
         //LIST OF 3 TEACHER USERS
 
         private List<Prof> profUsers = new List<Prof>
         {
-            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS",5 )
+            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS", 5),
+            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS",5),
+            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS",5)
           };
         public class Stud
         {
@@ -58,6 +69,8 @@ namespace LibrarySystem
                 EmployeeId = employeeId;
                 Name = name;
                 Department = department;
+                BookLimit = bookLimit;
+
             }
             public string Username { get; set; }
             public string Password { get; set; }
@@ -184,5 +197,34 @@ namespace LibrarySystem
             lblMessage.Text = "Incorrect password or username. Please try again.";
         }
 
+        private void passwordBx__TextChanged(object sender, EventArgs e)
+        {
+     
+        }
+        private string ConvertToText(string maskedPassword)
+        {
+            string textPassword = "";
+
+            foreach (char c in maskedPassword)
+            {
+                // Replace each dot character with the original character
+                if (c == (char)0x2022) // ASCII code for dot (●)
+                {
+                    textPassword += ' '; // Replace with your original character or leave it empty
+                }
+                else
+                {
+                    textPassword += c;
+                }
+            }
+
+            return textPassword;
+        }
+
+        private void passIcon_Click(object sender, EventArgs e)
+        {
+            string textPassword = ConvertToText(passwordBx.Texts);
+        }
     }
+
 }

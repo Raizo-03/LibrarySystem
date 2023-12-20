@@ -16,7 +16,7 @@ namespace LibrarySystem
         {
             InitializeComponent();
             this.bookLimit = booklimit;
-
+            label6.Text = booklimit.ToString();
             // Add event handlers for CheckedChanged event of CheckBox controls
 
             // FICTION CONTROLBOX
@@ -31,6 +31,16 @@ namespace LibrarySystem
 
             // NONFICTION CONTROLBOX
             foreach (Control control in nonficgroupBx.Controls)
+            {
+                if (control is CheckBox checkBox)
+                {
+                    checkBox.CheckedChanged += Group_CheckedChanged;
+                    selectedValuesDictionary.Add(checkBox, string.Empty);
+                }
+            }
+
+            // ACADEMIC CONTROLBOX
+            foreach (Control control in acadgroupBx.Controls)
             {
                 if (control is CheckBox checkBox)
                 {
