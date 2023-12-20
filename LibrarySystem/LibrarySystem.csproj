@@ -123,6 +123,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BooklistForm.resx">
       <DependentUpon>BooklistForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowerList.resx">
       <DependentUpon>BorrowerList.cs</DependentUpon>
