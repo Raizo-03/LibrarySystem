@@ -158,6 +158,7 @@
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 47);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
             this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 883);
+
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // dashboardbackPnl
@@ -387,6 +388,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 930);
+
             this.ControlBox = false;
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
