@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooklistForm));
             this.booklistLlbl = new ReaLTaiizor.Controls.FoxBigLabel();
@@ -121,6 +122,11 @@
             this.panel3.SuspendLayout();
             this.structurePanel.SuspendLayout();
             this.originPanel.SuspendLayout();
+
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooklistForm));
+            this.booklistLlbl = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.fictionBtn = new LibrarySystem.RJButton();
+
             this.SuspendLayout();
             // 
             // booklistLlbl
@@ -134,6 +140,7 @@
             this.booklistLlbl.Size = new System.Drawing.Size(165, 51);
             this.booklistLlbl.TabIndex = 7;
             this.booklistLlbl.Text = "Book List";
+
             this.booklistLlbl.Click += new System.EventHandler(this.booklistLlbl_Click);
             // 
             // mockingbirdPnl
@@ -921,6 +928,8 @@
     "\r\n";
             this.solitudeBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
             this.solitudeBtn.UseVisualStyleBackColor = false;
+
+
             // 
             // acadBtn
             // 
@@ -933,6 +942,7 @@
             this.acadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.acadBtn.ForeColor = System.Drawing.Color.White;
             this.acadBtn.Location = new System.Drawing.Point(736, 12);
+
             this.acadBtn.Name = "acadBtn";
             this.acadBtn.Size = new System.Drawing.Size(100, 98);
             this.acadBtn.TabIndex = 9;
@@ -940,6 +950,7 @@
             this.acadBtn.TextColor = System.Drawing.Color.White;
             this.acadBtn.UseVisualStyleBackColor = false;
             this.acadBtn.Click += new System.EventHandler(this.acadBtn_Click);
+
             // 
             // nonfictionBtn
             // 
@@ -952,12 +963,14 @@
             this.nonfictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nonfictionBtn.ForeColor = System.Drawing.Color.White;
             this.nonfictionBtn.Location = new System.Drawing.Point(614, 12);
+
             this.nonfictionBtn.Name = "nonfictionBtn";
             this.nonfictionBtn.Size = new System.Drawing.Size(100, 98);
             this.nonfictionBtn.TabIndex = 8;
             this.nonfictionBtn.Text = "NON - FICTION";
             this.nonfictionBtn.TextColor = System.Drawing.Color.White;
             this.nonfictionBtn.UseVisualStyleBackColor = false;
+
             this.nonfictionBtn.Click += new System.EventHandler(this.nonfictionBtn_Click);
             // 
             // briefBtn
@@ -1066,6 +1079,7 @@
             this.originBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-5-678901-23-4\r\nCharles Darwin\r\n1859\r\nJohn Murray\r\n";
             this.originBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
             this.originBtn.UseVisualStyleBackColor = false;
+
             // 
             // fictionBtn
             // 
@@ -1078,6 +1092,7 @@
             this.fictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fictionBtn.ForeColor = System.Drawing.Color.White;
             this.fictionBtn.Location = new System.Drawing.Point(491, 12);
+
             this.fictionBtn.Name = "fictionBtn";
             this.fictionBtn.Size = new System.Drawing.Size(100, 98);
             this.fictionBtn.TabIndex = 2;
@@ -1098,6 +1113,7 @@
             this.Controls.Add(this.nonfictionBtn);
             this.Controls.Add(this.booklistLlbl);
             this.Controls.Add(this.academicPanel);
+
             this.Controls.Add(this.fictionBtn);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1121,6 +1137,7 @@
             this.panel3.ResumeLayout(false);
             this.structurePanel.ResumeLayout(false);
             this.originPanel.ResumeLayout(false);
+    
             this.ResumeLayout(false);
 
         }
@@ -1199,5 +1216,6 @@
         private RJButton originBtn;
         private System.Windows.Forms.Timer acadTransition;
         private System.Windows.Forms.Timer acadTransition2;
+
     }
 }
