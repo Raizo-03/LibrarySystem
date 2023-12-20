@@ -82,7 +82,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1081, 47);
+            this.upperPanel.Size = new System.Drawing.Size(1028, 47);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -128,7 +128,7 @@
             this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMinimizeButton = true;
             this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.Black;
-            this.dashboardControlbx.Location = new System.Drawing.Point(939, 3);
+            this.dashboardControlbx.Location = new System.Drawing.Point(889, 0);
             this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.Olive;
             this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -158,7 +158,6 @@
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 47);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
             this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 883);
-
             this.dashboardFlowPnl.TabIndex = 2;
             // 
             // dashboardbackPnl
@@ -387,8 +386,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 930);
-
+            this.ClientSize = new System.Drawing.Size(1028, 930);
             this.ControlBox = false;
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
