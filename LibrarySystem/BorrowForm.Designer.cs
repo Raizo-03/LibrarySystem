@@ -346,6 +346,7 @@
             this.borrowBtn.Text = "BORROW";
             this.borrowBtn.TextColor = System.Drawing.Color.White;
             this.borrowBtn.UseVisualStyleBackColor = false;
+            this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
             // 
             // BorrowForm
             // 

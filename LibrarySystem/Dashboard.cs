@@ -233,10 +233,13 @@ namespace LibrarySystem
         //DASHBOARD BUTTON
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
+            string identifier = Identifier;
+            String nameofBorrower = userNameLabel.Text;
+            string id = USERID;
             dashboardTransition.Start();
             if (dashboard2 == null)
             {
-                dashboard2 = new DashboardForm2();
+                dashboard2 = new DashboardForm2(identifier, nameofBorrower, id);
                 dashboard2.FormClosed += dashboard2_FormClosed;
                 dashboard2.MdiParent = this;
                 dashboard2.Dock = DockStyle.Fill;
