@@ -22,6 +22,19 @@ namespace LibrarySystem
             label6.Text = booklimit.ToString();
             borrower.Text = username;
 
+            //BORROWING DATES
+            DateTime currentDate = DateTime.Now;
+            borrowdate.Text = currentDate.ToString();
+
+            if (identifier.Equals("stud"))
+            {
+                DateTime futureDate = currentDate.AddDays(3);
+                duedate.Text = futureDate.ToString();
+            }
+            else if (identifier.Equals("prof"))
+            {
+                duedate.Text = "NO DUE DATE";
+            }
 
             // Add event handlers for CheckedChanged event of CheckBox controls
 
