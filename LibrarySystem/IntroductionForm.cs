@@ -22,14 +22,14 @@ namespace LibrarySystem
         //LIST OF 10 STUDENT USERS
         private List<Stud> studentUsers = new List<Stud>
         {
-            new Stud("stud", "K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
+            new Stud("STUDENT", "K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
            
             };
         //LIST OF 3 TEACHER USERS
 
         private List<Prof> profUsers = new List<Prof>
         {
-            new Prof("prof", "K12043710", "1234", "Krissa Beringuel", "CCIS", 5)
+            new Prof("TEACHER", "K12043710", "1234", "Krissa Beringuel", "CCIS", 5)
          
           };
         public class Stud

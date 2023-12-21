@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace LibrarySystem
 {
@@ -26,12 +27,12 @@ namespace LibrarySystem
             DateTime currentDate = DateTime.Now;
             borrowdate.Text = currentDate.ToString();
 
-            if (identifier.Equals("stud"))
+            if (identifier.Equals("STUDENT"))
             {
                 DateTime futureDate = currentDate.AddDays(3);
                 duedate.Text = futureDate.ToString();
             }
-            else if (identifier.Equals("prof"))
+            else if (identifier.Equals("TEACHER"))
             {
                 duedate.Text = "NO DUE DATE";
             }
@@ -147,6 +148,23 @@ namespace LibrarySystem
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void borrowBtn_Click(object sender, EventArgs e)
+        {
+            /*
+            DialogResult result = MessageBox.Show($"Are you sure you want to continue {userNAME}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Perform logout actions
+                // For example, close the current form and show the login form
+                this.Close();
+
+                // Assuming LoginForm is the name of your login form
+                DashboardForm2 dash = new DashboardForm2();
+                dash.Show();
+            }
+            */
         }
     }
 }

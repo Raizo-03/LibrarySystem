@@ -12,9 +12,19 @@ namespace LibrarySystem
 {
     public partial class DashboardForm2 : Form
     {
-        public DashboardForm2()
+        private string identifier;
+        private string name;
+        private string ID;
+        public DashboardForm2(string Identifier, string Name, string iD)
         {
             InitializeComponent();
+            this.identifier = Identifier;
+            this.name = Name;
+            this.ID = iD;
+
+            nameLabel.Text = Name;
+            idLabel.Text = iD;
+            identifierLabel.Text = Identifier;
         }
 
         private void DashboardForm2_Load(object sender, EventArgs e)
