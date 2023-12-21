@@ -35,6 +35,28 @@ namespace LibrarySystem
             idLabel.Text = iD;
             identifierLabel.Text = Identifier;
 
+
+            borrowedlabel1.Text = book1;
+            borrowedLabel2.Text = book2;
+            borrowedLabel3.Text = book3;
+            borrowedLabel4.Text = book4;
+            borrowedLabel5.Text = book5;
+
+            int integerValue1 = int.Parse(availableLabel.Text);
+
+            if (borrowedlabel1.Text != null)
+            {
+                // Pre-decrement the value
+                int newvalue = --integerValue1;
+
+                // Convert the decremented integer to a string
+                string newavailnum1 = newvalue.ToString();
+
+                // Update the availableLabel.Text with the new value
+                availableLabel.Text = newavailnum1;
+            }
+
+
         }
 
         private void DashboardForm2_Load(object sender, EventArgs e)

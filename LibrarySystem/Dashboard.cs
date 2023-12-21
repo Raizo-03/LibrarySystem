@@ -29,7 +29,6 @@ namespace LibrarySystem
         private string Identifier;
         private string USERName;
         private string USERID;
-        private string DEPARTMENT;
         private int BOOKLIMIT;
         private string book1, book2, book3, book4, book5;
 
@@ -44,7 +43,7 @@ namespace LibrarySystem
         int nHeightEllipse // width of ellipse
     );
 
-        public Dashboard(string identifier, string userName, string userId, string department, int bookLimit)
+        public Dashboard(string identifier, string userName, string userId, int bookLimit, string Book1, string Book2, string Book3, string Book4, string Book5)
         {
             InitializeComponent();
             
@@ -53,19 +52,18 @@ namespace LibrarySystem
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.Identifier = identifier;
             this.BOOKLIMIT = bookLimit;
-            /*
-            userName = USERName;
-            userId = USERID;
-            */
-            // Use this information as needed in the Dashboard form
-            // For example, update labels or perform other actions
-            userNameLabel.Text = $"{userName}";
-            userIDLabel.Text = $"{userId}";
-            departmentLabel.Text = $"{department}";
-            //bookLimitLabel.Text = $"Book Limit: {bookLimit}";
-            //bookLimit = bookLimit;
+            this.USERName = userName;
+            this.USERID = userId;
+            this.book1 = Book1;
+            this.book2 = Book2;
+            this.book2 = Book2;
+            this.book3 = Book3;
+            this.book4 = Book4;
+            this.book5 = Book5;
+
 
         }
+        
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -235,8 +233,8 @@ namespace LibrarySystem
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             string identifier = Identifier;
-            String nameofBorrower = userNameLabel.Text;
-            string id = userIDLabel.Text;
+            String nameofBorrower = USERName;
+            string id = USERID;
             int LIMIT = BOOKLIMIT;
             dashboardTransition.Start();
             if (dashboard2 == null)
@@ -303,9 +301,18 @@ namespace LibrarySystem
         //BOOK LIST BUTTON
         private void booklistBtn_Click_1(object sender, EventArgs e)
         {
-            if(booklist == null)
+            String identifier = Identifier;
+            String name = Name;
+            String ID = USERID;
+            int limit = BOOKLIMIT;
+            String bk1 = book1;
+            String bk2 = book2;
+            String bk3 = book3;
+            String bk4 = book4;
+            String bk5 = book5;
+            if (booklist == null)
             {
-                booklist = new BooklistForm(USERName, USERID, DEPARTMENT);
+                booklist = new BooklistForm(identifier, USERName, USERID, limit, bk1, bk2, bk3, bk4, bk5);
                 booklist.FormClosed += booklist_FormClosed;
                 booklist.MdiParent = this;
                 booklist.Dock = DockStyle.Fill;
@@ -327,8 +334,9 @@ namespace LibrarySystem
         {
             string identifier = Identifier;
             int limit = BOOKLIMIT;
-            String nameofBorrower = userNameLabel.Text;
-            String ID = userIDLabel.Text;
+            String nameofBorrower = USERName;
+            String ID = USERID;
+
             if (borrow == null)
             {
                 borrow = new BorrowForm(identifier, nameofBorrower, ID, limit);
@@ -400,7 +408,7 @@ namespace LibrarySystem
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            String name = userNameLabel.Text;
+            String name = USERName;
             // Display a confirmation dialog
             DialogResult result = MessageBox.Show($"Are you sure you want to log out {name}?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

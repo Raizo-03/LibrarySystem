@@ -22,46 +22,43 @@ namespace LibrarySystem
         public string availability { get; private set; }
 
         private List<Book> books = new List<Book>();
+        private string username;
+        private string identifier;
+        private int limit;
+        private string book1, book2, book3, book4, book5;
 
-        public BooklistForm(string userName, string userID, string userDepartment)
+
+        public BooklistForm(string IDENTIFIER, string NAME, string ID, int LIMIT, string bk1, string bk2, string bk3, string  bk4, string bk5)
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLOR #FDF7E4
 
-            this.UserName = userName;
-            this.UserID = userID;
-            this.UserDepartment = userDepartment;
+            this.identifier = IDENTIFIER;
+            this.username = NAME;
+            this.limit = LIMIT;
+            this.book1 = bk1;
+            this.book2 = bk2;
+            this.book3 = bk3;
+            this.book4 = bk4;
+            this.book5 = bk5;
 
             fictionTransition2.Start();
             nonficTransition2.Start();
             acadTransition2.Start();
 
 
-            //books
-            books = new List<Book>
+            CheckBookAvailability(bk1);
+
+        }
+
+        //THIS WILL CAUSE ERROR
+        private void CheckBookAvailability(string bk)
+        {
+            if (bk.Equals("To Kill A Mocking Bird"))
             {
-                new Book
-                {
-                    Title = "To Kill a Mockingbird",
-                    IsAvailable = true
-                },
-                 new Book
-                {
-                    Title = "Pride and Prejudice",
-                    IsAvailable = true
-                },
-                new Book
-                {
-                    Title = "The Great Gatsby",
-                    IsAvailable = true
-
-                },
-
-
-            };
-
-
-
+                mockingstatsLbl.Text = "NOT AVAILABLE";
+                mockingstatsLbl.ForeColor = Color.Red;
+            }
         }
 
         // Add a method to populate the DataGridView with books

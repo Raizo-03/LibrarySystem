@@ -9,6 +9,8 @@ namespace LibrarySystem
 {
     public partial class BorrowForm : Form
     {
+        private Dashboard mdiParent;
+
         // Dictionary to store selected values for each checkbox
         private Dictionary<CheckBox, string> selectedValuesDictionary = new Dictionary<CheckBox, string>();
         private int bookLimit; // Set the limit to 5 books
@@ -80,7 +82,7 @@ namespace LibrarySystem
                     if (CountSelectedBooks() >= bookLimit)
                     {
                         checkBox.Checked = false; // Uncheck the checkbox
-                        MessageBox.Show($"You can only borrow up to {bookLimit} books.", "Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"Sorry! You have exceeded the number of books to be borrowed.", "Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -154,6 +156,7 @@ namespace LibrarySystem
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+            // Get values
             String identifier = Identifier;
             String name = userNAME;
             String id = ID;
@@ -164,19 +167,30 @@ namespace LibrarySystem
             String book4 = label4.Text;
             String book5 = label5.Text;
 
-
             DialogResult result = MessageBox.Show($"Are you sure you want to continue {userNAME}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (result == DialogResult.Yes)
             {
-                // Perform logout actions
-                // For example, close the current form and show the login form
-                this.Close();
+                // Close the MDI parent (Dashboard) of the current form
+                Form mdiParent = this.MdiParent;
+                if (mdiParent != null)
+                {
+                    mdiParent.Close();
+                }
 
-                // Assuming LoginForm is the name of your login form
-                DashboardForm2 dash = new DashboardForm2(identifier, name, id, limit, book1, book2, book3, book4, book5);
-                dash.Show();
+                // Create an instance of Dashboard and pass the values
+                Dashboard dashboardForm = new Dashboard(identifier, name, id, limit, book1, book2, book3, book4, book5);
+
+                // Show the Dashboard form
+                dashboardForm.Show();
+
+                // Close the current form
+                this.Close();
             }
-            
         }
+
+
+
+
     }
 }
