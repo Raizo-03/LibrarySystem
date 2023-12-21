@@ -36,7 +36,6 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.userIcon = new System.Windows.Forms.PictureBox();
             this.passIcon = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.passwordBx = new CustomControls.RJControls.RJTextBox();
             this.usernameBx = new CustomControls.RJControls.RJTextBox();
             this.proceedBtn = new LibrarySystem.RJButton();
@@ -115,17 +114,6 @@
             this.passIcon.TabStop = false;
             this.passIcon.Click += new System.EventHandler(this.passIcon_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(315, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
-            // 
             // passwordBx
             // 
             this.passwordBx.BackColor = System.Drawing.SystemColors.Window;
@@ -197,7 +185,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 576);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.passwordBx);
             this.Controls.Add(this.usernameBx);
             this.Controls.Add(this.passIcon);
@@ -232,7 +219,6 @@
         private System.Windows.Forms.PictureBox passIcon;
         private CustomControls.RJControls.RJTextBox usernameBx;
         private CustomControls.RJControls.RJTextBox passwordBx;
-        private System.Windows.Forms.Label label2;
     }
 }
 

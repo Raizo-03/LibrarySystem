@@ -26,6 +26,7 @@ namespace LibrarySystem
         AboutForm about;
         BorrowerList borrowerList;
         // Fields to store user information
+        private string Identifier;
         private string USERName;
         private string USERID;
         private string DEPARTMENT;
@@ -42,14 +43,14 @@ namespace LibrarySystem
         int nHeightEllipse // width of ellipse
     );
 
-        public Dashboard(string userName, string userId, string department, int bookLimit)
+        public Dashboard(string identifier, string userName, string userId, string department, int bookLimit)
         {
             InitializeComponent();
             
             //make the edges more round
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-
+            this.Identifier = identifier;
             this.BOOKLIMIT = bookLimit;
             /*
             userName = USERName;
@@ -319,10 +320,12 @@ namespace LibrarySystem
         //BORROW BUTTON
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+            string identifier = Identifier;
             int limit = BOOKLIMIT;
+            String nameofBorrower = userNameLabel.Text;
             if (borrow == null)
             {
-                borrow = new BorrowForm(limit);
+                borrow = new BorrowForm(identifier, limit, nameofBorrower);
                 borrow.FormClosed += borrow_FormClosed;
                 borrow.MdiParent = this;
                 borrow.Dock = DockStyle.Fill;

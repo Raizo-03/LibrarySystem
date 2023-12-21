@@ -22,27 +22,21 @@ namespace LibrarySystem
         //LIST OF 10 STUDENT USERS
         private List<Stud> studentUsers = new List<Stud>
         {
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2),
-            new Stud("K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
+            new Stud("stud", "K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
+           
             };
         //LIST OF 3 TEACHER USERS
 
         private List<Prof> profUsers = new List<Prof>
         {
-            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS", 5),
-            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS",5),
-            new Prof("K12043710", "1234", "Krissa Beringuel", "CCIS",5)
+            new Prof("prof", "K12043710", "1234", "Krissa Beringuel", "CCIS", 5)
+         
           };
         public class Stud
         {
-            public Stud(string studentId, string password, string name, string yearLevel, string section, int bookLimit)
+            public Stud(string identifier, string studentId, string password, string name, string yearLevel, string section, int bookLimit)
             {
+                Identifier = identifier;
                 Username = studentId;  // Set Username to StudentId
                 Password = password;
                 StudentId = studentId;
@@ -51,7 +45,7 @@ namespace LibrarySystem
                 Section = section;
                 BookLimit = bookLimit;
             }
-
+            public string Identifier { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
             public string StudentId { get; set; }
@@ -62,8 +56,9 @@ namespace LibrarySystem
         }
         public class Prof
         {
-            public Prof(string employeeId, string password, string name, string department, int bookLimit)
+            public Prof(string identifier, string employeeId, string password, string name, string department, int bookLimit)
             {
+                Identifier = identifier;
                 Username = employeeId;  // Set Username to EmployeeId
                 Password = password;
                 EmployeeId = employeeId;
@@ -72,6 +67,7 @@ namespace LibrarySystem
                 BookLimit = bookLimit;
 
             }
+            public string Identifier { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
             public string Name { get; set; }
@@ -153,7 +149,7 @@ namespace LibrarySystem
                 if (studentUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated student user information
-                    Dashboard secondForm = new Dashboard(studentUser.Name, studentUser.StudentId, studentUser.Section, studentUser.BookLimit);
+                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.Section, studentUser.BookLimit);
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;
@@ -177,7 +173,7 @@ namespace LibrarySystem
                 if (professorUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated professor user information
-                    Dashboard secondForm = new Dashboard(professorUser.Name, professorUser.EmployeeId, professorUser.Department, professorUser.BookLimit);
+                    Dashboard secondForm = new Dashboard(professorUser.Identifier, professorUser.Name, professorUser.EmployeeId, professorUser.Department, professorUser.BookLimit);
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;

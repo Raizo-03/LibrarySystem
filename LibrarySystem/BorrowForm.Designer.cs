@@ -40,12 +40,6 @@
             this.educatedcheckBx = new System.Windows.Forms.CheckBox();
             this.immortalcheckBx = new System.Windows.Forms.CheckBox();
             this.sapienscheckBx = new System.Windows.Forms.CheckBox();
-            this.acadgroupBx = new System.Windows.Forms.GroupBox();
-            this.origincheckBx = new System.Windows.Forms.CheckBox();
-            this.structurecheckBx = new System.Windows.Forms.CheckBox();
-            this.principiacheckBx = new System.Windows.Forms.CheckBox();
-            this.elementscheckBx = new System.Windows.Forms.CheckBox();
-            this.briefcheckBx = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,9 +47,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.borrowerLabel = new System.Windows.Forms.Label();
+            this.databorrowedLabel = new System.Windows.Forms.Label();
+            this.duedateLabel = new System.Windows.Forms.Label();
+            this.borrower = new System.Windows.Forms.Label();
+            this.borrowdate = new System.Windows.Forms.Label();
+            this.duedate = new System.Windows.Forms.Label();
+            this.borrowBtn = new LibrarySystem.RJButton();
             this.fictiongroupBx.SuspendLayout();
             this.nonficgroupBx.SuspendLayout();
-            this.acadgroupBx.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,73 +195,6 @@
             this.sapienscheckBx.Text = "Sapiens: A Brief History of Humankind";
             this.sapienscheckBx.UseVisualStyleBackColor = true;
             // 
-            // acadgroupBx
-            // 
-            this.acadgroupBx.Controls.Add(this.origincheckBx);
-            this.acadgroupBx.Controls.Add(this.structurecheckBx);
-            this.acadgroupBx.Controls.Add(this.principiacheckBx);
-            this.acadgroupBx.Controls.Add(this.elementscheckBx);
-            this.acadgroupBx.Controls.Add(this.briefcheckBx);
-            this.acadgroupBx.Location = new System.Drawing.Point(633, 178);
-            this.acadgroupBx.Name = "acadgroupBx";
-            this.acadgroupBx.Size = new System.Drawing.Size(251, 235);
-            this.acadgroupBx.TabIndex = 6;
-            this.acadgroupBx.TabStop = false;
-            this.acadgroupBx.Text = "ACADEMIC";
-            // 
-            // origincheckBx
-            // 
-            this.origincheckBx.AutoSize = true;
-            this.origincheckBx.Location = new System.Drawing.Point(19, 187);
-            this.origincheckBx.Name = "origincheckBx";
-            this.origincheckBx.Size = new System.Drawing.Size(128, 17);
-            this.origincheckBx.TabIndex = 4;
-            this.origincheckBx.Text = "The Origin of Species";
-            this.origincheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.origincheckBx.UseVisualStyleBackColor = true;
-            // 
-            // structurecheckBx
-            // 
-            this.structurecheckBx.AutoSize = true;
-            this.structurecheckBx.Location = new System.Drawing.Point(19, 151);
-            this.structurecheckBx.Name = "structurecheckBx";
-            this.structurecheckBx.Size = new System.Drawing.Size(208, 17);
-            this.structurecheckBx.TabIndex = 3;
-            this.structurecheckBx.Text = "The Structure of Scientific Revolutions";
-            this.structurecheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.structurecheckBx.UseVisualStyleBackColor = true;
-            // 
-            // principiacheckBx
-            // 
-            this.principiacheckBx.AutoSize = true;
-            this.principiacheckBx.Location = new System.Drawing.Point(19, 115);
-            this.principiacheckBx.Name = "principiacheckBx";
-            this.principiacheckBx.Size = new System.Drawing.Size(130, 17);
-            this.principiacheckBx.TabIndex = 2;
-            this.principiacheckBx.Text = "Principia Mathematica";
-            this.principiacheckBx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.principiacheckBx.UseVisualStyleBackColor = true;
-            // 
-            // elementscheckBx
-            // 
-            this.elementscheckBx.AutoSize = true;
-            this.elementscheckBx.Location = new System.Drawing.Point(19, 78);
-            this.elementscheckBx.Name = "elementscheckBx";
-            this.elementscheckBx.Size = new System.Drawing.Size(129, 17);
-            this.elementscheckBx.TabIndex = 1;
-            this.elementscheckBx.Text = "The Elements of Style";
-            this.elementscheckBx.UseVisualStyleBackColor = true;
-            // 
-            // briefcheckBx
-            // 
-            this.briefcheckBx.AutoSize = true;
-            this.briefcheckBx.Location = new System.Drawing.Point(19, 40);
-            this.briefcheckBx.Name = "briefcheckBx";
-            this.briefcheckBx.Size = new System.Drawing.Size(130, 17);
-            this.briefcheckBx.TabIndex = 0;
-            this.briefcheckBx.Text = "A Brief History of Time";
-            this.briefcheckBx.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -335,15 +268,100 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "label6";
             // 
+            // borrowerLabel
+            // 
+            this.borrowerLabel.AutoSize = true;
+            this.borrowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerLabel.Location = new System.Drawing.Point(56, 632);
+            this.borrowerLabel.Name = "borrowerLabel";
+            this.borrowerLabel.Size = new System.Drawing.Size(134, 16);
+            this.borrowerLabel.TabIndex = 9;
+            this.borrowerLabel.Text = "Borrower\'s Name: ";
+            // 
+            // databorrowedLabel
+            // 
+            this.databorrowedLabel.AutoSize = true;
+            this.databorrowedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databorrowedLabel.Location = new System.Drawing.Point(56, 672);
+            this.databorrowedLabel.Name = "databorrowedLabel";
+            this.databorrowedLabel.Size = new System.Drawing.Size(114, 16);
+            this.databorrowedLabel.TabIndex = 10;
+            this.databorrowedLabel.Text = "Date Borrowed:";
+            // 
+            // duedateLabel
+            // 
+            this.duedateLabel.AutoSize = true;
+            this.duedateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.duedateLabel.Location = new System.Drawing.Point(56, 708);
+            this.duedateLabel.Name = "duedateLabel";
+            this.duedateLabel.Size = new System.Drawing.Size(76, 16);
+            this.duedateLabel.TabIndex = 11;
+            this.duedateLabel.Text = "Due Date:";
+            // 
+            // borrower
+            // 
+            this.borrower.AutoSize = true;
+            this.borrower.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrower.Location = new System.Drawing.Point(196, 632);
+            this.borrower.Name = "borrower";
+            this.borrower.Size = new System.Drawing.Size(49, 18);
+            this.borrower.TabIndex = 12;
+            this.borrower.Text = "name";
+            // 
+            // borrowdate
+            // 
+            this.borrowdate.AutoSize = true;
+            this.borrowdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowdate.Location = new System.Drawing.Point(196, 672);
+            this.borrowdate.Name = "borrowdate";
+            this.borrowdate.Size = new System.Drawing.Size(40, 18);
+            this.borrowdate.TabIndex = 13;
+            this.borrowdate.Text = "date";
+            this.borrowdate.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // duedate
+            // 
+            this.duedate.AutoSize = true;
+            this.duedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.duedate.Location = new System.Drawing.Point(196, 708);
+            this.duedate.Name = "duedate";
+            this.duedate.Size = new System.Drawing.Size(67, 18);
+            this.duedate.TabIndex = 14;
+            this.duedate.Text = "duedate";
+            // 
+            // borrowBtn
+            // 
+            this.borrowBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.borrowBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.borrowBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borrowBtn.BorderRadius = 0;
+            this.borrowBtn.BorderSize = 0;
+            this.borrowBtn.FlatAppearance.BorderSize = 0;
+            this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowBtn.ForeColor = System.Drawing.Color.White;
+            this.borrowBtn.Location = new System.Drawing.Point(382, 762);
+            this.borrowBtn.Name = "borrowBtn";
+            this.borrowBtn.Size = new System.Drawing.Size(150, 40);
+            this.borrowBtn.TabIndex = 15;
+            this.borrowBtn.Text = "BORROW";
+            this.borrowBtn.TextColor = System.Drawing.Color.White;
+            this.borrowBtn.UseVisualStyleBackColor = false;
+            // 
             // BorrowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.borrowBtn);
+            this.Controls.Add(this.duedate);
+            this.Controls.Add(this.borrowdate);
+            this.Controls.Add(this.borrower);
+            this.Controls.Add(this.duedateLabel);
+            this.Controls.Add(this.databorrowedLabel);
+            this.Controls.Add(this.borrowerLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.acadgroupBx);
             this.Controls.Add(this.nonficgroupBx);
             this.Controls.Add(this.fictiongroupBx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -353,8 +371,6 @@
             this.fictiongroupBx.PerformLayout();
             this.nonficgroupBx.ResumeLayout(false);
             this.nonficgroupBx.PerformLayout();
-            this.acadgroupBx.ResumeLayout(false);
-            this.acadgroupBx.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -375,12 +391,6 @@
         private System.Windows.Forms.CheckBox educatedcheckBx;
         private System.Windows.Forms.CheckBox immortalcheckBx;
         private System.Windows.Forms.CheckBox sapienscheckBx;
-        private System.Windows.Forms.GroupBox acadgroupBx;
-        private System.Windows.Forms.CheckBox origincheckBx;
-        private System.Windows.Forms.CheckBox structurecheckBx;
-        private System.Windows.Forms.CheckBox principiacheckBx;
-        private System.Windows.Forms.CheckBox elementscheckBx;
-        private System.Windows.Forms.CheckBox briefcheckBx;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
@@ -388,5 +398,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label borrowerLabel;
+        private System.Windows.Forms.Label databorrowedLabel;
+        private System.Windows.Forms.Label duedateLabel;
+        private System.Windows.Forms.Label borrower;
+        private System.Windows.Forms.Label borrowdate;
+        private System.Windows.Forms.Label duedate;
+        private RJButton borrowBtn;
     }
 }
