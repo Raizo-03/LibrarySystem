@@ -17,8 +17,7 @@ namespace LibrarySystem
 {
     public partial class FirstForm : Form
     {
-        private const char PrivacyChar = '●';
-
+        private string book1, book2, book3, book4, book5;
         //LIST OF 10 STUDENT USERS
         private List<Stud> studentUsers = new List<Stud>
         {
@@ -149,7 +148,7 @@ namespace LibrarySystem
                 if (studentUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated student user information
-                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.Section, studentUser.BookLimit);
+                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.BookLimit, book1, book2, book3, book4, book5);
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;
@@ -173,7 +172,7 @@ namespace LibrarySystem
                 if (professorUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated professor user information
-                    Dashboard secondForm = new Dashboard(professorUser.Identifier, professorUser.Name, professorUser.EmployeeId, professorUser.Department, professorUser.BookLimit);
+                    Dashboard secondForm = new Dashboard(professorUser.Identifier, professorUser.Name, professorUser.EmployeeId, professorUser.BookLimit, book1, book2, book3, book4, book5);
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;
