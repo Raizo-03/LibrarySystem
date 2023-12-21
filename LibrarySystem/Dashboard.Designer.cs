@@ -89,7 +89,7 @@
             // departmentLabel
             // 
             this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentLabel.Location = new System.Drawing.Point(862, 46);
+            this.departmentLabel.Location = new System.Drawing.Point(671, 9);
             this.departmentLabel.Name = "departmentLabel";
             this.departmentLabel.Size = new System.Drawing.Size(125, 25);
             this.departmentLabel.TabIndex = 4;
@@ -98,7 +98,7 @@
             // userIDLabel
             // 
             this.userIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIDLabel.Location = new System.Drawing.Point(731, 47);
+            this.userIDLabel.Location = new System.Drawing.Point(540, 9);
             this.userIDLabel.Name = "userIDLabel";
             this.userIDLabel.Size = new System.Drawing.Size(125, 25);
             this.userIDLabel.TabIndex = 3;
@@ -107,7 +107,7 @@
             // userNameLabel
             // 
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(731, 22);
+            this.userNameLabel.Location = new System.Drawing.Point(339, 9);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(195, 25);
             this.userNameLabel.TabIndex = 2;

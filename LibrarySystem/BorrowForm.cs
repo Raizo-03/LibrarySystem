@@ -11,12 +11,18 @@ namespace LibrarySystem
         // Dictionary to store selected values for each checkbox
         private Dictionary<CheckBox, string> selectedValuesDictionary = new Dictionary<CheckBox, string>();
         private int bookLimit; // Set the limit to 5 books
-
-        public BorrowForm(int booklimit)
+        private String userNAME;
+        private String Identifier;
+        public BorrowForm(String identifier, int booklimit, string username)
         {
             InitializeComponent();
+            this.Identifier = identifier;   
             this.bookLimit = booklimit;
+            this.userNAME = username;
             label6.Text = booklimit.ToString();
+            borrower.Text = username;
+
+
             // Add event handlers for CheckedChanged event of CheckBox controls
 
             // FICTION CONTROLBOX
@@ -31,16 +37,6 @@ namespace LibrarySystem
 
             // NONFICTION CONTROLBOX
             foreach (Control control in nonficgroupBx.Controls)
-            {
-                if (control is CheckBox checkBox)
-                {
-                    checkBox.CheckedChanged += Group_CheckedChanged;
-                    selectedValuesDictionary.Add(checkBox, string.Empty);
-                }
-            }
-
-            // ACADEMIC CONTROLBOX
-            foreach (Control control in acadgroupBx.Controls)
             {
                 if (control is CheckBox checkBox)
                 {
@@ -133,6 +129,11 @@ namespace LibrarySystem
         private void nonficgroupBx_Enter(object sender, EventArgs e)
         {
             UpdateLabels();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
