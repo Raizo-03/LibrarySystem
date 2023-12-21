@@ -14,10 +14,12 @@ namespace LibrarySystem
         private int bookLimit; // Set the limit to 5 books
         private String userNAME;
         private String Identifier;
-        public BorrowForm(String identifier, int booklimit, string username)
+        private String ID;
+        public BorrowForm(String identifier, string username,string id, int booklimit)
         {
             InitializeComponent();
-            this.Identifier = identifier;   
+            this.Identifier = identifier;
+            this.ID = id;
             this.bookLimit = booklimit;
             this.userNAME = username;
             label6.Text = booklimit.ToString();
@@ -152,7 +154,17 @@ namespace LibrarySystem
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            
+            String identifier = Identifier;
+            String name = userNAME;
+            String id = ID;
+            int limit = bookLimit;
+            String book1 = label1.Text;
+            String book2 = label2.Text;
+            String book3 = label3.Text;
+            String book4 = label4.Text;
+            String book5 = label5.Text;
+
+
             DialogResult result = MessageBox.Show($"Are you sure you want to continue {userNAME}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -161,7 +173,7 @@ namespace LibrarySystem
                 this.Close();
 
                 // Assuming LoginForm is the name of your login form
-                DashboardForm2 dash = new DashboardForm2();
+                DashboardForm2 dash = new DashboardForm2(identifier, name, id, limit, book1, book2, book3, book4, book5);
                 dash.Show();
             }
             

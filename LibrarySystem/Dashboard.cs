@@ -31,6 +31,7 @@ namespace LibrarySystem
         private string USERID;
         private string DEPARTMENT;
         private int BOOKLIMIT;
+        private string book1, book2, book3, book4, book5;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -236,10 +237,11 @@ namespace LibrarySystem
             string identifier = Identifier;
             String nameofBorrower = userNameLabel.Text;
             string id = userIDLabel.Text;
+            int LIMIT = BOOKLIMIT;
             dashboardTransition.Start();
             if (dashboard2 == null)
             {
-                dashboard2 = new DashboardForm2(identifier, nameofBorrower, id);
+                dashboard2 = new DashboardForm2(identifier, nameofBorrower, id, LIMIT, book1, book2, book3, book4, book5);
                 dashboard2.FormClosed += dashboard2_FormClosed;
                 dashboard2.MdiParent = this;
                 dashboard2.Dock = DockStyle.Fill;
@@ -326,9 +328,10 @@ namespace LibrarySystem
             string identifier = Identifier;
             int limit = BOOKLIMIT;
             String nameofBorrower = userNameLabel.Text;
+            String ID = userIDLabel.Text;
             if (borrow == null)
             {
-                borrow = new BorrowForm(identifier, limit, nameofBorrower);
+                borrow = new BorrowForm(identifier, nameofBorrower, ID, limit);
                 borrow.FormClosed += borrow_FormClosed;
                 borrow.MdiParent = this;
                 borrow.Dock = DockStyle.Fill;
