@@ -152,7 +152,7 @@ namespace LibrarySystem
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            /*
+            
             DialogResult result = MessageBox.Show($"Are you sure you want to continue {userNAME}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -164,7 +164,7 @@ namespace LibrarySystem
                 DashboardForm2 dash = new DashboardForm2();
                 dash.Show();
             }
-            */
+            
         }
     }
 }

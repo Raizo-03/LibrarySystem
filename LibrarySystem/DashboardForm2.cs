@@ -15,6 +15,8 @@ namespace LibrarySystem
         private string identifier;
         private string name;
         private string ID;
+        private string book1, book2, book3, book4, book5;
+
         public DashboardForm2(string Identifier, string Name, string iD)
         {
             InitializeComponent();
@@ -25,11 +27,17 @@ namespace LibrarySystem
             nameLabel.Text = Name;
             idLabel.Text = iD;
             identifierLabel.Text = Identifier;
+
         }
 
         private void DashboardForm2_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
 
         }
     }
