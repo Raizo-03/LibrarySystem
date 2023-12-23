@@ -118,6 +118,9 @@
     <Compile Include="RJTextBox.designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoundPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
