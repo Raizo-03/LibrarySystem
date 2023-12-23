@@ -18,10 +18,9 @@ namespace LibrarySystem
         private string book1, book2, book3, book4, book5;
         private int booklimit;
 
-        public DashboardForm2(string Identifier, string Name, string iD, int Booklimit, String BOOK1, String BOOK2, String BOOK3, String BOOK4, String BOOK5)
+        public DashboardForm2(string Name, string iD, int Booklimit, String BOOK1, String BOOK2, String BOOK3, String BOOK4, String BOOK5)
         {
             InitializeComponent();
-            this.identifier = Identifier;
             this.name = Name;
             this.ID = iD;
             this.booklimit = Booklimit;
@@ -33,7 +32,6 @@ namespace LibrarySystem
 
             nameLabel.Text = Name;
             idLabel.Text = iD;
-            identifierLabel.Text = Identifier;
 
 
             borrowedlabel1.Text = book1;
