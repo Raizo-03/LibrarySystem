@@ -31,33 +31,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm2));
             this.hellolabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.idLabel = new System.Windows.Forms.Label();
-            this.identifierLabel = new System.Windows.Forms.Label();
             this.rjButton1 = new LibrarySystem.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.borrowedlabel1 = new System.Windows.Forms.Label();
             this.borrowedLabel2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.borrowedLabel3 = new System.Windows.Forms.Label();
-            this.borrowedLabel4 = new System.Windows.Forms.Label();
-            this.borrowedLabel5 = new System.Windows.Forms.Label();
-            this.returnedLabel1 = new System.Windows.Forms.Label();
-            this.returnedLabel2 = new System.Windows.Forms.Label();
-            this.returnedLabel3 = new System.Windows.Forms.Label();
-            this.returnedLabel4 = new System.Windows.Forms.Label();
-            this.returnedLabel5 = new System.Windows.Forms.Label();
             this.reservedLabel1 = new System.Windows.Forms.Label();
+            this.returnedLabel1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.reservedLabel2 = new System.Windows.Forms.Label();
+            this.returnedLabel2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.reservedLabel3 = new System.Windows.Forms.Label();
+            this.returnedLabel3 = new System.Windows.Forms.Label();
+            this.borrowedLabel3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.reservedLabel4 = new System.Windows.Forms.Label();
+            this.returnedLabel4 = new System.Windows.Forms.Label();
+            this.borrowedLabel4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.reservedLabel5 = new System.Windows.Forms.Label();
+            this.returnedLabel5 = new System.Windows.Forms.Label();
+            this.borrowedLabel5 = new System.Windows.Forms.Label();
             this.allbooksBtn = new LibrarySystem.RJButton();
             this.availbooksBtn = new LibrarySystem.RJButton();
             this.allbooksLabel = new System.Windows.Forms.Label();
@@ -74,7 +72,7 @@
             // 
             this.hellolabel.AutoSize = true;
             this.hellolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hellolabel.Location = new System.Drawing.Point(41, 51);
+            this.hellolabel.Location = new System.Drawing.Point(66, 84);
             this.hellolabel.Name = "hellolabel";
             this.hellolabel.Size = new System.Drawing.Size(123, 42);
             this.hellolabel.TabIndex = 1;
@@ -84,31 +82,11 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(154, 51);
+            this.nameLabel.Location = new System.Drawing.Point(179, 84);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(111, 42);
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "name";
-            // 
-            // idLabel
-            // 
-            this.idLabel.AutoSize = true;
-            this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(41, 107);
-            this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(54, 42);
-            this.idLabel.TabIndex = 3;
-            this.idLabel.Text = "ID";
-            // 
-            // identifierLabel
-            // 
-            this.identifierLabel.AutoSize = true;
-            this.identifierLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.identifierLabel.Location = new System.Drawing.Point(41, 160);
-            this.identifierLabel.Name = "identifierLabel";
-            this.identifierLabel.Size = new System.Drawing.Size(158, 42);
-            this.identifierLabel.TabIndex = 4;
-            this.identifierLabel.Text = "identifier";
             // 
             // rjButton1
             // 
@@ -140,15 +118,15 @@
             this.panel1.Size = new System.Drawing.Size(862, 35);
             this.panel1.TabIndex = 5;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 31);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "BORROWED";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(697, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 31);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "RESERVED";
             // 
             // label2
             // 
@@ -160,15 +138,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "RETURNED";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(697, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 31);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "RESERVED";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "BORROWED";
             // 
             // borrowedlabel1
             // 
@@ -201,6 +179,26 @@
             this.panel2.Size = new System.Drawing.Size(862, 35);
             this.panel2.TabIndex = 9;
             // 
+            // reservedLabel1
+            // 
+            this.reservedLabel1.AutoSize = true;
+            this.reservedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedLabel1.Location = new System.Drawing.Point(698, 7);
+            this.reservedLabel1.Name = "reservedLabel1";
+            this.reservedLabel1.Size = new System.Drawing.Size(162, 20);
+            this.reservedLabel1.TabIndex = 8;
+            this.reservedLabel1.Text = "NO RESERVED YET";
+            // 
+            // returnedLabel1
+            // 
+            this.returnedLabel1.AutoSize = true;
+            this.returnedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnedLabel1.Location = new System.Drawing.Point(347, 7);
+            this.returnedLabel1.Name = "returnedLabel1";
+            this.returnedLabel1.Size = new System.Drawing.Size(161, 20);
+            this.returnedLabel1.TabIndex = 7;
+            this.returnedLabel1.Text = "NO RETURNED YET";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkOrange;
@@ -211,6 +209,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(862, 35);
             this.panel3.TabIndex = 10;
+            // 
+            // reservedLabel2
+            // 
+            this.reservedLabel2.AutoSize = true;
+            this.reservedLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedLabel2.Location = new System.Drawing.Point(772, 7);
+            this.reservedLabel2.Name = "reservedLabel2";
+            this.reservedLabel2.Size = new System.Drawing.Size(79, 20);
+            this.reservedLabel2.TabIndex = 9;
+            this.reservedLabel2.Text = "reserved2";
+            // 
+            // returnedLabel2
+            // 
+            this.returnedLabel2.AutoSize = true;
+            this.returnedLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnedLabel2.Location = new System.Drawing.Point(389, 7);
+            this.returnedLabel2.Name = "returnedLabel2";
+            this.returnedLabel2.Size = new System.Drawing.Size(60, 20);
+            this.returnedLabel2.TabIndex = 8;
+            this.returnedLabel2.Text = "return2";
             // 
             // panel4
             // 
@@ -223,77 +241,15 @@
             this.panel4.Size = new System.Drawing.Size(862, 35);
             this.panel4.TabIndex = 10;
             // 
-            // panel5
+            // reservedLabel3
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel5.Controls.Add(this.reservedLabel4);
-            this.panel5.Controls.Add(this.returnedLabel4);
-            this.panel5.Controls.Add(this.borrowedLabel4);
-            this.panel5.Location = new System.Drawing.Point(73, 418);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(862, 35);
-            this.panel5.TabIndex = 11;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Orange;
-            this.panel6.Controls.Add(this.reservedLabel5);
-            this.panel6.Controls.Add(this.returnedLabel5);
-            this.panel6.Controls.Add(this.borrowedLabel5);
-            this.panel6.Location = new System.Drawing.Point(73, 451);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(862, 35);
-            this.panel6.TabIndex = 11;
-            // 
-            // borrowedLabel3
-            // 
-            this.borrowedLabel3.AutoSize = true;
-            this.borrowedLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedLabel3.Location = new System.Drawing.Point(7, 6);
-            this.borrowedLabel3.Name = "borrowedLabel3";
-            this.borrowedLabel3.Size = new System.Drawing.Size(84, 20);
-            this.borrowedLabel3.TabIndex = 8;
-            this.borrowedLabel3.Text = "borrowed3";
-            // 
-            // borrowedLabel4
-            // 
-            this.borrowedLabel4.AutoSize = true;
-            this.borrowedLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedLabel4.Location = new System.Drawing.Point(7, 10);
-            this.borrowedLabel4.Name = "borrowedLabel4";
-            this.borrowedLabel4.Size = new System.Drawing.Size(84, 20);
-            this.borrowedLabel4.TabIndex = 9;
-            this.borrowedLabel4.Text = "borrowed4";
-            // 
-            // borrowedLabel5
-            // 
-            this.borrowedLabel5.AutoSize = true;
-            this.borrowedLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedLabel5.Location = new System.Drawing.Point(7, 5);
-            this.borrowedLabel5.Name = "borrowedLabel5";
-            this.borrowedLabel5.Size = new System.Drawing.Size(84, 20);
-            this.borrowedLabel5.TabIndex = 10;
-            this.borrowedLabel5.Text = "borrowed5";
-            // 
-            // returnedLabel1
-            // 
-            this.returnedLabel1.AutoSize = true;
-            this.returnedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnedLabel1.Location = new System.Drawing.Point(347, 7);
-            this.returnedLabel1.Name = "returnedLabel1";
-            this.returnedLabel1.Size = new System.Drawing.Size(161, 20);
-            this.returnedLabel1.TabIndex = 7;
-            this.returnedLabel1.Text = "NO RETURNED YET";
-            // 
-            // returnedLabel2
-            // 
-            this.returnedLabel2.AutoSize = true;
-            this.returnedLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnedLabel2.Location = new System.Drawing.Point(389, 7);
-            this.returnedLabel2.Name = "returnedLabel2";
-            this.returnedLabel2.Size = new System.Drawing.Size(60, 20);
-            this.returnedLabel2.TabIndex = 8;
-            this.returnedLabel2.Text = "return2";
+            this.reservedLabel3.AutoSize = true;
+            this.reservedLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedLabel3.Location = new System.Drawing.Point(772, 5);
+            this.reservedLabel3.Name = "reservedLabel3";
+            this.reservedLabel3.Size = new System.Drawing.Size(79, 20);
+            this.reservedLabel3.TabIndex = 10;
+            this.reservedLabel3.Text = "reserved3";
             // 
             // returnedLabel3
             // 
@@ -305,55 +261,26 @@
             this.returnedLabel3.TabIndex = 9;
             this.returnedLabel3.Text = "return3";
             // 
-            // returnedLabel4
+            // borrowedLabel3
             // 
-            this.returnedLabel4.AutoSize = true;
-            this.returnedLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnedLabel4.Location = new System.Drawing.Point(389, 10);
-            this.returnedLabel4.Name = "returnedLabel4";
-            this.returnedLabel4.Size = new System.Drawing.Size(60, 20);
-            this.returnedLabel4.TabIndex = 10;
-            this.returnedLabel4.Text = "return4";
+            this.borrowedLabel3.AutoSize = true;
+            this.borrowedLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedLabel3.Location = new System.Drawing.Point(7, 6);
+            this.borrowedLabel3.Name = "borrowedLabel3";
+            this.borrowedLabel3.Size = new System.Drawing.Size(84, 20);
+            this.borrowedLabel3.TabIndex = 8;
+            this.borrowedLabel3.Text = "borrowed3";
             // 
-            // returnedLabel5
+            // panel5
             // 
-            this.returnedLabel5.AutoSize = true;
-            this.returnedLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnedLabel5.Location = new System.Drawing.Point(389, 5);
-            this.returnedLabel5.Name = "returnedLabel5";
-            this.returnedLabel5.Size = new System.Drawing.Size(60, 20);
-            this.returnedLabel5.TabIndex = 11;
-            this.returnedLabel5.Text = "return5";
-            // 
-            // reservedLabel1
-            // 
-            this.reservedLabel1.AutoSize = true;
-            this.reservedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedLabel1.Location = new System.Drawing.Point(698, 7);
-            this.reservedLabel1.Name = "reservedLabel1";
-            this.reservedLabel1.Size = new System.Drawing.Size(162, 20);
-            this.reservedLabel1.TabIndex = 8;
-            this.reservedLabel1.Text = "NO RESERVED YET";
-            // 
-            // reservedLabel2
-            // 
-            this.reservedLabel2.AutoSize = true;
-            this.reservedLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedLabel2.Location = new System.Drawing.Point(772, 7);
-            this.reservedLabel2.Name = "reservedLabel2";
-            this.reservedLabel2.Size = new System.Drawing.Size(79, 20);
-            this.reservedLabel2.TabIndex = 9;
-            this.reservedLabel2.Text = "reserved2";
-            // 
-            // reservedLabel3
-            // 
-            this.reservedLabel3.AutoSize = true;
-            this.reservedLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedLabel3.Location = new System.Drawing.Point(772, 5);
-            this.reservedLabel3.Name = "reservedLabel3";
-            this.reservedLabel3.Size = new System.Drawing.Size(79, 20);
-            this.reservedLabel3.TabIndex = 10;
-            this.reservedLabel3.Text = "reserved3";
+            this.panel5.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel5.Controls.Add(this.reservedLabel4);
+            this.panel5.Controls.Add(this.returnedLabel4);
+            this.panel5.Controls.Add(this.borrowedLabel4);
+            this.panel5.Location = new System.Drawing.Point(73, 418);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(862, 35);
+            this.panel5.TabIndex = 11;
             // 
             // reservedLabel4
             // 
@@ -366,6 +293,37 @@
             this.reservedLabel4.Text = "reserved4";
             this.reservedLabel4.Click += new System.EventHandler(this.label10_Click);
             // 
+            // returnedLabel4
+            // 
+            this.returnedLabel4.AutoSize = true;
+            this.returnedLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnedLabel4.Location = new System.Drawing.Point(389, 10);
+            this.returnedLabel4.Name = "returnedLabel4";
+            this.returnedLabel4.Size = new System.Drawing.Size(60, 20);
+            this.returnedLabel4.TabIndex = 10;
+            this.returnedLabel4.Text = "return4";
+            // 
+            // borrowedLabel4
+            // 
+            this.borrowedLabel4.AutoSize = true;
+            this.borrowedLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedLabel4.Location = new System.Drawing.Point(7, 10);
+            this.borrowedLabel4.Name = "borrowedLabel4";
+            this.borrowedLabel4.Size = new System.Drawing.Size(84, 20);
+            this.borrowedLabel4.TabIndex = 9;
+            this.borrowedLabel4.Text = "borrowed4";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Orange;
+            this.panel6.Controls.Add(this.reservedLabel5);
+            this.panel6.Controls.Add(this.returnedLabel5);
+            this.panel6.Controls.Add(this.borrowedLabel5);
+            this.panel6.Location = new System.Drawing.Point(73, 451);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(862, 35);
+            this.panel6.TabIndex = 11;
+            // 
             // reservedLabel5
             // 
             this.reservedLabel5.AutoSize = true;
@@ -375,6 +333,26 @@
             this.reservedLabel5.Size = new System.Drawing.Size(79, 20);
             this.reservedLabel5.TabIndex = 12;
             this.reservedLabel5.Text = "reserved5";
+            // 
+            // returnedLabel5
+            // 
+            this.returnedLabel5.AutoSize = true;
+            this.returnedLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnedLabel5.Location = new System.Drawing.Point(389, 5);
+            this.returnedLabel5.Name = "returnedLabel5";
+            this.returnedLabel5.Size = new System.Drawing.Size(60, 20);
+            this.returnedLabel5.TabIndex = 11;
+            this.returnedLabel5.Text = "return5";
+            // 
+            // borrowedLabel5
+            // 
+            this.borrowedLabel5.AutoSize = true;
+            this.borrowedLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedLabel5.Location = new System.Drawing.Point(7, 5);
+            this.borrowedLabel5.Name = "borrowedLabel5";
+            this.borrowedLabel5.Size = new System.Drawing.Size(84, 20);
+            this.borrowedLabel5.TabIndex = 10;
+            this.borrowedLabel5.Text = "borrowed5";
             // 
             // allbooksBtn
             // 
@@ -449,8 +427,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.identifierLabel);
-            this.Controls.Add(this.idLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.hellolabel);
             this.Controls.Add(this.rjButton1);
@@ -477,8 +453,6 @@
         #endregion
         private System.Windows.Forms.Label hellolabel;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.Label identifierLabel;
         private RJButton rjButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
