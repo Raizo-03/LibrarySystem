@@ -25,41 +25,26 @@ namespace LibrarySystem
         private string username;
         private string identifier;
         private int limit;
-        private string book1, book2, book3, book4, book5;
 
 
-        public BooklistForm(string IDENTIFIER, string NAME, string ID, int LIMIT, string bk1, string bk2, string bk3, string  bk4, string bk5)
+        public BooklistForm(string IDENTIFIER, string NAME, string ID, int LIMIT)
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLOR #FDF7E4
 
             this.identifier = IDENTIFIER;
             this.username = NAME;
-            this.limit = LIMIT;
-            this.book1 = bk1;
-            this.book2 = bk2;
-            this.book3 = bk3;
-            this.book4 = bk4;
-            this.book5 = bk5;
+    
 
             fictionTransition2.Start();
             nonficTransition2.Start();
             acadTransition2.Start();
 
 
-            CheckBookAvailability(bk1);
 
         }
 
-        //THIS WILL CAUSE ERROR
-        private void CheckBookAvailability(string bk)
-        {
-            if (bk.Equals("To Kill A Mocking Bird"))
-            {
-                mockingstatsLbl.Text = "NOT AVAILABLE";
-                mockingstatsLbl.ForeColor = Color.Red;
-            }
-        }
+   
 
         // Add a method to populate the DataGridView with books
         private void BooklistForm_Load(object sender, EventArgs e)
