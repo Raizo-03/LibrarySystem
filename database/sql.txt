@@ -1,0 +1,121 @@
+/*
+TO WORK THE DATABASE
+
+INSTALL NUGET FOR SQL (mysql connector)
+CHECK ROOT NAME AND PASSWORD OF SQL IN CONFIG.INC.PHP
+RUN THE APACHE AND MYSQL IN XAMPP CONTROL PANEL
+IMPORT THE SQL FILE 
+RUN THE CODE
+
+get this connection string        
+private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+
+*/
+
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS LibrarySystem;
+USE LibrarySystem;
+
+-- Create the books table
+CREATE TABLE books (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(255),
+    availability VARCHAR(15) DEFAULT 'AVAILABLE'
+);
+
+-- Insert Fictional Books
+INSERT INTO books (book_id, title, availability) VALUES
+(1, 'To Kill a Mockingbird', 'Available'),
+(2, '1984', 'Available'),
+(3, 'Pride and Prejudice', 'Available'),
+(4, 'The Great Gatsby', 'Available'),
+(5, 'One Hundred Years of Solitude', 'Available');
+
+-- Insert Non-Fictional Books
+INSERT INTO books (book_id, title, availability) VALUES
+(6, 'Sapiens: A Brief History of Humankind', 'Available'),
+(7, 'The Immortal Life of Henrietta Lacks', 'Available'),
+(8, 'Educated', 'Available'),
+(9, 'The Diary of a Young Girl', 'Available'),
+(10, 'Thinking, Fast and Slow', 'Available');
+
+
+-- Create the borrowers table
+CREATE TABLE borrowers (
+    user_id INT PRIMARY KEY,
+    identifier VARCHAR(10), -- 'STUDENT' or 'TEACHER'
+    name VARCHAR(255)
+);
+
+-- Insert students
+INSERT INTO borrowers (user_id, identifier, name) VALUES
+(12043456, 'STUDENT', 'Eduardo Buscato'),
+(12043710, 'STUDENT', 'Krissa Beringuel'),
+(12042342, 'STUDENT', 'Rod Balaoro'),
+(12042345, 'STUDENT', 'Harvey Hingco'),
+(12021321, 'STUDENT', 'April Faustino'),
+(12021327, 'STUDENT', 'Rhycell Ortega'),
+(12042469, 'STUDENT', 'Joshua Fernandez'),
+(12032131, 'STUDENT', 'Sean Sicat'),
+(12042346, 'STUDENT', 'Ricardo Colarina');
+
+-- Insert teachers
+INSERT INTO borrowers (user_id, identifier, name) VALUES
+(12043567, 'TEACHER', 'Asilito Caasi'),
+(12052345, 'TEACHER', 'Lans Villena'),
+(12052385, 'TEACHER', 'Buscato Eduardo'),
+(12048547, 'TEACHER', 'Caasi Asilito');
+
+-- Create the transactions table
+CREATE TABLE transactions (
+    transaction_id INT PRIMARY KEY,
+    book_id INT,
+    borrower_id INT,
+    transaction_type VARCHAR(10),
+    transaction_date DATE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
+);
+
+-- Change delimiter for triggers
+DELIMITER //
+
+-- Create a trigger to update book availability when a book is borrowed
+CREATE TRIGGER after_transaction_insert
+AFTER INSERT ON transactions
+FOR EACH ROW
+BEGIN
+    UPDATE books
+    SET availability = 'BORROWED'
+    WHERE book_id = NEW.book_id;
+END;
+
+-- Reset delimiter back to semicolon
+DELIMITER ;
+
+-- Create the reservations table
+CREATE TABLE reservations (
+    reservation_id INT PRIMARY KEY,
+    book_id INT,
+    borrower_id INT,
+    reservation_date DATE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
+);
+
+-- Change delimiter for triggers
+DELIMITER //
+
+-- Create a trigger to update book availability when a book is reserved
+CREATE TRIGGER after_reservation_insert
+AFTER INSERT ON reservations
+FOR EACH ROW
+BEGIN
+    UPDATE books
+    SET availability = 'RESERVED'
+    WHERE book_id = NEW.book_id;
+END;
+
+-- Reset delimiter back to semicolon
+DELIMITER ;
+
