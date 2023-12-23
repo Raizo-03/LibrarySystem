@@ -9,7 +9,6 @@ namespace LibrarySystem
 {
     public partial class BorrowForm : Form
     {
-        private Dashboard mdiParent;
 
         // Dictionary to store selected values for each checkbox
         private Dictionary<CheckBox, string> selectedValuesDictionary = new Dictionary<CheckBox, string>();
@@ -179,7 +178,7 @@ namespace LibrarySystem
                 }
 
                 // Create an instance of Dashboard and pass the values
-                Dashboard dashboardForm = new Dashboard(identifier, name, id, limit, book1, book2, book3, book4, book5);
+                Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
 
                 // Show the Dashboard form
                 dashboardForm.Show();

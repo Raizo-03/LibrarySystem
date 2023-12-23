@@ -17,18 +17,15 @@ namespace LibrarySystem
 {
     public partial class FirstForm : Form
     {
-        private string book1, book2, book3, book4, book5;
-        //LIST OF 10 STUDENT USERS
+        //LIST OF 2 ADMINS
         private List<Stud> studentUsers = new List<Stud>
         {
-            new Stud("STUDENT", "K12043456", "1234", "Eduardo Buscato", "Second Year", "ACSAD",2)
+            new Stud("STUDENT", "ADMIN1", "1234", "Admin 1", "Second Year", "ACSAD",2)
            
             };
-        //LIST OF 3 TEACHER USERS
-
         private List<Prof> profUsers = new List<Prof>
         {
-            new Prof("TEACHER", "K12043710", "1234", "Krissa Beringuel", "CCIS", 5)
+            new Prof("TEACHER", "ADMIN2", "1234", "Admin 2", "CCIS", 5)
          
           };
         public class Stud
@@ -148,7 +145,7 @@ namespace LibrarySystem
                 if (studentUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated student user information
-                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.BookLimit, book1, book2, book3, book4, book5);
+                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.BookLimit); 
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;
@@ -172,7 +169,7 @@ namespace LibrarySystem
                 if (professorUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated professor user information
-                    Dashboard secondForm = new Dashboard(professorUser.Identifier, professorUser.Name, professorUser.EmployeeId, professorUser.BookLimit, book1, book2, book3, book4, book5);
+                    Dashboard secondForm = new Dashboard(professorUser.Identifier, professorUser.Name, professorUser.EmployeeId, professorUser.BookLimit);
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;

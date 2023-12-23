@@ -30,7 +30,6 @@ namespace LibrarySystem
         private string USERName;
         private string USERID;
         private int BOOKLIMIT;
-        private string book1, book2, book3, book4, book5;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -43,7 +42,7 @@ namespace LibrarySystem
         int nHeightEllipse // width of ellipse
     );
 
-        public Dashboard(string identifier, string userName, string userId, int bookLimit, string Book1, string Book2, string Book3, string Book4, string Book5)
+        public Dashboard(string identifier, string userName, string userId, int bookLimit)
         {
             InitializeComponent();
             
@@ -54,12 +53,7 @@ namespace LibrarySystem
             this.BOOKLIMIT = bookLimit;
             this.USERName = userName;
             this.USERID = userId;
-            this.book1 = Book1;
-            this.book2 = Book2;
-            this.book2 = Book2;
-            this.book3 = Book3;
-            this.book4 = Book4;
-            this.book5 = Book5;
+       
 
 
         }
@@ -239,7 +233,7 @@ namespace LibrarySystem
             dashboardTransition.Start();
             if (dashboard2 == null)
             {
-                dashboard2 = new DashboardForm2(identifier, nameofBorrower, id, LIMIT, book1, book2, book3, book4, book5);
+                dashboard2 = new DashboardForm2(identifier, nameofBorrower, id);
                 dashboard2.FormClosed += dashboard2_FormClosed;
                 dashboard2.MdiParent = this;
                 dashboard2.Dock = DockStyle.Fill;
@@ -305,14 +299,10 @@ namespace LibrarySystem
             String name = Name;
             String ID = USERID;
             int limit = BOOKLIMIT;
-            String bk1 = book1;
-            String bk2 = book2;
-            String bk3 = book3;
-            String bk4 = book4;
-            String bk5 = book5;
+  
             if (booklist == null)
             {
-                booklist = new BooklistForm(identifier, USERName, USERID, limit, bk1, bk2, bk3, bk4, bk5);
+                booklist = new BooklistForm(identifier, USERName, USERID, limit);
                 booklist.FormClosed += booklist_FormClosed;
                 booklist.MdiParent = this;
                 booklist.Dock = DockStyle.Fill;
