@@ -291,7 +291,6 @@
             this.reservedLabel4.Size = new System.Drawing.Size(79, 20);
             this.reservedLabel4.TabIndex = 11;
             this.reservedLabel4.Text = "reserved4";
-            this.reservedLabel4.Click += new System.EventHandler(this.label10_Click);
             // 
             // returnedLabel4
             // 
