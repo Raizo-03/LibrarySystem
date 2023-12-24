@@ -141,6 +141,7 @@
     <Compile Include="DashboardForm2.Designer.cs">
       <DependentUpon>DashboardForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibraryDataAccess.cs" />
     <Compile Include="ReserveForm.cs">
       <SubType>Form</SubType>
     </Compile>

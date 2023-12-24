@@ -18,35 +18,39 @@ USE LibrarySystem;
 
 -- Create the books table
 CREATE TABLE books (
-    book_id INT PRIMARY KEY,
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
-    availability VARCHAR(15) DEFAULT 'AVAILABLE'
+    availability VARCHAR(15) DEFAULT 'AVAILABLE',
+    UNIQUE KEY (title)
 );
 
--- Insert Fictional Books
-INSERT INTO books (book_id, title, availability) VALUES
-(1, 'To Kill a Mockingbird', 'Available'),
-(2, '1984', 'Available'),
-(3, 'Pride and Prejudice', 'Available'),
-(4, 'The Great Gatsby', 'Available'),
-(5, 'One Hundred Years of Solitude', 'Available');
 
--- Insert Non-Fictional Books
-INSERT INTO books (book_id, title, availability) VALUES
-(6, 'Sapiens: A Brief History of Humankind', 'Available'),
-(7, 'The Immortal Life of Henrietta Lacks', 'Available'),
-(8, 'Educated', 'Available'),
-(9, 'The Diary of a Young Girl', 'Available'),
-(10, 'Thinking, Fast and Slow', 'Available');
+-- Insert Fictional Books
+INSERT INTO books (title, availability) VALUES
+('To Kill a Mockingbird', 'Available'),
+('1984', 'Available'),
+('Pride and Prejudice', 'Available'),
+('The Great Gatsby', 'Available'),
+('One Hundred Years of Solitude', 'Available'),
+('Sapiens: A Brief History of Humankind', 'Available'),
+('The Immortal Life of Henrietta Lacks', 'Available'),
+('Educated', 'Available'),
+('The Diary of a Young Girl', 'Available'),
+('Thinking, Fast and Slow', 'Available');
 
 
 -- Create the borrowers table
 CREATE TABLE borrowers (
     user_id INT PRIMARY KEY,
-    identifier VARCHAR(10), -- 'STUDENT' or 'TEACHER'
-    name VARCHAR(255)
+    identifier VARCHAR(10),
+    name VARCHAR(255),
+    books_borrowed INT DEFAULT 0,
+    books_reserved INT DEFAULT 0,
+    CONSTRAINT chk_book_limit CHECK (
+        (identifier = 'STUDENT' AND books_borrowed <= 2 AND books_reserved <= 2) OR
+        (identifier = 'TEACHER' AND books_borrowed >= 0 AND books_reserved >= 0)
+    )
 );
-
 -- Insert students
 INSERT INTO borrowers (user_id, identifier, name) VALUES
 (12043456, 'STUDENT', 'Eduardo Buscato'),
@@ -66,36 +70,30 @@ INSERT INTO borrowers (user_id, identifier, name) VALUES
 (12052385, 'TEACHER', 'Buscato Eduardo'),
 (12048547, 'TEACHER', 'Caasi Asilito');
 
--- Create the transactions table
-CREATE TABLE transactions (
-    transaction_id INT PRIMARY KEY,
-    book_id INT,
-    borrower_id INT,
-    transaction_type VARCHAR(10),
-    transaction_date DATE,
-    FOREIGN KEY (book_id) REFERENCES books(book_id),
-    FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
+
+-- Create the borrowings table
+CREATE TABLE borrowings (
+    borrowing_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_title VARCHAR(255),
+    user_id INT,
+    borrow_date DATE,
+    due_date DATE,
+    FOREIGN KEY (book_title) REFERENCES books(title),
+    FOREIGN KEY (user_id) REFERENCES borrowers(user_id)
 );
 
--- Change delimiter for triggers
-DELIMITER //
+-- Create the returnings table
+CREATE TABLE returnings (
+    returning_id INT AUTO_INCREMENT PRIMARY KEY,
+    borrowing_id INT,
+    return_date DATE,
+    FOREIGN KEY (borrowing_id) REFERENCES borrowings(borrowing_id)
+);
 
--- Create a trigger to update book availability when a book is borrowed
-CREATE TRIGGER after_transaction_insert
-AFTER INSERT ON transactions
-FOR EACH ROW
-BEGIN
-    UPDATE books
-    SET availability = 'BORROWED'
-    WHERE book_id = NEW.book_id;
-END;
-
--- Reset delimiter back to semicolon
-DELIMITER ;
 
 -- Create the reservations table
 CREATE TABLE reservations (
-    reservation_id INT PRIMARY KEY,
+    reservation_id INT AUTO_INCREMENT PRIMARY KEY,
     book_id INT,
     borrower_id INT,
     reservation_date DATE,
@@ -106,6 +104,26 @@ CREATE TABLE reservations (
 -- Change delimiter for triggers
 DELIMITER //
 
+-- Create a trigger to update book availability when a book is borrowed
+CREATE TRIGGER after_borrowing_insert
+AFTER INSERT ON borrowings
+FOR EACH ROW
+BEGIN
+    UPDATE books
+    SET availability = 'BORROWED'
+    WHERE title = NEW.book_title;
+END;
+
+-- Create a trigger to update book availability when a book is returned
+CREATE TRIGGER after_returning_insert
+AFTER INSERT ON returnings
+FOR EACH ROW
+BEGIN
+    UPDATE books
+    SET availability = 'AVAILABLE'
+    WHERE title = (SELECT title FROM borrowings WHERE borrowing_id = NEW.borrowing_id);
+END;
+
 -- Create a trigger to update book availability when a book is reserved
 CREATE TRIGGER after_reservation_insert
 AFTER INSERT ON reservations
@@ -113,9 +131,8 @@ FOR EACH ROW
 BEGIN
     UPDATE books
     SET availability = 'RESERVED'
-    WHERE book_id = NEW.book_id;
+    WHERE title = NEW.book_title;
 END;
 
 -- Reset delimiter back to semicolon
 DELIMITER ;
-

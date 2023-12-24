@@ -21,7 +21,6 @@ namespace LibrarySystem
         public string UserDepartment { get; private set; }
         public string availability { get; private set; }
 
-        private List<Book> books = new List<Book>();
         private string username;
         private string identifier;
         private int limit;
@@ -255,10 +254,5 @@ namespace LibrarySystem
 
     */
 
-    public class Book
-    {
-        public string Title { get; set; }
-        public bool IsAvailable { get; set; }
-
-    }
+ 
 }

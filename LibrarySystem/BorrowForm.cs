@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 
 namespace LibrarySystem
 {
@@ -12,11 +15,23 @@ namespace LibrarySystem
 
         // Dictionary to store selected values for each checkbox
         private Dictionary<CheckBox, string> selectedValuesDictionary = new Dictionary<CheckBox, string>();
+
         private int bookLimit; // Set the limit to 5 books
         private String userNAME;
         private String Identifier;
         private String ID;
-        public BorrowForm(String identifier, string username,string id, int booklimit)
+
+        //FOR DATABASE
+        private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+        private DateTime currentDate;  // Change to DateTime
+        private DateTime futureDate;  // Change to DateTime
+
+        private int selectedBookId; // Class-level variable to store the selected book ID
+        private List<int> selectedBookIds = new List<int>();
+        private string Booktitle;
+        CheckBox checkBox = new CheckBox();
+
+        public BorrowForm(String identifier, string username, string id, int booklimit)
         {
             InitializeComponent();
             this.Identifier = identifier;
@@ -24,172 +39,317 @@ namespace LibrarySystem
             this.bookLimit = booklimit;
             this.userNAME = username;
             label6.Text = booklimit.ToString();
-            borrower.Text = username;
 
             //BORROWING DATES
-            DateTime currentDate = DateTime.Now;
-            borrowdate.Text = currentDate.ToString();
+            currentDate = DateTime.Now;
+            futureDate = currentDate.AddDays(3);
 
-            if (identifier.Equals("STUDENT"))
-            {
-                DateTime futureDate = currentDate.AddDays(3);
-                duedate.Text = futureDate.ToString();
-            }
-            else if (identifier.Equals("TEACHER"))
-            {
-                duedate.Text = "NO DUE DATE";
-            }
+            borrowDate.Text = currentDate.ToString("MM/dd/yyyy");
+            dueDate.Text = futureDate.ToString("MM/dd/yyyy");
 
-            // Add event handlers for CheckedChanged event of CheckBox controls
 
-            // FICTION CONTROLBOX
-            foreach (Control control in fictiongroupBx.Controls)
-            {
-                if (control is CheckBox checkBox)
-                {
-                    checkBox.CheckedChanged += Group_CheckedChanged;
-                    selectedValuesDictionary.Add(checkBox, string.Empty);
-                }
-            }
 
-            // NONFICTION CONTROLBOX
-            foreach (Control control in nonficgroupBx.Controls)
-            {
-                if (control is CheckBox checkBox)
-                {
-                    checkBox.CheckedChanged += Group_CheckedChanged;
-                    selectedValuesDictionary.Add(checkBox, string.Empty);
-                }
-            }
+            PopulateBookCheckBoxes();
+
         }
+        private void borrowedDatepicker_ValueChanged(object sender, EventArgs e)
+        {
+            // Update borrowDate TextBox with the selected date
+            borrowDate.Text = borrowedDatepicker.Value.ToString("MM/dd/yyyy");
 
+            // Calculate the future date by adding 3 days to the selected date
+            futureDate = borrowedDatepicker.Value.AddDays(3);
+
+            // Update dueDate TextBox with the calculated future date
+            dueDate.Text = futureDate.ToString("MM/dd/yyyy");
+        }
         private void BorrowForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+
+            borrowerName.Text = userNAME;
+
         }
 
-        private void Group_CheckedChanged(object sender, EventArgs e)
+        //POPULATE THE CHECKBOXES
+        private void PopulateBookCheckBoxes()
         {
-            // Handle the CheckedChanged event for both group boxes
+            // Fetch book data from the database
+            List<Book> books = GetBooksFromDatabase();
 
-            // Update the selected value for the current checkbox
-            if (sender is CheckBox checkBox)
+            int topOffset = 20; // Adjust the initial vertical position as needed
+
+            foreach (var book in books)
             {
-                if (checkBox.Checked)
+                checkBox = new CheckBox();
+                checkBox.Text = book.Title;
+                checkBox.Tag = book.BookId;
+
+                // Adjust the width based on the length of the text
+                checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
+                checkBox.Location = new Point(440, 100);
+                checkBox.Top = topOffset;
+                topOffset += 25; // Adjust the vertical spacing as needed
+
+                // Get the book availability from the database
+                string availability = GetBookAvailabilityFromDatabase(book.Title);
+
+                // Disable the checkbox if the book is already borrowed
+                if (availability == "BORROWED")
                 {
-                    // Check if the book limit has been reached
-                    if (CountSelectedBooks() >= bookLimit)
+                    checkBox.Enabled = false;
+                }
+
+                // Add the event handler for the CheckedChanged event
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
+
+                Controls.Add(checkBox);
+            }
+        }
+
+        // GETS THE BOOKID
+        private List<string> selectedBookTitles = new List<string>();
+
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox = sender as CheckBox;
+
+            if (checkBox != null)
+            {
+                string bookTitle = checkBox.Text;
+
+                if (checkBox.Checked && !selectedBookTitles.Contains(bookTitle))
+                {
+                    // Checkbox is checked and not already in the list, add it
+                    selectedBookTitles.Add(bookTitle);
+                }
+                else if (!checkBox.Checked && selectedBookTitles.Contains(bookTitle))
+                {
+                    // Checkbox is unchecked and in the list, remove it
+                    selectedBookTitles.Remove(bookTitle);
+                }
+            }
+        }
+        public void UpdateBookAvailability(string title, string availability)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Update the book availability based on the book title
+                string query = "UPDATE books SET availability = @availability WHERE title = @title";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@title", title);
+                    command.Parameters.AddWithValue("@availability", availability);
+
+                    // Execute the update query
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        private string GetBookAvailabilityFromDatabase(string bookTitle)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT availability FROM books WHERE title = @bookTitle";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@bookTitle", bookTitle);
+
+                    var result = command.ExecuteScalar();
+                    return result != null ? result.ToString() : null; // Default value if not found
+                }
+            }
+        }
+
+        //GETS THE BOOKS FROM THE DATABASE
+        private List<Book> GetBooksFromDatabase()
+        {
+            List<Book> books = new List<Book>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT book_id, title FROM books";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        checkBox.Checked = false; // Uncheck the checkbox
-                        MessageBox.Show($"Sorry! You have exceeded the number of books to be borrowed.", "Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        while (reader.Read())
+                        {
+                            int bookId = reader.GetInt32("book_id");
+                            string title = reader.GetString("title");
+
+                            books.Add(new Book { BookId = bookId, Title = title });
+                        }
                     }
-                    else
-                    {
-                        selectedValuesDictionary[checkBox] = checkBox.Text;
-                    }
-                }
-                else
-                {
-                    selectedValuesDictionary[checkBox] = string.Empty;
                 }
             }
 
-            // Update labels with all selected values
-            UpdateLabels();
-        }
-
-        private int CountSelectedBooks()
-        {
-            // Count the number of selected books
-            int count = 0;
-            foreach (var checkBox in selectedValuesDictionary.Keys)
-            {
-                if (!string.IsNullOrEmpty(selectedValuesDictionary[checkBox]) && checkBox.Checked)
-                {
-                    count++;
-                }
-            }
-            return count;
-        }
-
-        private void UpdateLabels()
-        {
-            // Display each selected value in its corresponding label
-            Label[] labels = { label1, label2, label3, label4, label5 };
-
-            // Clear all labels
-            foreach (var label in labels)
-            {
-                label.Text = string.Empty;
-            }
-
-            // Iterate through checkboxes and update labels
-            int index = 0;
-            foreach (var checkBox in selectedValuesDictionary.Keys)
-            {
-                if (index >= labels.Length)
-                    break;
-
-                if (!string.IsNullOrEmpty(selectedValuesDictionary[checkBox]) && checkBox.Checked)
-                {
-                    labels[index].Text = selectedValuesDictionary[checkBox];
-                    index++;
-                }
-            }
-        }
-
-        private void fictiongroupBx_Enter(object sender, EventArgs e)
-        {
-            UpdateLabels();
-        }
-
-        private void nonficgroupBx_Enter(object sender, EventArgs e)
-        {
-            UpdateLabels();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
+            return books;
         }
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            // Get values
-            String identifier = Identifier;
-            String name = userNAME;
-            String id = ID;
-            int limit = bookLimit;
-            String book1 = label1.Text;
-            String book2 = label2.Text;
-            String book3 = label3.Text;
-            String book4 = label4.Text;
-            String book5 = label5.Text;
+            LibraryDataAccess library = new LibraryDataAccess();
+            int borrowerId = GetBorrowerUserId();
+            string identifier = GetIdentifierFromDatabase();
+            
 
-            DialogResult result = MessageBox.Show($"Are you sure you want to continue {userNAME}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            // Check if the borrower is a student and has already borrowed 2 books
+            if (identifier == "STUDENT" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 2)
             {
-                // Close the MDI parent (Dashboard) of the current form
-                Form mdiParent = this.MdiParent;
-                if (mdiParent != null)
+                MessageBox.Show("Students can only borrow up to 2 books.");
+                return;
+            }
+
+            foreach (string bookTitle in selectedBookTitles)
+            {
+                // Get the book availability from the database
+                string availability = GetBookAvailabilityFromDatabase(bookTitle);
+
+                // Check if the book is already borrowed
+                if (availability == "BORROWED")
                 {
-                    mdiParent.Close();
+                    MessageBox.Show($"The book '{bookTitle}' is already borrowed and cannot be borrowed again.");
+                    continue; // Skip to the next book
                 }
 
-                // Create an instance of Dashboard and pass the values
-                Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
+                // Parse borrowDate and dueDate TextBox values to DateTime
+                if (DateTime.TryParse(borrowDate.Text, out DateTime borrowDateTime) &&
+                    DateTime.TryParse(dueDate.Text, out DateTime dueDateTime))
+                {
+                    // Use the selected book title, borrow date, and due date in the BorrowBook method
+                    library.BorrowBook(bookTitle, borrowerId, borrowDateTime, dueDateTime);
 
-                // Show the Dashboard form
-                dashboardForm.Show();
-
-                // Close the current form
-                this.Close();
+                    // Update the book availability to 'BORROWED' in the database
+                    UpdateBookAvailability(bookTitle, "BORROWED");
+                }
+                else
+                {
+                    MessageBox.Show("Invalid date format.");
+                }
             }
+
+            MessageBox.Show("Borrowing successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Refresh the list of available books after borrowing
+            PopulateBookCheckBoxes();
+
+            // Close the current form and open the Dashboard form
+            Form mdiParent = this.MdiParent;
+            if (mdiParent != null)
+            {
+                mdiParent.Close();
+            }
+            string name = " ";
+            string id = " ";
+            int limit = 0;
+            Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
+            dashboardForm.Show();
+            this.Close();
         }
 
 
 
+        // Additional method to count the number of books borrowed by a user
+        private int CountBorrowedBooks(int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
 
+                // Consider only the borrowings where the book has not been returned
+                string query = "SELECT COUNT(*) FROM borrowings WHERE user_id = @userId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    return Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+        }
+
+
+        //GETTING USER INFO FROM DATABASE
+        private int GetBorrowerUserId()
+        {
+            // Get the borrower's name from your textbox
+            string borrowerNames = borrowerName.Text.Trim(); // Replace with your actual textbox name
+
+            // Query the database to get the user ID based on the borrower's name
+            int userId = GetUserFromDatabase(borrowerNames);
+
+            // Return the user ID
+            return userId;
+        }
+        private int GetUserFromDatabase(string borrowerName)
+        {
+            // Use your data access layer to query the database and retrieve the user ID
+            // This is a simplified example, and you need to replace it with your actual database access code
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT user_id FROM borrowers WHERE name = @borrowerName";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerName", borrowerName);
+
+                    // Execute the query and return the user ID
+                    var result = command.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : -1; // Default value if not found
+                }
+            }
+        }
+        private string GetIdentifierFromDatabase()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT identifier FROM borrowers WHERE name = @borrowerName";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@borrowerName", borrowerName.Text.Trim());
+
+                        var result = command.ExecuteScalar();
+                        return result != null ? result.ToString() : null; // Default value if not found
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching identifier: {ex.Message}");
+                return null;
+            }
+        }
+
+
+        private void borrowerName_TextChanged(object sender, EventArgs e)
+        {
+            string identifier = GetIdentifierFromDatabase();
+
+        }
+    }
+    public class Book
+    {
+        public int BookId { get; set; }
+        public string Title { get; set; }
     }
 }
