@@ -32,8 +32,12 @@
             this.bName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.returndateTb = new System.Windows.Forms.TextBox();
+            this.returndatePicker = new System.Windows.Forms.DateTimePicker();
+            this.dueDateLabel = new System.Windows.Forms.Label();
+            this.bkTitleLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.returnBtn = new LibrarySystem.RJButton();
             this.SuspendLayout();
             // 
             // borrowerName
@@ -76,19 +80,68 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Return Date:";
             // 
-            // textBox1
+            // returndateTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 605);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 4;
+            this.returndateTb.Location = new System.Drawing.Point(177, 605);
+            this.returndateTb.Name = "returndateTb";
+            this.returndateTb.Size = new System.Drawing.Size(127, 20);
+            this.returndateTb.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // returndatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(310, 605);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.returndatePicker.Location = new System.Drawing.Point(310, 605);
+            this.returndatePicker.Name = "returndatePicker";
+            this.returndatePicker.Size = new System.Drawing.Size(200, 20);
+            this.returndatePicker.TabIndex = 5;
+            this.returndatePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dueDateLabel
+            // 
+            this.dueDateLabel.AutoSize = true;
+            this.dueDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dueDateLabel.Location = new System.Drawing.Point(174, 571);
+            this.dueDateLabel.Name = "dueDateLabel";
+            this.dueDateLabel.Size = new System.Drawing.Size(46, 18);
+            this.dueDateLabel.TabIndex = 6;
+            this.dueDateLabel.Text = "label1";
+            // 
+            // bkTitleLabel
+            // 
+            this.bkTitleLabel.AutoSize = true;
+            this.bkTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bkTitleLabel.Location = new System.Drawing.Point(68, 499);
+            this.bkTitleLabel.Name = "bkTitleLabel";
+            this.bkTitleLabel.Size = new System.Drawing.Size(90, 18);
+            this.bkTitleLabel.TabIndex = 7;
+            this.bkTitleLabel.Text = "Book Title:";
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(174, 499);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(0, 18);
+            this.titleLabel.TabIndex = 8;
+            // 
+            // returnBtn
+            // 
+            this.returnBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.returnBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.returnBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.returnBtn.BorderRadius = 0;
+            this.returnBtn.BorderSize = 0;
+            this.returnBtn.FlatAppearance.BorderSize = 0;
+            this.returnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.returnBtn.ForeColor = System.Drawing.Color.White;
+            this.returnBtn.Location = new System.Drawing.Point(421, 661);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(150, 40);
+            this.returnBtn.TabIndex = 9;
+            this.returnBtn.Text = "returnBtn";
+            this.returnBtn.TextColor = System.Drawing.Color.White;
+            this.returnBtn.UseVisualStyleBackColor = false;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // ReturnForm
             // 
@@ -96,8 +149,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.returnBtn);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.bkTitleLabel);
+            this.Controls.Add(this.dueDateLabel);
+            this.Controls.Add(this.returndatePicker);
+            this.Controls.Add(this.returndateTb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bName);
@@ -116,7 +173,11 @@
         private System.Windows.Forms.Label bName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox returndateTb;
+        private System.Windows.Forms.DateTimePicker returndatePicker;
+        private System.Windows.Forms.Label dueDateLabel;
+        private System.Windows.Forms.Label bkTitleLabel;
+        private System.Windows.Forms.Label titleLabel;
+        private RJButton returnBtn;
     }
 }

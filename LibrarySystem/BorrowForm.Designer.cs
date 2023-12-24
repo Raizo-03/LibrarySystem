@@ -220,6 +220,7 @@
             this.dueDate.Name = "dueDate";
             this.dueDate.Size = new System.Drawing.Size(119, 20);
             this.dueDate.TabIndex = 20;
+            this.dueDate.TextChanged += new System.EventHandler(this.dueDate_TextChanged);
             // 
             // label7
             // 
