@@ -422,22 +422,20 @@ namespace LibrarySystem
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            if (reserve == null)
+            if (penalty == null)
             {
                 penalty = new PenaltyForm();
                 penalty.FormClosed += penalty_FormClosed;
                 penalty.MdiParent = this;
                 penalty.Dock = DockStyle.Fill;
-                penalty.Show();
             }
-            else
-            {
-                penalty.Activate();
-            }
+
+            penalty.Show(); // Show the form whether reserve is null or not
+            penalty.Activate();
         }
         private void penalty_FormClosed(object sender, FormClosedEventArgs e)
         {
-            booklist = null;
+            penalty = null;
         }
 
         private void dashboardFlowPnl_Paint(object sender, PaintEventArgs e)
