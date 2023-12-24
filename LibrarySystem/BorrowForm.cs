@@ -45,9 +45,9 @@ namespace LibrarySystem
             futureDate = currentDate.AddDays(3);
 
             borrowDate.Text = currentDate.ToString("MM/dd/yyyy");
-            dueDate.Text = futureDate.ToString("MM/dd/yyyy");
 
 
+      
 
             PopulateBookCheckBoxes();
 
@@ -60,8 +60,16 @@ namespace LibrarySystem
             // Calculate the future date by adding 3 days to the selected date
             futureDate = borrowedDatepicker.Value.AddDays(3);
 
-            // Update dueDate TextBox with the calculated future date
-            dueDate.Text = futureDate.ToString("MM/dd/yyyy");
+            string userIdentifier = GetIdentifierFromDatabase();
+            if (userIdentifier == "TEACHER")
+            {
+                dueDate.Text = "NO DUE DATE";
+            }
+            else
+            {
+                dueDate.Text = futureDate.ToString("MM/dd/yyyy");
+            }
+
         }
         private void BorrowForm_Load(object sender, EventArgs e)
         {
@@ -203,7 +211,14 @@ namespace LibrarySystem
             LibraryDataAccess library = new LibraryDataAccess();
             int borrowerId = GetBorrowerUserId();
             string identifier = GetIdentifierFromDatabase();
-            
+            label7.Text = identifier;
+
+            // Check if the borrowerId is valid
+            if (borrowerId == -1)
+            {
+                MessageBox.Show("Invalid Input. Please enter a valid borrower's name.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             // Check if the borrower is a student and has already borrowed 2 books
             if (identifier == "STUDENT" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 2)
@@ -211,6 +226,31 @@ namespace LibrarySystem
                 MessageBox.Show("Students can only borrow up to 2 books.");
                 return;
             }
+            else if (identifier == "TEACHER" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 5)
+            {
+                MessageBox.Show("Teachers can only borrow up to 5 books.");
+                return;
+            }
+
+            // Check if any checkboxes are selected
+            if (selectedBookTitles.Count == 0)
+            {
+                MessageBox.Show("Invalid Input. Please select at least one book.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check if any selected book is of the "ACADEMIC" genre
+            foreach (string bookTitle in selectedBookTitles)
+            {
+                string genre = GetBookGenreFromDatabase(bookTitle);
+                if (genre == "ACADEMIC")
+                {
+                    MessageBox.Show("Academic Books are only allowed inside the library.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            // Continue with the borrowing process for non-academic books
 
             foreach (string bookTitle in selectedBookTitles)
             {
@@ -225,19 +265,28 @@ namespace LibrarySystem
                 }
 
                 // Parse borrowDate and dueDate TextBox values to DateTime
-                if (DateTime.TryParse(borrowDate.Text, out DateTime borrowDateTime) &&
-                    DateTime.TryParse(dueDate.Text, out DateTime dueDateTime))
+                if (DateTime.TryParse(borrowDate.Text, out DateTime borrowDateTime))
                 {
-                    // Use the selected book title, borrow date, and due date in the BorrowBook method
-                    library.BorrowBook(bookTitle, borrowerId, borrowDateTime, dueDateTime);
+                    if (dueDate.Text.Equals("NO DUE DATE"))
+                    {
+                        // Use the selected book title, borrow date, and no due date in the BorrowBook method
+                        library.BorrowBook(bookTitle, borrowerId, borrowDateTime, DateTime.MaxValue); // Use DateTime.MaxValue as a placeholder
+                    }
+                    else if (DateTime.TryParse(dueDate.Text, out DateTime dueDateTime))
+                    {
+                        // Use the selected book title, borrow date, and due date in the BorrowBook method
+                        library.BorrowBook(bookTitle, borrowerId, borrowDateTime, dueDateTime);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid date format.");
+                    }
 
                     // Update the book availability to 'BORROWED' in the database
                     UpdateBookAvailability(bookTitle, "BORROWED");
                 }
-                else
-                {
-                    MessageBox.Show("Invalid date format.");
-                }
+
+
             }
 
             MessageBox.Show("Borrowing successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,6 +307,25 @@ namespace LibrarySystem
             dashboardForm.Show();
             this.Close();
         }
+
+        private string GetBookGenreFromDatabase(string bookTitle)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT genre FROM books WHERE title = @bookTitle";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@bookTitle", bookTitle);
+
+                    var result = command.ExecuteScalar();
+                    return result != null ? result.ToString() : null; // Default value if not found
+                }
+            }
+        }
+
 
 
 
@@ -344,6 +412,11 @@ namespace LibrarySystem
         private void borrowerName_TextChanged(object sender, EventArgs e)
         {
             string identifier = GetIdentifierFromDatabase();
+
+        }
+
+        private void borrowDate_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

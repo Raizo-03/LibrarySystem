@@ -47,8 +47,8 @@
             this.borrowerName = new System.Windows.Forms.TextBox();
             this.borrowDate = new System.Windows.Forms.TextBox();
             this.dueDate = new System.Windows.Forms.TextBox();
-            this.borrowBtn = new LibrarySystem.RJButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.borrowBtn = new LibrarySystem.RJButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,6 +212,7 @@
             this.borrowDate.Name = "borrowDate";
             this.borrowDate.Size = new System.Drawing.Size(119, 20);
             this.borrowDate.TabIndex = 19;
+            this.borrowDate.TextChanged += new System.EventHandler(this.borrowDate_TextChanged);
             // 
             // dueDate
             // 
@@ -219,6 +220,15 @@
             this.dueDate.Name = "dueDate";
             this.dueDate.Size = new System.Drawing.Size(119, 20);
             this.dueDate.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(728, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "label7";
             // 
             // borrowBtn
             // 
@@ -238,15 +248,6 @@
             this.borrowBtn.TextColor = System.Drawing.Color.White;
             this.borrowBtn.UseVisualStyleBackColor = false;
             this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(728, 155);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "label7";
             // 
             // BorrowForm
             // 

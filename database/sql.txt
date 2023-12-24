@@ -21,11 +21,11 @@ CREATE TABLE books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     availability VARCHAR(15) DEFAULT 'AVAILABLE',
+    genre VARCHAR(50) DEFAULT 'NORMAL',
     UNIQUE KEY (title)
 );
 
-
--- Insert Fictional Books
+-- Insert data for normal books
 INSERT INTO books (title, availability) VALUES
 ('To Kill a Mockingbird', 'Available'),
 ('1984', 'Available'),
@@ -37,6 +37,15 @@ INSERT INTO books (title, availability) VALUES
 ('Educated', 'Available'),
 ('The Diary of a Young Girl', 'Available'),
 ('Thinking, Fast and Slow', 'Available');
+
+-- Insert data for academic books
+INSERT INTO books (title, availability, genre) VALUES
+('A Brief History of Time', 'Available', 'ACADEMIC'),
+('The Elements of Style', 'Available', 'ACADEMIC'),
+('Principia Mathematica', 'Available', 'ACADEMIC'),
+('The Structure of Scientific Revolutions', 'Available', 'ACADEMIC'),
+('The Origin of Species', 'Available', 'ACADEMIC');
+
 
 
 -- Create the borrowers table
@@ -80,14 +89,18 @@ CREATE TABLE borrowings (
     due_date DATE,
     FOREIGN KEY (book_title) REFERENCES books(title),
     FOREIGN KEY (user_id) REFERENCES borrowers(user_id)
+  
+
 );
 
 -- Create the returnings table
 CREATE TABLE returnings (
     returning_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_title VARCHAR(255),
     borrowing_id INT,
     return_date DATE,
-    FOREIGN KEY (borrowing_id) REFERENCES borrowings(borrowing_id)
+    FOREIGN KEY (borrowing_id) REFERENCES borrowings(borrowing_id),
+    FOREIGN KEY (book_title) REFERENCES books(title)
 );
 
 
