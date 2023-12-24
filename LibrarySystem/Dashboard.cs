@@ -25,6 +25,7 @@ namespace LibrarySystem
         ReserveForm reserve;
         AboutForm about;
         BorrowerList borrowerList;
+        PenaltyForm penalty;
         // Fields to store user information
         private string Identifier;
         private string USERName;
@@ -97,6 +98,9 @@ namespace LibrarySystem
             borrowerlistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             logoutBtn.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             logoutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
+            penaltyBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+            panel1.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
+
 
         }
 
@@ -414,6 +418,31 @@ namespace LibrarySystem
                 loginForm.Show();
             }
             // If the user clicks "No", do nothing and keep the user in the current state
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if (reserve == null)
+            {
+                penalty = new PenaltyForm();
+                penalty.FormClosed += penalty_FormClosed;
+                penalty.MdiParent = this;
+                penalty.Dock = DockStyle.Fill;
+                penalty.Show();
+            }
+            else
+            {
+                penalty.Activate();
+            }
+        }
+        private void penalty_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            booklist = null;
+        }
+
+        private void dashboardFlowPnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
