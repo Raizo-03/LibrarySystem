@@ -54,6 +54,8 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.penaltyBtn = new System.Windows.Forms.Button();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -67,6 +69,7 @@
             this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             this.logoutBtn2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -124,8 +127,9 @@
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 47);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(71, 883);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(70, 883);
             this.dashboardFlowPnl.TabIndex = 2;
+            this.dashboardFlowPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.dashboardFlowPnl_Paint);
             // 
             // dashboardbackPnl
             // 
@@ -134,6 +138,7 @@
             this.dashboardbackPnl.Controls.Add(this.borrowBtn2);
             this.dashboardbackPnl.Controls.Add(this.returnBtn2);
             this.dashboardbackPnl.Controls.Add(this.reserveBtn2);
+            this.dashboardbackPnl.Controls.Add(this.panel1);
             this.dashboardbackPnl.Controls.Add(this.borrowerlistBtn2);
             this.dashboardbackPnl.Location = new System.Drawing.Point(0, 0);
             this.dashboardbackPnl.Margin = new System.Windows.Forms.Padding(0);
@@ -274,7 +279,7 @@
             // borrowerlistBtn2
             // 
             this.borrowerlistBtn2.Controls.Add(this.borrowerlistBtn);
-            this.borrowerlistBtn2.Location = new System.Drawing.Point(3, 363);
+            this.borrowerlistBtn2.Location = new System.Drawing.Point(3, 435);
             this.borrowerlistBtn2.Name = "borrowerlistBtn2";
             this.borrowerlistBtn2.Size = new System.Drawing.Size(275, 66);
             this.borrowerlistBtn2.TabIndex = 6;
@@ -349,6 +354,29 @@
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.penaltyBtn);
+            this.panel1.Location = new System.Drawing.Point(3, 363);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(275, 66);
+            this.panel1.TabIndex = 7;
+            // 
+            // penaltyBtn
+            // 
+            this.penaltyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltyBtn.Image = ((System.Drawing.Image)(resources.GetObject("penaltyBtn.Image")));
+            this.penaltyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.penaltyBtn.Location = new System.Drawing.Point(-8, -21);
+            this.penaltyBtn.Name = "penaltyBtn";
+            this.penaltyBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.penaltyBtn.Size = new System.Drawing.Size(294, 95);
+            this.penaltyBtn.TabIndex = 3;
+            this.penaltyBtn.Text = "      Penalty Form";
+            this.penaltyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.penaltyBtn.UseVisualStyleBackColor = true;
+            this.penaltyBtn.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +406,7 @@
             this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             this.logoutBtn2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -407,5 +436,7 @@
         private System.Windows.Forms.Button borrowerlistBtn;
         private System.Windows.Forms.Panel logoutBtn2;
         private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button penaltyBtn;
     }
 }
