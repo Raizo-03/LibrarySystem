@@ -114,6 +114,15 @@ CREATE TABLE reservations (
     FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
 );
 
+-- Create the penalties table
+CREATE TABLE IF NOT EXISTS penalties (
+    penalty_id INT AUTO_INCREMENT PRIMARY KEY,
+    borrower_id INT,
+    amount DECIMAL(10, 2),
+    paid BIT DEFAULT 0, -- Default value is 0 (unpaid)
+    FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
+);
+
 -- Change delimiter for triggers
 DELIMITER //
 
@@ -126,26 +135,27 @@ BEGIN
     SET availability = 'BORROWED'
     WHERE title = NEW.book_title;
 END;
+//
+DELIMITER ;
 
 -- Create a trigger to update book availability when a book is returned
+DELIMITER //
 CREATE TRIGGER after_returning_insert
 AFTER INSERT ON returnings
 FOR EACH ROW
 BEGIN
+    -- Declare variables to store book information
+    DECLARE book_title VARCHAR(255);
+    
+    -- Retrieve book information using a JOIN with borrowings table
+    SELECT b.title INTO book_title
+    FROM borrowings b
+    WHERE b.borrowing_id = NEW.borrowing_id;
+    
+    -- Update book availability
     UPDATE books
     SET availability = 'AVAILABLE'
-    WHERE title = (SELECT title FROM borrowings WHERE borrowing_id = NEW.borrowing_id);
+    WHERE title = book_title;
 END;
-
--- Create a trigger to update book availability when a book is reserved
-CREATE TRIGGER after_reservation_insert
-AFTER INSERT ON reservations
-FOR EACH ROW
-BEGIN
-    UPDATE books
-    SET availability = 'RESERVED'
-    WHERE title = NEW.book_title;
-END;
-
--- Reset delimiter back to semicolon
+//
 DELIMITER ;

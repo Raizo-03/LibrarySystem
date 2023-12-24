@@ -208,6 +208,13 @@ namespace LibrarySystem
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+            // Check for unpaid penalties
+            if (HasUnpaidPenalties())
+            {
+                MessageBox.Show("You have unpaid penalties. Please clear them before borrowing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             LibraryDataAccess library = new LibraryDataAccess();
             int borrowerId = GetBorrowerUserId();
             string identifier = GetIdentifierFromDatabase();
@@ -267,26 +274,37 @@ namespace LibrarySystem
                 // Parse borrowDate and dueDate TextBox values to DateTime
                 if (DateTime.TryParse(borrowDate.Text, out DateTime borrowDateTime))
                 {
-                    if (dueDate.Text.Equals("NO DUE DATE"))
+                    if (!string.IsNullOrEmpty(dueDate.Text))  // Check if dueDate.Text is not null or empty
                     {
-                        // Use the selected book title, borrow date, and no due date in the BorrowBook method
-                        library.BorrowBook(bookTitle, borrowerId, borrowDateTime, DateTime.MaxValue); // Use DateTime.MaxValue as a placeholder
-                    }
-                    else if (DateTime.TryParse(dueDate.Text, out DateTime dueDateTime))
-                    {
-                        // Use the selected book title, borrow date, and due date in the BorrowBook method
-                        library.BorrowBook(bookTitle, borrowerId, borrowDateTime, dueDateTime);
+                        if (dueDate.Text.Equals("NO DUE DATE"))
+                        {
+                            // Use the selected book title, borrow date, and no due date in the BorrowBook method
+                            library.BorrowBook(bookTitle, borrowerId, borrowDateTime, DateTime.MaxValue); // Use DateTime.MaxValue as a placeholder
+                        }
+                        else if (DateTime.TryParse(dueDate.Text, out DateTime dueDateTime))
+                        {
+                            // Use the selected book title, borrow date, and due date in the BorrowBook method
+                            library.BorrowBook(bookTitle, borrowerId, borrowDateTime, dueDateTime);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid due date format.");
+                        }
+
+                        // Update the book availability to 'BORROWED' in the database
+                        UpdateBookAvailability(bookTitle, "BORROWED");
                     }
                     else
                     {
-                        MessageBox.Show("Invalid date format.");
+                        MessageBox.Show("Input Necessary Details. Please enter a valid due date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-
-                    // Update the book availability to 'BORROWED' in the database
-                    UpdateBookAvailability(bookTitle, "BORROWED");
                 }
-
-
+                else
+                {
+                    MessageBox.Show("Invalid borrow date format.");
+                    return;
+                }
             }
 
             MessageBox.Show("Borrowing successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -306,6 +324,25 @@ namespace LibrarySystem
             Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
             dashboardForm.Show();
             this.Close();
+        }
+
+        private bool HasUnpaidPenalties()
+        {
+            int borrowerId = GetBorrowerUserId();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM penalties WHERE borrower_id = @borrowerId AND paid = 0";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    return Convert.ToInt32(command.ExecuteScalar()) > 0;
+                }
+            }
         }
 
         private string GetBookGenreFromDatabase(string bookTitle)
@@ -419,10 +456,16 @@ namespace LibrarySystem
         {
 
         }
+
+        private void dueDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     public class Book
     {
         public int BookId { get; set; }
         public string Title { get; set; }
+
     }
 }
