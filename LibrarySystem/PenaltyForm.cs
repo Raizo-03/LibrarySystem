@@ -320,7 +320,7 @@ namespace LibrarySystem
         }
         private void ShowPaymentResultMessage(bool paymentSuccessful, string borrowerName, int borrowerId, decimal amountPaid, decimal change, decimal balance)
         {
-            string resultMessage;
+            string resultMessage;            
 
             if (paymentSuccessful)
             {
@@ -343,6 +343,9 @@ namespace LibrarySystem
             {
                 Controls.Remove(checkBoxToRemove);
                 checkBoxes.Remove(checkBoxToRemove);
+
+                // Delete the corresponding penalty from the database
+                DeletePenaltyFromDatabase(borrowerIdToRemove);
             }
 
             borrowerLabel.Text = string.Empty;
@@ -351,6 +354,42 @@ namespace LibrarySystem
             cLabel.Text = "₱0.00";
             bLabel.Text = "₱0.00";
             // Clear any other UI elements as needed
+        }
+
+        private void DeletePenaltyFromDatabase(int borrowerId)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Implement your database deletion logic here
+                    string deleteQuery = "DELETE FROM penalties WHERE borrower_id = @BorrowerId";
+
+                    using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@BorrowerId", borrowerId);
+
+                        // Execute the delete query
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            Console.WriteLine($"Penalty for borrower ID {borrowerId} deleted successfully.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Penalty for borrower ID {borrowerId} not found in the database.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it according to your application's requirements
+                Console.WriteLine($"Error deleting penalty from the database: {ex.Message}");
+            }
         }
 
 
