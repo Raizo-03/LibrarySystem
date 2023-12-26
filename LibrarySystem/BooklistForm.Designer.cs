@@ -1039,7 +1039,7 @@
             this.acadBtn.FlatAppearance.BorderSize = 0;
             this.acadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.acadBtn.ForeColor = System.Drawing.Color.White;
-            this.acadBtn.Location = new System.Drawing.Point(736, 12);
+            this.acadBtn.Location = new System.Drawing.Point(677, 12);
             this.acadBtn.Name = "acadBtn";
             this.acadBtn.Size = new System.Drawing.Size(100, 98);
             this.acadBtn.TabIndex = 9;
@@ -1058,7 +1058,7 @@
             this.nonfictionBtn.FlatAppearance.BorderSize = 0;
             this.nonfictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nonfictionBtn.ForeColor = System.Drawing.Color.White;
-            this.nonfictionBtn.Location = new System.Drawing.Point(614, 12);
+            this.nonfictionBtn.Location = new System.Drawing.Point(555, 12);
             this.nonfictionBtn.Name = "nonfictionBtn";
             this.nonfictionBtn.Size = new System.Drawing.Size(100, 98);
             this.nonfictionBtn.TabIndex = 8;
@@ -1077,7 +1077,7 @@
             this.fictionBtn.FlatAppearance.BorderSize = 0;
             this.fictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fictionBtn.ForeColor = System.Drawing.Color.White;
-            this.fictionBtn.Location = new System.Drawing.Point(491, 12);
+            this.fictionBtn.Location = new System.Drawing.Point(432, 12);
             this.fictionBtn.Name = "fictionBtn";
             this.fictionBtn.Size = new System.Drawing.Size(100, 98);
             this.fictionBtn.TabIndex = 2;

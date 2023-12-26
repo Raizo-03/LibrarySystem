@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +14,8 @@ namespace LibrarySystem
     
     public partial class BooklistForm : Form
     {
-
+        private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+        private Timer updateTimer;
 
         // Add properties for user detail
         public string UserName { get; private set; }
@@ -40,16 +42,119 @@ namespace LibrarySystem
             nonficTransition2.Start();
             acadTransition2.Start();
 
+            // Initialize and start the update timer
+            updateTimer = new Timer();
+            updateTimer.Interval = 60000; // Update every 60 seconds (adjust as needed)
+            updateTimer.Tick += UpdateTimer_Tick;
+            updateTimer.Start();
+
+            // Example: Fetch book information and update label
+            string bookTitle = "To Kill a Mockingbird".Trim();
+            FetchBookInformation(bookTitle);
 
 
         }
 
-   
+        //FETCHES BOOK TITLES
+        private void FetchBookInformation(string bookTitle)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Query to fetch title and availability from the books table
+                    string query = "SELECT title, availability FROM books WHERE title = @bookTitle";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@bookTitle", bookTitle);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Fetch title and availability from the database
+                                string fetchedTitle = reader.GetString("title");
+                                string fetchedAvailability = reader.GetString("availability");
+
+                                // Now you can use these values as needed
+                                UpdateStatusLabel(fetchedTitle, fetchedAvailability);
+                            }
+                            else
+                            {
+                                // Handle the case where the book with the specified title is not found
+                                MessageBox.Show($"Book with title '{bookTitle}' not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching book information: {ex.Message}");
+            }
+        }
+
+        private void UpdateStatusLabel(string title, string availability)
+        {
+
+            if (title.Trim().Equals("To Kill a Mockingbird", StringComparison.OrdinalIgnoreCase))
+            {
+                mockingstatsLbl.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    mockingstatsLbl.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    mockingstatsLbl.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    mockingstatsLbl.ForeColor = Color.DodgerBlue;
+                    mockingstatsLbl.Text = availability.ToUpper();
+
+                }
+            } else if(title.Trim().Equals("1984", StringComparison.OrdinalIgnoreCase))
+            {
+                stats1984Lbl.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    stats1984Lbl.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    stats1984Lbl.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    stats1984Lbl.ForeColor = Color.DodgerBlue;
+                    stats1984Lbl.Text = availability.ToUpper();
+
+                }
+            }
+            else
+            {
+                mockingstatsLbl.Text = "UNKNOWN TITLE";
+            }
+        }
+
+
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            
+        }
 
         // Add a method to populate the DataGridView with books
         private void BooklistForm_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void fictionButton_Click(object sender, EventArgs e)
