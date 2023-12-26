@@ -268,14 +268,25 @@ namespace LibrarySystem
                 // Calculate the remaining penalty amount after payment
                 decimal remainingPenalty = penaltyAmount - amountPaid;
 
+                // Determine if the penalty is fully paid or not
+                bool isFullyPaid = remainingPenalty <= 0;
+
                 // Update the penalties table with payment information
-                string updateQuery = "UPDATE penalties SET paid = @isFullyPaid, amount = @remainingPenalty WHERE borrower_id = @borrowerId";
+                string updateQuery;
+
+                if (isFullyPaid)
+                {
+                    // If fully paid, update both 'amount' and 'paid' columns
+                    updateQuery = "UPDATE penalties SET paid = @isFullyPaid, amount = @remainingPenalty WHERE borrower_id = @borrowerId";
+                }
+                else
+                {
+                    // If still balance, update only the 'amount' column
+                    updateQuery = "UPDATE penalties SET amount = @remainingPenalty WHERE borrower_id = @borrowerId";
+                }
 
                 using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection))
                 {
-                    // Determine if the penalty is fully paid or not
-                    bool isFullyPaid = remainingPenalty <= 0;
-
                     updateCommand.Parameters.AddWithValue("@isFullyPaid", isFullyPaid);
                     updateCommand.Parameters.AddWithValue("@remainingPenalty", remainingPenalty < 0 ? 0 : remainingPenalty); // Ensure remaining penalty is not negative
                     updateCommand.Parameters.AddWithValue("@borrowerId", borrowerId);
@@ -284,6 +295,9 @@ namespace LibrarySystem
                 }
             }
         }
+
+
+
 
 
         private void amountpaidTb_TextChanged(object sender, EventArgs e)
@@ -372,23 +386,44 @@ namespace LibrarySystem
                 {
                     connection.Open();
 
-                    // Implement your database deletion logic here
-                    string deleteQuery = "DELETE FROM penalties WHERE borrower_id = @BorrowerId";
+                    // Fetch penalty amount from the database
+                    decimal penaltyAmount = FetchPenaltyAmountFromDatabase(borrowerId);
 
-                    using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
+                    // Determine if the penalty is fully paid or not
+                    bool isFullyPaid = penaltyAmount <= 0;
+
+                    // Implement your database deletion logic only if fully paid
+                    if (isFullyPaid)
                     {
-                        command.Parameters.AddWithValue("@BorrowerId", borrowerId);
+                        string deleteQuery = "DELETE FROM penalties WHERE borrower_id = @BorrowerId";
 
-                        // Execute the delete query
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
                         {
-                            Console.WriteLine($"Penalty for borrower ID {borrowerId} deleted successfully.");
+                            command.Parameters.AddWithValue("@BorrowerId", borrowerId);
+
+                            // Execute the delete query
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine($"Penalty for borrower ID {borrowerId} deleted successfully.");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Penalty for borrower ID {borrowerId} not found in the database.");
+                            }
                         }
-                        else
+                    }
+                    else
+                    {
+                        // If there is still a balance, update the 'paid' column to unpaid (BIT = 0)
+                        string updatePaidQuery = "UPDATE penalties SET paid = 0 WHERE borrower_id = @BorrowerId";
+
+                        using (MySqlCommand updateCommand = new MySqlCommand(updatePaidQuery, connection))
                         {
-                            Console.WriteLine($"Penalty for borrower ID {borrowerId} not found in the database.");
+                            updateCommand.Parameters.AddWithValue("@BorrowerId", borrowerId);
+
+                            updateCommand.ExecuteNonQuery();
                         }
                     }
                 }
@@ -396,9 +431,10 @@ namespace LibrarySystem
             catch (Exception ex)
             {
                 // Log the exception or handle it according to your application's requirements
-                Console.WriteLine($"Error deleting penalty from the database: {ex.Message}");
+                Console.WriteLine($"Error deleting/updating penalty from the database: {ex.Message}");
             }
         }
+
 
 
 

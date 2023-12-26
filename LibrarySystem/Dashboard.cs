@@ -264,7 +264,7 @@ namespace LibrarySystem
         {
             const int targetExpandedHeight = 420;
             const int targetCollapsedHeight = 65;
-            const int step = 200;
+            const int step = 500;
 
             if (!menuExpand)
             {
