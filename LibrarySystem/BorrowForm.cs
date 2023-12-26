@@ -38,7 +38,6 @@ namespace LibrarySystem
             this.ID = id;
             this.bookLimit = booklimit;
             this.userNAME = username;
-            label6.Text = booklimit.ToString();
 
             //BORROWING DATES
             currentDate = DateTime.Now;
@@ -218,7 +217,6 @@ namespace LibrarySystem
             LibraryDataAccess library = new LibraryDataAccess();
             int borrowerId = GetBorrowerUserId();
             string identifier = GetIdentifierFromDatabase();
-            label7.Text = identifier;
 
             // Check if the borrowerId is valid
             if (borrowerId == -1)

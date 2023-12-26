@@ -24,6 +24,8 @@ namespace LibrarySystem
 
             // Populate your UI with checkboxes for available books
             PopulateBookCheckBoxes(availableBooks);
+
+            reservedbooksDG.Visible = false;
         }
 
         private bool HasUnpaidPenalties(int borrowerId)
@@ -430,6 +432,166 @@ namespace LibrarySystem
                 }
             }
         }
+
+        private void rbooksBtn_Click(object sender, EventArgs e)
+        {
+            reservedbooksDG.Visible = true;
+            FetchReservationsAndBindDataGridView();
+        }
+
+        private void FetchReservationsAndBindDataGridView()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Query to fetch reservations with borrower's name
+                    string query = "SELECT r.reservation_id, r.book_id, b.name AS borrower_name, r.reservation_date " +
+                                   "FROM reservations r " +
+                                   "INNER JOIN borrowers b ON r.borrower_id = b.user_id";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            DataTable reservationsDataTable = new DataTable();
+                            adapter.Fill(reservationsDataTable);
+
+                            // Bind the DataTable to the DataGridView
+                            reservedbooksDG.DataSource = reservationsDataTable;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching reservations: {ex.Message}");
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            // Check if any row is selected in the DataGridView
+            if (reservedbooksDG.SelectedRows.Count > 0)
+            {
+                // Get the selected reservation_id
+                int reservationId = Convert.ToInt32(reservedbooksDG.SelectedRows[0].Cells["reservation_id"].Value);
+
+                // Ask for confirmation before deletion
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this reservation?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Delete the reservation from the DataGridView
+                    DeleteReservationFromDataGridView(reservationId);
+
+                    // Delete the reservation from the database
+                    DeleteReservationFromDatabase(reservationId);
+
+                    // Close the current form and open the Dashboard form
+                    Form mdiParent = this.MdiParent;
+                    if (mdiParent != null)
+                    {
+                        mdiParent.Close();
+                    }
+                    string identifier = " ";
+                    string name = " ";
+                    string id = " ";
+                    int limit = 0;
+                    Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
+                    dashboardForm.Show();
+                    this.Close();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+        private void DeleteReservationFromDataGridView(int reservationId)
+        {
+            // Find the row with the specified reservation_id
+            DataGridViewRow rowToDelete = null;
+
+            foreach (DataGridViewRow row in reservedbooksDG.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["reservation_id"].Value) == reservationId)
+                {
+                    rowToDelete = row;
+                    break;
+                }
+            }
+
+            // Remove the row from the DataGridView
+            if (rowToDelete != null)
+            {
+                reservedbooksDG.Rows.Remove(rowToDelete);
+            }
+        }
+
+        private void DeleteReservationFromDatabase(int reservationId)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Get book_id from the reservation
+                    int bookId = GetBookIdFromReservation(reservationId);
+
+                    // Query to update book availability to "Available"
+                    string updateBookAvailabilityQuery = "UPDATE books SET availability = 'AVAILABLE' WHERE book_id = @bookId";
+
+                    using (MySqlCommand updateBookAvailabilityCommand = new MySqlCommand(updateBookAvailabilityQuery, connection))
+                    {
+                        updateBookAvailabilityCommand.Parameters.AddWithValue("@bookId", bookId);
+                        updateBookAvailabilityCommand.ExecuteNonQuery();
+                    }
+
+                    // Query to delete the reservation from the database
+                    string deleteReservationQuery = "DELETE FROM reservations WHERE reservation_id = @reservationId";
+
+                    using (MySqlCommand command = new MySqlCommand(deleteReservationQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@reservationId", reservationId);
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Reservation deleted successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting reservation: {ex.Message}");
+            }
+        }
+
+        private int GetBookIdFromReservation(int reservationId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Query to get book_id from the reservation
+                string query = "SELECT book_id FROM reservations WHERE reservation_id = @reservationId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@reservationId", reservationId);
+                    return Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+        }
+
     }
 
     public class Borrower

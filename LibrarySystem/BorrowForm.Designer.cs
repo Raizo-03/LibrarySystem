@@ -29,17 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.databorrowedLabel = new System.Windows.Forms.Label();
             this.duedateLabel = new System.Windows.Forms.Label();
@@ -47,7 +41,6 @@
             this.borrowerName = new System.Windows.Forms.TextBox();
             this.borrowDate = new System.Windows.Forms.TextBox();
             this.dueDate = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.borrowBtn = new LibrarySystem.RJButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,11 +49,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -70,41 +58,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(499, 161);
             this.panel1.TabIndex = 7;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(198, 136);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(198, 104);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(198, 69);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(198, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(198, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
             // 
             // label5
             // 
@@ -150,15 +103,6 @@
             this.label1.Size = new System.Drawing.Size(496, 32);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(424, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "label6";
             // 
             // borrowerLabel
             // 
@@ -222,15 +166,6 @@
             this.dueDate.TabIndex = 20;
             this.dueDate.TextChanged += new System.EventHandler(this.dueDate_TextChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(728, 155);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "label7";
-            // 
             // borrowBtn
             // 
             this.borrowBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -256,7 +191,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.dueDate);
             this.Controls.Add(this.borrowDate);
             this.Controls.Add(this.borrowerName);
@@ -265,13 +199,11 @@
             this.Controls.Add(this.duedateLabel);
             this.Controls.Add(this.databorrowedLabel);
             this.Controls.Add(this.borrowerLabel);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BorrowForm";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,20 +216,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label borrowerLabel;
         private System.Windows.Forms.Label databorrowedLabel;
         private System.Windows.Forms.Label duedateLabel;
         private RJButton borrowBtn;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker borrowedDatepicker;
         private System.Windows.Forms.TextBox borrowerName;
         private System.Windows.Forms.TextBox borrowDate;
         private System.Windows.Forms.TextBox dueDate;
-        private System.Windows.Forms.Label label7;
     }
 }

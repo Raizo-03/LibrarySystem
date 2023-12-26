@@ -1,0 +1,161 @@
+/*
+TO WORK THE DATABASE
+
+INSTALL NUGET FOR SQL (mysql connector)
+CHECK ROOT NAME AND PASSWORD OF SQL IN CONFIG.INC.PHP
+RUN THE APACHE AND MYSQL IN XAMPP CONTROL PANEL
+IMPORT THE SQL FILE 
+RUN THE CODE
+
+get this connection string        
+private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+
+*/
+
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS LibrarySystem;
+USE LibrarySystem;
+
+-- Create the books table
+CREATE TABLE books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    availability VARCHAR(15) DEFAULT 'AVAILABLE',
+    genre VARCHAR(50) DEFAULT 'NORMAL',
+    UNIQUE KEY (title)
+);
+
+-- Insert data for normal books
+INSERT INTO books (title, availability) VALUES
+('To Kill a Mockingbird', 'Available'),
+('1984', 'Available'),
+('Pride and Prejudice', 'Available'),
+('The Great Gatsby', 'Available'),
+('One Hundred Years of Solitude', 'Available'),
+('Sapiens: A Brief History of Humankind', 'Available'),
+('The Immortal Life of Henrietta Lacks', 'Available'),
+('Educated', 'Available'),
+('The Diary of a Young Girl', 'Available'),
+('Thinking, Fast and Slow', 'Available');
+
+-- Insert data for academic books
+INSERT INTO books (title, availability, genre) VALUES
+('A Brief History of Time', 'Available', 'ACADEMIC'),
+('The Elements of Style', 'Available', 'ACADEMIC'),
+('Principia Mathematica', 'Available', 'ACADEMIC'),
+('The Structure of Scientific Revolutions', 'Available', 'ACADEMIC'),
+('The Origin of Species', 'Available', 'ACADEMIC');
+
+
+
+-- Create the borrowers table
+CREATE TABLE borrowers (
+    user_id INT PRIMARY KEY,
+    identifier VARCHAR(10),
+    name VARCHAR(255),
+    books_borrowed INT DEFAULT 0,
+    books_reserved INT DEFAULT 0,
+    CONSTRAINT chk_book_limit CHECK (
+        (identifier = 'STUDENT' AND books_borrowed <= 2 AND books_reserved <= 2) OR
+        (identifier = 'TEACHER' AND books_borrowed >= 0 AND books_reserved >= 0)
+    )
+);
+-- Insert students
+INSERT INTO borrowers (user_id, identifier, name) VALUES
+(12043456, 'STUDENT', 'Eduardo Buscato'),
+(12043710, 'STUDENT', 'Krissa Beringuel'),
+(12042342, 'STUDENT', 'Rod Balaoro'),
+(12042345, 'STUDENT', 'Harvey Hingco'),
+(12021321, 'STUDENT', 'April Faustino'),
+(12021327, 'STUDENT', 'Rhycell Ortega'),
+(12042469, 'STUDENT', 'Joshua Fernandez'),
+(12032131, 'STUDENT', 'Sean Sicat'),
+(12042346, 'STUDENT', 'Ricardo Colarina');
+
+-- Insert teachers
+INSERT INTO borrowers (user_id, identifier, name) VALUES
+(12043567, 'TEACHER', 'Asilito Caasi'),
+(12052345, 'TEACHER', 'Lans Villena'),
+(12052385, 'TEACHER', 'Buscato Eduardo'),
+(12048547, 'TEACHER', 'Caasi Asilito');
+
+
+-- Create the borrowings table
+CREATE TABLE borrowings (
+    borrowing_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_title VARCHAR(255),
+    user_id INT,
+    borrow_date DATE,
+    due_date DATE,
+    FOREIGN KEY (book_title) REFERENCES books(title),
+    FOREIGN KEY (user_id) REFERENCES borrowers(user_id)
+  
+
+);
+
+-- Create the returnings table
+CREATE TABLE returnings (
+    returning_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_title VARCHAR(255),
+    borrowing_id INT,
+    return_date DATE,
+    FOREIGN KEY (borrowing_id) REFERENCES borrowings(borrowing_id),
+    FOREIGN KEY (book_title) REFERENCES books(title)
+);
+
+
+-- Create the reservations table
+CREATE TABLE reservations (
+    reservation_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    borrower_id INT,
+    reservation_date DATE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
+);
+
+-- Create the penalties table
+CREATE TABLE IF NOT EXISTS penalties (
+    penalty_id INT AUTO_INCREMENT PRIMARY KEY,
+    borrower_id INT,
+    amount DECIMAL(10, 2),
+    paid BIT DEFAULT 0, -- Default value is 0 (unpaid)
+    FOREIGN KEY (borrower_id) REFERENCES borrowers(user_id)
+);
+
+-- Change delimiter for triggers
+DELIMITER //
+
+-- Create a trigger to update book availability when a book is borrowed
+CREATE TRIGGER after_borrowing_insert
+AFTER INSERT ON borrowings
+FOR EACH ROW
+BEGIN
+    UPDATE books
+    SET availability = 'BORROWED'
+    WHERE title = NEW.book_title;
+END;
+//
+DELIMITER ;
+
+-- Create a trigger to update book availability when a book is returned
+DELIMITER //
+CREATE TRIGGER after_returning_insert
+AFTER INSERT ON returnings
+FOR EACH ROW
+BEGIN
+    -- Declare variables to store book information
+    DECLARE book_title VARCHAR(255);
+    
+    -- Retrieve book information using a JOIN with borrowings table
+    SELECT b.title INTO book_title
+    FROM borrowings b
+    WHERE b.borrowing_id = NEW.borrowing_id;
+    
+    -- Update book availability
+    UPDATE books
+    SET availability = 'AVAILABLE'
+    WHERE title = book_title;
+END;
+//
+DELIMITER ;
