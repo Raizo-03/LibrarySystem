@@ -48,9 +48,26 @@ namespace LibrarySystem
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
 
-            // Example: Fetch book information and update label
-            string bookTitle = "To Kill a Mockingbird".Trim();
-            FetchBookInformation(bookTitle);
+            // Example: List of book titles
+            List<string> bookTitles = new List<string>
+            {
+                 "To Kill a Mockingbird",
+                 "1984",
+                 "Pride and Prejudice",
+                 "The Great Gatsby",
+                 "One Hundred Years of Solitude",
+                 "Sapiens: A Brief History of Humankind",
+                 "The Immortal Life of Henrietta Lacks",
+                 "Educated",
+                 "The Diary of a Young Girl",
+                 "Thinking, Fast and Slow"
+             };
+
+            // Fetch information for each book title
+            foreach (string bookTitle in bookTitles)
+            {
+                FetchBookInformation(bookTitle);
+            }
 
 
         }
@@ -119,7 +136,8 @@ namespace LibrarySystem
                     mockingstatsLbl.Text = availability.ToUpper();
 
                 }
-            } else if(title.Trim().Equals("1984", StringComparison.OrdinalIgnoreCase))
+            }
+            else if (title.Trim().Equals("1984", StringComparison.OrdinalIgnoreCase))
             {
                 stats1984Lbl.Text = availability;
 
@@ -139,9 +157,166 @@ namespace LibrarySystem
 
                 }
             }
-            else
+            else if (title.Trim().Equals("Pride and Prejudice", StringComparison.OrdinalIgnoreCase))
             {
-                mockingstatsLbl.Text = "UNKNOWN TITLE";
+                pridestatsLbl.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    pridestatsLbl.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    pridestatsLbl.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    pridestatsLbl.ForeColor = Color.DodgerBlue;
+                    pridestatsLbl.Text = availability.ToUpper();
+
+                }
+            }
+            else if (title.Trim().Equals("The Great Gatsby", StringComparison.OrdinalIgnoreCase))
+            {
+                gatsbystatsLbl.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    gatsbystatsLbl.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    gatsbystatsLbl.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    gatsbystatsLbl.ForeColor = Color.DodgerBlue;
+                    gatsbystatsLbl.Text = availability.ToUpper();
+
+                }
+            }
+            else if (title.Trim().Equals("One Hundred Years of Solitude", StringComparison.OrdinalIgnoreCase))
+            {
+                solitudestatsLbl.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    solitudestatsLbl.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    solitudestatsLbl.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    solitudestatsLbl.ForeColor = Color.DodgerBlue;
+                    solitudestatsLbl.Text = availability.ToUpper();
+
+                }
+            }
+            else if (title.Trim().Equals("Sapiens: A Brief History of Humankind", StringComparison.OrdinalIgnoreCase))
+            {
+                sapiensstatsLabel.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    sapiensstatsLabel.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    sapiensstatsLabel.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    sapiensstatsLabel.ForeColor = Color.DodgerBlue;
+                    sapiensstatsLabel.Text = availability.ToUpper();
+
+                }
+            }
+            else if (title.Trim().Equals("The Immortal Life of Henrietta Lacks", StringComparison.OrdinalIgnoreCase))
+            {
+                immortalstatsLabel.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    immortalstatsLabel.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    immortalstatsLabel.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    immortalstatsLabel.ForeColor = Color.DodgerBlue;
+                    immortalstatsLabel.Text = availability.ToUpper();
+
+                }
+            }
+            else if (title.Trim().Equals("Educated", StringComparison.OrdinalIgnoreCase))
+            {
+                educatedstatsLbl.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    educatedstatsLbl.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    educatedstatsLbl.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    educatedstatsLbl.ForeColor = Color.DodgerBlue;
+                    educatedstatsLbl.Text = availability.ToUpper();
+
+                }
+            }
+            else if (title.Trim().Equals("The Diary of a Young Girl", StringComparison.OrdinalIgnoreCase))
+            {
+                diarystatsLabel.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    diarystatsLabel.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    diarystatsLabel.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    diarystatsLabel.ForeColor = Color.DodgerBlue;
+                    diarystatsLabel.Text = availability.ToUpper();
+                }
+            }
+            else if (title.Trim().Equals("Thinking, Fast and Slow", StringComparison.OrdinalIgnoreCase))
+            {
+                thinkingstatsLabel.Text = availability;
+
+                // Set ForeColor based on availability
+                if (availability.Equals("BORROWED", StringComparison.OrdinalIgnoreCase))
+                {
+                    thinkingstatsLabel.ForeColor = Color.DarkGreen;
+                }
+                else if (availability.Equals("RESERVED", StringComparison.OrdinalIgnoreCase))
+                {
+                    thinkingstatsLabel.ForeColor = Color.Brown;
+                }
+                else if (availability.Equals("AVAILABLE", StringComparison.OrdinalIgnoreCase))
+                {
+                    thinkingstatsLabel.ForeColor = Color.DodgerBlue;
+                    thinkingstatsLabel.Text = availability.ToUpper();
+                }
+            }
+            else
+                    {
             }
         }
 
