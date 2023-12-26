@@ -138,7 +138,7 @@
             this.returnBtn.Name = "returnBtn";
             this.returnBtn.Size = new System.Drawing.Size(150, 40);
             this.returnBtn.TabIndex = 9;
-            this.returnBtn.Text = "returnBtn";
+            this.returnBtn.Text = "RETURN";
             this.returnBtn.TextColor = System.Drawing.Color.White;
             this.returnBtn.UseVisualStyleBackColor = false;
             this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
