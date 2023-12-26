@@ -31,7 +31,7 @@ namespace LibrarySystem
         private void DashboardForm2_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLORS #FDF7E4
-            nameLabel.Text = Name;
+            nameLabel.Text = "ADMIN";
 
             int totalAvailableBooks = GetTotalAvailableBooks();
             availableLabel.Text = $"{totalAvailableBooks}";

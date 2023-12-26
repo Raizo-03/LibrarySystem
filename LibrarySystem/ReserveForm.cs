@@ -26,6 +26,7 @@ namespace LibrarySystem
             PopulateBookCheckBoxes(availableBooks);
 
             reservedbooksDG.Visible = false;
+            reservedbooksDG.ReadOnly = true;
         }
 
         private bool HasUnpaidPenalties(int borrowerId)
@@ -455,10 +456,11 @@ namespace LibrarySystem
                 {
                     connection.Open();
 
-                    // Query to fetch reservations with borrower's name
-                    string query = "SELECT r.reservation_id, r.book_id, b.name AS borrower_name, r.reservation_date " +
+                    // Query to fetch reservations with borrower's name and book title
+                    string query = "SELECT r.reservation_id, bk.title AS book_title, b.name AS borrower_name, r.reservation_date " +
                                    "FROM reservations r " +
-                                   "INNER JOIN borrowers b ON r.borrower_id = b.user_id";
+                                   "INNER JOIN borrowers b ON r.borrower_id = b.user_id " +
+                                   "INNER JOIN books bk ON r.book_id = bk.book_id";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -478,6 +480,7 @@ namespace LibrarySystem
                 MessageBox.Show($"Error fetching reservations: {ex.Message}");
             }
         }
+
 
         private void editBtn_Click(object sender, EventArgs e)
         {
@@ -510,7 +513,7 @@ namespace LibrarySystem
                         mdiParent.Close();
                     }
                     string identifier = " ";
-                    string name = " ";
+                    string name = "ADMIN 1";
                     string id = " ";
                     int limit = 0;
                     Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
@@ -600,6 +603,10 @@ namespace LibrarySystem
             }
         }
 
+        private void reservedbooksDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
     public class Borrower

@@ -110,8 +110,9 @@
             this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reservedbooksDG.Location = new System.Drawing.Point(315, 54);
             this.reservedbooksDG.Name = "reservedbooksDG";
-            this.reservedbooksDG.Size = new System.Drawing.Size(452, 361);
+            this.reservedbooksDG.Size = new System.Drawing.Size(433, 361);
             this.reservedbooksDG.TabIndex = 11;
+            this.reservedbooksDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservedbooksDG_CellContentClick);
             // 
             // deleteBtn
             // 
