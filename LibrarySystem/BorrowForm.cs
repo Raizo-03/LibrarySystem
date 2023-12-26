@@ -324,7 +324,7 @@ namespace LibrarySystem
             {
                 mdiParent.Close();
             }
-            string name = " ";
+            string name = "ADMIN 1";
             string id = " ";
             int limit = 0;
             Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
