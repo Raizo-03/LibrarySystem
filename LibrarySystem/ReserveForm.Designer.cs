@@ -35,7 +35,12 @@
             this.reserveddateTb = new System.Windows.Forms.TextBox();
             this.reservedatepicker = new System.Windows.Forms.DateTimePicker();
             this.borrowernameTb = new System.Windows.Forms.TextBox();
+            this.reservedbooksDG = new System.Windows.Forms.DataGridView();
+            this.deleteBtn = new LibrarySystem.RJButton();
+            this.editBtn = new LibrarySystem.RJButton();
+            this.rbooksBtn = new LibrarySystem.RJButton();
             this.reserveBtn = new LibrarySystem.RJButton();
+            ((System.ComponentModel.ISupportInitialize)(this.reservedbooksDG)).BeginInit();
             this.SuspendLayout();
             // 
             // bnameLabel
@@ -84,7 +89,6 @@
             this.reserveddateTb.Name = "reserveddateTb";
             this.reserveddateTb.Size = new System.Drawing.Size(121, 20);
             this.reserveddateTb.TabIndex = 5;
-            this.reserveddateTb.Text = "d";
             // 
             // reservedatepicker
             // 
@@ -101,6 +105,71 @@
             this.borrowernameTb.Size = new System.Drawing.Size(121, 20);
             this.borrowernameTb.TabIndex = 7;
             // 
+            // reservedbooksDG
+            // 
+            this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservedbooksDG.Location = new System.Drawing.Point(315, 54);
+            this.reservedbooksDG.Name = "reservedbooksDG";
+            this.reservedbooksDG.Size = new System.Drawing.Size(452, 361);
+            this.reservedbooksDG.TabIndex = 11;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.deleteBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.deleteBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.deleteBtn.BorderRadius = 0;
+            this.deleteBtn.BorderSize = 0;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(649, 625);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(150, 40);
+            this.deleteBtn.TabIndex = 13;
+            this.deleteBtn.Text = "DELETE";
+            this.deleteBtn.TextColor = System.Drawing.Color.White;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // editBtn
+            // 
+            this.editBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.editBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.editBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.editBtn.BorderRadius = 0;
+            this.editBtn.BorderSize = 0;
+            this.editBtn.FlatAppearance.BorderSize = 0;
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtn.ForeColor = System.Drawing.Color.White;
+            this.editBtn.Location = new System.Drawing.Point(649, 567);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(150, 40);
+            this.editBtn.TabIndex = 10;
+            this.editBtn.Text = "EDIT";
+            this.editBtn.TextColor = System.Drawing.Color.White;
+            this.editBtn.UseVisualStyleBackColor = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // rbooksBtn
+            // 
+            this.rbooksBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbooksBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rbooksBtn.BorderRadius = 0;
+            this.rbooksBtn.BorderSize = 0;
+            this.rbooksBtn.FlatAppearance.BorderSize = 0;
+            this.rbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbooksBtn.ForeColor = System.Drawing.Color.White;
+            this.rbooksBtn.Location = new System.Drawing.Point(471, 567);
+            this.rbooksBtn.Name = "rbooksBtn";
+            this.rbooksBtn.Size = new System.Drawing.Size(150, 40);
+            this.rbooksBtn.TabIndex = 9;
+            this.rbooksBtn.Text = "RESERVED BOOKS";
+            this.rbooksBtn.TextColor = System.Drawing.Color.White;
+            this.rbooksBtn.UseVisualStyleBackColor = false;
+            this.rbooksBtn.Click += new System.EventHandler(this.rbooksBtn_Click);
+            // 
             // reserveBtn
             // 
             this.reserveBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -111,7 +180,7 @@
             this.reserveBtn.FlatAppearance.BorderSize = 0;
             this.reserveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reserveBtn.ForeColor = System.Drawing.Color.White;
-            this.reserveBtn.Location = new System.Drawing.Point(471, 571);
+            this.reserveBtn.Location = new System.Drawing.Point(295, 567);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(150, 40);
             this.reserveBtn.TabIndex = 8;
@@ -126,6 +195,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.reservedbooksDG);
+            this.Controls.Add(this.editBtn);
+            this.Controls.Add(this.rbooksBtn);
             this.Controls.Add(this.reserveBtn);
             this.Controls.Add(this.borrowernameTb);
             this.Controls.Add(this.reservedatepicker);
@@ -137,6 +210,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReserveForm";
             this.Load += new System.EventHandler(this.ReserveForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reservedbooksDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +226,9 @@
         private System.Windows.Forms.DateTimePicker reservedatepicker;
         private System.Windows.Forms.TextBox borrowernameTb;
         private RJButton reserveBtn;
+        private RJButton rbooksBtn;
+        private RJButton editBtn;
+        private System.Windows.Forms.DataGridView reservedbooksDG;
+        private RJButton deleteBtn;
     }
 }
