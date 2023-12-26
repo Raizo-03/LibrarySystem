@@ -131,6 +131,14 @@ namespace LibrarySystem
 
         private void payBtn_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to continue with the paying process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check user's choice
+            if (result == DialogResult.No)
+            {
+                // User chose not to continue, so return without executing the borrowing process
+                return;
+            }
             if (int.TryParse(borrowerLabel.Tag?.ToString(), out int borrowerId))
             {
                 string borrowerName = borrowerLabel.Text;

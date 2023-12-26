@@ -207,6 +207,14 @@ namespace LibrarySystem
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to continue with the borrowing process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            // Check user's choice
+            if (result == DialogResult.No)
+            {
+                // User chose not to continue, so return without executing the borrowing process
+                return;
+            }
             // Check for unpaid penalties
             if (HasUnpaidPenalties())
             {
