@@ -27,6 +27,8 @@ namespace LibrarySystem
 
             reservedbooksDG.Visible = false;
             reservedbooksDG.ReadOnly = true;
+            reservedbooksDG.CellClick += reservedbooksDG_CellContentClick;
+
         }
 
         private bool HasUnpaidPenalties(int borrowerId)
@@ -605,7 +607,27 @@ namespace LibrarySystem
 
         private void reservedbooksDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check if a valid row index and column index are clicked
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = reservedbooksDG.Rows[e.RowIndex];
 
+                // Get the values from the selected row
+                string reservationId = selectedRow.Cells["reservation_id"].Value.ToString();
+                string bookTitle = selectedRow.Cells["book_title"].Value.ToString();
+                string borrowerName = selectedRow.Cells["borrower_name"].Value.ToString();
+                string reservationDate = ((DateTime)selectedRow.Cells["reservation_date"].Value).ToString("MM/dd/yyyy");
+
+
+
+                MessageBox.Show(
+                    $"Reservation ID: {reservationId}\nBook Title: {bookTitle}\nBorrower Name: {borrowerName}\nReservation Date: {reservationDate:MM/dd/yyyy}",
+                    "Reservation Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
     }
 
