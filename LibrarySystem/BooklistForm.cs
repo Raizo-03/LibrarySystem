@@ -484,6 +484,110 @@ namespace LibrarySystem
         bool menuExpand = false;
         private void bookinfoTransition_Tick(object sender, EventArgs e)
         {
+            const int targetExpandedWidth = 521;
+            const int targetCollapsedWidth = 27;
+            const int step = 500;
+
+            if (!menuExpand)
+            {
+                // Expanding
+                bookinfoflowPanel.Width += step;
+                if (bookinfoflowPanel.Width >= targetExpandedWidth)
+                {
+                    bookinfoflowPanel.Width = targetExpandedWidth;
+                    bookinfoTransition.Stop();
+                    menuExpand = true;
+                }
+            }
+            else
+            {
+                // Collapsing
+                bookinfoflowPanel.Width -= step;
+                if (bookinfoflowPanel.Width <= targetCollapsedWidth)
+                {
+                    bookinfoflowPanel.Width = targetCollapsedWidth;
+                    bookinfoTransition.Stop();
+                    menuExpand = false;
+                }
+            }
+        }
+
+
+        //FICTION BOOK BUTTONS
+        private void mockingbirdBtn_Click_1(object sender, EventArgs e)
+        {
+            bookinfoTransition.Start();
+        }
+
+        private void prideBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn1984_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gatsbyBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void solitudeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //NON FICTION BOOK BUTTONS
+        private void sapiensBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void immortalBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void diaryBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thinkingBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void educatedBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //ACADEMIC BOOK BUTTONS
+        private void briefBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void elementsBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void principiaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void structureBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void originBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }
