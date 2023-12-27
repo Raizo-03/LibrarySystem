@@ -342,20 +342,6 @@ namespace LibrarySystem
             acadTransition.Start();
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-            // Optional: You can implement logic for handling the rjButton1 click event.
-        }
-
-
-
-    
-        // Event handler for the SortCompare event to customize sorting for Genre column
-  
-
-
-     
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -494,7 +480,12 @@ namespace LibrarySystem
             acadTransition2.Start();
         }
 
-   
+        //DASHBOARD TRANSITION
+        bool menuExpand = false;
+        private void bookinfoTransition_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
