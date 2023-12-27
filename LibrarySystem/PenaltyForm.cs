@@ -143,8 +143,8 @@ namespace LibrarySystem
             {
                 string borrowerName = borrowerLabel.Text;
                 decimal amountPaid = decimal.TryParse(amountpaidTb.Text, out decimal paidAmount) ? paidAmount : 0;
-                decimal change = decimal.TryParse(cLabel.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal changeAmount) ? changeAmount : 0;
-                decimal balance = decimal.TryParse(bLabel.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal balanceAmount) ? balanceAmount : 0;
+                decimal change = decimal.TryParse(cLabel.Text.Replace("₱", ""), out decimal changeAmount) ? changeAmount : 0;
+                decimal balance = decimal.TryParse(bLabel.Text.Replace("₱", ""), out decimal balanceAmount) ? balanceAmount : 0;
 
                 // Perform the payment update in the database (you may need to implement this)
                 bool paymentSuccessful = UpdatePaymentInDatabase(borrowerId, amountPaid);
@@ -153,6 +153,8 @@ namespace LibrarySystem
                 ShowPaymentResultMessage(paymentSuccessful, borrowerName, borrowerId, amountPaid, change, balance);
                 if (paymentSuccessful)
                 {
+                    // Refresh the form or update UI as needed
+                    // For example, you may want to clear checkboxes and labels after successful payment
                     ClearPaymentDetails();
 
                     // Close the current form and open the Dashboard form
@@ -341,7 +343,6 @@ namespace LibrarySystem
         private void ShowPaymentResultMessage(bool paymentSuccessful, string borrowerName, int borrowerId, decimal amountPaid, decimal change, decimal balance)
         {
             string resultMessage;
-            change = decimal.Parse(cLabel.Text);
 
             if (paymentSuccessful)
             {
@@ -354,7 +355,6 @@ namespace LibrarySystem
 
             MessageBox.Show(resultMessage, paymentSuccessful ? "Success" : "Warning", MessageBoxButtons.OK, paymentSuccessful ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
-
         private void ClearPaymentDetails()
         {
             int borrowerIdToRemove = int.Parse(borrowerLabel.Tag.ToString());
