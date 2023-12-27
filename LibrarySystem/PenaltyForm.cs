@@ -32,7 +32,7 @@ namespace LibrarySystem
             int topOffset = 20; // Adjust the initial vertical position as needed
 
             System.Windows.Forms.CheckBox checkBox = new System.Windows.Forms.CheckBox();
-            checkBox.Text = borrowerName + " - " + penaltyAmount.ToString("C");
+            checkBox.Text = borrowerName + " - " + penaltyAmount.ToString("C", CultureInfo.CreateSpecificCulture("en-PH"));
             checkBox.Tag = borrowerId; // Use Tag property to store borrowerId
             checkBox.CheckedChanged += BorrowerCheckBox_CheckedChanged;
 
