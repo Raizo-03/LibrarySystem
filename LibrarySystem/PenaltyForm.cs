@@ -63,7 +63,7 @@ namespace LibrarySystem
                     string penaltyAmountText = checkBox.Text.Split('-')[1].Trim();
 
                     // Try to parse the penalty amount from the checkbox text
-                    if (decimal.TryParse(penaltyAmountText, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal penaltyAmount))
+                    if (decimal.TryParse(penaltyAmountText, NumberStyles.Currency, CultureInfo.CreateSpecificCulture("en-PH"), out decimal penaltyAmount))
                     {
                         // Show a message box for debugging
                         MessageBox.Show($"Borrower ID: {borrowerId}\nBorrower Name: {borrowerName}\nPenalty Amount: {penaltyAmount}");

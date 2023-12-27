@@ -480,34 +480,34 @@ namespace LibrarySystem
             acadTransition2.Start();
         }
 
-        //DASHBOARD TRANSITION
-        bool menuExpand = false;
+        //BOOKINFO TRANSITION
+        bool bookinfoCurtain = false;
         private void bookinfoTransition_Tick(object sender, EventArgs e)
         {
-            const int targetExpandedWidth = 521;
-            const int targetCollapsedWidth = 27;
-            const int step = 500;
+            const int targetExpandedHeight = 352;
+            const int targetCollapsedHeight = 10;
+            const int step = 200;
 
-            if (!menuExpand)
+            if (!bookinfoCurtain)
             {
                 // Expanding
-                bookinfoflowPanel.Width += step;
-                if (bookinfoflowPanel.Width >= targetExpandedWidth)
+                bookinfoflowPanel.Height += step;
+                if (bookinfoflowPanel.Height >= targetExpandedHeight)
                 {
-                    bookinfoflowPanel.Width = targetExpandedWidth;
+                    bookinfoflowPanel.Height = targetExpandedHeight;
                     bookinfoTransition.Stop();
-                    menuExpand = true;
+                    bookinfoCurtain = true;
                 }
             }
             else
             {
                 // Collapsing
-                bookinfoflowPanel.Width -= step;
-                if (bookinfoflowPanel.Width <= targetCollapsedWidth)
+                bookinfoflowPanel.Height -= step;
+                if (bookinfoflowPanel.Height <= targetCollapsedHeight)
                 {
-                    bookinfoflowPanel.Width = targetCollapsedWidth;
+                    bookinfoflowPanel.Height = targetCollapsedHeight;
                     bookinfoTransition.Stop();
-                    menuExpand = false;
+                    bookinfoCurtain = false;
                 }
             }
         }

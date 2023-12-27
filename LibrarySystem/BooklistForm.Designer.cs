@@ -102,10 +102,10 @@
             this.acadTransition2 = new System.Windows.Forms.Timer(this.components);
             this.bookinfoflowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.bookImagelbl = new System.Windows.Forms.Label();
+            this.bookinfoTransition = new System.Windows.Forms.Timer(this.components);
             this.acadBtn = new LibrarySystem.RJButton();
             this.nonfictionBtn = new LibrarySystem.RJButton();
             this.fictionBtn = new LibrarySystem.RJButton();
-            this.bookinfoTransition = new System.Windows.Forms.Timer(this.components);
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -1051,10 +1051,11 @@
             // bookinfoflowPanel
             // 
             this.bookinfoflowPanel.BackColor = System.Drawing.Color.Transparent;
+            this.bookinfoflowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bookinfoflowPanel.Controls.Add(this.bookImagelbl);
-            this.bookinfoflowPanel.Location = new System.Drawing.Point(773, 205);
+            this.bookinfoflowPanel.Location = new System.Drawing.Point(291, 207);
             this.bookinfoflowPanel.Name = "bookinfoflowPanel";
-            this.bookinfoflowPanel.Size = new System.Drawing.Size(27, 352);
+            this.bookinfoflowPanel.Size = new System.Drawing.Size(433, 10);
             this.bookinfoflowPanel.TabIndex = 22;
             this.bookinfoflowPanel.WrapContents = false;
             // 
@@ -1066,6 +1067,10 @@
             this.bookImagelbl.Name = "bookImagelbl";
             this.bookImagelbl.Size = new System.Drawing.Size(182, 352);
             this.bookImagelbl.TabIndex = 1;
+            // 
+            // bookinfoTransition
+            // 
+            this.bookinfoTransition.Tick += new System.EventHandler(this.bookinfoTransition_Tick);
             // 
             // acadBtn
             // 
@@ -1123,10 +1128,6 @@
             this.fictionBtn.TextColor = System.Drawing.Color.White;
             this.fictionBtn.UseVisualStyleBackColor = false;
             this.fictionBtn.Click += new System.EventHandler(this.fictionButton_Click);
-            // 
-            // bookinfoTransition
-            // 
-            this.bookinfoTransition.Tick += new System.EventHandler(this.bookinfoTransition_Tick);
             // 
             // BooklistForm
             // 
