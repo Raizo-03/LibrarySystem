@@ -342,7 +342,9 @@ namespace LibrarySystem
         }
         private void ShowPaymentResultMessage(bool paymentSuccessful, string borrowerName, int borrowerId, decimal amountPaid, decimal change, decimal balance)
         {
-            string resultMessage;            
+            string resultMessage;
+            cLabel.Text = change.ToString();
+            bLabel.Text = balance.ToString();
 
             if (paymentSuccessful)
             {
