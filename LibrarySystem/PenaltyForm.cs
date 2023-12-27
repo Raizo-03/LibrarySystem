@@ -153,8 +153,6 @@ namespace LibrarySystem
                 ShowPaymentResultMessage(paymentSuccessful, borrowerName, borrowerId, amountPaid, change, balance);
                 if (paymentSuccessful)
                 {
-                    // Refresh the form or update UI as needed
-                    // For example, you may want to clear checkboxes and labels after successful payment
                     ClearPaymentDetails();
 
                     // Close the current form and open the Dashboard form
@@ -356,6 +354,7 @@ namespace LibrarySystem
 
             MessageBox.Show(resultMessage, paymentSuccessful ? "Success" : "Warning", MessageBoxButtons.OK, paymentSuccessful ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
+
         private void ClearPaymentDetails()
         {
             int borrowerIdToRemove = int.Parse(borrowerLabel.Tag.ToString());
