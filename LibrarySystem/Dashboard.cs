@@ -66,6 +66,7 @@ namespace LibrarySystem
         private void Dashboard_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+            this.BackColor = Color.Green;
             //upperPanel.BackColor = Color.FromArgb(176, 146, 106, 106); // CUSTOM UPPER PANEL #B0926A
 
             //UPPER PANEL COLOR

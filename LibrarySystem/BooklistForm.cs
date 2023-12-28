@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using static LibrarySystem.FirstForm;
@@ -72,6 +73,17 @@ namespace LibrarySystem
             //default visibility for bookinfoflowpanel
             bookinfoflowPanel.Visible = false;
 
+
+            // Load custom font
+            PrivateFontCollection privateFonts = new PrivateFontCollection();
+            privateFonts.AddFontFile("C://Users//USER//source//repos//LibrarySystem//fonts//titles//playfair-display-font//PlayfairDisplayBold-nRv8g.ttf");
+
+            // Create a Font object
+            Font customFont = new Font(privateFonts.Families[0], 33); // Use the appropriate size
+
+            // Set the label's font
+            booklistLabel.Font = customFont;
+            
 
         }
 
@@ -434,17 +446,7 @@ namespace LibrarySystem
             }
         }
 
-        private void booklistLlbl_Click(object sender, EventArgs e)
-        {
-            fictionPanel.Location = new Point(35, 115);
-            nonfictionPanel.Location = new Point(35, 368);
-            academicPanel.Location = new Point(35, 623);
-            fictionTransition2.Start();
-            nonficTransition2.Start();
-            acadTransition2.Start();
-            bookinfoflowPanel.Visible = false;
-            
-        }
+
 
         //ACADEMIC
         bool acadExpand = false;
@@ -1010,6 +1012,18 @@ namespace LibrarySystem
 
         private void bookinfoflowPanel_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void booklistLabel_Click(object sender, EventArgs e)
+        {
+            fictionPanel.Location = new Point(36, 106);
+            nonfictionPanel.Location = new Point(36, 359);
+            academicPanel.Location = new Point(36, 614);
+            fictionTransition2.Start();
+            nonficTransition2.Start();
+            acadTransition2.Start();
+            bookinfoflowPanel.Visible = false;
 
         }
     }

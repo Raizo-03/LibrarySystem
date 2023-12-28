@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BooklistForm));
-            this.booklistLlbl = new ReaLTaiizor.Controls.FoxBigLabel();
             this.mockingbirdPnl = new System.Windows.Forms.Panel();
             this.mockingstatsLbl = new System.Windows.Forms.Label();
             this.mockingLbl = new System.Windows.Forms.Label();
@@ -108,6 +107,7 @@
             this.nonfictionBtn = new LibrarySystem.RJButton();
             this.fictionBtn = new LibrarySystem.RJButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.booklistLabel = new System.Windows.Forms.Label();
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -129,19 +129,6 @@
             this.bookinfoflowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // booklistLlbl
-            // 
-            this.booklistLlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
-            this.booklistLlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.booklistLlbl.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.booklistLlbl.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.booklistLlbl.Location = new System.Drawing.Point(47, 39);
-            this.booklistLlbl.Name = "booklistLlbl";
-            this.booklistLlbl.Size = new System.Drawing.Size(165, 51);
-            this.booklistLlbl.TabIndex = 7;
-            this.booklistLlbl.Text = "Book List";
-            this.booklistLlbl.Click += new System.EventHandler(this.booklistLlbl_Click);
             // 
             // mockingbirdPnl
             // 
@@ -1057,7 +1044,7 @@
             this.bookinfoflowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bookinfoflowPanel.Controls.Add(this.bookinfoImage);
             this.bookinfoflowPanel.Controls.Add(this.bookinfoLabel);
-            this.bookinfoflowPanel.Location = new System.Drawing.Point(291, 207);
+            this.bookinfoflowPanel.Location = new System.Drawing.Point(328, 258);
             this.bookinfoflowPanel.Name = "bookinfoflowPanel";
             this.bookinfoflowPanel.Size = new System.Drawing.Size(396, 352);
             this.bookinfoflowPanel.TabIndex = 22;
@@ -1151,19 +1138,31 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
+            // booklistLabel
+            // 
+            this.booklistLabel.AutoSize = true;
+            this.booklistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booklistLabel.ForeColor = System.Drawing.Color.Black;
+            this.booklistLabel.Location = new System.Drawing.Point(36, 45);
+            this.booklistLabel.Name = "booklistLabel";
+            this.booklistLabel.Size = new System.Drawing.Size(259, 52);
+            this.booklistLabel.TabIndex = 24;
+            this.booklistLabel.Text = "BOOK LIST";
+            this.booklistLabel.Click += new System.EventHandler(this.booklistLabel_Click);
+            // 
             // BooklistForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 868);
             this.ControlBox = false;
+            this.Controls.Add(this.booklistLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bookinfoflowPanel);
             this.Controls.Add(this.nonfictionPanel);
             this.Controls.Add(this.fictionPanel);
             this.Controls.Add(this.acadBtn);
             this.Controls.Add(this.nonfictionBtn);
-            this.Controls.Add(this.booklistLlbl);
             this.Controls.Add(this.academicPanel);
             this.Controls.Add(this.fictionBtn);
             this.ForeColor = System.Drawing.Color.Transparent;
@@ -1191,12 +1190,12 @@
             this.bookinfoflowPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private RJButton fictionBtn;
-        private ReaLTaiizor.Controls.FoxBigLabel booklistLlbl;
         private RJButton mockingbirdBtn;
         private RJButton nonfictionBtn;
         private RJButton acadBtn;
@@ -1273,5 +1272,6 @@
         private System.Windows.Forms.Label bookinfoImage;
         private System.Windows.Forms.Label bookinfoLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label booklistLabel;
     }
 }
