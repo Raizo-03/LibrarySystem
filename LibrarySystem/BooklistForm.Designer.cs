@@ -1144,11 +1144,13 @@
             // 
             // gifPanel
             // 
+            this.gifPanel.Image = ((System.Drawing.Image)(resources.GetObject("gifPanel.Image")));
             this.gifPanel.Location = new System.Drawing.Point(889, 2);
             this.gifPanel.Name = "gifPanel";
             this.gifPanel.Size = new System.Drawing.Size(165, 870);
             this.gifPanel.TabIndex = 23;
             this.gifPanel.TabStop = false;
+            this.gifPanel.Click += new System.EventHandler(this.gifPanel_Click);
             // 
             // BooklistForm
             // 
