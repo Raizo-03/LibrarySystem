@@ -107,6 +107,7 @@
             this.fictionBtn = new LibrarySystem.RJButton();
             this.bookinfoImage = new System.Windows.Forms.Label();
             this.bookinfoLabel = new System.Windows.Forms.Label();
+            this.gifPanel = new System.Windows.Forms.PictureBox();
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -126,6 +127,7 @@
             this.structurePanel.SuspendLayout();
             this.originPanel.SuspendLayout();
             this.bookinfoflowPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gifPanel)).BeginInit();
             this.SuspendLayout();
             // 
             // booklistLlbl
@@ -959,12 +961,12 @@
             this.acadBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.acadBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.acadBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.acadBtn.BorderRadius = 0;
+            this.acadBtn.BorderRadius = 25;
             this.acadBtn.BorderSize = 0;
             this.acadBtn.FlatAppearance.BorderSize = 0;
             this.acadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.acadBtn.ForeColor = System.Drawing.Color.White;
-            this.acadBtn.Location = new System.Drawing.Point(677, 12);
+            this.acadBtn.Location = new System.Drawing.Point(645, 12);
             this.acadBtn.Name = "acadBtn";
             this.acadBtn.Size = new System.Drawing.Size(100, 98);
             this.acadBtn.TabIndex = 9;
@@ -978,12 +980,12 @@
             this.nonfictionBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.nonfictionBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.nonfictionBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.nonfictionBtn.BorderRadius = 0;
+            this.nonfictionBtn.BorderRadius = 25;
             this.nonfictionBtn.BorderSize = 0;
             this.nonfictionBtn.FlatAppearance.BorderSize = 0;
             this.nonfictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nonfictionBtn.ForeColor = System.Drawing.Color.White;
-            this.nonfictionBtn.Location = new System.Drawing.Point(555, 12);
+            this.nonfictionBtn.Location = new System.Drawing.Point(523, 12);
             this.nonfictionBtn.Name = "nonfictionBtn";
             this.nonfictionBtn.Size = new System.Drawing.Size(100, 98);
             this.nonfictionBtn.TabIndex = 8;
@@ -1109,12 +1111,12 @@
             this.fictionBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.fictionBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.fictionBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.fictionBtn.BorderRadius = 0;
+            this.fictionBtn.BorderRadius = 25;
             this.fictionBtn.BorderSize = 0;
             this.fictionBtn.FlatAppearance.BorderSize = 0;
             this.fictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fictionBtn.ForeColor = System.Drawing.Color.White;
-            this.fictionBtn.Location = new System.Drawing.Point(432, 12);
+            this.fictionBtn.Location = new System.Drawing.Point(400, 12);
             this.fictionBtn.Name = "fictionBtn";
             this.fictionBtn.Size = new System.Drawing.Size(100, 98);
             this.fictionBtn.TabIndex = 2;
@@ -1138,8 +1140,15 @@
             this.bookinfoLabel.Name = "bookinfoLabel";
             this.bookinfoLabel.Size = new System.Drawing.Size(204, 351);
             this.bookinfoLabel.TabIndex = 2;
-            this.bookinfoLabel.Text = "title";
             this.bookinfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gifPanel
+            // 
+            this.gifPanel.Location = new System.Drawing.Point(889, 2);
+            this.gifPanel.Name = "gifPanel";
+            this.gifPanel.Size = new System.Drawing.Size(165, 870);
+            this.gifPanel.TabIndex = 23;
+            this.gifPanel.TabStop = false;
             // 
             // BooklistForm
             // 
@@ -1147,6 +1156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.gifPanel);
             this.Controls.Add(this.bookinfoflowPanel);
             this.Controls.Add(this.nonfictionPanel);
             this.Controls.Add(this.fictionPanel);
@@ -1178,6 +1188,7 @@
             this.structurePanel.ResumeLayout(false);
             this.originPanel.ResumeLayout(false);
             this.bookinfoflowPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gifPanel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1260,5 +1271,6 @@
         private System.Windows.Forms.Timer bookinfoTransition;
         private System.Windows.Forms.Label bookinfoImage;
         private System.Windows.Forms.Label bookinfoLabel;
+        private System.Windows.Forms.PictureBox gifPanel;
     }
 }
