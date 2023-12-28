@@ -876,26 +876,134 @@ namespace LibrarySystem
 
             // Text for the label
             bookinfoLabel.Text = "A Brief History of Time: From the Big Bang to Black Holes\r\n\r\n\r\n It is a book on theoretical cosmology by English physicist Stephen Hawking. It was first published in 1988. Hawking wrote the book for readers who had no prior knowledge of physics.\r\n\r\nIn A Brief History of Time, Hawking writes in non-technical terms about the structure, origin, development and eventual fate of the Universe, which is the object of study of astronomy and modern physics. He talks about basic concepts like space and time, basic building blocks that make up the Universe (such as quarks) and the fundamental forces that govern it (such as gravity). ";
+       
         }
 
         private void elementsBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//elementsbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//briefRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "The Elements Of Style\r\n\r\n\r\n The Elements of Style is a style guide to writing American English, published in numerous editions. The original was written by William Strunk Jr. in 1918, and published by Harcourt in 1920, comprising eight \"elementary rules of usage,\" ten \"elementary principles of composition,\" \"a few matters of form,\" a list of 49 \"words and expressions commonly misused,\" and a list of 57 \"words often misspelled.\" Writer and editor E. B. White greatly enlarged and revised the book for publication by Macmillan in 1959. That was the first edition of the so-called Strunk & White, which Time recognized in 2011 as one of the 100 best and most influential books written in English since 1923";
+       
         }
 
         private void principiaBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//principiabookInfo.png";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//principiaRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Principia Mathematica\r\n\r\n\r\n Philosophiæ Naturalis Principia Mathematica (English: The Mathematical Principles of Natural Philosophy) often referred to as simply the Principia, is a book by Isaac Newton that expounds Newton's laws of motion and his law of universal gravitation. The Principia is written in Latin and comprises three volumes, and was first published on 5 July 1687.The Principia is considered one of the most important works in the history of science.The French mathematical physicist Alexis Clairaut assessed it in 1747: \"The famous book of Mathematical Principles of Natural Philosophy marked the epoch of a great revolution in physics.";
+       
         }
 
         private void structureBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//structurebookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//structuresRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "The Structure of Scientific Revolutions\r\n\r\n\r\n The Structure of Scientific Revolutions is a book about the history of science by philosopher Thomas S. Kuhn. Its publication was a landmark event in the history, philosophy, and sociology of science. Kuhn challenged the then prevailing view of progress in science in which scientific progress was viewed as \"development-by-accumulation\" of accepted facts and theories. Kuhn argued for an episodic model in which periods of conceptual continuity where there is cumulative progress, which Kuhn referred to as periods of \"normal science\", were interrupted by periods of revolutionary science.";
+       
         }
 
         private void originBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//originbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//structuresRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "On the Origin of Species \r\n\r\n On the Origin of Species (or, more completely, On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life) is a work of scientific literature by Charles Darwin that is considered to be the foundation of evolutionary biology; it was published on 24 November 1859. Darwin's book introduced the scientific theory that populations evolve over the course of generations through a process of natural selection. The book presented a body of evidence that the diversity of life arose by common descent through a branching pattern of evolution. ";
         }
 
         private void bookinfoflowPanel_Paint(object sender, PaintEventArgs e)
@@ -905,41 +1013,4 @@ namespace LibrarySystem
     }
 
 
-    //FICTION TRANSITION
-
-    /*
-    bool menuExpand = false;
-    private void fictionTransition_Tick_1(object sender, EventArgs e)
-    {
-        const int targetExpandedWidth = 851;
-        const int targetCollapsedWidth = 26;
-        const int step = 200;
-
-        if (!fictionExpand)
-        {
-            // Expanding
-            fictionPanel.Width += step;
-            if (fictionPanel.Height >= targetExpandedWidth)
-            {
-                fictionPanel.Height = targetExpandedWidth;
-                fictionTransition.Stop();
-                fictionExpand = true;
-            }
-        }
-        else
-        {
-            // Collapsing
-            fictionPanel.Height -= step;
-            if (fictionPanel.Height <= targetCollapsedWidth)
-            {
-                fictionPanel.Height = targetCollapsedWidth;
-                fictionTransition.Stop();
-                fictionExpand = false;
-            }
-        }
-    }
-
-    */
-
- 
 }
