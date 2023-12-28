@@ -435,7 +435,7 @@
             this.fictionPanel.Controls.Add(this.gatsbyPnl);
             this.fictionPanel.Controls.Add(this.solitudePnl);
             this.fictionPanel.ForeColor = System.Drawing.Color.Transparent;
-            this.fictionPanel.Location = new System.Drawing.Point(12, 100);
+            this.fictionPanel.Location = new System.Drawing.Point(36, 106);
             this.fictionPanel.Name = "fictionPanel";
             this.fictionPanel.Size = new System.Drawing.Size(10, 249);
             this.fictionPanel.TabIndex = 18;
@@ -736,7 +736,7 @@
             this.nonfictionPanel.Controls.Add(this.diaryPanel);
             this.nonfictionPanel.Controls.Add(this.thinkingPanel);
             this.nonfictionPanel.Controls.Add(this.educatedPanel);
-            this.nonfictionPanel.Location = new System.Drawing.Point(12, 353);
+            this.nonfictionPanel.Location = new System.Drawing.Point(36, 359);
             this.nonfictionPanel.Name = "nonfictionPanel";
             this.nonfictionPanel.Size = new System.Drawing.Size(10, 249);
             this.nonfictionPanel.TabIndex = 20;
@@ -756,7 +756,7 @@
             this.academicPanel.Controls.Add(this.panel3);
             this.academicPanel.Controls.Add(this.structurePanel);
             this.academicPanel.Controls.Add(this.originPanel);
-            this.academicPanel.Location = new System.Drawing.Point(12, 608);
+            this.academicPanel.Location = new System.Drawing.Point(36, 614);
             this.academicPanel.Name = "academicPanel";
             this.academicPanel.Size = new System.Drawing.Size(10, 249);
             this.academicPanel.TabIndex = 21;
@@ -1145,9 +1145,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(825, -11);
+            this.pictureBox1.Location = new System.Drawing.Point(842, -11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 922);
+            this.pictureBox1.Size = new System.Drawing.Size(210, 922);
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
@@ -1155,7 +1155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 911);
+            this.ClientSize = new System.Drawing.Size(1053, 868);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bookinfoflowPanel);
