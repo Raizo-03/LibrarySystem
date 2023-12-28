@@ -716,32 +716,166 @@ namespace LibrarySystem
 
             // Text for the label
             bookinfoLabel.Text = "A Brief History of Humankind\r\n\r\nSapiens: A Brief History of Humankind is a book by Yuval Noah Harari, first published in Hebrew in Israel in 2011 based on a series of lectures Harari taught at The Hebrew University of Jerusalem, and in English in 2014.The book, focusing on Homo sapiens, surveys the history of humankind, starting from the Stone Age and going up to the twenty-first century. The account is situated within a framework that intersects the natural sciences with the social sciences.";
+        
         }
 
         private void immortalBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//immortalbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//immortalRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "The Immortal Life of Henrietta Lacks\r\n\r\n The Immortal Life of Henrietta Lacks (2010) is a non-fiction book by American author Rebecca Skloot. It was the 2011 winner of the National Academies Communication Award for best creative work that helps the public understanding of topics in science, engineering or medicine.The book is about Henrietta Lacks and the immortal cell line, known as HeLa, that came from Lacks's cervical cancer cells in 1951. Skloot became interested in Lacks after a biology teacher referenced her but knew little about her. Skloot began conducting extensive research on her and worked with Lacks' family to create the book.";
         }
 
         private void diaryBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//diarybookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//diaryRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "The Diary of a Young Girl\r\n\r\n\r\n The Diary of a Young Girl, often referred to as The Diary of Anne Frank, is a book of the writings from the Dutch-language diary kept by Anne Frank while she was in hiding for two years with her family during the Nazi occupation of the Netherlands. The family was apprehended in 1944, and Anne Frank died of typhus in the Bergen-Belsen concentration camp in 1945. Anne's diaries were retrieved by Miep Gies and Bep Voskuijl. Miep gave them to Anne's father, Otto Frank, the family's only survivor, just after the Second World War was over.";
+       
         }
+
 
         private void thinkingBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//thinkingbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//thinkingRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Thinking, Fast and Slow\r\n\r\n\r\n Thinking, Fast and Slow is a 2011 popular science book by psychologist Daniel Kahneman. The book's main thesis is a differentiation between two modes of thought: \"System 1\" is fast, instinctive and emotional; \"System 2\" is slower, more deliberative, and more logical.The book delineates rational and non-rational motivations or triggers associated with each type of thinking process, and how they complement each other, starting with Kahneman's own research on loss aversion. From framing choices to people's tendency to replace a difficult question with one which is easy to answer, the book summarizes several decades of research to suggest that people have too much confidence in human judgment.";
+        
         }
 
         private void educatedBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//educatedbookInfo.png";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//educatedRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Educated\r\n\r\n\r\n Educated (2018) is a memoir by the American author Tara Westover. Westover recounts overcoming her survivalist Mormon family in order to go to college, and emphasizes the importance of education in enlarging her world. She details her journey from her isolated life in the mountains of Idaho to completing a PhD program in history at Cambridge University. She started college at the age of 17 having had no formal education. She explores her struggle to reconcile her desire to learn with the world she inhabited with her father.";
         }
 
         //ACADEMIC BOOK BUTTONS
         private void briefBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//briefbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//briefRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "A Brief History of Time: From the Big Bang to Black Holes\r\n\r\n\r\n It is a book on theoretical cosmology by English physicist Stephen Hawking. It was first published in 1988. Hawking wrote the book for readers who had no prior knowledge of physics.\r\n\r\nIn A Brief History of Time, Hawking writes in non-technical terms about the structure, origin, development and eventual fate of the Universe, which is the object of study of astronomy and modern physics. He talks about basic concepts like space and time, basic building blocks that make up the Universe (such as quarks) and the fundamental forces that govern it (such as gravity). ";
         }
 
         private void elementsBtn_Click(object sender, EventArgs e)
