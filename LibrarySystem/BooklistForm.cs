@@ -71,8 +71,10 @@ namespace LibrarySystem
 
             //default visibility for bookinfoflowpanel
             bookinfoflowPanel.Visible = false;
-        
+
+
         }
+
 
         //FETCHES BOOK TITLES
         private void FetchBookInformation(string bookTitle)
@@ -1007,6 +1009,11 @@ namespace LibrarySystem
         }
 
         private void bookinfoflowPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gifPanel_Click(object sender, EventArgs e)
         {
 
         }
