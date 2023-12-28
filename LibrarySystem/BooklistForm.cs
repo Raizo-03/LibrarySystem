@@ -785,18 +785,97 @@ namespace LibrarySystem
 
         private void thinkingBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//thinkingbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//thinkingRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Thinking, Fast and Slow\r\n\r\n\r\n Thinking, Fast and Slow is a 2011 popular science book by psychologist Daniel Kahneman. The book's main thesis is a differentiation between two modes of thought: \"System 1\" is fast, instinctive and emotional; \"System 2\" is slower, more deliberative, and more logical.The book delineates rational and non-rational motivations or triggers associated with each type of thinking process, and how they complement each other, starting with Kahneman's own research on loss aversion. From framing choices to people's tendency to replace a difficult question with one which is easy to answer, the book summarizes several decades of research to suggest that people have too much confidence in human judgment.";
+        
         }
 
         private void educatedBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//educatedbookInfo.png";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//educatedRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Educated\r\n\r\n\r\n Educated (2018) is a memoir by the American author Tara Westover. Westover recounts overcoming her survivalist Mormon family in order to go to college, and emphasizes the importance of education in enlarging her world. She details her journey from her isolated life in the mountains of Idaho to completing a PhD program in history at Cambridge University. She started college at the age of 17 having had no formal education. She explores her struggle to reconcile her desire to learn with the world she inhabited with her father.";
         }
 
         //ACADEMIC BOOK BUTTONS
         private void briefBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//briefbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//briefRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "A Brief History of Time: From the Big Bang to Black Holes\r\n\r\n\r\n It is a book on theoretical cosmology by English physicist Stephen Hawking. It was first published in 1988. Hawking wrote the book for readers who had no prior knowledge of physics.\r\n\r\nIn A Brief History of Time, Hawking writes in non-technical terms about the structure, origin, development and eventual fate of the Universe, which is the object of study of astronomy and modern physics. He talks about basic concepts like space and time, basic building blocks that make up the Universe (such as quarks) and the fundamental forces that govern it (such as gravity). ";
         }
 
         private void elementsBtn_Click(object sender, EventArgs e)
