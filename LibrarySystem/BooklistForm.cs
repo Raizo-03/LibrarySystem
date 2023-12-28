@@ -44,11 +44,11 @@ namespace LibrarySystem
 
             // Initialize and start the update timer
             updateTimer = new Timer();
-            updateTimer.Interval = 60000; // Update every 60 seconds (adjust as needed)
+            updateTimer.Interval = 60000;
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
 
-            // Example: List of book titles
+            // List of book titles
             List<string> bookTitles = new List<string>
             {
                  "To Kill a Mockingbird",
@@ -69,7 +69,9 @@ namespace LibrarySystem
                 FetchBookInformation(bookTitle);
             }
 
-
+            //default visibility for bookinfoflowpanel
+            bookinfoflowPanel.Visible = false;
+        
         }
 
         //FETCHES BOOK TITLES
@@ -340,6 +342,8 @@ namespace LibrarySystem
             fictionTransition2.Start();
             nonficTransition.Start();
             acadTransition.Start();
+            bookinfoflowPanel.Visible = false;
+          
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -389,6 +393,8 @@ namespace LibrarySystem
             fictionTransition.Start();
             nonficTransition2.Start();
             acadTransition.Start();
+            bookinfoflowPanel.Visible = false;
+            
         }
         //NONFICTION
         //COLLAPSE
@@ -434,6 +440,7 @@ namespace LibrarySystem
             fictionTransition2.Start();
             nonficTransition2.Start();
             acadTransition2.Start();
+            bookinfoflowPanel.Visible = false;
             
         }
 
@@ -478,6 +485,8 @@ namespace LibrarySystem
             fictionTransition.Start();
             nonficTransition.Start();
             acadTransition2.Start();
+            bookinfoflowPanel.Visible = false;
+         
         }
 
         //BOOKINFO TRANSITION
@@ -508,29 +517,140 @@ namespace LibrarySystem
                     bookinfoflowPanel.Height = targetCollapsedHeight;
                     bookinfoTransition.Stop();
                     bookinfoCurtain = false;
+                    bookinfoflowPanel.Visible = false;
                 }
             }
         }
-
-
+        
         //FICTION BOOK BUTTONS
         private void mockingbirdBtn_Click_1(object sender, EventArgs e)
         {
             bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
+
+
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//mockingbirdbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users//USER//source//repos//LibrarySystem//images//mockingRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "To Kill a Mocking Bird\r\n\r\nTo Kill a Mockingbird is a novel by the American author Harper Lee. It was published in 1960 and was instantly successful. In the United States, it is widely read in high schools and middle schools. To Kill a Mockingbird has become a classic of modern American literature; a year after its release, it won the Pulitzer Prize. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was ten.";
+
         }
 
         private void prideBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
+
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//pridebookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users//USER//source//repos//LibrarySystem//images//prideRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Pride and Prejudice \r\n\r\nPride and Prejudice is the second novel by English author Jane Austen, published in 1813. A novel of manners, it follows the character development of Elizabeth Bennet, the protagonist of the book, who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.";
+
 
         }
 
         private void Btn1984_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
+
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//1984bookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users//USER//source//repos//LibrarySystem//images//1984Rating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "Nineteen Eighty-Four\r\n\r\nNineteen Eighty-Four (also published as 1984) is a dystopian novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime. Thematically, it centres on the consequences of totalitarianism, mass surveillance and repressive regimentation of people and behaviours within society.Orwell, a democratic socialist, modelled the authoritarian state in the novel on the Soviet Union in the era of Stalinism, and Nazi Germany. More broadly, the novel examines the role of truth and facts within societies and the ways in which they can be manipulated.";
 
         }
 
         private void gatsbyBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
+
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//gatsbybookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users//USER//Downloads//g (1)-PhotoRoom.png-PhotoRoom.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "The Great Gatsby\r\n\r\nThe Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.\r\n\r\nThe novel was inspired by a youthful romance Fitzgerald had with socialite Ginevra King, and the riotous parties he attended on Long Island's North Shore in 1922. Following a move to the French Riviera, Fitzgerald completed a rough draft of the novel in 1924. He submitted it to editor Maxwell Perkins, who persuaded Fitzgerald to revise the work over the following winter.";
+
 
         }
 
@@ -587,6 +707,11 @@ namespace LibrarySystem
         }
 
         private void originBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookinfoflowPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
