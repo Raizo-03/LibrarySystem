@@ -638,7 +638,7 @@ namespace LibrarySystem
             }
 
             // FOR THE RATING
-            string imagePath2 = "C://Users//USER//Downloads//g (1)-PhotoRoom.png-PhotoRoom.png";
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//gatsbyRating.png";
             try
             {
                 bookinfoLabel.Image = Image.FromFile(imagePath2);
@@ -656,13 +656,66 @@ namespace LibrarySystem
 
         private void solitudeBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
+
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//solitudebookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//solitudeRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "One Hundred Years of Solitude\r\n\r\nOne Hundred Years of Solitude is a 1967 novel by Colombian author Gabriel García Márquez that tells the multi-generational story of the Buendía family, whose patriarch, José Arcadio Buendía, founded the fictitious town of Macondo. The novel is often cited as one of the supreme achievements in world literature.\r\n\r\nThe magical realist style and thematic substance of One Hundred Years of Solitude established it as an important representative novel of the literary Latin American Boom of the 1960s and 1970s, which was stylistically influenced by Modernism (European and North American) and the Cuban Vanguardia (Avant-Garde) literary movement.";
 
         }
 
         //NON FICTION BOOK BUTTONS
         private void sapiensBtn_Click(object sender, EventArgs e)
         {
+            bookinfoTransition.Start();
+            bookinfoflowPanel.Visible = true;
 
+            //FOR THE BOOK COVER
+            string imagePath1 = "C://Users//USER//source//repos//LibrarySystem//images//sapiensbookInfo.jpg";
+            try
+            {
+                bookinfoImage.Image = new System.Drawing.Bitmap(imagePath1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // FOR THE RATING
+            string imagePath2 = "C://Users/USER//source//repos//LibrarySystem//images//sapiensRating.png";
+            try
+            {
+                bookinfoLabel.Image = Image.FromFile(imagePath2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Text for the label
+            bookinfoLabel.Text = "A Brief History of Humankind\r\n\r\nSapiens: A Brief History of Humankind is a book by Yuval Noah Harari, first published in Hebrew in Israel in 2011 based on a series of lectures Harari taught at The Hebrew University of Jerusalem, and in English in 2014.The book, focusing on Homo sapiens, surveys the history of humankind, starting from the Stone Age and going up to the twenty-first century. The account is situated within a framework that intersects the natural sciences with the social sciences.";
         }
 
         private void immortalBtn_Click(object sender, EventArgs e)
