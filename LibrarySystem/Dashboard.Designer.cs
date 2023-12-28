@@ -46,6 +46,8 @@
             this.returnBtn = new System.Windows.Forms.Button();
             this.reserveBtn2 = new System.Windows.Forms.Panel();
             this.reserveBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.penaltyBtn = new System.Windows.Forms.Button();
             this.borrowerlistBtn2 = new System.Windows.Forms.Panel();
             this.borrowerlistBtn = new System.Windows.Forms.Button();
             this.aboutBtn2 = new System.Windows.Forms.Panel();
@@ -54,8 +56,6 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.penaltyBtn = new System.Windows.Forms.Button();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -66,10 +66,10 @@
             this.borrowBtn2.SuspendLayout();
             this.returnBtn2.SuspendLayout();
             this.reserveBtn2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             this.logoutBtn2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
@@ -79,7 +79,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1028, 47);
+            this.upperPanel.Size = new System.Drawing.Size(1053, 47);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -98,7 +98,7 @@
             this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMinimizeButton = true;
             this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.Black;
-            this.dashboardControlbx.Location = new System.Drawing.Point(889, 0);
+            this.dashboardControlbx.Location = new System.Drawing.Point(914, 0);
             this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.Olive;
             this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -127,7 +127,7 @@
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 47);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(70, 883);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(70, 873);
             this.dashboardFlowPnl.TabIndex = 2;
             this.dashboardFlowPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.dashboardFlowPnl_Paint);
             // 
@@ -276,6 +276,29 @@
             this.reserveBtn.UseVisualStyleBackColor = true;
             this.reserveBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.penaltyBtn);
+            this.panel1.Location = new System.Drawing.Point(3, 363);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(275, 66);
+            this.panel1.TabIndex = 7;
+            // 
+            // penaltyBtn
+            // 
+            this.penaltyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltyBtn.Image = ((System.Drawing.Image)(resources.GetObject("penaltyBtn.Image")));
+            this.penaltyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.penaltyBtn.Location = new System.Drawing.Point(-8, -21);
+            this.penaltyBtn.Name = "penaltyBtn";
+            this.penaltyBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.penaltyBtn.Size = new System.Drawing.Size(294, 95);
+            this.penaltyBtn.TabIndex = 3;
+            this.penaltyBtn.Text = "      Penalty Form";
+            this.penaltyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.penaltyBtn.UseVisualStyleBackColor = true;
+            this.penaltyBtn.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // borrowerlistBtn2
             // 
             this.borrowerlistBtn2.Controls.Add(this.borrowerlistBtn);
@@ -354,37 +377,15 @@
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.penaltyBtn);
-            this.panel1.Location = new System.Drawing.Point(3, 363);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 66);
-            this.panel1.TabIndex = 7;
-            // 
-            // penaltyBtn
-            // 
-            this.penaltyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.penaltyBtn.Image = ((System.Drawing.Image)(resources.GetObject("penaltyBtn.Image")));
-            this.penaltyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.penaltyBtn.Location = new System.Drawing.Point(-8, -21);
-            this.penaltyBtn.Name = "penaltyBtn";
-            this.penaltyBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.penaltyBtn.Size = new System.Drawing.Size(294, 95);
-            this.penaltyBtn.TabIndex = 3;
-            this.penaltyBtn.Text = "      Penalty Form";
-            this.penaltyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.penaltyBtn.UseVisualStyleBackColor = true;
-            this.penaltyBtn.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 930);
+            this.ClientSize = new System.Drawing.Size(1053, 920);
             this.ControlBox = false;
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -403,10 +404,10 @@
             this.borrowBtn2.ResumeLayout(false);
             this.returnBtn2.ResumeLayout(false);
             this.reserveBtn2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             this.logoutBtn2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

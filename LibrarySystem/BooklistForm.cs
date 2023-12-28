@@ -338,9 +338,9 @@ namespace LibrarySystem
 
         private void fictionButton_Click(object sender, EventArgs e)
         {
-            fictionPanel.Location = new Point(47, 115);
-            nonfictionPanel.Location = new Point(47, 368);
-            academicPanel.Location = new Point(47, 623);
+            fictionPanel.Location = new Point(12, 115);
+            nonfictionPanel.Location = new Point(12, 368);
+            academicPanel.Location = new Point(12, 623);
             fictionTransition2.Start();
             nonficTransition.Start();
             acadTransition.Start();
@@ -389,9 +389,9 @@ namespace LibrarySystem
 
         private void nonfictionBtn_Click(object sender, EventArgs e)
         {
-            nonfictionPanel.Location = new Point(47, 115);
-            academicPanel.Location = new Point(47, 368);
-            fictionPanel.Location = new Point(47, 623);
+            nonfictionPanel.Location = new Point(12, 115);
+            academicPanel.Location = new Point(12, 368);
+            fictionPanel.Location = new Point(12, 623);
             fictionTransition.Start();
             nonficTransition2.Start();
             acadTransition.Start();
@@ -436,9 +436,9 @@ namespace LibrarySystem
 
         private void booklistLlbl_Click(object sender, EventArgs e)
         {
-            fictionPanel.Location = new Point(47, 115);
-            nonfictionPanel.Location = new Point(47, 368);
-            academicPanel.Location = new Point(47, 623);
+            fictionPanel.Location = new Point(12, 115);
+            nonfictionPanel.Location = new Point(12, 368);
+            academicPanel.Location = new Point(12, 623);
             fictionTransition2.Start();
             nonficTransition2.Start();
             acadTransition2.Start();
@@ -481,9 +481,9 @@ namespace LibrarySystem
 
         private void acadBtn_Click(object sender, EventArgs e)
         {
-            academicPanel.Location = new Point(47, 115);
-            fictionPanel.Location = new Point(47, 368);
-            nonfictionPanel.Location = new Point(47, 623);
+            academicPanel.Location = new Point(12, 115);
+            fictionPanel.Location = new Point(12, 368);
+            nonfictionPanel.Location = new Point(12, 623);
             fictionTransition.Start();
             nonficTransition.Start();
             acadTransition2.Start();
@@ -1009,11 +1009,6 @@ namespace LibrarySystem
         }
 
         private void bookinfoflowPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gifPanel_Click(object sender, EventArgs e)
         {
 
         }
