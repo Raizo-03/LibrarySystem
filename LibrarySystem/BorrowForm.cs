@@ -45,9 +45,6 @@ namespace LibrarySystem
 
             borrowDate.Text = currentDate.ToString("MM/dd/yyyy");
 
-
-      
-
             PopulateBookCheckBoxes();
 
         }
@@ -84,7 +81,7 @@ namespace LibrarySystem
             // Fetch book data from the database
             List<Book> books = GetBooksFromDatabase();
 
-            int topOffset = 20; // Adjust the initial vertical position as needed
+            int topOffset = 120; // Adjust the initial vertical position to 120
 
             foreach (var book in books)
             {
@@ -93,10 +90,10 @@ namespace LibrarySystem
                 checkBox.Tag = book.BookId;
 
                 // Adjust the width based on the length of the text
-                checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
-                checkBox.Location = new Point(440, 100);
-                checkBox.Top = topOffset;
+                checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
+                checkBox.Location = new Point(576, topOffset); // Set the location with the adjusted topOffset
                 topOffset += 25; // Adjust the vertical spacing as needed
+                checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
 
                 // Get the book availability from the database
                 string availability = GetBookAvailabilityFromDatabase(book.Title);
@@ -113,6 +110,7 @@ namespace LibrarySystem
                 Controls.Add(checkBox);
             }
         }
+
 
         // GETS THE BOOKID
         private List<string> selectedBookTitles = new List<string>();

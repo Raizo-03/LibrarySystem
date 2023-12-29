@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.databorrowedLabel = new System.Windows.Forms.Label();
             this.duedateLabel = new System.Windows.Forms.Label();
@@ -41,74 +35,19 @@
             this.borrowerName = new System.Windows.Forms.TextBox();
             this.borrowDate = new System.Windows.Forms.TextBox();
             this.dueDate = new System.Windows.Forms.TextBox();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.booklistLabel = new System.Windows.Forms.Label();
+            this.borrowDG = new System.Windows.Forms.DataGridView();
+            this.rjButton1 = new LibrarySystem.RJButton();
             this.borrowBtn = new LibrarySystem.RJButton();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(218, 438);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 161);
-            this.panel1.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(496, 32);
-            this.label5.TabIndex = 4;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(1, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(496, 32);
-            this.label4.TabIndex = 3;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(496, 32);
-            this.label3.TabIndex = 2;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(0, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(496, 32);
-            this.label2.TabIndex = 1;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(496, 32);
-            this.label1.TabIndex = 0;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // borrowerLabel
             // 
             this.borrowerLabel.AutoSize = true;
             this.borrowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerLabel.Location = new System.Drawing.Point(56, 632);
+            this.borrowerLabel.Location = new System.Drawing.Point(258, 617);
             this.borrowerLabel.Name = "borrowerLabel";
             this.borrowerLabel.Size = new System.Drawing.Size(134, 16);
             this.borrowerLabel.TabIndex = 9;
@@ -118,7 +57,7 @@
             // 
             this.databorrowedLabel.AutoSize = true;
             this.databorrowedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.databorrowedLabel.Location = new System.Drawing.Point(56, 672);
+            this.databorrowedLabel.Location = new System.Drawing.Point(258, 657);
             this.databorrowedLabel.Name = "databorrowedLabel";
             this.databorrowedLabel.Size = new System.Drawing.Size(114, 16);
             this.databorrowedLabel.TabIndex = 10;
@@ -128,7 +67,7 @@
             // 
             this.duedateLabel.AutoSize = true;
             this.duedateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duedateLabel.Location = new System.Drawing.Point(56, 708);
+            this.duedateLabel.Location = new System.Drawing.Point(258, 693);
             this.duedateLabel.Name = "duedateLabel";
             this.duedateLabel.Size = new System.Drawing.Size(76, 16);
             this.duedateLabel.TabIndex = 11;
@@ -136,7 +75,7 @@
             // 
             // borrowedDatepicker
             // 
-            this.borrowedDatepicker.Location = new System.Drawing.Point(382, 672);
+            this.borrowedDatepicker.Location = new System.Drawing.Point(534, 660);
             this.borrowedDatepicker.Name = "borrowedDatepicker";
             this.borrowedDatepicker.Size = new System.Drawing.Size(200, 20);
             this.borrowedDatepicker.TabIndex = 17;
@@ -144,7 +83,7 @@
             // 
             // borrowerName
             // 
-            this.borrowerName.Location = new System.Drawing.Point(196, 632);
+            this.borrowerName.Location = new System.Drawing.Point(398, 617);
             this.borrowerName.Name = "borrowerName";
             this.borrowerName.Size = new System.Drawing.Size(119, 20);
             this.borrowerName.TabIndex = 18;
@@ -152,7 +91,7 @@
             // 
             // borrowDate
             // 
-            this.borrowDate.Location = new System.Drawing.Point(196, 675);
+            this.borrowDate.Location = new System.Drawing.Point(398, 660);
             this.borrowDate.Name = "borrowDate";
             this.borrowDate.Size = new System.Drawing.Size(119, 20);
             this.borrowDate.TabIndex = 19;
@@ -160,11 +99,57 @@
             // 
             // dueDate
             // 
-            this.dueDate.Location = new System.Drawing.Point(196, 708);
+            this.dueDate.Location = new System.Drawing.Point(398, 693);
             this.dueDate.Name = "dueDate";
             this.dueDate.Size = new System.Drawing.Size(119, 20);
             this.dueDate.TabIndex = 20;
             this.dueDate.TextChanged += new System.EventHandler(this.dueDate_TextChanged);
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Olive;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Khaki;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(39, 90);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(871, 5);
+            this.guna2GradientPanel1.TabIndex = 21;
+            // 
+            // booklistLabel
+            // 
+            this.booklistLabel.AutoSize = true;
+            this.booklistLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booklistLabel.ForeColor = System.Drawing.Color.Black;
+            this.booklistLabel.Location = new System.Drawing.Point(30, 35);
+            this.booklistLabel.Name = "booklistLabel";
+            this.booklistLabel.Size = new System.Drawing.Size(232, 52);
+            this.booklistLabel.TabIndex = 25;
+            this.booklistLabel.Text = "BORROW";
+            // 
+            // borrowDG
+            // 
+            this.borrowDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.borrowDG.Location = new System.Drawing.Point(39, 123);
+            this.borrowDG.Name = "borrowDG";
+            this.borrowDG.Size = new System.Drawing.Size(531, 358);
+            this.borrowDG.TabIndex = 27;
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 0;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(302, 754);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(150, 40);
+            this.rjButton1.TabIndex = 26;
+            this.rjButton1.Text = "BORROWED BOOKS";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
             // 
             // borrowBtn
             // 
@@ -176,7 +161,7 @@
             this.borrowBtn.FlatAppearance.BorderSize = 0;
             this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrowBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowBtn.Location = new System.Drawing.Point(382, 762);
+            this.borrowBtn.Location = new System.Drawing.Point(480, 754);
             this.borrowBtn.Name = "borrowBtn";
             this.borrowBtn.Size = new System.Drawing.Size(150, 40);
             this.borrowBtn.TabIndex = 15;
@@ -191,6 +176,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.borrowDG);
+            this.Controls.Add(this.rjButton1);
+            this.Controls.Add(this.booklistLabel);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.dueDate);
             this.Controls.Add(this.borrowDate);
             this.Controls.Add(this.borrowerName);
@@ -199,23 +188,16 @@
             this.Controls.Add(this.duedateLabel);
             this.Controls.Add(this.databorrowedLabel);
             this.Controls.Add(this.borrowerLabel);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BorrowForm";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label borrowerLabel;
         private System.Windows.Forms.Label databorrowedLabel;
         private System.Windows.Forms.Label duedateLabel;
@@ -224,5 +206,9 @@
         private System.Windows.Forms.TextBox borrowerName;
         private System.Windows.Forms.TextBox borrowDate;
         private System.Windows.Forms.TextBox dueDate;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.Label booklistLabel;
+        private RJButton rjButton1;
+        private System.Windows.Forms.DataGridView borrowDG;
     }
 }
