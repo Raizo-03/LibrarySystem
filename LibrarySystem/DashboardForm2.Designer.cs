@@ -111,8 +111,9 @@
             this.reservedB.Name = "reservedB";
             this.reservedB.Size = new System.Drawing.Size(200, 66);
             this.reservedB.TabIndex = 19;
-            this.reservedB.Text = "RESERVED";
+            this.reservedB.Text = "RESERVE";
             this.reservedB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.reservedB.Click += new System.EventHandler(this.reservedB_Click);
             // 
             // penaltiesB
             // 
@@ -131,7 +132,7 @@
             this.penaltiesB.Name = "penaltiesB";
             this.penaltiesB.Size = new System.Drawing.Size(200, 66);
             this.penaltiesB.TabIndex = 20;
-            this.penaltiesB.Text = "USERS";
+            this.penaltiesB.Text = "PENALTIES";
             this.penaltiesB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // analyticsDG
@@ -209,8 +210,9 @@
             this.borrowedB.Name = "borrowedB";
             this.borrowedB.Size = new System.Drawing.Size(200, 66);
             this.borrowedB.TabIndex = 18;
-            this.borrowedB.Text = "BORROWED";
+            this.borrowedB.Text = "BORROW";
             this.borrowedB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.borrowedB.Click += new System.EventHandler(this.borrowedB_Click);
             // 
             // borrowedPanel
             // 
