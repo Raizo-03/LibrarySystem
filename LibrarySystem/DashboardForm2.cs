@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,23 @@ namespace LibrarySystem
 
             int totalAvailableBooks = GetTotalAvailableBooks();
             availableLabel.Text = $"{totalAvailableBooks}";
+
+
+
+            //FONTS 
+            // TITLES
+            PrivateFontCollection privateFonts = new PrivateFontCollection();
+            privateFonts.AddFontFile("C://Users//USER//source//repos//LibrarySystem//fonts//titles//playfair-display-font//PlayfairDisplayBold-nRv8g.ttf");
+
+            // Create a Font object
+            Font customFont = new Font(privateFonts.Families[0], 33); // Use the appropriate size
+
+            // Set the label's font
+            nameLabel.Font = customFont;
+            hellolabel.Font = customFont;
+
+
+
         }
 
        

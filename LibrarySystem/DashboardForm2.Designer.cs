@@ -30,17 +30,17 @@
         {
             this.hellolabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.allbooksBtn = new LibrarySystem.RJButton();
-            this.availbooksBtn = new LibrarySystem.RJButton();
             this.allbooksLabel = new System.Windows.Forms.Label();
             this.availableLabel = new System.Windows.Forms.Label();
+            this.availbooksBtn = new LibrarySystem.RJButton();
+            this.allbooksBtn = new LibrarySystem.RJButton();
             this.SuspendLayout();
             // 
             // hellolabel
             // 
             this.hellolabel.AutoSize = true;
             this.hellolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hellolabel.Location = new System.Drawing.Point(66, 84);
+            this.hellolabel.Location = new System.Drawing.Point(103, 95);
             this.hellolabel.Name = "hellolabel";
             this.hellolabel.Size = new System.Drawing.Size(123, 42);
             this.hellolabel.TabIndex = 1;
@@ -50,29 +50,33 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(179, 84);
+            this.nameLabel.Location = new System.Drawing.Point(232, 95);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(137, 42);
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "ADMIN";
             // 
-            // allbooksBtn
+            // allbooksLabel
             // 
-            this.allbooksBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.allbooksBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.allbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.allbooksBtn.BorderRadius = 0;
-            this.allbooksBtn.BorderSize = 0;
-            this.allbooksBtn.FlatAppearance.BorderSize = 0;
-            this.allbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.allbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.allbooksBtn.Location = new System.Drawing.Point(564, 12);
-            this.allbooksBtn.Name = "allbooksBtn";
-            this.allbooksBtn.Size = new System.Drawing.Size(176, 40);
-            this.allbooksBtn.TabIndex = 12;
-            this.allbooksBtn.Text = "All Books";
-            this.allbooksBtn.TextColor = System.Drawing.Color.White;
-            this.allbooksBtn.UseVisualStyleBackColor = false;
+            this.allbooksLabel.BackColor = System.Drawing.Color.Transparent;
+            this.allbooksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allbooksLabel.Location = new System.Drawing.Point(830, 10);
+            this.allbooksLabel.Name = "allbooksLabel";
+            this.allbooksLabel.Size = new System.Drawing.Size(38, 40);
+            this.allbooksLabel.TabIndex = 14;
+            this.allbooksLabel.Text = "15";
+            this.allbooksLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // availableLabel
+            // 
+            this.availableLabel.BackColor = System.Drawing.Color.Transparent;
+            this.availableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availableLabel.Location = new System.Drawing.Point(830, 69);
+            this.availableLabel.Name = "availableLabel";
+            this.availableLabel.Size = new System.Drawing.Size(38, 40);
+            this.availableLabel.TabIndex = 15;
+            this.availableLabel.Text = "10";
+            this.availableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // availbooksBtn
             // 
@@ -84,7 +88,7 @@
             this.availbooksBtn.FlatAppearance.BorderSize = 0;
             this.availbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.availbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.availbooksBtn.Location = new System.Drawing.Point(564, 71);
+            this.availbooksBtn.Location = new System.Drawing.Point(692, 69);
             this.availbooksBtn.Name = "availbooksBtn";
             this.availbooksBtn.Size = new System.Drawing.Size(176, 40);
             this.availbooksBtn.TabIndex = 13;
@@ -92,34 +96,30 @@
             this.availbooksBtn.TextColor = System.Drawing.Color.White;
             this.availbooksBtn.UseVisualStyleBackColor = false;
             // 
-            // allbooksLabel
+            // allbooksBtn
             // 
-            this.allbooksLabel.BackColor = System.Drawing.Color.Transparent;
-            this.allbooksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allbooksLabel.Location = new System.Drawing.Point(702, 12);
-            this.allbooksLabel.Name = "allbooksLabel";
-            this.allbooksLabel.Size = new System.Drawing.Size(38, 40);
-            this.allbooksLabel.TabIndex = 14;
-            this.allbooksLabel.Text = "15";
-            this.allbooksLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // availableLabel
-            // 
-            this.availableLabel.BackColor = System.Drawing.Color.Transparent;
-            this.availableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availableLabel.Location = new System.Drawing.Point(702, 71);
-            this.availableLabel.Name = "availableLabel";
-            this.availableLabel.Size = new System.Drawing.Size(38, 40);
-            this.availableLabel.TabIndex = 15;
-            this.availableLabel.Text = "10";
-            this.availableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.allbooksBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.allbooksBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.allbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.allbooksBtn.BorderRadius = 0;
+            this.allbooksBtn.BorderSize = 0;
+            this.allbooksBtn.FlatAppearance.BorderSize = 0;
+            this.allbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.allbooksBtn.ForeColor = System.Drawing.Color.White;
+            this.allbooksBtn.Location = new System.Drawing.Point(692, 10);
+            this.allbooksBtn.Name = "allbooksBtn";
+            this.allbooksBtn.Size = new System.Drawing.Size(176, 40);
+            this.allbooksBtn.TabIndex = 12;
+            this.allbooksBtn.Text = "All Books";
+            this.allbooksBtn.TextColor = System.Drawing.Color.White;
+            this.allbooksBtn.UseVisualStyleBackColor = false;
             // 
             // DashboardForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(1057, 880);
+            this.ClientSize = new System.Drawing.Size(1053, 762);
             this.ControlBox = false;
             this.Controls.Add(this.availableLabel);
             this.Controls.Add(this.allbooksLabel);
