@@ -79,7 +79,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1053, 47);
+            this.upperPanel.Size = new System.Drawing.Size(1100, 47);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -98,7 +98,7 @@
             this.dashboardControlbx.EnableMaximizeColor = System.Drawing.Color.Black;
             this.dashboardControlbx.EnableMinimizeButton = true;
             this.dashboardControlbx.EnableMinimizeColor = System.Drawing.Color.Black;
-            this.dashboardControlbx.Location = new System.Drawing.Point(914, 0);
+            this.dashboardControlbx.Location = new System.Drawing.Point(961, 0);
             this.dashboardControlbx.MaximizeHoverColor = System.Drawing.Color.Olive;
             this.dashboardControlbx.MaximizeHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dashboardControlbx.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -381,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 920);
+            this.ClientSize = new System.Drawing.Size(1100, 920);
             this.ControlBox = false;
             this.Controls.Add(this.dashboardFlowPnl);
             this.Controls.Add(this.upperPanel);

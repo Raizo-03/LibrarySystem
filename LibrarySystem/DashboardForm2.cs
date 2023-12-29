@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using LiveCharts.Wpf;
+using LiveCharts;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.Integration;
 
 
 
@@ -41,21 +44,20 @@ namespace LibrarySystem
             analyticsDG.ReadOnly = true;
             analyticsDG.AlternatingRowsDefaultCellStyle = null;
 
-            CustomizeChartAppearance();
 
             UpdateChart();
+            ActivateAvailbooks();
+
+            UpdatePieChart();
 
         }
-        private void UpdateChart()
+        private void UpdatePieChart()
         {
             try
             {
                 // Clear existing series data
-                chart1.Series.Clear();
-
-                // Create a new series
-                Series series = new Series("Analytics");
-                series.ChartType = SeriesChartType.Column; // You can change the chart type as needed
+                pieChart1.Series.Clear();
+                pieChart1.Text = "Library Analytics";
 
                 // Fetch updated information
                 int totalAvailableBooks = GetTotalAvailableBooks();
@@ -63,68 +65,91 @@ namespace LibrarySystem
                 int totalReservations = GetTotalReservations();
                 int totalPenalties = GetTotalPenalties();
 
-                // Add data points to the series with custom colors
-                DataPoint availableBooksPoint = new DataPoint();
-                availableBooksPoint.SetValueXY("Available Books", totalAvailableBooks);
-                availableBooksPoint.Color = Color.Blue; // Set the color for the "Available Books" bar
-                series.Points.Add(availableBooksPoint);
+                // Create series and add data
+                pieChart1.Series.Add(new PieSeries
+                {
+                    Title = "Available Books",
+                    Values = new ChartValues<double> { totalAvailableBooks },
+                    DataLabels = true
+                });
 
-                DataPoint borrowingsPoint = new DataPoint();
-                borrowingsPoint.SetValueXY("Borrowings", totalBorrowings);
-                borrowingsPoint.Color = Color.Green; // Set the color for the "Borrowings" bar
-                series.Points.Add(borrowingsPoint);
+                pieChart1.Series.Add(new PieSeries
+                {
+                    Title = "Borrowings",
+                    Values = new ChartValues<double> { totalBorrowings },
+                    DataLabels = true
+                });
 
-                DataPoint reservationsPoint = new DataPoint();
-                reservationsPoint.SetValueXY("Reservations", totalReservations);
-                reservationsPoint.Color = Color.Orange; // Set the color for the "Reservations" bar
-                series.Points.Add(reservationsPoint);
+                pieChart1.Series.Add(new PieSeries
+                {
+                    Title = "Reservations",
+                    Values = new ChartValues<double> { totalReservations },
+                    DataLabels = true
+                });
 
-                DataPoint penaltiesPoint = new DataPoint();
-                penaltiesPoint.SetValueXY("Penalties", totalPenalties);
-                penaltiesPoint.Color = Color.Red; // Set the color for the "Penalties" bar
-                series.Points.Add(penaltiesPoint);
+                pieChart1.Series.Add(new PieSeries
+                {
+                    Title = "Penalties",
+                    Values = new ChartValues<double> { totalPenalties },
+                    DataLabels = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating PieChart: {ex.Message}", "PieChart Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void UpdateChart()
+        {
+            try
+            {
+                // Clear existing series data
+                cartesianChart1.Series = new LiveCharts.SeriesCollection();
+                cartesianChart1.Text = "Library Analytics";
 
-                // Add the series to the chart
-                chart1.Series.Add(series);
+                // Fetch updated information
+                int totalAvailableBooks = GetTotalAvailableBooks();
+                int totalBorrowings = GetTotalBorrowings();
+                int totalReservations = GetTotalReservations();
+                int totalPenalties = GetTotalPenalties();
 
-                // Refresh the chart
-                chart1.Update();
+                // Create series and add data
+                cartesianChart1.Series.Add(new RowSeries
+                {
+                    Title = "Available Books",
+                    Values = new ChartValues<double> { totalAvailableBooks },
+                    DataLabels = true
+                });
+
+                cartesianChart1.Series.Add(new RowSeries
+                {
+                    Title = "Borrowings",
+                    Values = new ChartValues<double> { totalBorrowings },
+                    DataLabels = true
+                });
+
+                cartesianChart1.Series.Add(new RowSeries
+                {
+                    Title = "Reservations",
+                    Values = new ChartValues<double> { totalReservations },
+                    DataLabels = true
+                });
+
+                cartesianChart1.Series.Add(new RowSeries
+                {
+                    Title = "Penalties",
+                    Values = new ChartValues<double> { totalPenalties },
+                    DataLabels = true
+                });
+
+                // Ensure the chart is redrawn
+                cartesianChart1.Update(true, true);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error updating chart: {ex.Message}", "Chart Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void CustomizeChartAppearance()
-        {
-            // Set chart title
-            chart1.Titles.Add("Library Analytics");
-            chart1.Titles[0].Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            chart1.Titles[0].ForeColor = Color.FromArgb(37, 37, 38); // Title text color
-
-            // Customize chart area
-            ChartArea chartArea = chart1.ChartAreas[0];
-            chartArea.BackColor = Color.FromArgb(255, 253, 247, 228); // Custom background color
-            chartArea.AxisX.LineColor = Color.Gray; // X-axis color
-            chartArea.AxisY.LineColor = Color.Gray; // Y-axis color
-            chartArea.AxisX.MajorGrid.LineColor = Color.LightGray; // X-axis grid color
-            chartArea.AxisY.MajorGrid.LineColor = Color.LightGray; // Y-axis grid color
-
-            // Customize series
-            foreach (Series series in chart1.Series)
-            {
-                series.BorderColor = Color.FromArgb(85, 137, 175); // Series border color
-                series.BorderWidth = 3; // Series border width
-            }
-
-            // Set legend style
-            Legend legend = chart1.Legends[0];
-            legend.BackColor = Color.Transparent;
-            legend.Font = new Font("Segoe UI", 10);
-            legend.ForeColor = Color.FromArgb(37, 37, 38); // Legend text color
-        }
-
 
 
         private void ApplyRoundedButtonStyle(Guna2GradientPanel panel)
@@ -198,9 +223,7 @@ namespace LibrarySystem
 
             return availableBooks;
         }
-
-
-        private void availbooksB_Click(object sender, EventArgs e)
+        private void ActivateAvailbooks()
         {
             try
             {
@@ -229,11 +252,8 @@ namespace LibrarySystem
                 analyticsDG.AllowUserToResizeRows = false;
                 analyticsDG.AllowUserToResizeColumns = false;
 
-        
-
                 // Disable row headers resizing and visibility
                 analyticsDG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-               
 
                 // Bind the list to the DataGridView
                 foreach (Book book in availableBooks)
@@ -247,6 +267,11 @@ namespace LibrarySystem
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void availbooksB_Click(object sender, EventArgs e)
+        {
+            ActivateAvailbooks();
         }
 
         private void borrowedB_Click(object sender, EventArgs e)
@@ -267,7 +292,7 @@ namespace LibrarySystem
 
                 // Set font size and apply modern style
                 analyticsDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
-                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold); // Adjust font, size, and style
+                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
                 analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
@@ -341,7 +366,7 @@ namespace LibrarySystem
 
                 // Set font size and apply modern style
                 analyticsDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
-                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold); // Adjust font, size, and style
+                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
                 analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
@@ -349,7 +374,7 @@ namespace LibrarySystem
                 // Set column widths
                 analyticsDG.Columns["BookTitle"].Width = 200; // Adjust width as needed
                 analyticsDG.Columns["BorrowerName"].Width = 200; // Adjust width as needed
-                analyticsDG.Columns["ReservationDate"].Width = 150; // Adjust width as needed
+                analyticsDG.Columns["ReservationDate"].Width = 300; // Adjust width as needed
 
                 // Disable user resizing of rows and columns
                 analyticsDG.AllowUserToResizeRows = false;
@@ -479,15 +504,15 @@ namespace LibrarySystem
 
                 // Set font size and apply modern style
                 analyticsDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
-                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold); // Adjust font, size, and style
+                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
                 analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
-                analyticsDG.Columns["PenaltyID"].Width = 150; // Adjust width as needed
-                analyticsDG.Columns["BorrowerName"].Width = 200; // Adjust width as needed
-                analyticsDG.Columns["Amount"].Width = 150; // Adjust width as needed
+                analyticsDG.Columns["PenaltyID"].Width = 200; // Adjust width as needed
+                analyticsDG.Columns["BorrowerName"].Width = 300; // Adjust width as needed
+                analyticsDG.Columns["Amount"].Width = 200; // Adjust width as needed
 
                 // Disable user resizing of rows and columns
                 analyticsDG.AllowUserToResizeRows = false;
