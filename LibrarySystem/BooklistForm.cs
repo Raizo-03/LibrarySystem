@@ -350,9 +350,9 @@ namespace LibrarySystem
 
         private void fictionButton_Click(object sender, EventArgs e)
         {
-            fictionPanel.Location = new Point(35, 115);
-            nonfictionPanel.Location = new Point(35, 368);
-            academicPanel.Location = new Point(35, 623);
+            fictionPanel.Location = new Point(36, 106);
+            nonfictionPanel.Location = new Point(36, 359);
+            academicPanel.Location = new Point(36, 614);
             fictionTransition2.Start();
             nonficTransition.Start();
             acadTransition.Start();
@@ -401,9 +401,9 @@ namespace LibrarySystem
 
         private void nonfictionBtn_Click(object sender, EventArgs e)
         {
-            nonfictionPanel.Location = new Point(35, 115);
-            academicPanel.Location = new Point(35, 368);
-            fictionPanel.Location = new Point(35, 623);
+            nonfictionPanel.Location = new Point(36, 106);
+            academicPanel.Location = new Point(36, 359);
+            fictionPanel.Location = new Point(36, 614);
             fictionTransition.Start();
             nonficTransition2.Start();
             acadTransition.Start();
@@ -483,9 +483,9 @@ namespace LibrarySystem
 
         private void acadBtn_Click(object sender, EventArgs e)
         {
-            academicPanel.Location = new Point(35, 115);
-            fictionPanel.Location = new Point(35, 368);
-            nonfictionPanel.Location = new Point(35, 623);
+            academicPanel.Location = new Point(36, 106);
+            fictionPanel.Location = new Point(36, 359);
+            nonfictionPanel.Location = new Point(36, 614);
             fictionTransition.Start();
             nonficTransition.Start();
             acadTransition2.Start();
