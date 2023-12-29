@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization;
+using System.Windows.Forms.DataVisualization.Charting;
+
 
 
 namespace LibrarySystem
@@ -33,11 +36,95 @@ namespace LibrarySystem
             ApplyRoundedButtonStyle(borrowedPanel);
             ApplyRoundedButtonStyle(reservedPanel);
             ApplyRoundedButtonStyle(userPanel);
+            ApplyRoundedButtonStyle(usersPanel);
 
             analyticsDG.ReadOnly = true;
             analyticsDG.AlternatingRowsDefaultCellStyle = null;
 
+            CustomizeChartAppearance();
+
+            UpdateChart();
+
         }
+        private void UpdateChart()
+        {
+            try
+            {
+                // Clear existing series data
+                chart1.Series.Clear();
+
+                // Create a new series
+                Series series = new Series("Analytics");
+                series.ChartType = SeriesChartType.Column; // You can change the chart type as needed
+
+                // Fetch updated information
+                int totalAvailableBooks = GetTotalAvailableBooks();
+                int totalBorrowings = GetTotalBorrowings();
+                int totalReservations = GetTotalReservations();
+                int totalPenalties = GetTotalPenalties();
+
+                // Add data points to the series with custom colors
+                DataPoint availableBooksPoint = new DataPoint();
+                availableBooksPoint.SetValueXY("Available Books", totalAvailableBooks);
+                availableBooksPoint.Color = Color.Blue; // Set the color for the "Available Books" bar
+                series.Points.Add(availableBooksPoint);
+
+                DataPoint borrowingsPoint = new DataPoint();
+                borrowingsPoint.SetValueXY("Borrowings", totalBorrowings);
+                borrowingsPoint.Color = Color.Green; // Set the color for the "Borrowings" bar
+                series.Points.Add(borrowingsPoint);
+
+                DataPoint reservationsPoint = new DataPoint();
+                reservationsPoint.SetValueXY("Reservations", totalReservations);
+                reservationsPoint.Color = Color.Orange; // Set the color for the "Reservations" bar
+                series.Points.Add(reservationsPoint);
+
+                DataPoint penaltiesPoint = new DataPoint();
+                penaltiesPoint.SetValueXY("Penalties", totalPenalties);
+                penaltiesPoint.Color = Color.Red; // Set the color for the "Penalties" bar
+                series.Points.Add(penaltiesPoint);
+
+                // Add the series to the chart
+                chart1.Series.Add(series);
+
+                // Refresh the chart
+                chart1.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating chart: {ex.Message}", "Chart Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CustomizeChartAppearance()
+        {
+            // Set chart title
+            chart1.Titles.Add("Library Analytics");
+            chart1.Titles[0].Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            chart1.Titles[0].ForeColor = Color.FromArgb(37, 37, 38); // Title text color
+
+            // Customize chart area
+            ChartArea chartArea = chart1.ChartAreas[0];
+            chartArea.BackColor = Color.FromArgb(255, 253, 247, 228); // Custom background color
+            chartArea.AxisX.LineColor = Color.Gray; // X-axis color
+            chartArea.AxisY.LineColor = Color.Gray; // Y-axis color
+            chartArea.AxisX.MajorGrid.LineColor = Color.LightGray; // X-axis grid color
+            chartArea.AxisY.MajorGrid.LineColor = Color.LightGray; // Y-axis grid color
+
+            // Customize series
+            foreach (Series series in chart1.Series)
+            {
+                series.BorderColor = Color.FromArgb(85, 137, 175); // Series border color
+                series.BorderWidth = 3; // Series border width
+            }
+
+            // Set legend style
+            Legend legend = chart1.Legends[0];
+            legend.BackColor = Color.Transparent;
+            legend.Font = new Font("Segoe UI", 10);
+            legend.ForeColor = Color.FromArgb(37, 37, 38); // Legend text color
+        }
+
 
 
         private void ApplyRoundedButtonStyle(Guna2GradientPanel panel)
