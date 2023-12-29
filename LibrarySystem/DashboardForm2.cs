@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,33 @@ namespace LibrarySystem
             this.identifier = Identifier;
             this.Name = Name;
             this.id = Id;
+
+            ApplyRoundedButtonStyle(availbooksPanel);
+            ApplyRoundedButtonStyle(borrowedPanel);
+            ApplyRoundedButtonStyle(reservedPanel);
+            ApplyRoundedButtonStyle(userPanel);
+            
+
+
+
+        }
+
+
+        private void ApplyRoundedButtonStyle(Guna2GradientPanel panel)
+        {
+
+            // Set the border radius to make the button rounded
+            panel.BorderRadius = 12; // Adjust the radius to control the roundness
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void availableLabel_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void DashboardForm2_Load(object sender, EventArgs e)
