@@ -1143,7 +1143,7 @@
             this.booklistLabel.AutoSize = true;
             this.booklistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booklistLabel.ForeColor = System.Drawing.Color.Black;
-            this.booklistLabel.Location = new System.Drawing.Point(36, 45);
+            this.booklistLabel.Location = new System.Drawing.Point(27, 49);
             this.booklistLabel.Name = "booklistLabel";
             this.booklistLabel.Size = new System.Drawing.Size(259, 52);
             this.booklistLabel.TabIndex = 24;
