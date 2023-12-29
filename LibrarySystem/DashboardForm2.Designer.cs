@@ -29,23 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.hellolabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.allbooksLabel = new System.Windows.Forms.Label();
             this.availableLabel = new System.Windows.Forms.Label();
-            this.availbooksBtn = new LibrarySystem.RJButton();
-            this.allbooksBtn = new LibrarySystem.RJButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.reservedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.penaltiesB = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.analyticsDG = new System.Windows.Forms.DataGridView();
             this.availbooksPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.borrowedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.availbooksB = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.borrowedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.reservedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.userPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).BeginInit();
             this.availbooksPanel.SuspendLayout();
             this.borrowedPanel.SuspendLayout();
             this.reservedPanel.SuspendLayout();
@@ -72,17 +71,6 @@
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "ADMIN";
             // 
-            // allbooksLabel
-            // 
-            this.allbooksLabel.BackColor = System.Drawing.Color.Transparent;
-            this.allbooksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allbooksLabel.Location = new System.Drawing.Point(830, 10);
-            this.allbooksLabel.Name = "allbooksLabel";
-            this.allbooksLabel.Size = new System.Drawing.Size(38, 40);
-            this.allbooksLabel.TabIndex = 14;
-            this.allbooksLabel.Text = "15";
-            this.allbooksLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // availableLabel
             // 
             this.availableLabel.BackColor = System.Drawing.Color.Transparent;
@@ -95,42 +83,6 @@
             this.availableLabel.Text = "10";
             this.availableLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.availableLabel.Click += new System.EventHandler(this.availableLabel_Click);
-            // 
-            // availbooksBtn
-            // 
-            this.availbooksBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.availbooksBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.availbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.availbooksBtn.BorderRadius = 0;
-            this.availbooksBtn.BorderSize = 0;
-            this.availbooksBtn.FlatAppearance.BorderSize = 0;
-            this.availbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.availbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.availbooksBtn.Location = new System.Drawing.Point(678, 68);
-            this.availbooksBtn.Name = "availbooksBtn";
-            this.availbooksBtn.Size = new System.Drawing.Size(113, 40);
-            this.availbooksBtn.TabIndex = 13;
-            this.availbooksBtn.Text = "Available Books";
-            this.availbooksBtn.TextColor = System.Drawing.Color.White;
-            this.availbooksBtn.UseVisualStyleBackColor = false;
-            // 
-            // allbooksBtn
-            // 
-            this.allbooksBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.allbooksBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.allbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.allbooksBtn.BorderRadius = 0;
-            this.allbooksBtn.BorderSize = 0;
-            this.allbooksBtn.FlatAppearance.BorderSize = 0;
-            this.allbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.allbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.allbooksBtn.Location = new System.Drawing.Point(692, 10);
-            this.allbooksBtn.Name = "allbooksBtn";
-            this.allbooksBtn.Size = new System.Drawing.Size(113, 40);
-            this.allbooksBtn.TabIndex = 12;
-            this.allbooksBtn.Text = "All Books";
-            this.allbooksBtn.TextColor = System.Drawing.Color.White;
-            this.allbooksBtn.UseVisualStyleBackColor = false;
             // 
             // guna2GradientPanel1
             // 
@@ -182,14 +134,29 @@
             this.penaltiesB.Text = "USERS";
             this.penaltiesB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // dataGridView1
+            // analyticsDG
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 350);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(596, 332);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.analyticsDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.analyticsDG.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.analyticsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.analyticsDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.analyticsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.analyticsDG.DefaultCellStyle = dataGridViewCellStyle2;
+            this.analyticsDG.GridColor = System.Drawing.Color.PeachPuff;
+            this.analyticsDG.Location = new System.Drawing.Point(19, 350);
+            this.analyticsDG.Name = "analyticsDG";
+            this.analyticsDG.Size = new System.Drawing.Size(596, 332);
+            this.analyticsDG.TabIndex = 22;
+            this.analyticsDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // availbooksPanel
             // 
@@ -201,27 +168,6 @@
             this.availbooksPanel.Name = "availbooksPanel";
             this.availbooksPanel.Size = new System.Drawing.Size(209, 116);
             this.availbooksPanel.TabIndex = 23;
-            // 
-            // borrowedB
-            // 
-            this.borrowedB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.borrowedB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.borrowedB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.borrowedB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.borrowedB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.borrowedB.FillColor = System.Drawing.Color.LightCoral;
-            this.borrowedB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.borrowedB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedB.ForeColor = System.Drawing.Color.White;
-            this.borrowedB.Image = ((System.Drawing.Image)(resources.GetObject("borrowedB.Image")));
-            this.borrowedB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.borrowedB.ImageSize = new System.Drawing.Size(35, 35);
-            this.borrowedB.Location = new System.Drawing.Point(6, 14);
-            this.borrowedB.Name = "borrowedB";
-            this.borrowedB.Size = new System.Drawing.Size(200, 66);
-            this.borrowedB.TabIndex = 18;
-            this.borrowedB.Text = "BORROWED";
-            this.borrowedB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // availbooksB
             // 
@@ -243,6 +189,28 @@
             this.availbooksB.TabIndex = 17;
             this.availbooksB.Text = "AVAILABLE BOOKS";
             this.availbooksB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.availbooksB.Click += new System.EventHandler(this.availbooksB_Click);
+            // 
+            // borrowedB
+            // 
+            this.borrowedB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.borrowedB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.borrowedB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.borrowedB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.borrowedB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.borrowedB.FillColor = System.Drawing.Color.LightCoral;
+            this.borrowedB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.borrowedB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedB.ForeColor = System.Drawing.Color.White;
+            this.borrowedB.Image = ((System.Drawing.Image)(resources.GetObject("borrowedB.Image")));
+            this.borrowedB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.borrowedB.ImageSize = new System.Drawing.Size(35, 35);
+            this.borrowedB.Location = new System.Drawing.Point(6, 14);
+            this.borrowedB.Name = "borrowedB";
+            this.borrowedB.Size = new System.Drawing.Size(200, 66);
+            this.borrowedB.TabIndex = 18;
+            this.borrowedB.Text = "BORROWED";
+            this.borrowedB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // borrowedPanel
             // 
@@ -285,17 +253,14 @@
             this.Controls.Add(this.reservedPanel);
             this.Controls.Add(this.borrowedPanel);
             this.Controls.Add(this.availbooksPanel);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.analyticsDG);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.allbooksLabel);
-            this.Controls.Add(this.availbooksBtn);
-            this.Controls.Add(this.allbooksBtn);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.hellolabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashboardForm2";
             this.Load += new System.EventHandler(this.DashboardForm2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).EndInit();
             this.availbooksPanel.ResumeLayout(false);
             this.borrowedPanel.ResumeLayout(false);
             this.reservedPanel.ResumeLayout(false);
@@ -308,14 +273,11 @@
         #endregion
         private System.Windows.Forms.Label hellolabel;
         private System.Windows.Forms.Label nameLabel;
-        private RJButton allbooksBtn;
-        private RJButton availbooksBtn;
-        private System.Windows.Forms.Label allbooksLabel;
         private System.Windows.Forms.Label availableLabel;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientButton reservedB;
         private Guna.UI2.WinForms.Guna2GradientButton penaltiesB;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView analyticsDG;
         private Guna.UI2.WinForms.Guna2GradientPanel availbooksPanel;
         private Guna.UI2.WinForms.Guna2GradientButton borrowedB;
         private Guna.UI2.WinForms.Guna2GradientButton availbooksB;

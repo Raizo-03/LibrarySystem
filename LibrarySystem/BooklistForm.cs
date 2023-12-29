@@ -76,13 +76,13 @@ namespace LibrarySystem
 
             // Load custom font
             PrivateFontCollection privateFonts = new PrivateFontCollection();
-            privateFonts.AddFontFile("C://Users//USER//source//repos//LibrarySystem//fonts//titles//playfair-display-font//PlayfairDisplayBold-nRv8g.ttf");
+            //privateFonts.AddFontFile("C://Users//USER//source//repos//LibrarySystem//fonts//titles//playfair-display-font//PlayfairDisplayBold-nRv8g.ttf");
 
             // Create a Font object
-            Font customFont = new Font(privateFonts.Families[0], 33); // Use the appropriate size
+            //Font customFont = new Font(privateFonts.Families[0], 33); // Use the appropriate size
 
             // Set the label's font
-            booklistLabel.Font = customFont;
+            //booklistLabel.Font = customFont;
             
 
         }
