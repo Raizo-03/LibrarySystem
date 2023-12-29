@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.hellolabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.availableLabel = new System.Windows.Forms.Label();
@@ -44,27 +41,28 @@
             this.availbooksB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.borrowinglabel = new System.Windows.Forms.Label();
             this.userPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.penaltieslabel = new System.Windows.Forms.Label();
             this.reservedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.reservedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.borrowinglabel = new System.Windows.Forms.Label();
             this.reservinglabel = new System.Windows.Forms.Label();
-            this.penaltieslabel = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.usersLabel = new System.Windows.Forms.Label();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.usersPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).BeginInit();
             this.availbooksPanel.SuspendLayout();
             this.borrowedPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
             this.reservedPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.usersPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +70,7 @@
             // 
             this.hellolabel.AutoSize = true;
             this.hellolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hellolabel.Location = new System.Drawing.Point(12, 107);
+            this.hellolabel.Location = new System.Drawing.Point(12, 81);
             this.hellolabel.Name = "hellolabel";
             this.hellolabel.Size = new System.Drawing.Size(123, 42);
             this.hellolabel.TabIndex = 1;
@@ -82,7 +80,7 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(141, 107);
+            this.nameLabel.Location = new System.Drawing.Point(141, 81);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(137, 42);
             this.nameLabel.TabIndex = 2;
@@ -105,7 +103,7 @@
             // 
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.Olive;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Khaki;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(19, 171);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(19, 145);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(871, 5);
             this.guna2GradientPanel1.TabIndex = 16;
@@ -133,21 +131,21 @@
             // 
             // analyticsDG
             // 
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.analyticsDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.analyticsDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.analyticsDG.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.analyticsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.analyticsDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.analyticsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.analyticsDG.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.analyticsDG.DefaultCellStyle = dataGridViewCellStyle14;
             this.analyticsDG.GridColor = System.Drawing.Color.PeachPuff;
             this.analyticsDG.Location = new System.Drawing.Point(19, 350);
             this.analyticsDG.Name = "analyticsDG";
@@ -221,6 +219,18 @@
             this.borrowedPanel.Size = new System.Drawing.Size(209, 116);
             this.borrowedPanel.TabIndex = 24;
             // 
+            // borrowinglabel
+            // 
+            this.borrowinglabel.BackColor = System.Drawing.Color.Transparent;
+            this.borrowinglabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowinglabel.ForeColor = System.Drawing.Color.White;
+            this.borrowinglabel.Location = new System.Drawing.Point(168, 83);
+            this.borrowinglabel.Name = "borrowinglabel";
+            this.borrowinglabel.Size = new System.Drawing.Size(38, 33);
+            this.borrowinglabel.TabIndex = 18;
+            this.borrowinglabel.Text = "10";
+            this.borrowinglabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // userPanel
             // 
             this.userPanel.Controls.Add(this.penaltieslabel);
@@ -231,6 +241,18 @@
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(209, 116);
             this.userPanel.TabIndex = 26;
+            // 
+            // penaltieslabel
+            // 
+            this.penaltieslabel.BackColor = System.Drawing.Color.Transparent;
+            this.penaltieslabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltieslabel.ForeColor = System.Drawing.Color.White;
+            this.penaltieslabel.Location = new System.Drawing.Point(168, 83);
+            this.penaltieslabel.Name = "penaltieslabel";
+            this.penaltieslabel.Size = new System.Drawing.Size(38, 33);
+            this.penaltieslabel.TabIndex = 20;
+            this.penaltieslabel.Text = "10";
+            this.penaltieslabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // reservedB
             // 
@@ -265,18 +287,6 @@
             this.reservedPanel.Size = new System.Drawing.Size(209, 116);
             this.reservedPanel.TabIndex = 25;
             // 
-            // borrowinglabel
-            // 
-            this.borrowinglabel.BackColor = System.Drawing.Color.Transparent;
-            this.borrowinglabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowinglabel.ForeColor = System.Drawing.Color.White;
-            this.borrowinglabel.Location = new System.Drawing.Point(168, 83);
-            this.borrowinglabel.Name = "borrowinglabel";
-            this.borrowinglabel.Size = new System.Drawing.Size(38, 33);
-            this.borrowinglabel.TabIndex = 18;
-            this.borrowinglabel.Text = "10";
-            this.borrowinglabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // reservinglabel
             // 
             this.reservinglabel.BackColor = System.Drawing.Color.Transparent;
@@ -289,42 +299,14 @@
             this.reservinglabel.Text = "10";
             this.reservinglabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // penaltieslabel
-            // 
-            this.penaltieslabel.BackColor = System.Drawing.Color.Transparent;
-            this.penaltieslabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.penaltieslabel.ForeColor = System.Drawing.Color.White;
-            this.penaltieslabel.Location = new System.Drawing.Point(168, 83);
-            this.penaltieslabel.Name = "penaltieslabel";
-            this.penaltieslabel.Size = new System.Drawing.Size(38, 33);
-            this.penaltieslabel.TabIndex = 20;
-            this.penaltieslabel.Text = "10";
-            this.penaltieslabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chart1
-            // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(22, 650);
-            this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(868, 190);
-            this.chart1.TabIndex = 28;
-            this.chart1.Text = "chart1";
-            // 
             // usersLabel
             // 
             this.usersLabel.BackColor = System.Drawing.Color.Transparent;
             this.usersLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usersLabel.ForeColor = System.Drawing.Color.White;
-            this.usersLabel.Location = new System.Drawing.Point(3, 16);
+            this.usersLabel.Location = new System.Drawing.Point(13, 16);
             this.usersLabel.Name = "usersLabel";
-            this.usersLabel.Size = new System.Drawing.Size(214, 33);
+            this.usersLabel.Size = new System.Drawing.Size(201, 33);
             this.usersLabel.TabIndex = 21;
             this.usersLabel.Text = "SYSTEM ACCOUNTS";
             this.usersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,6 +330,7 @@
             this.guna2GradientButton1.Size = new System.Drawing.Size(170, 56);
             this.guna2GradientButton1.TabIndex = 22;
             this.guna2GradientButton1.Text = "ADMINS";
+            this.guna2GradientButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // guna2GradientButton2
             // 
@@ -368,6 +351,7 @@
             this.guna2GradientButton2.Size = new System.Drawing.Size(170, 58);
             this.guna2GradientButton2.TabIndex = 23;
             this.guna2GradientButton2.Text = "STUDENTS";
+            this.guna2GradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // guna2GradientButton3
             // 
@@ -388,6 +372,7 @@
             this.guna2GradientButton3.Size = new System.Drawing.Size(170, 54);
             this.guna2GradientButton3.TabIndex = 24;
             this.guna2GradientButton3.Text = "TEACHERS";
+            this.guna2GradientButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // usersPanel
             // 
@@ -405,17 +390,17 @@
             this.usersPanel.Size = new System.Drawing.Size(217, 285);
             this.usersPanel.TabIndex = 29;
             // 
-            // label1
+            // label3
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(176, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 33);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "2";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(173, 200);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 33);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -429,17 +414,45 @@
             this.label2.Text = "10";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // label1
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(173, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 33);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "3";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(176, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 33);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "2";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(22, 674);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(648, 130);
+            this.cartesianChart1.TabIndex = 30;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label4.Location = new System.Drawing.Point(337, 638);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(201, 33);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "LIBRARY ANALYTICS";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pieChart1
+            // 
+            this.pieChart1.Location = new System.Drawing.Point(676, 650);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(250, 180);
+            this.pieChart1.TabIndex = 31;
+            this.pieChart1.Text = "pieChart1";
             // 
             // DashboardForm2
             // 
@@ -448,8 +461,10 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1053, 920);
             this.ControlBox = false;
+            this.Controls.Add(this.pieChart1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cartesianChart1);
             this.Controls.Add(this.usersPanel);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.userPanel);
             this.Controls.Add(this.reservedPanel);
             this.Controls.Add(this.borrowedPanel);
@@ -466,7 +481,6 @@
             this.borrowedPanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             this.reservedPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.usersPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -490,7 +504,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton reservedB;
         private Guna.UI2.WinForms.Guna2GradientPanel reservedPanel;
         private System.Windows.Forms.Label reservinglabel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label usersLabel;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
@@ -499,5 +512,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Label label4;
+        private LiveCharts.WinForms.PieChart pieChart1;
     }
 }
