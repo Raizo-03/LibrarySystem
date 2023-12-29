@@ -217,23 +217,22 @@ namespace LibrarySystem
         private void DashboardForm2_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLORS #FDF7E4
+            analyticsDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLORS #FDF7E4
             nameLabel.Text = "ADMIN";
 
             int totalAvailableBooks = GetTotalAvailableBooks();
             availableLabel.Text = $"{totalAvailableBooks}";
 
-            //FONTS 
-            // TITLES
-            PrivateFontCollection privateFonts = new PrivateFontCollection();
-            //privateFonts.AddFontFile("C://Users//USER//source//repos//LibrarySystem//fonts//titles//playfair-display-font//PlayfairDisplayBold-nRv8g.ttf");
 
-            // Create a Font object
-            //Font customFont = new Font(privateFonts.Families[0], 33); // Use the appropriate size
+            int totalBorrowings = GetTotalBorrowings();
+            borrowinglabel.Text = $"{totalBorrowings}";
 
-            // Set the label's font
-            //nameLabel.Font = customFont;
-            //hellolabel.Font = customFont;
 
+            int totalReservations = GetTotalReservations();
+            reservinglabel.Text = $"{totalReservations}";
+
+            int totalPenalties = GetTotalPenalties();
+            penaltieslabel.Text = $"{totalPenalties}";
 
 
         }
@@ -286,6 +285,30 @@ namespace LibrarySystem
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+        private int GetTotalBorrowings()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get the total number of borrowings
+                    string query = "SELECT COUNT(*) FROM borrowings";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // ExecuteScalar is used to get a single value from the query result
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching total borrowings: {ex.Message}");
+                return 0;
+            }
+        }
 
         private int GetTotalAvailableBooks()
         {
@@ -303,6 +326,104 @@ namespace LibrarySystem
                 }
             }
         }
+        private int GetTotalReservations()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get the total number of reservations
+                    string query = "SELECT COUNT(*) FROM reservations";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // ExecuteScalar is used to get a single value from the query result
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching total reservations: {ex.Message}");
+                return 0;
+            }
+        }
+        private int GetTotalPenalties()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get the total number of penalties
+                    string query = "SELECT COUNT(*) FROM penalties";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // ExecuteScalar is used to get a single value from the query result
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching total penalties: {ex.Message}");
+                return 0;
+            }
+        }
+
+        private void penaltiesB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Clear existing columns in the DataGridView
+                analyticsDG.Columns.Clear();
+
+                // Fetch penalty information from the database
+                List<PenaltyInfo> penalties = GetPenaltiesInfo();
+
+                // Add columns to the DataGridView
+                analyticsDG.Columns.Add("PenaltyID", "PENALTY ID");
+                analyticsDG.Columns.Add("BorrowerName", "BORROWER'S NAME");
+                analyticsDG.Columns.Add("Amount", "AMOUNT");
+
+                // Set font size and apply modern style
+                analyticsDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
+                analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold); // Adjust font, size, and style
+                analyticsDG.EnableHeadersVisualStyles = false;
+                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
+
+                // Set column widths
+                analyticsDG.Columns["PenaltyID"].Width = 150; // Adjust width as needed
+                analyticsDG.Columns["BorrowerName"].Width = 200; // Adjust width as needed
+                analyticsDG.Columns["Amount"].Width = 150; // Adjust width as needed
+
+                // Disable user resizing of rows and columns
+                analyticsDG.AllowUserToResizeRows = false;
+                analyticsDG.AllowUserToResizeColumns = false;
+
+                // Disable row headers resizing and visibility
+                analyticsDG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+                // Bind the list to the DataGridView
+                foreach (PenaltyInfo penalty in penalties)
+                {
+                    int rowIndex = analyticsDG.Rows.Add();
+                    analyticsDG.Rows[rowIndex].Cells["PenaltyID"].Value = penalty.PenaltyID;
+                    analyticsDG.Rows[rowIndex].Cells["BorrowerName"].Value = penalty.BorrowerName;
+                    analyticsDG.Rows[rowIndex].Cells["Amount"].Value = penalty.Amount;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
         private List<BorrowingInfo> GetBorrowingsInfo()
         {
             List<BorrowingInfo> borrowings = new List<BorrowingInfo>();
@@ -394,6 +515,49 @@ namespace LibrarySystem
 
             return reservations;
         }
+        private List<PenaltyInfo> GetPenaltiesInfo()
+        {
+            List<PenaltyInfo> penalties = new List<PenaltyInfo>();
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get penalty information
+                    string query = "SELECT penalty_id, borrowers.name AS BorrowerName, CONCAT('₱', penalties.amount) AS Amount " +
+                                   "FROM penalties " +
+                                   "INNER JOIN borrowers ON penalties.borrower_id = borrowers.user_id";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Create a PenaltyInfo object and populate its properties
+                                PenaltyInfo penalty = new PenaltyInfo
+                                {
+                                    PenaltyID = reader["penalty_id"].ToString(),
+                                    BorrowerName = reader["BorrowerName"].ToString(),
+                                    Amount = reader["Amount"].ToString()
+                                };
+
+                                // Add the penalty information to the list
+                                penalties.Add(penalty);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching penalty information: {ex.Message}");
+            }
+
+            return penalties;
+        }
     }
     public class BorrowingInfo
     {
@@ -407,5 +571,11 @@ namespace LibrarySystem
         public string BookTitle { get; set; }
         public string BorrowerName { get; set; }
         public string ReservationDate { get; set; }
+    }
+    public class PenaltyInfo
+    {
+        public string PenaltyID { get; set; }
+        public string BorrowerName { get; set; }
+        public string Amount { get; set; }
     }
 }
