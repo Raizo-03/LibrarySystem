@@ -33,46 +33,36 @@
             this.mockingbirdPnl = new System.Windows.Forms.Panel();
             this.mockingstatsLbl = new System.Windows.Forms.Label();
             this.mockingLbl = new System.Windows.Forms.Label();
-            this.mockingbirdBtn = new LibrarySystem.RJButton();
             this.Pnl1984 = new System.Windows.Forms.Panel();
             this.stats1984Lbl = new System.Windows.Forms.Label();
             this.Lbl1984 = new System.Windows.Forms.Label();
-            this.Btn1984 = new LibrarySystem.RJButton();
             this.pridePnl = new System.Windows.Forms.Panel();
             this.pridestatsLbl = new System.Windows.Forms.Label();
             this.prideLbl = new System.Windows.Forms.Label();
-            this.prideBtn = new LibrarySystem.RJButton();
             this.gatsbyPnl = new System.Windows.Forms.Panel();
             this.gatsbystatsLbl = new System.Windows.Forms.Label();
             this.gatsbyLbl = new System.Windows.Forms.Label();
-            this.gatsbyBtn = new LibrarySystem.RJButton();
             this.solitudePnl = new System.Windows.Forms.Panel();
             this.solitudeLbl = new System.Windows.Forms.Label();
             this.solitudestatsLbl = new System.Windows.Forms.Label();
-            this.solitudeBtn = new LibrarySystem.RJButton();
             this.fictionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.fictionTransition = new System.Windows.Forms.Timer(this.components);
             this.fictionTransition2 = new System.Windows.Forms.Timer(this.components);
             this.diaryPanel = new System.Windows.Forms.Panel();
             this.diarystatsLabel = new System.Windows.Forms.Label();
             this.diaryLabel = new System.Windows.Forms.Label();
-            this.diaryBtn = new LibrarySystem.RJButton();
             this.thinkingPanel = new System.Windows.Forms.Panel();
             this.thinkingstatsLabel = new System.Windows.Forms.Label();
             this.thinkingLabel = new System.Windows.Forms.Label();
-            this.thinkingBtn = new LibrarySystem.RJButton();
             this.immortalPanel = new System.Windows.Forms.Panel();
             this.immortalstatsLabel = new System.Windows.Forms.Label();
             this.immortalLabel = new System.Windows.Forms.Label();
-            this.immortalBtn = new LibrarySystem.RJButton();
             this.sapiensPanel = new System.Windows.Forms.Panel();
             this.sapiensstatsLabel = new System.Windows.Forms.Label();
             this.sapiensLabel = new System.Windows.Forms.Label();
-            this.sapiensBtn = new LibrarySystem.RJButton();
             this.educatedPanel = new System.Windows.Forms.Panel();
             this.educatedstatsLbl = new System.Windows.Forms.Label();
             this.educatedLabel = new System.Windows.Forms.Label();
-            this.educatedBtn = new LibrarySystem.RJButton();
             this.nonfictionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.nonficTransition = new System.Windows.Forms.Timer(this.components);
             this.nonficTransition2 = new System.Windows.Forms.Timer(this.components);
@@ -80,34 +70,44 @@
             this.briefPanel = new System.Windows.Forms.Panel();
             this.briefstatsLabel = new System.Windows.Forms.Label();
             this.briefLabel = new System.Windows.Forms.Label();
-            this.briefBtn = new LibrarySystem.RJButton();
             this.elementsPanel = new System.Windows.Forms.Panel();
             this.elementsstatsLabel = new System.Windows.Forms.Label();
             this.elementsLabel = new System.Windows.Forms.Label();
-            this.elementsBtn = new LibrarySystem.RJButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.principiastatsLabel = new System.Windows.Forms.Label();
             this.principiaLabel = new System.Windows.Forms.Label();
-            this.principiaBtn = new LibrarySystem.RJButton();
             this.structurePanel = new System.Windows.Forms.Panel();
             this.structurestatsLabel = new System.Windows.Forms.Label();
             this.structureLabel = new System.Windows.Forms.Label();
-            this.structureBtn = new LibrarySystem.RJButton();
             this.originPanel = new System.Windows.Forms.Panel();
             this.originstatsLabel = new System.Windows.Forms.Label();
             this.originLabel = new System.Windows.Forms.Label();
-            this.originBtn = new LibrarySystem.RJButton();
             this.acadTransition = new System.Windows.Forms.Timer(this.components);
             this.acadTransition2 = new System.Windows.Forms.Timer(this.components);
             this.bookinfoflowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.bookinfoImage = new System.Windows.Forms.Label();
             this.bookinfoLabel = new System.Windows.Forms.Label();
             this.bookinfoTransition = new System.Windows.Forms.Timer(this.components);
-            this.acadBtn = new LibrarySystem.RJButton();
-            this.nonfictionBtn = new LibrarySystem.RJButton();
-            this.fictionBtn = new LibrarySystem.RJButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.booklistLabel = new System.Windows.Forms.Label();
+            this.sapiensBtn = new LibrarySystem.RJButton();
+            this.immortalBtn = new LibrarySystem.RJButton();
+            this.diaryBtn = new LibrarySystem.RJButton();
+            this.thinkingBtn = new LibrarySystem.RJButton();
+            this.educatedBtn = new LibrarySystem.RJButton();
+            this.mockingbirdBtn = new LibrarySystem.RJButton();
+            this.Btn1984 = new LibrarySystem.RJButton();
+            this.prideBtn = new LibrarySystem.RJButton();
+            this.gatsbyBtn = new LibrarySystem.RJButton();
+            this.solitudeBtn = new LibrarySystem.RJButton();
+            this.acadBtn = new LibrarySystem.RJButton();
+            this.nonfictionBtn = new LibrarySystem.RJButton();
+            this.briefBtn = new LibrarySystem.RJButton();
+            this.elementsBtn = new LibrarySystem.RJButton();
+            this.principiaBtn = new LibrarySystem.RJButton();
+            this.structureBtn = new LibrarySystem.RJButton();
+            this.originBtn = new LibrarySystem.RJButton();
+            this.fictionBtn = new LibrarySystem.RJButton();
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -165,28 +165,6 @@
             this.mockingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mockingLbl.Click += new System.EventHandler(this.label4_Click);
             // 
-            // mockingbirdBtn
-            // 
-            this.mockingbirdBtn.BackColor = System.Drawing.Color.Transparent;
-            this.mockingbirdBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.mockingbirdBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.mockingbirdBtn.BorderRadius = 1;
-            this.mockingbirdBtn.BorderSize = 3;
-            this.mockingbirdBtn.FlatAppearance.BorderSize = 0;
-            this.mockingbirdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mockingbirdBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mockingbirdBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.mockingbirdBtn.Image = ((System.Drawing.Image)(resources.GetObject("mockingbirdBtn.Image")));
-            this.mockingbirdBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.mockingbirdBtn.Location = new System.Drawing.Point(0, 0);
-            this.mockingbirdBtn.Name = "mockingbirdBtn";
-            this.mockingbirdBtn.Size = new System.Drawing.Size(149, 243);
-            this.mockingbirdBtn.TabIndex = 1;
-            this.mockingbirdBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-1-234567-89-0\r\n Harper Lee \r\n1960\r\nJ.B. Lippincott & Co.\r\n";
-            this.mockingbirdBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.mockingbirdBtn.UseVisualStyleBackColor = false;
-            this.mockingbirdBtn.Click += new System.EventHandler(this.mockingbirdBtn_Click_1);
-            // 
             // Pnl1984
             // 
             this.Pnl1984.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -220,28 +198,6 @@
             this.Lbl1984.TabIndex = 13;
             this.Lbl1984.Text = "1984";
             this.Lbl1984.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Btn1984
-            // 
-            this.Btn1984.BackColor = System.Drawing.Color.Transparent;
-            this.Btn1984.BackgroundColor = System.Drawing.Color.Transparent;
-            this.Btn1984.BorderColor = System.Drawing.Color.Transparent;
-            this.Btn1984.BorderRadius = 1;
-            this.Btn1984.BorderSize = 3;
-            this.Btn1984.FlatAppearance.BorderSize = 0;
-            this.Btn1984.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn1984.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn1984.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.Btn1984.Image = ((System.Drawing.Image)(resources.GetObject("Btn1984.Image")));
-            this.Btn1984.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Btn1984.Location = new System.Drawing.Point(0, 0);
-            this.Btn1984.Name = "Btn1984";
-            this.Btn1984.Size = new System.Drawing.Size(149, 243);
-            this.Btn1984.TabIndex = 1;
-            this.Btn1984.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-2-345678-90-1\r\nGeorge Orwell\r\n1949\r\nSecker & Warburg\r\n";
-            this.Btn1984.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.Btn1984.UseVisualStyleBackColor = false;
-            this.Btn1984.Click += new System.EventHandler(this.Btn1984_Click);
             // 
             // pridePnl
             // 
@@ -277,28 +233,6 @@
             this.prideLbl.Text = "Pride And Prejudice";
             this.prideLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // prideBtn
-            // 
-            this.prideBtn.BackColor = System.Drawing.Color.Transparent;
-            this.prideBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.prideBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.prideBtn.BorderRadius = 1;
-            this.prideBtn.BorderSize = 3;
-            this.prideBtn.FlatAppearance.BorderSize = 0;
-            this.prideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prideBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prideBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.prideBtn.Image = ((System.Drawing.Image)(resources.GetObject("prideBtn.Image")));
-            this.prideBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.prideBtn.Location = new System.Drawing.Point(0, 0);
-            this.prideBtn.Name = "prideBtn";
-            this.prideBtn.Size = new System.Drawing.Size(149, 243);
-            this.prideBtn.TabIndex = 1;
-            this.prideBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-3-456789-01-2\r\nJane Austen\r\n1813\r\nT. Egerton, Whitehall\r\n";
-            this.prideBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.prideBtn.UseVisualStyleBackColor = false;
-            this.prideBtn.Click += new System.EventHandler(this.prideBtn_Click);
-            // 
             // gatsbyPnl
             // 
             this.gatsbyPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -333,29 +267,6 @@
             this.gatsbyLbl.Text = "The Great Gatsby";
             this.gatsbyLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gatsbyBtn
-            // 
-            this.gatsbyBtn.BackColor = System.Drawing.Color.Transparent;
-            this.gatsbyBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.gatsbyBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.gatsbyBtn.BorderRadius = 1;
-            this.gatsbyBtn.BorderSize = 3;
-            this.gatsbyBtn.FlatAppearance.BorderSize = 0;
-            this.gatsbyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gatsbyBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gatsbyBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.gatsbyBtn.Image = ((System.Drawing.Image)(resources.GetObject("gatsbyBtn.Image")));
-            this.gatsbyBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.gatsbyBtn.Location = new System.Drawing.Point(0, 0);
-            this.gatsbyBtn.Name = "gatsbyBtn";
-            this.gatsbyBtn.Size = new System.Drawing.Size(149, 243);
-            this.gatsbyBtn.TabIndex = 1;
-            this.gatsbyBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-4-567890-12-3\r\nF. Scott Fitzgerald\r\n1925\r\nCharles Scribner\'s S" +
-    "ons\r\n";
-            this.gatsbyBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.gatsbyBtn.UseVisualStyleBackColor = false;
-            this.gatsbyBtn.Click += new System.EventHandler(this.gatsbyBtn_Click);
-            // 
             // solitudePnl
             // 
             this.solitudePnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -389,29 +300,6 @@
             this.solitudestatsLbl.TabIndex = 2;
             this.solitudestatsLbl.Text = "AVAILABLE";
             this.solitudestatsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // solitudeBtn
-            // 
-            this.solitudeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.solitudeBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.solitudeBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.solitudeBtn.BorderRadius = 2;
-            this.solitudeBtn.BorderSize = 3;
-            this.solitudeBtn.FlatAppearance.BorderSize = 0;
-            this.solitudeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.solitudeBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.solitudeBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.solitudeBtn.Image = ((System.Drawing.Image)(resources.GetObject("solitudeBtn.Image")));
-            this.solitudeBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.solitudeBtn.Location = new System.Drawing.Point(0, 0);
-            this.solitudeBtn.Name = "solitudeBtn";
-            this.solitudeBtn.Size = new System.Drawing.Size(149, 243);
-            this.solitudeBtn.TabIndex = 1;
-            this.solitudeBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-5-678901-23-4\r\nGabriel Marquez\r\n1967\r\nEditorial Sudamericana" +
-    "\r\n";
-            this.solitudeBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.solitudeBtn.UseVisualStyleBackColor = false;
-            this.solitudeBtn.Click += new System.EventHandler(this.solitudeBtn_Click);
             // 
             // fictionPanel
             // 
@@ -469,28 +357,6 @@
             this.diaryLabel.Text = "The Diary of a Young Girl";
             this.diaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // diaryBtn
-            // 
-            this.diaryBtn.BackColor = System.Drawing.Color.Transparent;
-            this.diaryBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.diaryBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.diaryBtn.BorderRadius = 1;
-            this.diaryBtn.BorderSize = 3;
-            this.diaryBtn.FlatAppearance.BorderSize = 0;
-            this.diaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.diaryBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diaryBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.diaryBtn.Image = ((System.Drawing.Image)(resources.GetObject("diaryBtn.Image")));
-            this.diaryBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.diaryBtn.Location = new System.Drawing.Point(0, 0);
-            this.diaryBtn.Name = "diaryBtn";
-            this.diaryBtn.Size = new System.Drawing.Size(149, 243);
-            this.diaryBtn.TabIndex = 1;
-            this.diaryBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-9-012345-67-8\r\nAnne Frank\r\n1947\r\nContact Publishing\r\n";
-            this.diaryBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.diaryBtn.UseVisualStyleBackColor = false;
-            this.diaryBtn.Click += new System.EventHandler(this.diaryBtn_Click);
-            // 
             // thinkingPanel
             // 
             this.thinkingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -524,29 +390,6 @@
             this.thinkingLabel.TabIndex = 13;
             this.thinkingLabel.Text = "Thinking, Fast and Slow";
             this.thinkingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // thinkingBtn
-            // 
-            this.thinkingBtn.BackColor = System.Drawing.Color.Transparent;
-            this.thinkingBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.thinkingBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.thinkingBtn.BorderRadius = 1;
-            this.thinkingBtn.BorderSize = 3;
-            this.thinkingBtn.FlatAppearance.BorderSize = 0;
-            this.thinkingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.thinkingBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thinkingBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.thinkingBtn.Image = ((System.Drawing.Image)(resources.GetObject("thinkingBtn.Image")));
-            this.thinkingBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.thinkingBtn.Location = new System.Drawing.Point(0, 0);
-            this.thinkingBtn.Name = "thinkingBtn";
-            this.thinkingBtn.Size = new System.Drawing.Size(149, 243);
-            this.thinkingBtn.TabIndex = 1;
-            this.thinkingBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-0-123456-78-9\r\nDaniel Kahneman\r\n2011\r\nFarrar, Straus and Girou" +
-    "x\r\n";
-            this.thinkingBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.thinkingBtn.UseVisualStyleBackColor = false;
-            this.thinkingBtn.Click += new System.EventHandler(this.thinkingBtn_Click);
             // 
             // immortalPanel
             // 
@@ -582,28 +425,6 @@
             this.immortalLabel.Text = "The Immortal Life of Henrietta Lacks";
             this.immortalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // immortalBtn
-            // 
-            this.immortalBtn.BackColor = System.Drawing.Color.Transparent;
-            this.immortalBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.immortalBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.immortalBtn.BorderRadius = 1;
-            this.immortalBtn.BorderSize = 3;
-            this.immortalBtn.FlatAppearance.BorderSize = 0;
-            this.immortalBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.immortalBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.immortalBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.immortalBtn.Image = ((System.Drawing.Image)(resources.GetObject("immortalBtn.Image")));
-            this.immortalBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.immortalBtn.Location = new System.Drawing.Point(0, 0);
-            this.immortalBtn.Name = "immortalBtn";
-            this.immortalBtn.Size = new System.Drawing.Size(149, 243);
-            this.immortalBtn.TabIndex = 1;
-            this.immortalBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-7-890123-45-6\r\nRebecca Skloot\r\n2010\r\nCrown Publishing \r\n";
-            this.immortalBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.immortalBtn.UseVisualStyleBackColor = false;
-            this.immortalBtn.Click += new System.EventHandler(this.immortalBtn_Click);
-            // 
             // sapiensPanel
             // 
             this.sapiensPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -638,28 +459,6 @@
             this.sapiensLabel.Text = "Sapiens: A Brief History of Humankind";
             this.sapiensLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sapiensBtn
-            // 
-            this.sapiensBtn.BackColor = System.Drawing.Color.Transparent;
-            this.sapiensBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.sapiensBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.sapiensBtn.BorderRadius = 1;
-            this.sapiensBtn.BorderSize = 3;
-            this.sapiensBtn.FlatAppearance.BorderSize = 0;
-            this.sapiensBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sapiensBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sapiensBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.sapiensBtn.Image = ((System.Drawing.Image)(resources.GetObject("sapiensBtn.Image")));
-            this.sapiensBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.sapiensBtn.Location = new System.Drawing.Point(0, 0);
-            this.sapiensBtn.Name = "sapiensBtn";
-            this.sapiensBtn.Size = new System.Drawing.Size(149, 243);
-            this.sapiensBtn.TabIndex = 1;
-            this.sapiensBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-6-789012-34-5\r\nYuval Noah Harari\r\n2011\r\nHarper\r\n";
-            this.sapiensBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.sapiensBtn.UseVisualStyleBackColor = false;
-            this.sapiensBtn.Click += new System.EventHandler(this.sapiensBtn_Click);
-            // 
             // educatedPanel
             // 
             this.educatedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -693,28 +492,6 @@
             this.educatedLabel.TabIndex = 13;
             this.educatedLabel.Text = "Educated";
             this.educatedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // educatedBtn
-            // 
-            this.educatedBtn.BackColor = System.Drawing.Color.Transparent;
-            this.educatedBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.educatedBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.educatedBtn.BorderRadius = 1;
-            this.educatedBtn.BorderSize = 3;
-            this.educatedBtn.FlatAppearance.BorderSize = 0;
-            this.educatedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.educatedBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.educatedBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.educatedBtn.Image = ((System.Drawing.Image)(resources.GetObject("educatedBtn.Image")));
-            this.educatedBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.educatedBtn.Location = new System.Drawing.Point(0, 0);
-            this.educatedBtn.Name = "educatedBtn";
-            this.educatedBtn.Size = new System.Drawing.Size(149, 243);
-            this.educatedBtn.TabIndex = 1;
-            this.educatedBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-8-901234-56-7\r\nTara Westover\r\n2018\r\nRandom House\r\n";
-            this.educatedBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.educatedBtn.UseVisualStyleBackColor = false;
-            this.educatedBtn.Click += new System.EventHandler(this.educatedBtn_Click);
             // 
             // nonfictionPanel
             // 
@@ -782,29 +559,6 @@
             this.briefLabel.Text = "A Brief History of Time";
             this.briefLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // briefBtn
-            // 
-            this.briefBtn.BackColor = System.Drawing.Color.Transparent;
-            this.briefBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.briefBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.briefBtn.BorderRadius = 1;
-            this.briefBtn.BorderSize = 3;
-            this.briefBtn.FlatAppearance.BorderSize = 0;
-            this.briefBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.briefBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.briefBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.briefBtn.Image = ((System.Drawing.Image)(resources.GetObject("briefBtn.Image")));
-            this.briefBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.briefBtn.Location = new System.Drawing.Point(0, 0);
-            this.briefBtn.Name = "briefBtn";
-            this.briefBtn.Size = new System.Drawing.Size(149, 243);
-            this.briefBtn.TabIndex = 1;
-            this.briefBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-1-234567-89-0\r\nStephen Hawking\r\n1988\r\nBantam Dell Publishing" +
-    " ";
-            this.briefBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.briefBtn.UseVisualStyleBackColor = false;
-            this.briefBtn.Click += new System.EventHandler(this.briefBtn_Click);
-            // 
             // elementsPanel
             // 
             this.elementsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -838,29 +592,6 @@
             this.elementsLabel.TabIndex = 13;
             this.elementsLabel.Text = "The Elements of Style";
             this.elementsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // elementsBtn
-            // 
-            this.elementsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.elementsBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.elementsBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.elementsBtn.BorderRadius = 1;
-            this.elementsBtn.BorderSize = 3;
-            this.elementsBtn.FlatAppearance.BorderSize = 0;
-            this.elementsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.elementsBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elementsBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.elementsBtn.Image = ((System.Drawing.Image)(resources.GetObject("elementsBtn.Image")));
-            this.elementsBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.elementsBtn.Location = new System.Drawing.Point(0, 0);
-            this.elementsBtn.Name = "elementsBtn";
-            this.elementsBtn.Size = new System.Drawing.Size(149, 243);
-            this.elementsBtn.TabIndex = 1;
-            this.elementsBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-2-345678-90-1\r\nWilliam Strunk Jr.\r\n1918\r\nHarcourt, Brace & H" +
-    "owe\r\n";
-            this.elementsBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.elementsBtn.UseVisualStyleBackColor = false;
-            this.elementsBtn.Click += new System.EventHandler(this.elementsBtn_Click);
             // 
             // panel3
             // 
@@ -896,28 +627,6 @@
             this.principiaLabel.Text = "Principia Mathematica";
             this.principiaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // principiaBtn
-            // 
-            this.principiaBtn.BackColor = System.Drawing.Color.Transparent;
-            this.principiaBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.principiaBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.principiaBtn.BorderRadius = 1;
-            this.principiaBtn.BorderSize = 3;
-            this.principiaBtn.FlatAppearance.BorderSize = 0;
-            this.principiaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.principiaBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principiaBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.principiaBtn.Image = ((System.Drawing.Image)(resources.GetObject("principiaBtn.Image")));
-            this.principiaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.principiaBtn.Location = new System.Drawing.Point(0, 0);
-            this.principiaBtn.Name = "principiaBtn";
-            this.principiaBtn.Size = new System.Drawing.Size(149, 243);
-            this.principiaBtn.TabIndex = 1;
-            this.principiaBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-3-456789-01-2\r\nIsaac Newton\r\n1687\r\nCambridge University ";
-            this.principiaBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.principiaBtn.UseVisualStyleBackColor = false;
-            this.principiaBtn.Click += new System.EventHandler(this.principiaBtn_Click);
-            // 
             // structurePanel
             // 
             this.structurePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -952,28 +661,6 @@
             this.structureLabel.Text = "The Structure of Scientific Revolutions";
             this.structureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // structureBtn
-            // 
-            this.structureBtn.BackColor = System.Drawing.Color.Transparent;
-            this.structureBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.structureBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.structureBtn.BorderRadius = 1;
-            this.structureBtn.BorderSize = 3;
-            this.structureBtn.FlatAppearance.BorderSize = 0;
-            this.structureBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.structureBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.structureBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.structureBtn.Image = ((System.Drawing.Image)(resources.GetObject("structureBtn.Image")));
-            this.structureBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.structureBtn.Location = new System.Drawing.Point(0, 0);
-            this.structureBtn.Name = "structureBtn";
-            this.structureBtn.Size = new System.Drawing.Size(149, 243);
-            this.structureBtn.TabIndex = 1;
-            this.structureBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-4-567890-12-3\r\nThomas S. Kuhn\r\n1962\r\nUniversity of Chicago ";
-            this.structureBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.structureBtn.UseVisualStyleBackColor = false;
-            this.structureBtn.Click += new System.EventHandler(this.structureBtn_Click);
-            // 
             // originPanel
             // 
             this.originPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1007,28 +694,6 @@
             this.originLabel.TabIndex = 13;
             this.originLabel.Text = "The Origin of Species";
             this.originLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // originBtn
-            // 
-            this.originBtn.BackColor = System.Drawing.Color.Transparent;
-            this.originBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.originBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.originBtn.BorderRadius = 1;
-            this.originBtn.BorderSize = 3;
-            this.originBtn.FlatAppearance.BorderSize = 0;
-            this.originBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.originBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.originBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.originBtn.Image = ((System.Drawing.Image)(resources.GetObject("originBtn.Image")));
-            this.originBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.originBtn.Location = new System.Drawing.Point(0, 0);
-            this.originBtn.Name = "originBtn";
-            this.originBtn.Size = new System.Drawing.Size(149, 243);
-            this.originBtn.TabIndex = 1;
-            this.originBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-5-678901-23-4\r\nCharles Darwin\r\n1859\r\nJohn Murray\r\n";
-            this.originBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
-            this.originBtn.UseVisualStyleBackColor = false;
-            this.originBtn.Click += new System.EventHandler(this.originBtn_Click);
             // 
             // acadTransition
             // 
@@ -1072,6 +737,250 @@
             // 
             this.bookinfoTransition.Tick += new System.EventHandler(this.bookinfoTransition_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(842, -11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 922);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // booklistLabel
+            // 
+            this.booklistLabel.AutoSize = true;
+            this.booklistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booklistLabel.ForeColor = System.Drawing.Color.Black;
+            this.booklistLabel.Location = new System.Drawing.Point(27, 38);
+            this.booklistLabel.Name = "booklistLabel";
+            this.booklistLabel.Size = new System.Drawing.Size(259, 52);
+            this.booklistLabel.TabIndex = 24;
+            this.booklistLabel.Text = "BOOK LIST";
+            this.booklistLabel.Click += new System.EventHandler(this.booklistLabel_Click);
+            // 
+            // sapiensBtn
+            // 
+            this.sapiensBtn.BackColor = System.Drawing.Color.Transparent;
+            this.sapiensBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.sapiensBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.sapiensBtn.BorderRadius = 1;
+            this.sapiensBtn.BorderSize = 3;
+            this.sapiensBtn.FlatAppearance.BorderSize = 0;
+            this.sapiensBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sapiensBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sapiensBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.sapiensBtn.Image = ((System.Drawing.Image)(resources.GetObject("sapiensBtn.Image")));
+            this.sapiensBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.sapiensBtn.Location = new System.Drawing.Point(0, 0);
+            this.sapiensBtn.Name = "sapiensBtn";
+            this.sapiensBtn.Size = new System.Drawing.Size(149, 243);
+            this.sapiensBtn.TabIndex = 1;
+            this.sapiensBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-6-789012-34-5\r\nYuval Noah Harari\r\n2011\r\nHarper\r\n";
+            this.sapiensBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.sapiensBtn.UseVisualStyleBackColor = false;
+            this.sapiensBtn.Click += new System.EventHandler(this.sapiensBtn_Click);
+            // 
+            // immortalBtn
+            // 
+            this.immortalBtn.BackColor = System.Drawing.Color.Transparent;
+            this.immortalBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.immortalBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.immortalBtn.BorderRadius = 1;
+            this.immortalBtn.BorderSize = 3;
+            this.immortalBtn.FlatAppearance.BorderSize = 0;
+            this.immortalBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.immortalBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.immortalBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.immortalBtn.Image = ((System.Drawing.Image)(resources.GetObject("immortalBtn.Image")));
+            this.immortalBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.immortalBtn.Location = new System.Drawing.Point(0, 0);
+            this.immortalBtn.Name = "immortalBtn";
+            this.immortalBtn.Size = new System.Drawing.Size(149, 243);
+            this.immortalBtn.TabIndex = 1;
+            this.immortalBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-7-890123-45-6\r\nRebecca Skloot\r\n2010\r\nCrown Publishing \r\n";
+            this.immortalBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.immortalBtn.UseVisualStyleBackColor = false;
+            this.immortalBtn.Click += new System.EventHandler(this.immortalBtn_Click);
+            // 
+            // diaryBtn
+            // 
+            this.diaryBtn.BackColor = System.Drawing.Color.Transparent;
+            this.diaryBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.diaryBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.diaryBtn.BorderRadius = 1;
+            this.diaryBtn.BorderSize = 3;
+            this.diaryBtn.FlatAppearance.BorderSize = 0;
+            this.diaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.diaryBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diaryBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.diaryBtn.Image = ((System.Drawing.Image)(resources.GetObject("diaryBtn.Image")));
+            this.diaryBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.diaryBtn.Location = new System.Drawing.Point(0, 0);
+            this.diaryBtn.Name = "diaryBtn";
+            this.diaryBtn.Size = new System.Drawing.Size(149, 243);
+            this.diaryBtn.TabIndex = 1;
+            this.diaryBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-9-012345-67-8\r\nAnne Frank\r\n1947\r\nContact Publishing\r\n";
+            this.diaryBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.diaryBtn.UseVisualStyleBackColor = false;
+            this.diaryBtn.Click += new System.EventHandler(this.diaryBtn_Click);
+            // 
+            // thinkingBtn
+            // 
+            this.thinkingBtn.BackColor = System.Drawing.Color.Transparent;
+            this.thinkingBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.thinkingBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.thinkingBtn.BorderRadius = 1;
+            this.thinkingBtn.BorderSize = 3;
+            this.thinkingBtn.FlatAppearance.BorderSize = 0;
+            this.thinkingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.thinkingBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thinkingBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.thinkingBtn.Image = ((System.Drawing.Image)(resources.GetObject("thinkingBtn.Image")));
+            this.thinkingBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.thinkingBtn.Location = new System.Drawing.Point(0, 0);
+            this.thinkingBtn.Name = "thinkingBtn";
+            this.thinkingBtn.Size = new System.Drawing.Size(149, 243);
+            this.thinkingBtn.TabIndex = 1;
+            this.thinkingBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-0-123456-78-9\r\nDaniel Kahneman\r\n2011\r\nFarrar, Straus and Girou" +
+    "x\r\n";
+            this.thinkingBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.thinkingBtn.UseVisualStyleBackColor = false;
+            this.thinkingBtn.Click += new System.EventHandler(this.thinkingBtn_Click);
+            // 
+            // educatedBtn
+            // 
+            this.educatedBtn.BackColor = System.Drawing.Color.Transparent;
+            this.educatedBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.educatedBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.educatedBtn.BorderRadius = 1;
+            this.educatedBtn.BorderSize = 3;
+            this.educatedBtn.FlatAppearance.BorderSize = 0;
+            this.educatedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.educatedBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.educatedBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.educatedBtn.Image = ((System.Drawing.Image)(resources.GetObject("educatedBtn.Image")));
+            this.educatedBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.educatedBtn.Location = new System.Drawing.Point(0, 0);
+            this.educatedBtn.Name = "educatedBtn";
+            this.educatedBtn.Size = new System.Drawing.Size(149, 243);
+            this.educatedBtn.TabIndex = 1;
+            this.educatedBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-8-901234-56-7\r\nTara Westover\r\n2018\r\nRandom House\r\n";
+            this.educatedBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.educatedBtn.UseVisualStyleBackColor = false;
+            this.educatedBtn.Click += new System.EventHandler(this.educatedBtn_Click);
+            // 
+            // mockingbirdBtn
+            // 
+            this.mockingbirdBtn.BackColor = System.Drawing.Color.Transparent;
+            this.mockingbirdBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.mockingbirdBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.mockingbirdBtn.BorderRadius = 1;
+            this.mockingbirdBtn.BorderSize = 3;
+            this.mockingbirdBtn.FlatAppearance.BorderSize = 0;
+            this.mockingbirdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mockingbirdBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mockingbirdBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.mockingbirdBtn.Image = ((System.Drawing.Image)(resources.GetObject("mockingbirdBtn.Image")));
+            this.mockingbirdBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mockingbirdBtn.Location = new System.Drawing.Point(0, 0);
+            this.mockingbirdBtn.Name = "mockingbirdBtn";
+            this.mockingbirdBtn.Size = new System.Drawing.Size(149, 243);
+            this.mockingbirdBtn.TabIndex = 1;
+            this.mockingbirdBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-1-234567-89-0\r\n Harper Lee \r\n1960\r\nJ.B. Lippincott & Co.\r\n";
+            this.mockingbirdBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.mockingbirdBtn.UseVisualStyleBackColor = false;
+            this.mockingbirdBtn.Click += new System.EventHandler(this.mockingbirdBtn_Click_1);
+            // 
+            // Btn1984
+            // 
+            this.Btn1984.BackColor = System.Drawing.Color.Transparent;
+            this.Btn1984.BackgroundColor = System.Drawing.Color.Transparent;
+            this.Btn1984.BorderColor = System.Drawing.Color.Transparent;
+            this.Btn1984.BorderRadius = 1;
+            this.Btn1984.BorderSize = 3;
+            this.Btn1984.FlatAppearance.BorderSize = 0;
+            this.Btn1984.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn1984.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn1984.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.Btn1984.Image = ((System.Drawing.Image)(resources.GetObject("Btn1984.Image")));
+            this.Btn1984.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn1984.Location = new System.Drawing.Point(0, 0);
+            this.Btn1984.Name = "Btn1984";
+            this.Btn1984.Size = new System.Drawing.Size(149, 243);
+            this.Btn1984.TabIndex = 1;
+            this.Btn1984.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-2-345678-90-1\r\nGeorge Orwell\r\n1949\r\nSecker & Warburg\r\n";
+            this.Btn1984.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.Btn1984.UseVisualStyleBackColor = false;
+            this.Btn1984.Click += new System.EventHandler(this.Btn1984_Click);
+            // 
+            // prideBtn
+            // 
+            this.prideBtn.BackColor = System.Drawing.Color.Transparent;
+            this.prideBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.prideBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.prideBtn.BorderRadius = 1;
+            this.prideBtn.BorderSize = 3;
+            this.prideBtn.FlatAppearance.BorderSize = 0;
+            this.prideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prideBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prideBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.prideBtn.Image = ((System.Drawing.Image)(resources.GetObject("prideBtn.Image")));
+            this.prideBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.prideBtn.Location = new System.Drawing.Point(0, 0);
+            this.prideBtn.Name = "prideBtn";
+            this.prideBtn.Size = new System.Drawing.Size(149, 243);
+            this.prideBtn.TabIndex = 1;
+            this.prideBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-3-456789-01-2\r\nJane Austen\r\n1813\r\nT. Egerton, Whitehall\r\n";
+            this.prideBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.prideBtn.UseVisualStyleBackColor = false;
+            this.prideBtn.Click += new System.EventHandler(this.prideBtn_Click);
+            // 
+            // gatsbyBtn
+            // 
+            this.gatsbyBtn.BackColor = System.Drawing.Color.Transparent;
+            this.gatsbyBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.gatsbyBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.gatsbyBtn.BorderRadius = 1;
+            this.gatsbyBtn.BorderSize = 3;
+            this.gatsbyBtn.FlatAppearance.BorderSize = 0;
+            this.gatsbyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gatsbyBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gatsbyBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.gatsbyBtn.Image = ((System.Drawing.Image)(resources.GetObject("gatsbyBtn.Image")));
+            this.gatsbyBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.gatsbyBtn.Location = new System.Drawing.Point(0, 0);
+            this.gatsbyBtn.Name = "gatsbyBtn";
+            this.gatsbyBtn.Size = new System.Drawing.Size(149, 243);
+            this.gatsbyBtn.TabIndex = 1;
+            this.gatsbyBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-4-567890-12-3\r\nF. Scott Fitzgerald\r\n1925\r\nCharles Scribner\'s S" +
+    "ons\r\n";
+            this.gatsbyBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.gatsbyBtn.UseVisualStyleBackColor = false;
+            this.gatsbyBtn.Click += new System.EventHandler(this.gatsbyBtn_Click);
+            // 
+            // solitudeBtn
+            // 
+            this.solitudeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.solitudeBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.solitudeBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.solitudeBtn.BorderRadius = 2;
+            this.solitudeBtn.BorderSize = 3;
+            this.solitudeBtn.FlatAppearance.BorderSize = 0;
+            this.solitudeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.solitudeBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.solitudeBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.solitudeBtn.Image = ((System.Drawing.Image)(resources.GetObject("solitudeBtn.Image")));
+            this.solitudeBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.solitudeBtn.Location = new System.Drawing.Point(0, 0);
+            this.solitudeBtn.Name = "solitudeBtn";
+            this.solitudeBtn.Size = new System.Drawing.Size(149, 243);
+            this.solitudeBtn.TabIndex = 1;
+            this.solitudeBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-5-678901-23-4\r\nGabriel Marquez\r\n1967\r\nEditorial Sudamericana" +
+    "\r\n";
+            this.solitudeBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.solitudeBtn.UseVisualStyleBackColor = false;
+            this.solitudeBtn.Click += new System.EventHandler(this.solitudeBtn_Click);
+            // 
             // acadBtn
             // 
             this.acadBtn.BackColor = System.Drawing.Color.Olive;
@@ -1110,6 +1019,118 @@
             this.nonfictionBtn.UseVisualStyleBackColor = false;
             this.nonfictionBtn.Click += new System.EventHandler(this.nonfictionBtn_Click);
             // 
+            // briefBtn
+            // 
+            this.briefBtn.BackColor = System.Drawing.Color.Transparent;
+            this.briefBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.briefBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.briefBtn.BorderRadius = 1;
+            this.briefBtn.BorderSize = 3;
+            this.briefBtn.FlatAppearance.BorderSize = 0;
+            this.briefBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.briefBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.briefBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.briefBtn.Image = ((System.Drawing.Image)(resources.GetObject("briefBtn.Image")));
+            this.briefBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.briefBtn.Location = new System.Drawing.Point(0, 0);
+            this.briefBtn.Name = "briefBtn";
+            this.briefBtn.Size = new System.Drawing.Size(149, 243);
+            this.briefBtn.TabIndex = 1;
+            this.briefBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-1-234567-89-0\r\nStephen Hawking\r\n1988\r\nBantam Dell Publishing" +
+    " ";
+            this.briefBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.briefBtn.UseVisualStyleBackColor = false;
+            this.briefBtn.Click += new System.EventHandler(this.briefBtn_Click);
+            // 
+            // elementsBtn
+            // 
+            this.elementsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.elementsBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.elementsBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.elementsBtn.BorderRadius = 1;
+            this.elementsBtn.BorderSize = 3;
+            this.elementsBtn.FlatAppearance.BorderSize = 0;
+            this.elementsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.elementsBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elementsBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.elementsBtn.Image = ((System.Drawing.Image)(resources.GetObject("elementsBtn.Image")));
+            this.elementsBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.elementsBtn.Location = new System.Drawing.Point(0, 0);
+            this.elementsBtn.Name = "elementsBtn";
+            this.elementsBtn.Size = new System.Drawing.Size(149, 243);
+            this.elementsBtn.TabIndex = 1;
+            this.elementsBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-2-345678-90-1\r\nWilliam Strunk Jr.\r\n1918\r\nHarcourt, Brace & H" +
+    "owe\r\n";
+            this.elementsBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.elementsBtn.UseVisualStyleBackColor = false;
+            this.elementsBtn.Click += new System.EventHandler(this.elementsBtn_Click);
+            // 
+            // principiaBtn
+            // 
+            this.principiaBtn.BackColor = System.Drawing.Color.Transparent;
+            this.principiaBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.principiaBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.principiaBtn.BorderRadius = 1;
+            this.principiaBtn.BorderSize = 3;
+            this.principiaBtn.FlatAppearance.BorderSize = 0;
+            this.principiaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.principiaBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.principiaBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.principiaBtn.Image = ((System.Drawing.Image)(resources.GetObject("principiaBtn.Image")));
+            this.principiaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.principiaBtn.Location = new System.Drawing.Point(0, 0);
+            this.principiaBtn.Name = "principiaBtn";
+            this.principiaBtn.Size = new System.Drawing.Size(149, 243);
+            this.principiaBtn.TabIndex = 1;
+            this.principiaBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n978-3-456789-01-2\r\nIsaac Newton\r\n1687\r\nCambridge University ";
+            this.principiaBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.principiaBtn.UseVisualStyleBackColor = false;
+            this.principiaBtn.Click += new System.EventHandler(this.principiaBtn_Click);
+            // 
+            // structureBtn
+            // 
+            this.structureBtn.BackColor = System.Drawing.Color.Transparent;
+            this.structureBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.structureBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.structureBtn.BorderRadius = 1;
+            this.structureBtn.BorderSize = 3;
+            this.structureBtn.FlatAppearance.BorderSize = 0;
+            this.structureBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.structureBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.structureBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.structureBtn.Image = ((System.Drawing.Image)(resources.GetObject("structureBtn.Image")));
+            this.structureBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.structureBtn.Location = new System.Drawing.Point(0, 0);
+            this.structureBtn.Name = "structureBtn";
+            this.structureBtn.Size = new System.Drawing.Size(149, 243);
+            this.structureBtn.TabIndex = 1;
+            this.structureBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-4-567890-12-3\r\nThomas S. Kuhn\r\n1962\r\nUniversity of Chicago ";
+            this.structureBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.structureBtn.UseVisualStyleBackColor = false;
+            this.structureBtn.Click += new System.EventHandler(this.structureBtn_Click);
+            // 
+            // originBtn
+            // 
+            this.originBtn.BackColor = System.Drawing.Color.Transparent;
+            this.originBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.originBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.originBtn.BorderRadius = 1;
+            this.originBtn.BorderSize = 3;
+            this.originBtn.FlatAppearance.BorderSize = 0;
+            this.originBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.originBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.originBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.originBtn.Image = ((System.Drawing.Image)(resources.GetObject("originBtn.Image")));
+            this.originBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.originBtn.Location = new System.Drawing.Point(0, 0);
+            this.originBtn.Name = "originBtn";
+            this.originBtn.Size = new System.Drawing.Size(149, 243);
+            this.originBtn.TabIndex = 1;
+            this.originBtn.Text = " \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n978-5-678901-23-4\r\nCharles Darwin\r\n1859\r\nJohn Murray\r\n";
+            this.originBtn.TextColor = System.Drawing.Color.DarkOliveGreen;
+            this.originBtn.UseVisualStyleBackColor = false;
+            this.originBtn.Click += new System.EventHandler(this.originBtn_Click);
+            // 
             // fictionBtn
             // 
             this.fictionBtn.BackColor = System.Drawing.Color.Olive;
@@ -1128,27 +1149,6 @@
             this.fictionBtn.TextColor = System.Drawing.Color.White;
             this.fictionBtn.UseVisualStyleBackColor = false;
             this.fictionBtn.Click += new System.EventHandler(this.fictionButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(842, -11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 922);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
-            // booklistLabel
-            // 
-            this.booklistLabel.AutoSize = true;
-            this.booklistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booklistLabel.ForeColor = System.Drawing.Color.Black;
-            this.booklistLabel.Location = new System.Drawing.Point(27, 49);
-            this.booklistLabel.Name = "booklistLabel";
-            this.booklistLabel.Size = new System.Drawing.Size(259, 52);
-            this.booklistLabel.TabIndex = 24;
-            this.booklistLabel.Text = "BOOK LIST";
-            this.booklistLabel.Click += new System.EventHandler(this.booklistLabel_Click);
             // 
             // BooklistForm
             // 
