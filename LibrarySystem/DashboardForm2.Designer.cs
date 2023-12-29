@@ -35,20 +35,23 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.availableLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.reservedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.penaltiesB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.analyticsDG = new System.Windows.Forms.DataGridView();
             this.availbooksPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.availbooksB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.reservedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.userPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.reservedB = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.reservedPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.borrowinglabel = new System.Windows.Forms.Label();
+            this.reservinglabel = new System.Windows.Forms.Label();
+            this.penaltieslabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).BeginInit();
             this.availbooksPanel.SuspendLayout();
             this.borrowedPanel.SuspendLayout();
-            this.reservedPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
+            this.reservedPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // hellolabel
@@ -93,28 +96,6 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(871, 5);
             this.guna2GradientPanel1.TabIndex = 16;
             // 
-            // reservedB
-            // 
-            this.reservedB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.reservedB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.reservedB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.reservedB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.reservedB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reservedB.FillColor = System.Drawing.Color.Chartreuse;
-            this.reservedB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.reservedB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedB.ForeColor = System.Drawing.Color.White;
-            this.reservedB.Image = ((System.Drawing.Image)(resources.GetObject("reservedB.Image")));
-            this.reservedB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.reservedB.ImageSize = new System.Drawing.Size(35, 35);
-            this.reservedB.Location = new System.Drawing.Point(6, 14);
-            this.reservedB.Name = "reservedB";
-            this.reservedB.Size = new System.Drawing.Size(200, 66);
-            this.reservedB.TabIndex = 19;
-            this.reservedB.Text = "RESERVE";
-            this.reservedB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.reservedB.Click += new System.EventHandler(this.reservedB_Click);
-            // 
             // penaltiesB
             // 
             this.penaltiesB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -134,6 +115,7 @@
             this.penaltiesB.TabIndex = 20;
             this.penaltiesB.Text = "PENALTIES";
             this.penaltiesB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.penaltiesB.Click += new System.EventHandler(this.penaltiesB_Click);
             // 
             // analyticsDG
             // 
@@ -216,6 +198,7 @@
             // 
             // borrowedPanel
             // 
+            this.borrowedPanel.Controls.Add(this.borrowinglabel);
             this.borrowedPanel.Controls.Add(this.borrowedB);
             this.borrowedPanel.FillColor = System.Drawing.Color.LightCoral;
             this.borrowedPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -224,8 +207,42 @@
             this.borrowedPanel.Size = new System.Drawing.Size(209, 116);
             this.borrowedPanel.TabIndex = 24;
             // 
+            // userPanel
+            // 
+            this.userPanel.Controls.Add(this.penaltieslabel);
+            this.userPanel.Controls.Add(this.penaltiesB);
+            this.userPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.userPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.userPanel.Location = new System.Drawing.Point(664, 197);
+            this.userPanel.Name = "userPanel";
+            this.userPanel.Size = new System.Drawing.Size(209, 116);
+            this.userPanel.TabIndex = 26;
+            // 
+            // reservedB
+            // 
+            this.reservedB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.reservedB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.reservedB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.reservedB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.reservedB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.reservedB.FillColor = System.Drawing.Color.Chartreuse;
+            this.reservedB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.reservedB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedB.ForeColor = System.Drawing.Color.White;
+            this.reservedB.Image = ((System.Drawing.Image)(resources.GetObject("reservedB.Image")));
+            this.reservedB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.reservedB.ImageSize = new System.Drawing.Size(35, 35);
+            this.reservedB.Location = new System.Drawing.Point(6, 14);
+            this.reservedB.Name = "reservedB";
+            this.reservedB.Size = new System.Drawing.Size(200, 66);
+            this.reservedB.TabIndex = 19;
+            this.reservedB.Text = "RESERVE";
+            this.reservedB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.reservedB.Click += new System.EventHandler(this.reservedB_Click);
+            // 
             // reservedPanel
             // 
+            this.reservedPanel.Controls.Add(this.reservinglabel);
             this.reservedPanel.Controls.Add(this.reservedB);
             this.reservedPanel.FillColor = System.Drawing.Color.Chartreuse;
             this.reservedPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -234,15 +251,41 @@
             this.reservedPanel.Size = new System.Drawing.Size(209, 116);
             this.reservedPanel.TabIndex = 25;
             // 
-            // userPanel
+            // borrowinglabel
             // 
-            this.userPanel.Controls.Add(this.penaltiesB);
-            this.userPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.userPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
-            this.userPanel.Location = new System.Drawing.Point(664, 197);
-            this.userPanel.Name = "userPanel";
-            this.userPanel.Size = new System.Drawing.Size(209, 116);
-            this.userPanel.TabIndex = 26;
+            this.borrowinglabel.BackColor = System.Drawing.Color.Transparent;
+            this.borrowinglabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowinglabel.ForeColor = System.Drawing.Color.White;
+            this.borrowinglabel.Location = new System.Drawing.Point(168, 83);
+            this.borrowinglabel.Name = "borrowinglabel";
+            this.borrowinglabel.Size = new System.Drawing.Size(38, 33);
+            this.borrowinglabel.TabIndex = 18;
+            this.borrowinglabel.Text = "10";
+            this.borrowinglabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // reservinglabel
+            // 
+            this.reservinglabel.BackColor = System.Drawing.Color.Transparent;
+            this.reservinglabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservinglabel.ForeColor = System.Drawing.Color.White;
+            this.reservinglabel.Location = new System.Drawing.Point(168, 83);
+            this.reservinglabel.Name = "reservinglabel";
+            this.reservinglabel.Size = new System.Drawing.Size(38, 33);
+            this.reservinglabel.TabIndex = 19;
+            this.reservinglabel.Text = "10";
+            this.reservinglabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // penaltieslabel
+            // 
+            this.penaltieslabel.BackColor = System.Drawing.Color.Transparent;
+            this.penaltieslabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltieslabel.ForeColor = System.Drawing.Color.White;
+            this.penaltieslabel.Location = new System.Drawing.Point(168, 83);
+            this.penaltieslabel.Name = "penaltieslabel";
+            this.penaltieslabel.Size = new System.Drawing.Size(38, 33);
+            this.penaltieslabel.TabIndex = 20;
+            this.penaltieslabel.Text = "10";
+            this.penaltieslabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DashboardForm2
             // 
@@ -265,8 +308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).EndInit();
             this.availbooksPanel.ResumeLayout(false);
             this.borrowedPanel.ResumeLayout(false);
-            this.reservedPanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
+            this.reservedPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,14 +320,17 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label availableLabel;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2GradientButton reservedB;
         private Guna.UI2.WinForms.Guna2GradientButton penaltiesB;
         private System.Windows.Forms.DataGridView analyticsDG;
         private Guna.UI2.WinForms.Guna2GradientPanel availbooksPanel;
         private Guna.UI2.WinForms.Guna2GradientButton borrowedB;
         private Guna.UI2.WinForms.Guna2GradientButton availbooksB;
         private Guna.UI2.WinForms.Guna2GradientPanel borrowedPanel;
-        private Guna.UI2.WinForms.Guna2GradientPanel reservedPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel userPanel;
+        private System.Windows.Forms.Label borrowinglabel;
+        private System.Windows.Forms.Label penaltieslabel;
+        private Guna.UI2.WinForms.Guna2GradientButton reservedB;
+        private Guna.UI2.WinForms.Guna2GradientPanel reservedPanel;
+        private System.Windows.Forms.Label reservinglabel;
     }
 }
