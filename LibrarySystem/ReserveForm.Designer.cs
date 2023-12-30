@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             this.bnameLabel = new System.Windows.Forms.Label();
             this.btitleLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -38,11 +40,15 @@
             this.reservedbooksDG = new System.Windows.Forms.DataGridView();
             this.reserveLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.calendarBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.manageTransition = new System.Windows.Forms.Timer(this.components);
+            this.manageFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.manageBtn = new LibrarySystem.RJButton();
             this.deleteBtn = new LibrarySystem.RJButton();
-            this.editBtn = new LibrarySystem.RJButton();
             this.rbooksBtn = new LibrarySystem.RJButton();
             this.reserveBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.reservedbooksDG)).BeginInit();
+            this.manageFlowPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // bnameLabel
@@ -94,9 +100,9 @@
             // 
             // reservedatepicker
             // 
-            this.reservedatepicker.Location = new System.Drawing.Point(663, 632);
+            this.reservedatepicker.Location = new System.Drawing.Point(688, 657);
             this.reservedatepicker.Name = "reservedatepicker";
-            this.reservedatepicker.Size = new System.Drawing.Size(200, 20);
+            this.reservedatepicker.Size = new System.Drawing.Size(19, 20);
             this.reservedatepicker.TabIndex = 6;
             this.reservedatepicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -141,53 +147,87 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(871, 5);
             this.guna2GradientPanel1.TabIndex = 28;
             // 
+            // calendarBtn
+            // 
+            this.calendarBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.calendarBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.calendarBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.calendarBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.calendarBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.calendarBtn.FillColor = System.Drawing.Color.Olive;
+            this.calendarBtn.FillColor2 = System.Drawing.Color.YellowGreen;
+            this.calendarBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.calendarBtn.ForeColor = System.Drawing.Color.White;
+            this.calendarBtn.Image = ((System.Drawing.Image)(resources.GetObject("calendarBtn.Image")));
+            this.calendarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.calendarBtn.Location = new System.Drawing.Point(655, 647);
+            this.calendarBtn.Name = "calendarBtn";
+            this.calendarBtn.Size = new System.Drawing.Size(63, 40);
+            this.calendarBtn.TabIndex = 31;
+            // 
+            // manageTransition
+            // 
+            this.manageTransition.Tick += new System.EventHandler(this.manageTransition_Tick);
+            // 
+            // manageFlowPanel
+            // 
+            this.manageFlowPanel.Controls.Add(this.manageBtn);
+            this.manageFlowPanel.Controls.Add(this.deleteBtn);
+            this.manageFlowPanel.Location = new System.Drawing.Point(678, 697);
+            this.manageFlowPanel.Name = "manageFlowPanel";
+            this.manageFlowPanel.Size = new System.Drawing.Size(185, 62);
+            this.manageFlowPanel.TabIndex = 32;
+            // 
+            // manageBtn
+            // 
+            this.manageBtn.BackColor = System.Drawing.Color.Olive;
+            this.manageBtn.BackgroundColor = System.Drawing.Color.Olive;
+            this.manageBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.manageBtn.BorderRadius = 25;
+            this.manageBtn.BorderSize = 0;
+            this.manageBtn.FlatAppearance.BorderSize = 0;
+            this.manageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageBtn.ForeColor = System.Drawing.Color.White;
+            this.manageBtn.Location = new System.Drawing.Point(3, 3);
+            this.manageBtn.Name = "manageBtn";
+            this.manageBtn.Size = new System.Drawing.Size(179, 55);
+            this.manageBtn.TabIndex = 10;
+            this.manageBtn.Text = "MANAGE";
+            this.manageBtn.TextColor = System.Drawing.Color.White;
+            this.manageBtn.UseVisualStyleBackColor = false;
+            this.manageBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
             // deleteBtn
             // 
-            this.deleteBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.deleteBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.deleteBtn.BackColor = System.Drawing.Color.Olive;
+            this.deleteBtn.BackgroundColor = System.Drawing.Color.Olive;
             this.deleteBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.deleteBtn.BorderRadius = 0;
+            this.deleteBtn.BorderRadius = 22;
             this.deleteBtn.BorderSize = 0;
             this.deleteBtn.FlatAppearance.BorderSize = 0;
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(684, 755);
+            this.deleteBtn.Location = new System.Drawing.Point(3, 64);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(179, 55);
+            this.deleteBtn.Size = new System.Drawing.Size(179, 40);
             this.deleteBtn.TabIndex = 13;
             this.deleteBtn.Text = "DELETE";
             this.deleteBtn.TextColor = System.Drawing.Color.White;
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // editBtn
-            // 
-            this.editBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.editBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.editBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.editBtn.BorderRadius = 25;
-            this.editBtn.BorderSize = 0;
-            this.editBtn.FlatAppearance.BorderSize = 0;
-            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Location = new System.Drawing.Point(684, 694);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(179, 55);
-            this.editBtn.TabIndex = 10;
-            this.editBtn.Text = "EDIT";
-            this.editBtn.TextColor = System.Drawing.Color.White;
-            this.editBtn.UseVisualStyleBackColor = false;
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
             // rbooksBtn
             // 
-            this.rbooksBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rbooksBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbooksBtn.BackColor = System.Drawing.Color.Olive;
+            this.rbooksBtn.BackgroundColor = System.Drawing.Color.Olive;
             this.rbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rbooksBtn.BorderRadius = 25;
             this.rbooksBtn.BorderSize = 0;
             this.rbooksBtn.FlatAppearance.BorderSize = 0;
             this.rbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbooksBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbooksBtn.ForeColor = System.Drawing.Color.White;
             this.rbooksBtn.Location = new System.Drawing.Point(482, 697);
             this.rbooksBtn.Name = "rbooksBtn";
@@ -200,13 +240,14 @@
             // 
             // reserveBtn
             // 
-            this.reserveBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.reserveBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.reserveBtn.BackColor = System.Drawing.Color.Olive;
+            this.reserveBtn.BackgroundColor = System.Drawing.Color.Olive;
             this.reserveBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.reserveBtn.BorderRadius = 25;
             this.reserveBtn.BorderSize = 0;
             this.reserveBtn.FlatAppearance.BorderSize = 0;
             this.reserveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reserveBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveBtn.ForeColor = System.Drawing.Color.White;
             this.reserveBtn.Location = new System.Drawing.Point(287, 697);
             this.reserveBtn.Name = "reserveBtn";
@@ -223,11 +264,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.manageFlowPanel);
             this.Controls.Add(this.reserveLabel);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.reservedbooksDG);
-            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.rbooksBtn);
             this.Controls.Add(this.reserveBtn);
             this.Controls.Add(this.borrowernameTb);
@@ -237,10 +277,12 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.btitleLabel);
             this.Controls.Add(this.bnameLabel);
+            this.Controls.Add(this.calendarBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReserveForm";
             this.Load += new System.EventHandler(this.ReserveForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reservedbooksDG)).EndInit();
+            this.manageFlowPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,10 +299,13 @@
         private System.Windows.Forms.TextBox borrowernameTb;
         private RJButton reserveBtn;
         private RJButton rbooksBtn;
-        private RJButton editBtn;
+        private RJButton manageBtn;
         private System.Windows.Forms.DataGridView reservedbooksDG;
         private RJButton deleteBtn;
         private System.Windows.Forms.Label reserveLabel;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientButton calendarBtn;
+        private System.Windows.Forms.Timer manageTransition;
+        private System.Windows.Forms.FlowLayoutPanel manageFlowPanel;
     }
 }

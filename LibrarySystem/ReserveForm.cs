@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,8 +33,16 @@ namespace LibrarySystem
             reservedbooksDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
             reservedbooksDG.ScrollBars = ScrollBars.Vertical;
 
+            ApplyRoundedButtonStyle(calendarBtn);
+            reservedbooksDG.Visible = true;
+            FetchReservationsAndBindDataGridView();
         }
+        private void ApplyRoundedButtonStyle(Guna2GradientButton button)
+        {
 
+            // Set the border radius to make the button rounded
+            button.BorderRadius = 12; // Adjust the radius to control the roundness
+        }
         private bool HasUnpaidPenalties(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -523,7 +532,7 @@ namespace LibrarySystem
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-
+            manageTransition.Start();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -669,6 +678,37 @@ namespace LibrarySystem
                 }
             }catch(Exception ex) {
                 MessageBox.Show($"Error! Row must have a reservation in order to edit it.");
+            }
+        }
+
+        bool manageCurtain = false;
+        private void manageTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedHeight = 107;
+            const int targetCollapsedHeight = 62;
+            const int step = 45;
+
+            if (!manageCurtain)
+            {
+                // Expanding
+                manageFlowPanel.Height += step;
+                if (manageFlowPanel.Height >= targetExpandedHeight)
+                {
+                    manageFlowPanel.Height = targetExpandedHeight;
+                    manageTransition.Stop();
+                    manageCurtain = true;
+                }
+            }
+            else
+            {
+                // Collapsing
+                manageFlowPanel.Height -= step;
+                if (manageFlowPanel.Height <= targetCollapsedHeight)
+                {
+                    manageFlowPanel.Height = targetCollapsedHeight;
+                    manageTransition.Stop();
+                    manageCurtain = false;
+                }
             }
         }
     }
