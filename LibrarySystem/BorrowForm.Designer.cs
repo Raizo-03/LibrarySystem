@@ -131,7 +131,7 @@
             this.borrowDG.GridColor = System.Drawing.Color.PeachPuff;
             this.borrowDG.Location = new System.Drawing.Point(39, 123);
             this.borrowDG.Name = "borrowDG";
-            this.borrowDG.Size = new System.Drawing.Size(531, 358);
+            this.borrowDG.Size = new System.Drawing.Size(564, 358);
             this.borrowDG.TabIndex = 27;
             this.borrowDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.borrowDG_CellContentClick);
             // 
