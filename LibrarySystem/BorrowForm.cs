@@ -200,7 +200,7 @@ namespace LibrarySystem
             {
                 connection.Open();
 
-                string query = "SELECT book_id, title FROM books";
+                string query = "SELECT book_id, title FROM books WHERE availability = 'AVAILABLE'";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {

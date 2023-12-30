@@ -28,6 +28,9 @@ namespace LibrarySystem
             reservedbooksDG.Visible = false;
             reservedbooksDG.ReadOnly = true;
             reservedbooksDG.CellClick += reservedbooksDG_CellContentClick;
+            reservedbooksDG.ReadOnly = true;
+            reservedbooksDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
+            reservedbooksDG.ScrollBars = ScrollBars.Vertical;
 
         }
 
@@ -107,7 +110,7 @@ namespace LibrarySystem
 
         private void PopulateBookCheckBoxes(List<Book> books)
         {
-            int topOffset = 20; // Adjust the initial vertical position as needed
+            int topOffset = 120; // Adjust the initial vertical position to 120
 
             foreach (var book in books)
             {
@@ -119,10 +122,10 @@ namespace LibrarySystem
                     checkBox.Tag = book.BookId;
 
                     // Adjust the width based on the length of the text
-                    checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
-                    checkBox.Location = new Point(50, topOffset);
-                    checkBox.Top = topOffset;
+                    checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
+                    checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                     topOffset += 25; // Adjust the vertical spacing as needed
+                    checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
 
                     // Add the event handler for the CheckedChanged event
                     checkBox.CheckedChanged += CheckBox_CheckedChanged;
@@ -221,6 +224,13 @@ namespace LibrarySystem
         private void reserveBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the reserving process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check if the returndateTb textbox is empty
+            if (string.IsNullOrWhiteSpace(reserveddateTb.Text))
+            {
+                MessageBox.Show("Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Stop further processing if the textbox is empty
+            }
 
             // Check user's choice
             if (result == DialogResult.No)
@@ -473,6 +483,33 @@ namespace LibrarySystem
 
                             // Bind the DataTable to the DataGridView
                             reservedbooksDG.DataSource = reservationsDataTable;
+                            // Set font size and apply modern style
+                            reservedbooksDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
+                            reservedbooksDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
+                            reservedbooksDG.EnableHeadersVisualStyles = false;
+                            reservedbooksDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                            reservedbooksDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
+
+                            // Disable user resizing of rows and columns
+                            reservedbooksDG.AllowUserToResizeRows = false;
+                            reservedbooksDG.AllowUserToResizeColumns = false;
+
+                            // Disable row headers resizing and visibility
+                            reservedbooksDG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+                            // Set column widths
+                            reservedbooksDG.Columns["reservation_id"].Width = 80; // Adjust width as needed
+                            reservedbooksDG.Columns["book_title"].Width = 180; // Adjust width as needed
+                            reservedbooksDG.Columns["borrower_name"].Width = 150; // Adjust width as needed
+                            reservedbooksDG.Columns["reservation_date"].Width = 120; // Adjust width as needed
+
+                            // Set column headers
+                            reservedbooksDG.Columns["reservation_id"].HeaderText = "ID";
+                            reservedbooksDG.Columns["book_title"].HeaderText = "Title";
+                            reservedbooksDG.Columns["borrower_name"].HeaderText = "Borrower Name";
+                            reservedbooksDG.Columns["reservation_date"].HeaderText = "Reservation Date";
+
+
                         }
                     }
                 }
@@ -607,26 +644,31 @@ namespace LibrarySystem
 
         private void reservedbooksDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if a valid row index and column index are clicked
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            try
             {
-                // Get the selected row
-                DataGridViewRow selectedRow = reservedbooksDG.Rows[e.RowIndex];
+                // Check if a valid row index and column index are clicked
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Get the selected row
+                    DataGridViewRow selectedRow = reservedbooksDG.Rows[e.RowIndex];
 
-                // Get the values from the selected row
-                string reservationId = selectedRow.Cells["reservation_id"].Value.ToString();
-                string bookTitle = selectedRow.Cells["book_title"].Value.ToString();
-                string borrowerName = selectedRow.Cells["borrower_name"].Value.ToString();
-                string reservationDate = ((DateTime)selectedRow.Cells["reservation_date"].Value).ToString("MM/dd/yyyy");
+                    // Get the values from the selected row
+                    string reservationId = selectedRow.Cells["reservation_id"].Value.ToString();
+                    string bookTitle = selectedRow.Cells["book_title"].Value.ToString();
+                    string borrowerName = selectedRow.Cells["borrower_name"].Value.ToString();
+                    string reservationDate = ((DateTime)selectedRow.Cells["reservation_date"].Value).ToString("MM/dd/yyyy");
 
 
 
-                MessageBox.Show(
-                    $"Reservation ID: {reservationId}\nBook Title: {bookTitle}\nBorrower Name: {borrowerName}\nReservation Date: {reservationDate:MM/dd/yyyy}",
-                    "Reservation Information",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                    MessageBox.Show(
+                        $"Reservation ID: {reservationId}\nBook Title: {bookTitle}\nBorrower Name: {borrowerName}\nReservation Date: {reservationDate:MM/dd/yyyy}",
+                        "Reservation Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }catch(Exception ex) {
+                MessageBox.Show($"Error! Row must have a reservation in order to edit it.");
             }
         }
     }
