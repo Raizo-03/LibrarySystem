@@ -62,18 +62,83 @@ namespace LibrarySystem
                 }
             }
         }
-
         private bool CanBorrowerReserve(int borrowerId)
         {
-            // Check if the borrower has unpaid penalties
-            if (HasUnpaidPenalties(borrowerId))
+            // Fetch the number of books already borrowed by the borrower
+            int borrowedBooksCount = GetBorrowedBooksCount(borrowerId);
+
+            // Check if the borrower is a teacher
+            bool isTeacher = IsTeacher(borrowerId);
+
+            // Get the maximum reservation limit based on the borrower's borrowing history
+            int maxReservationLimit = GetMaxReservationLimit(borrowerId, isTeacher);
+
+            // Fetch the number of reservations made by the borrower
+            int reservationCount = GetBorrowerReservationCount(borrowerId);
+
+            // Check if the remaining reservation limit is greater than 0
+            if (reservationCount < maxReservationLimit)
             {
-                MessageBox.Show("Borrower has unpaid penalties. Cannot reserve a book.");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show($"Borrower has already reached the maximum reservation limit. Cannot reserve more books.");
                 return false;
             }
-
-            return true;
         }
+
+        private int GetBorrowerReservationCount(int borrowerId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM reservations WHERE borrower_id = @borrowerId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    return Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+        }
+
+        private int GetBorrowedBooksCount(int borrowerId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Query to count the number of books borrowed by the borrower
+                string query = "SELECT COUNT(*) FROM borrowings WHERE user_id = @borrowerId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    return Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+        }
+
+        private int GetMaxReservationLimit(int borrowerId, bool isTeacher, int borrowedBooksCount)
+        {
+            // Define the reservation limits based on the borrower type (student or teacher)
+            int[] studentLimits = { 2, 1, 0 };
+            int[] teacherLimits = { 5, 4, 3, 2, 1, 0 };
+
+            // Determine the applicable limits based on the borrower type
+            int[] applicableLimits = isTeacher ? teacherLimits : studentLimits;
+
+            // Ensure the borrowedBooksCount is within the valid range
+            int adjustedBorrowedBooksCount = Math.Max(0, Math.Min(borrowedBooksCount, applicableLimits.Length - 1));
+
+            // Return the maximum reservation limit based on the borrowedBooksCount
+            return applicableLimits[adjustedBorrowedBooksCount];
+        }
+
 
         private List<Borrower> FetchPaidBorrowers()
         {
@@ -247,6 +312,7 @@ namespace LibrarySystem
                 // User chose not to continue, so return without executing the borrowing process
                 return;
             }
+
             // Check if a book is selected
             if (!string.IsNullOrEmpty(titleLabel.Text))
             {
@@ -271,7 +337,7 @@ namespace LibrarySystem
 
                         if (borrower != null)
                         {
-                            // Check if the borrower can reserve based on penalties
+                            // Check if the borrower can reserve based on penalties and borrowed books
                             if (CanBorrowerReserve(borrower.BorrowerId))
                             {
                                 // Check the maximum reservation limit based on the borrower's identifier
@@ -317,7 +383,7 @@ namespace LibrarySystem
                             }
                             else
                             {
-                                MessageBox.Show("Invalid or unpaid borrower name.");
+                                MessageBox.Show("Invalid or unpaid borrower name, or borrower has reached the maximum reservation limit.");
                             }
                         }
                         else
@@ -358,22 +424,40 @@ namespace LibrarySystem
             }
         }
 
+        private int GetMaxReservationLimit(int borrowerId, bool isTeacher)
+        {
+            // Default maximum reservation limit
+            int defaultMaxReservationLimit = isTeacher ? 5 : 2; // Default for students is 2, for teachers is 5
+
+            // Check the number of books already borrowed by the borrower
+            int borrowedBooksCount = GetBorrowedBooksCount(borrowerId);
+
+            // Calculate the adjusted maximum reservation limit based on the number of borrowed books
+            int adjustedMaxReservationLimit = isTeacher
+                ? Math.Max(0, 5 - borrowedBooksCount)
+                : Math.Max(0, 2 - borrowedBooksCount);
+
+            // Return the maximum reservation limit
+            return Math.Min(defaultMaxReservationLimit, adjustedMaxReservationLimit);
+        }
+
+
+
         private int GetMaxReservationLimit(string identifier)
         {
-            // Set default maximum reservation limit
-            int maxReservationLimit = 3;
+            // Default maximum reservation limit
+            int defaultMaxReservationLimit = 2; // Default for students
 
-            // Check borrower identifier and set the appropriate limit
-            if (identifier.Contains("STUDENT"))
+            // Check if the borrower is a teacher
+            bool isTeacher = identifier.Contains("TEACHER");
+
+            // If the borrower is a teacher, set the maximum reservation limit to 5
+            if (isTeacher)
             {
-                maxReservationLimit = 2;
-            }
-            else if (identifier.Contains("TEACHER"))
-            {
-                maxReservationLimit = 5;
+                defaultMaxReservationLimit = 5;
             }
 
-            return maxReservationLimit;
+            return defaultMaxReservationLimit;
         }
 
         private int GetBookIdByTitle(string title)
@@ -711,6 +795,46 @@ namespace LibrarySystem
                 }
             }
         }
+        private bool IsTeacher(int borrowerId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Query to check if the borrower is a teacher
+                string query = "SELECT COUNT(*) FROM borrowers WHERE user_id = @borrowerId AND identifier = 'TEACHER'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+        }
+
+        private int GetMaxReservationLimit(int borrowerId)
+        {
+            // Default maximum reservation limit
+            int defaultMaxReservationLimit = 2; // Default for students
+
+            // Check if the borrower is a teacher
+            bool isTeacher = IsTeacher(borrowerId);
+
+            // If the borrower is a teacher, set the maximum reservation limit to 5
+            if (isTeacher)
+            {
+                defaultMaxReservationLimit = 5;
+            }
+
+            return defaultMaxReservationLimit;
+        }
+
+
+
+
     }
 
     public class Borrower
