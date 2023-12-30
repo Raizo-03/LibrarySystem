@@ -98,7 +98,7 @@
             // 
             this.returndatePicker.Location = new System.Drawing.Point(730, 605);
             this.returndatePicker.Name = "returndatePicker";
-            this.returndatePicker.Size = new System.Drawing.Size(24, 20);
+            this.returndatePicker.Size = new System.Drawing.Size(19, 20);
             this.returndatePicker.TabIndex = 5;
             this.returndatePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
