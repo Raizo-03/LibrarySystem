@@ -36,7 +36,7 @@
             this.borrowDate = new System.Windows.Forms.TextBox();
             this.dueDate = new System.Windows.Forms.TextBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.booklistLabel = new System.Windows.Forms.Label();
+            this.borrowLabel = new System.Windows.Forms.Label();
             this.borrowDG = new System.Windows.Forms.DataGridView();
             this.calendarBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedBtn = new LibrarySystem.RJButton();
@@ -111,20 +111,20 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(871, 5);
             this.guna2GradientPanel1.TabIndex = 21;
             // 
-            // booklistLabel
+            // borrowLabel
             // 
-            this.booklistLabel.AutoSize = true;
-            this.booklistLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booklistLabel.ForeColor = System.Drawing.Color.Black;
-            this.booklistLabel.Location = new System.Drawing.Point(30, 35);
-            this.booklistLabel.Name = "booklistLabel";
-            this.booklistLabel.Size = new System.Drawing.Size(232, 52);
-            this.booklistLabel.TabIndex = 25;
-            this.booklistLabel.Text = "BORROW";
+            this.borrowLabel.AutoSize = true;
+            this.borrowLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowLabel.ForeColor = System.Drawing.Color.Black;
+            this.borrowLabel.Location = new System.Drawing.Point(30, 35);
+            this.borrowLabel.Name = "borrowLabel";
+            this.borrowLabel.Size = new System.Drawing.Size(232, 52);
+            this.borrowLabel.TabIndex = 25;
+            this.borrowLabel.Text = "BORROW";
             // 
             // borrowDG
             // 
-            this.borrowDG.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.borrowDG.BackgroundColor = System.Drawing.Color.DarkKhaki;
             this.borrowDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.borrowDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.borrowDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -155,8 +155,8 @@
             // 
             // borrowedBtn
             // 
-            this.borrowedBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.borrowedBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.borrowedBtn.BackColor = System.Drawing.Color.Olive;
+            this.borrowedBtn.BackgroundColor = System.Drawing.Color.Olive;
             this.borrowedBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.borrowedBtn.BorderRadius = 25;
             this.borrowedBtn.BorderSize = 0;
@@ -174,8 +174,8 @@
             // 
             // borrowBtn
             // 
-            this.borrowBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.borrowBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.borrowBtn.BackColor = System.Drawing.Color.Olive;
+            this.borrowBtn.BackgroundColor = System.Drawing.Color.Olive;
             this.borrowBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.borrowBtn.BorderRadius = 25;
             this.borrowBtn.BorderSize = 0;
@@ -209,7 +209,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.borrowDG);
             this.Controls.Add(this.borrowedBtn);
-            this.Controls.Add(this.booklistLabel);
+            this.Controls.Add(this.borrowLabel);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.dueDate);
             this.Controls.Add(this.borrowDate);
@@ -238,7 +238,7 @@
         private System.Windows.Forms.TextBox borrowDate;
         private System.Windows.Forms.TextBox dueDate;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label booklistLabel;
+        private System.Windows.Forms.Label borrowLabel;
         private RJButton borrowedBtn;
         private System.Windows.Forms.DataGridView borrowDG;
         private Guna.UI2.WinForms.Guna2GradientButton calendarBtn;

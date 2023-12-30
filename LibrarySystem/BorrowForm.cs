@@ -49,9 +49,10 @@ namespace LibrarySystem
             PopulateBookCheckBoxes();
             borrowDG.ReadOnly = true;
             borrowDG.AlternatingRowsDefaultCellStyle = null;
+            borrowDG.RowHeadersVisible = false;
+
             activateFetching();
-
-
+     
             ApplyRoundedButtonStyle(calendarBtn);
         }
         private void ApplyRoundedButtonStyle(Guna2GradientButton button)
