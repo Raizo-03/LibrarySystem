@@ -28,6 +28,10 @@ namespace LibrarySystem
             reservedbooksDG.Visible = false;
             reservedbooksDG.ReadOnly = true;
             reservedbooksDG.CellClick += reservedbooksDG_CellContentClick;
+            reservedbooksDG.RowHeadersVisible = false;
+            reservedbooksDG.ReadOnly = true;
+            reservedbooksDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
+            reservedbooksDG.ScrollBars = ScrollBars.Vertical;
 
         }
 
@@ -107,7 +111,7 @@ namespace LibrarySystem
 
         private void PopulateBookCheckBoxes(List<Book> books)
         {
-            int topOffset = 20; // Adjust the initial vertical position as needed
+            int topOffset = 120; // Adjust the initial vertical position to 120
 
             foreach (var book in books)
             {
@@ -119,10 +123,10 @@ namespace LibrarySystem
                     checkBox.Tag = book.BookId;
 
                     // Adjust the width based on the length of the text
-                    checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
-                    checkBox.Location = new Point(50, topOffset);
-                    checkBox.Top = topOffset;
+                    checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
+                    checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                     topOffset += 25; // Adjust the vertical spacing as needed
+                    checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
 
                     // Add the event handler for the CheckedChanged event
                     checkBox.CheckedChanged += CheckBox_CheckedChanged;

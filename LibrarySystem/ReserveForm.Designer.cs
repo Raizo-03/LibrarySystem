@@ -36,6 +36,8 @@
             this.reservedatepicker = new System.Windows.Forms.DateTimePicker();
             this.borrowernameTb = new System.Windows.Forms.TextBox();
             this.reservedbooksDG = new System.Windows.Forms.DataGridView();
+            this.returnLabel = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.deleteBtn = new LibrarySystem.RJButton();
             this.editBtn = new LibrarySystem.RJButton();
             this.rbooksBtn = new LibrarySystem.RJButton();
@@ -47,7 +49,7 @@
             // 
             this.bnameLabel.AutoSize = true;
             this.bnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnameLabel.Location = new System.Drawing.Point(311, 494);
+            this.bnameLabel.Location = new System.Drawing.Point(303, 624);
             this.bnameLabel.Name = "bnameLabel";
             this.bnameLabel.Size = new System.Drawing.Size(150, 20);
             this.bnameLabel.TabIndex = 0;
@@ -57,7 +59,7 @@
             // 
             this.btitleLabel.AutoSize = true;
             this.btitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btitleLabel.Location = new System.Drawing.Point(311, 455);
+            this.btitleLabel.Location = new System.Drawing.Point(303, 585);
             this.btitleLabel.Name = "btitleLabel";
             this.btitleLabel.Size = new System.Drawing.Size(94, 20);
             this.btitleLabel.TabIndex = 2;
@@ -67,7 +69,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(467, 455);
+            this.titleLabel.Location = new System.Drawing.Point(459, 585);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(39, 20);
             this.titleLabel.TabIndex = 3;
@@ -77,7 +79,7 @@
             // 
             this.reservedateLabel.AutoSize = true;
             this.reservedateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedateLabel.Location = new System.Drawing.Point(311, 529);
+            this.reservedateLabel.Location = new System.Drawing.Point(303, 659);
             this.reservedateLabel.Name = "reservedateLabel";
             this.reservedateLabel.Size = new System.Drawing.Size(134, 20);
             this.reservedateLabel.TabIndex = 4;
@@ -85,14 +87,14 @@
             // 
             // reserveddateTb
             // 
-            this.reserveddateTb.Location = new System.Drawing.Point(471, 531);
+            this.reserveddateTb.Location = new System.Drawing.Point(463, 661);
             this.reserveddateTb.Name = "reserveddateTb";
             this.reserveddateTb.Size = new System.Drawing.Size(121, 20);
             this.reserveddateTb.TabIndex = 5;
             // 
             // reservedatepicker
             // 
-            this.reservedatepicker.Location = new System.Drawing.Point(598, 531);
+            this.reservedatepicker.Location = new System.Drawing.Point(590, 661);
             this.reservedatepicker.Name = "reservedatepicker";
             this.reservedatepicker.Size = new System.Drawing.Size(200, 20);
             this.reservedatepicker.TabIndex = 6;
@@ -100,7 +102,7 @@
             // 
             // borrowernameTb
             // 
-            this.borrowernameTb.Location = new System.Drawing.Point(471, 496);
+            this.borrowernameTb.Location = new System.Drawing.Point(463, 626);
             this.borrowernameTb.Name = "borrowernameTb";
             this.borrowernameTb.Size = new System.Drawing.Size(121, 20);
             this.borrowernameTb.TabIndex = 7;
@@ -108,11 +110,31 @@
             // reservedbooksDG
             // 
             this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reservedbooksDG.Location = new System.Drawing.Point(315, 54);
+            this.reservedbooksDG.Location = new System.Drawing.Point(39, 123);
             this.reservedbooksDG.Name = "reservedbooksDG";
-            this.reservedbooksDG.Size = new System.Drawing.Size(433, 361);
+            this.reservedbooksDG.Size = new System.Drawing.Size(564, 358);
             this.reservedbooksDG.TabIndex = 11;
             this.reservedbooksDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservedbooksDG_CellContentClick);
+            // 
+            // returnLabel
+            // 
+            this.returnLabel.AutoSize = true;
+            this.returnLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnLabel.ForeColor = System.Drawing.Color.Black;
+            this.returnLabel.Location = new System.Drawing.Point(30, 35);
+            this.returnLabel.Name = "returnLabel";
+            this.returnLabel.Size = new System.Drawing.Size(212, 52);
+            this.returnLabel.TabIndex = 29;
+            this.returnLabel.Text = "RETURN";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Olive;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Khaki;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(39, 90);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(871, 5);
+            this.guna2GradientPanel1.TabIndex = 28;
             // 
             // deleteBtn
             // 
@@ -124,7 +146,7 @@
             this.deleteBtn.FlatAppearance.BorderSize = 0;
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(649, 625);
+            this.deleteBtn.Location = new System.Drawing.Point(641, 755);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(150, 40);
             this.deleteBtn.TabIndex = 13;
@@ -143,7 +165,7 @@
             this.editBtn.FlatAppearance.BorderSize = 0;
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Location = new System.Drawing.Point(649, 567);
+            this.editBtn.Location = new System.Drawing.Point(641, 697);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(150, 40);
             this.editBtn.TabIndex = 10;
@@ -162,7 +184,7 @@
             this.rbooksBtn.FlatAppearance.BorderSize = 0;
             this.rbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.rbooksBtn.Location = new System.Drawing.Point(471, 567);
+            this.rbooksBtn.Location = new System.Drawing.Point(463, 697);
             this.rbooksBtn.Name = "rbooksBtn";
             this.rbooksBtn.Size = new System.Drawing.Size(150, 40);
             this.rbooksBtn.TabIndex = 9;
@@ -181,7 +203,7 @@
             this.reserveBtn.FlatAppearance.BorderSize = 0;
             this.reserveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reserveBtn.ForeColor = System.Drawing.Color.White;
-            this.reserveBtn.Location = new System.Drawing.Point(295, 567);
+            this.reserveBtn.Location = new System.Drawing.Point(287, 697);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(150, 40);
             this.reserveBtn.TabIndex = 8;
@@ -196,6 +218,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.returnLabel);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.reservedbooksDG);
             this.Controls.Add(this.editBtn);
@@ -231,5 +255,7 @@
         private RJButton editBtn;
         private System.Windows.Forms.DataGridView reservedbooksDG;
         private RJButton deleteBtn;
+        private System.Windows.Forms.Label returnLabel;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
     }
 }
