@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -30,6 +31,14 @@ namespace LibrarySystem
             borrowDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
             borrowDG.ScrollBars = ScrollBars.Vertical; 
             activateFetching();
+
+            ApplyRoundedButtonStyle(calendarBtn);
+        }
+        private void ApplyRoundedButtonStyle(Guna2GradientButton button)
+        {
+
+            // Set the border radius to make the button rounded
+            button.BorderRadius = 12; // Adjust the radius to control the roundness
         }
 
         private void PopulateBookCheckBoxes()
@@ -46,7 +55,7 @@ namespace LibrarySystem
                 checkBox.Tag = borrowedBook.Book.BookId;
 
                 // Adjust the width based on the length of the text
-                checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
+                checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
                 checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                 topOffset += 25; // Adjust the vertical spacing as needed
                 checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font

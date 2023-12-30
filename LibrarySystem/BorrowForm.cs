@@ -50,6 +50,7 @@ namespace LibrarySystem
             borrowDG.ReadOnly = true;
             borrowDG.AlternatingRowsDefaultCellStyle = null;
             borrowDG.RowHeadersVisible = false;
+            borrowDG.ScrollBars = ScrollBars.Vertical;
 
             activateFetching();
      
@@ -107,7 +108,7 @@ namespace LibrarySystem
 
                 // Adjust the width based on the length of the text
                 checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
-                checkBox.Location = new Point(576, topOffset); // Set the location with the adjusted topOffset
+                checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                 topOffset += 25; // Adjust the vertical spacing as needed
                 checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
 
@@ -499,17 +500,17 @@ namespace LibrarySystem
                 borrowDG.Columns.Add("DueDate", "DUE DATE");
 
                 // Set font size and apply modern style
-                borrowDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
-                borrowDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
+                borrowDG.DefaultCellStyle.Font = new Font("Segoe UI", 8); // Adjust font and size
+                borrowDG.ColumnHeadersDefaultCellStyle.Font = new Font("Arial Rounded MT Bold", 10, FontStyle.Regular); // Adjust font, size, and style
                 borrowDG.EnableHeadersVisualStyles = false;
                 borrowDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
                 borrowDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
-                borrowDG.Columns["BookTitle"].Width = 200; // Adjust width as needed
-                borrowDG.Columns["BorrowerName"].Width = 200; // Adjust width as needed
-                borrowDG.Columns["BorrowDate"].Width = 150; // Adjust width as needed
-                borrowDG.Columns["DueDate"].Width = 150; // Adjust width as needed
+                borrowDG.Columns["BookTitle"].Width = 180; // Adjust width as needed
+                borrowDG.Columns["BorrowerName"].Width = 170; // Adjust width as needed
+                borrowDG.Columns["BorrowDate"].Width = 110; // Adjust width as needed
+                borrowDG.Columns["DueDate"].Width = 110; // Adjust width as needed
 
                 // Disable user resizing of rows and columns
                 borrowDG.AllowUserToResizeRows = false;
