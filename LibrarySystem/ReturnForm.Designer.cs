@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReturnForm));
             this.borrowerName = new System.Windows.Forms.Label();
             this.bName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.returnLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.borrowDG = new System.Windows.Forms.DataGridView();
+            this.calendarBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedBtn = new LibrarySystem.RJButton();
             this.returnBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).BeginInit();
@@ -49,7 +51,7 @@
             // 
             this.borrowerName.AutoSize = true;
             this.borrowerName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerName.Location = new System.Drawing.Point(68, 532);
+            this.borrowerName.Location = new System.Drawing.Point(321, 538);
             this.borrowerName.Name = "borrowerName";
             this.borrowerName.Size = new System.Drawing.Size(152, 18);
             this.borrowerName.TabIndex = 0;
@@ -59,17 +61,16 @@
             // 
             this.bName.AutoSize = true;
             this.bName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bName.Location = new System.Drawing.Point(214, 532);
+            this.bName.Location = new System.Drawing.Point(499, 538);
             this.bName.Name = "bName";
-            this.bName.Size = new System.Drawing.Size(56, 18);
+            this.bName.Size = new System.Drawing.Size(0, 18);
             this.bName.TabIndex = 1;
-            this.bName.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 571);
+            this.label2.Location = new System.Drawing.Point(321, 577);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 18);
             this.label2.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 605);
+            this.label3.Location = new System.Drawing.Point(321, 608);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 18);
             this.label3.TabIndex = 3;
@@ -88,16 +89,16 @@
             // returndateTb
             // 
             this.returndateTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returndateTb.Location = new System.Drawing.Point(177, 599);
+            this.returndateTb.Location = new System.Drawing.Point(496, 605);
             this.returndateTb.Name = "returndateTb";
             this.returndateTb.Size = new System.Drawing.Size(180, 26);
             this.returndateTb.TabIndex = 4;
             // 
             // returndatePicker
             // 
-            this.returndatePicker.Location = new System.Drawing.Point(466, 557);
+            this.returndatePicker.Location = new System.Drawing.Point(730, 605);
             this.returndatePicker.Name = "returndatePicker";
-            this.returndatePicker.Size = new System.Drawing.Size(200, 20);
+            this.returndatePicker.Size = new System.Drawing.Size(24, 20);
             this.returndatePicker.TabIndex = 5;
             this.returndatePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -105,17 +106,16 @@
             // 
             this.dueDateLabel.AutoSize = true;
             this.dueDateLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dueDateLabel.Location = new System.Drawing.Point(174, 571);
+            this.dueDateLabel.Location = new System.Drawing.Point(499, 577);
             this.dueDateLabel.Name = "dueDateLabel";
-            this.dueDateLabel.Size = new System.Drawing.Size(56, 18);
+            this.dueDateLabel.Size = new System.Drawing.Size(0, 18);
             this.dueDateLabel.TabIndex = 6;
-            this.dueDateLabel.Text = "label1";
             // 
             // bkTitleLabel
             // 
             this.bkTitleLabel.AutoSize = true;
             this.bkTitleLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bkTitleLabel.Location = new System.Drawing.Point(68, 499);
+            this.bkTitleLabel.Location = new System.Drawing.Point(321, 505);
             this.bkTitleLabel.Name = "bkTitleLabel";
             this.bkTitleLabel.Size = new System.Drawing.Size(92, 18);
             this.bkTitleLabel.TabIndex = 7;
@@ -124,8 +124,8 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(174, 499);
+            this.titleLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(499, 505);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 18);
             this.titleLabel.TabIndex = 8;
@@ -159,8 +159,26 @@
             this.borrowDG.GridColor = System.Drawing.Color.PeachPuff;
             this.borrowDG.Location = new System.Drawing.Point(39, 123);
             this.borrowDG.Name = "borrowDG";
-            this.borrowDG.Size = new System.Drawing.Size(531, 358);
+            this.borrowDG.Size = new System.Drawing.Size(564, 358);
             this.borrowDG.TabIndex = 28;
+            // 
+            // calendarBtn
+            // 
+            this.calendarBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.calendarBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.calendarBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.calendarBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.calendarBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.calendarBtn.FillColor = System.Drawing.Color.Olive;
+            this.calendarBtn.FillColor2 = System.Drawing.Color.YellowGreen;
+            this.calendarBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.calendarBtn.ForeColor = System.Drawing.Color.White;
+            this.calendarBtn.Image = ((System.Drawing.Image)(resources.GetObject("calendarBtn.Image")));
+            this.calendarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.calendarBtn.Location = new System.Drawing.Point(697, 594);
+            this.calendarBtn.Name = "calendarBtn";
+            this.calendarBtn.Size = new System.Drawing.Size(63, 40);
+            this.calendarBtn.TabIndex = 30;
             // 
             // borrowedBtn
             // 
@@ -172,7 +190,7 @@
             this.borrowedBtn.FlatAppearance.BorderSize = 0;
             this.borrowedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrowedBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowedBtn.Location = new System.Drawing.Point(260, 655);
+            this.borrowedBtn.Location = new System.Drawing.Point(316, 673);
             this.borrowedBtn.Name = "borrowedBtn";
             this.borrowedBtn.Size = new System.Drawing.Size(179, 55);
             this.borrowedBtn.TabIndex = 29;
@@ -191,7 +209,7 @@
             this.returnBtn.FlatAppearance.BorderSize = 0;
             this.returnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnBtn.ForeColor = System.Drawing.Color.White;
-            this.returnBtn.Location = new System.Drawing.Point(466, 655);
+            this.returnBtn.Location = new System.Drawing.Point(522, 673);
             this.returnBtn.Name = "returnBtn";
             this.returnBtn.Size = new System.Drawing.Size(179, 55);
             this.returnBtn.TabIndex = 9;
@@ -220,6 +238,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bName);
             this.Controls.Add(this.borrowerName);
+            this.Controls.Add(this.calendarBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReturnForm";
             this.Load += new System.EventHandler(this.ReturnForm_Load);
@@ -245,5 +264,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.DataGridView borrowDG;
         private RJButton borrowedBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton calendarBtn;
     }
 }

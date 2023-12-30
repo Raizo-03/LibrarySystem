@@ -133,6 +133,7 @@
             this.borrowDG.Name = "borrowDG";
             this.borrowDG.Size = new System.Drawing.Size(531, 358);
             this.borrowDG.TabIndex = 27;
+            this.borrowDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.borrowDG_CellContentClick);
             // 
             // calendarBtn
             // 

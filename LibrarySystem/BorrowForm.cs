@@ -598,9 +598,10 @@ namespace LibrarySystem
             
         }
 
-  
+        private void borrowDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-    
+        }
     }
     public class Borrowing
     {
