@@ -25,7 +25,8 @@ namespace LibrarySystem
             PopulateBookCheckBoxes();
 
             returndatePicker.ValueChanged += dateTimePicker1_ValueChanged;
-
+            borrowDG.RowHeadersVisible = false;
+            borrowDG.ReadOnly = true;
 
         }
 
@@ -34,7 +35,7 @@ namespace LibrarySystem
             // Fetch borrowed book data from the database
             borrowedBooks = GetBorrowedBooksFromDatabase();
 
-            int topOffset = 20; // Adjust the initial vertical position as needed
+            int topOffset = 120; // Adjust the initial vertical position to 120
 
             foreach (var borrowedBook in borrowedBooks)
             {
@@ -44,9 +45,9 @@ namespace LibrarySystem
 
                 // Adjust the width based on the length of the text
                 checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
-                checkBox.Location = new Point(440, 100);
-                checkBox.Top = topOffset;
+                checkBox.Location = new Point(576, topOffset); // Set the location with the adjusted topOffset
                 topOffset += 25; // Adjust the vertical spacing as needed
+                checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
 
                 // Add the event handler for the CheckedChanged event
                 checkBox.CheckedChanged += CheckBox_CheckedChanged;
@@ -278,6 +279,14 @@ namespace LibrarySystem
                 // User chose not to continue, so return without executing the borrowing process
                 return;
             }
+
+            // Check if the returndateTb textbox is empty
+            if (string.IsNullOrWhiteSpace(returndateTb.Text))
+            {
+                MessageBox.Show("Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Stop further processing if the textbox is empty
+            }
+
             // Calculate penalty before returning
             CalculatePenalty();
 
@@ -391,5 +400,110 @@ namespace LibrarySystem
                 }
             }
         }
+
+        private void borrowedBtn_Click(object sender, EventArgs e)
+        {
+            activateFetching();
+        }
+
+        private void activateFetching()
+        {
+            try
+            {
+                // Clear existing columns in the DataGridView
+                borrowDG.Columns.Clear();
+
+                // Fetch borrowing information from the database
+                List<Borrowing> borrowings = GetBorrowingsFromDatabase();
+
+                // Add columns to the DataGridView
+                borrowDG.Columns.Add("BookTitle", "BOOK TITLE");
+                borrowDG.Columns.Add("BorrowerName", "BORROWER'S NAME");
+                borrowDG.Columns.Add("BorrowDate", "BORROW DATE");
+                borrowDG.Columns.Add("DueDate", "DUE DATE");
+
+                // Set font size and apply modern style
+                borrowDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
+                borrowDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
+                borrowDG.EnableHeadersVisualStyles = false;
+                borrowDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                borrowDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
+
+                // Set column widths
+                borrowDG.Columns["BookTitle"].Width = 200; // Adjust width as needed
+                borrowDG.Columns["BorrowerName"].Width = 200; // Adjust width as needed
+                borrowDG.Columns["BorrowDate"].Width = 150; // Adjust width as needed
+                borrowDG.Columns["DueDate"].Width = 150; // Adjust width as needed
+
+                // Disable user resizing of rows and columns
+                borrowDG.AllowUserToResizeRows = false;
+                borrowDG.AllowUserToResizeColumns = false;
+
+                // Disable row headers resizing and visibility
+                borrowDG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+                // Bind the list to the DataGridView
+                foreach (Borrowing borrowing in borrowings)
+                {
+                    int rowIndex = borrowDG.Rows.Add();
+                    borrowDG.Rows[rowIndex].Cells["BookTitle"].Value = borrowing.BookTitle;
+                    borrowDG.Rows[rowIndex].Cells["BorrowerName"].Value = GetBorrowerNameFromDatabase(borrowing.UserId);
+                    borrowDG.Rows[rowIndex].Cells["BorrowDate"].Value = borrowing.BorrowDate.ToString("MM/dd/yyyy");
+                    borrowDG.Rows[rowIndex].Cells["DueDate"].Value = borrowing.DueDate.ToString("MM/dd/yyyy");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+        private List<Borrowing> GetBorrowingsFromDatabase()
+        {
+            List<Borrowing> borrowings = new List<Borrowing>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT borrowing_id, book_title, user_id, borrow_date, due_date FROM borrowings";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int borrowingId = reader.GetInt32("borrowing_id");
+                            string bookTitle = reader.GetString("book_title");
+                            int userId = reader.GetInt32("user_id");
+                            DateTime borrowDate = reader.GetDateTime("borrow_date");
+                            DateTime dueDate = reader.GetDateTime("due_date");
+
+                            borrowings.Add(new Borrowing { BorrowingId = borrowingId, BookTitle = bookTitle, UserId = userId, BorrowDate = borrowDate, DueDate = dueDate });
+                        }
+                    }
+                }
+            }
+
+            return borrowings;
+        }
+        private string GetBorrowerNameFromDatabase(int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT name FROM borrowers WHERE user_id = @userId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    var result = command.ExecuteScalar();
+                    return result != null ? result.ToString() : null; // Default value if not found
+                }
+            }
+        }
+
+
     }
 }

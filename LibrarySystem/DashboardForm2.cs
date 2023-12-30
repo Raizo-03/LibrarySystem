@@ -43,6 +43,7 @@ namespace LibrarySystem
 
             analyticsDG.ReadOnly = true;
             analyticsDG.AlternatingRowsDefaultCellStyle = null;
+            analyticsDG.RowHeadersVisible = false;
 
 
             UpdateChart();
