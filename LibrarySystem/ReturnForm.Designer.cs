@@ -38,6 +38,8 @@
             this.bkTitleLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.returnBtn = new LibrarySystem.RJButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // borrowerName
@@ -143,12 +145,21 @@
             this.returnBtn.UseVisualStyleBackColor = false;
             this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 109);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(476, 357);
+            this.dataGridView1.TabIndex = 10;
+            // 
             // ReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.bkTitleLabel);
@@ -162,6 +173,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReturnForm";
             this.Load += new System.EventHandler(this.ReturnForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Label bkTitleLabel;
         private System.Windows.Forms.Label titleLabel;
         private RJButton returnBtn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
