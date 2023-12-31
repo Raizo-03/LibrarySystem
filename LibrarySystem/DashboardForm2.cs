@@ -56,17 +56,14 @@ namespace LibrarySystem
         {
             try
             {
-                // Clear existing series data
                 pieChart1.Series.Clear();
                 pieChart1.Text = "Library Analytics";
 
-                // Fetch updated information
                 int totalAvailableBooks = GetTotalAvailableBooks();
                 int totalBorrowings = GetTotalBorrowings();
                 int totalReservations = GetTotalReservations();
                 int totalPenalties = GetTotalPenalties();
 
-                // Create series and add data
                 pieChart1.Series.Add(new PieSeries
                 {
                     Title = "Available Books",

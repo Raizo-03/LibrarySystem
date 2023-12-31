@@ -70,14 +70,14 @@ INSERT INTO borrowers (user_id, identifier, name) VALUES
 (12021327, 'STUDENT', 'Rhycell Ortega'),
 (12042469, 'STUDENT', 'Joshua Fernandez'),
 (12032131, 'STUDENT', 'Sean Sicat'),
-(12042346, 'STUDENT', 'Ricardo Colarina');
+(12042346, 'STUDENT', 'Ricardo Colarina'),
+(12043567, 'STUDENT', 'Asilito Caasi');
 
 -- Insert teachers
 INSERT INTO borrowers (user_id, identifier, name) VALUES
-(12043567, 'TEACHER', 'Asilito Caasi'),
-(12052345, 'TEACHER', 'Lans Villena'),
-(12052385, 'TEACHER', 'Buscato Eduardo'),
-(12048547, 'TEACHER', 'Caasi Asilito');
+(12052345, 'TEACHER', 'Jomariss Plan'),
+(12052385, 'TEACHER', 'Lester Diampoc'),
+(12048547, 'TEACHER', 'Daniel Dellosa');
 
 
 -- Create the borrowings table
