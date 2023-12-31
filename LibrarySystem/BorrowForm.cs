@@ -637,7 +637,7 @@ namespace LibrarySystem
             }
             else
             {
-                MessageBox.Show($"Borrower has already reached the maximum borrowing limit. Cannot borrow more books.");
+                MessageBox.Show("Borrower has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.");
                 return false;
             }
         }
