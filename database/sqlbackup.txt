@@ -49,7 +49,7 @@ INSERT INTO books (title, availability, genre) VALUES
 
 
 -- Create the borrowers table
-CREATE TABLE borrowers (
+CREATE TABLE IF NOT EXISTS borrowers (
     user_id INT PRIMARY KEY,
     identifier VARCHAR(10),
     name VARCHAR(255),
@@ -70,18 +70,18 @@ INSERT INTO borrowers (user_id, identifier, name) VALUES
 (12021327, 'STUDENT', 'Rhycell Ortega'),
 (12042469, 'STUDENT', 'Joshua Fernandez'),
 (12032131, 'STUDENT', 'Sean Sicat'),
-(12042346, 'STUDENT', 'Ricardo Colarina');
+(12042346, 'STUDENT', 'Ricardo Colarina'),
+(12043567, 'STUDENT', 'Asilito Caasi');
 
 -- Insert teachers
 INSERT INTO borrowers (user_id, identifier, name) VALUES
-(12043567, 'TEACHER', 'Asilito Caasi'),
-(12052345, 'TEACHER', 'Lans Villena'),
-(12052385, 'TEACHER', 'Buscato Eduardo'),
-(12048547, 'TEACHER', 'Caasi Asilito');
+(12052345, 'TEACHER', 'Jomariss Plan'),
+(12052385, 'TEACHER', 'Lester Diampoc'),
+(12048547, 'TEACHER', 'Daniel Dellosa');
 
 
 -- Create the borrowings table
-CREATE TABLE borrowings (
+CREATE TABLE IF NOT EXISTS borrowings (
     borrowing_id INT AUTO_INCREMENT PRIMARY KEY,
     book_title VARCHAR(255),
     user_id INT,
@@ -94,7 +94,7 @@ CREATE TABLE borrowings (
 );
 
 -- Create the returnings table
-CREATE TABLE returnings (
+CREATE TABLE IF NOT EXISTS returnings (
     returning_id INT AUTO_INCREMENT PRIMARY KEY,
     book_title VARCHAR(255),
     borrowing_id INT,
@@ -105,7 +105,7 @@ CREATE TABLE returnings (
 
 
 -- Create the reservations table
-CREATE TABLE reservations (
+CREATE TABLE IF NOT EXISTS reservations (
     reservation_id INT AUTO_INCREMENT PRIMARY KEY,
     book_id INT,
     borrower_id INT,
