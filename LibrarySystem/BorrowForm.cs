@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 using Guna.UI2.WinForms;
 using Microsoft.VisualBasic.ApplicationServices;
@@ -63,6 +64,22 @@ namespace LibrarySystem
             button.BorderRadius = 12; // Adjust the radius to control the roundness
         }
 
+        private int GetReservedBooksCount(int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM reservations WHERE borrower_id = @userId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    return Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+        }
 
         private void borrowedDatepicker_ValueChanged(object sender, EventArgs e)
         {
@@ -223,13 +240,14 @@ namespace LibrarySystem
         private void borrowBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the borrowing process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
+
             // Check user's choice
             if (result == DialogResult.No)
             {
                 // User chose not to continue, so return without executing the borrowing process
                 return;
             }
+
             // Check for unpaid penalties
             if (HasUnpaidPenalties())
             {
@@ -248,6 +266,9 @@ namespace LibrarySystem
                 return;
             }
 
+            // Fetch the number of books reserved by the user
+            int reservedBooksCount = GetReservedBooksCount(borrowerId);
+
             // Check if the borrower is a student and has already borrowed 2 books
             if (identifier == "STUDENT" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 2)
             {
@@ -259,6 +280,10 @@ namespace LibrarySystem
                 MessageBox.Show("Teachers can only borrow up to 5 books.");
                 return;
             }
+            if (!CanBorrowerBorrow(borrowerId))
+            {
+                return;
+            }
 
             // Check if any checkboxes are selected
             if (selectedBookTitles.Count == 0)
@@ -267,6 +292,7 @@ namespace LibrarySystem
                 return;
             }
 
+  
             // Check if any selected book is of the "ACADEMIC" genre
             foreach (string bookTitle in selectedBookTitles)
             {
@@ -394,7 +420,7 @@ namespace LibrarySystem
             {
                 connection.Open();
 
-                // Consider only the borrowings where the book has not been returned
+                // Count all rows for the user in the borrowings table
                 string query = "SELECT COUNT(*) FROM borrowings WHERE user_id = @userId";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -405,6 +431,8 @@ namespace LibrarySystem
                 }
             }
         }
+
+
 
 
         //GETTING USER INFO FROM DATABASE
@@ -588,6 +616,84 @@ namespace LibrarySystem
                 }
             }
         }
+        private bool CanBorrowerBorrow(int borrowerId)
+        {
+            // Fetch the number of books already borrowed by the borrower
+            int borrowedBooksCount = CountBorrowedBooks(borrowerId);
+
+            // Check if the borrower is a teacher
+            bool isTeacher = IsTeacher(borrowerId);
+
+            // Get the maximum reservation limit based on the borrower's borrowing history
+            int maxReservationLimit = GetMaxBorrowingLimit(borrowerId, isTeacher);
+
+            // Fetch the number of reservations made by the borrower
+            int reservationCount = GetBorrowerReservationCount(borrowerId);
+
+            // Check if the remaining reservation limit is greater than 0
+            if (reservationCount < maxReservationLimit)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show($"Borrower has already reached the maximum borrowing limit. Cannot borrow more books.");
+                return false;
+            }
+        }
+        private int GetBorrowerReservationCount(int borrowerId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM reservations WHERE borrower_id = @borrowerId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    return Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+        }
+
+        private int GetMaxBorrowingLimit(int borrowerId, bool isTeacher)
+        {
+            // Default maximum borrowing limit
+            int defaultMaxBorrowingLimit = isTeacher ? 5 : 2; // Default for students is 2, for teachers is 5
+
+            // Check the number of books already borrowed by the borrower
+            int borrowedBooksCount = CountBorrowedBooks(borrowerId);
+
+            // Calculate the adjusted maximum borrowing limit based on the number of borrowed books
+            int adjustedMaxBorrowingLimit = isTeacher
+                ? Math.Max(0, 5 - borrowedBooksCount)
+                : Math.Max(0, 2 - borrowedBooksCount);
+
+            // Return the maximum borrowing limit
+            return Math.Min(defaultMaxBorrowingLimit, adjustedMaxBorrowingLimit);
+        }
+
+        private bool IsTeacher(int borrowerId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Query to check if the borrower is a teacher
+                string query = "SELECT COUNT(*) FROM borrowers WHERE user_id = @borrowerId AND identifier = 'TEACHER'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@borrowerId", borrowerId);
+
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+        }
 
         private void calendarBtn_Click(object sender, EventArgs e)
         {
@@ -603,6 +709,8 @@ namespace LibrarySystem
         {
 
         }
+
+   
     }
     public class Borrowing
     {
