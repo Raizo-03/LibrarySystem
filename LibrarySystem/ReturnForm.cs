@@ -294,7 +294,7 @@ namespace LibrarySystem
             // Check if the returndateTb textbox is empty
             if (string.IsNullOrWhiteSpace(returndateTb.Text))
             {
-                MessageBox.Show("Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Input Necessary Details. Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Stop further processing if the textbox is empty
             }
 
