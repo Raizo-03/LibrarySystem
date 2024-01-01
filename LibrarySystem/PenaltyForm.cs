@@ -107,7 +107,7 @@ namespace LibrarySystem
         {
             FetchUnpaidPenalties();
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
-
+            activateFetching();
 
         }
         private void FetchUnpaidPenalties()
