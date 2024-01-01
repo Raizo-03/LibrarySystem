@@ -1085,11 +1085,11 @@
             // booklistLabel
             // 
             this.booklistLabel.AutoSize = true;
-            this.booklistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booklistLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booklistLabel.ForeColor = System.Drawing.Color.Black;
             this.booklistLabel.Location = new System.Drawing.Point(27, 38);
             this.booklistLabel.Name = "booklistLabel";
-            this.booklistLabel.Size = new System.Drawing.Size(259, 52);
+            this.booklistLabel.Size = new System.Drawing.Size(266, 51);
             this.booklistLabel.TabIndex = 24;
             this.booklistLabel.Text = "BOOK LIST";
             this.booklistLabel.Click += new System.EventHandler(this.booklistLabel_Click);
