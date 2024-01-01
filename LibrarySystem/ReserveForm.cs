@@ -302,7 +302,7 @@ namespace LibrarySystem
             // Check if the returndateTb textbox is empty
             if (string.IsNullOrWhiteSpace(reserveddateTb.Text))
             {
-                MessageBox.Show("Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Input Necessary Details. Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Stop further processing if the textbox is empty
             }
 
@@ -378,32 +378,32 @@ namespace LibrarySystem
                                 }
                                 else
                                 {
-                                    MessageBox.Show($"The borrower '{borrowerName}' has reached the maximum reservation limit.");
+                                    MessageBox.Show($"Sorry! You have exceeded the number of books to be reserve. The borrower '{borrowerName}' has reached the maximum reservation limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Invalid or unpaid borrower name, or borrower has reached the maximum reservation limit.");
+                                MessageBox.Show("Borrower has reached the maximum reservation limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Borrower not found or has unpaid penalties. Reservation not allowed.");
+                            MessageBox.Show("Borrower not found. Reservation not allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Borrower has unpaid penalties or not found. Reservation not allowed.");
+                        MessageBox.Show("Borrower has unpaid penalties or not found. Reservation not allowed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a borrower name.");
+                    MessageBox.Show("Input Necessary Details. Please enter a borrower name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Please select a book.");
+                MessageBox.Show("Input Necessary Details. Please select a book.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
