@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -452,8 +453,104 @@ namespace LibrarySystem
             }
         }
 
+        private void activateFetching()
+        {
+            try
+            {
+                // Clear existing columns in the DataGridView
+                penaltyDG.Columns.Clear();
 
+                // Fetch penalty information from the database
+                List<PenaltyInfo> penalties = GetPenaltiesInfo();
 
+                // Add columns to the DataGridView
+                penaltyDG.Columns.Add("PenaltyID", "PENALTY ID");
+                penaltyDG.Columns.Add("BorrowerName", "BORROWER'S NAME");
+                penaltyDG.Columns.Add("Amount", "AMOUNT");
 
-    }
+                // Set font size and apply modern style
+                penaltyDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
+                penaltyDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
+                penaltyDG.EnableHeadersVisualStyles = false;
+                penaltyDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                penaltyDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
+
+                // Set column widths
+                penaltyDG.Columns["PenaltyID"].Width = 120; // Adjust width as needed
+                penaltyDG.Columns["BorrowerName"].Width = 325; // Adjust width as needed
+                penaltyDG.Columns["Amount"].Width = 275; // Adjust width as needed
+
+                // Disable user resizing of rows and columns
+                penaltyDG.AllowUserToResizeRows = false;
+                penaltyDG.AllowUserToResizeColumns = false;
+
+                // Disable row headers resizing and visibility
+                penaltyDG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+                // Bind the list to the DataGridView
+                foreach (PenaltyInfo penalty in penalties)
+                {
+                    int rowIndex = penaltyDG.Rows.Add();
+                    penaltyDG.Rows[rowIndex].Cells["PenaltyID"].Value = penalty.PenaltyID;
+                    penaltyDG.Rows[rowIndex].Cells["BorrowerName"].Value = penalty.BorrowerName;
+                    penaltyDG.Rows[rowIndex].Cells["Amount"].Value = penalty.Amount;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void penaltyBtn_Click(object sender, EventArgs e)
+        {
+            activateFetching();
+           
+        }
+
+        private List<PenaltyInfo> GetPenaltiesInfo()
+        {
+            List<PenaltyInfo> penalties = new List<PenaltyInfo>();
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get penalty information
+                    string query = "SELECT penalty_id, borrowers.name AS BorrowerName, CONCAT('₱', penalties.amount) AS Amount " +
+                                   "FROM penalties " +
+                                   "INNER JOIN borrowers ON penalties.borrower_id = borrowers.user_id";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Create a PenaltyInfo object and populate its properties
+                                PenaltyInfo penalty = new PenaltyInfo
+                                {
+                                    PenaltyID = reader["penalty_id"].ToString(),
+                                    BorrowerName = reader["BorrowerName"].ToString(),
+                                    Amount = reader["Amount"].ToString()
+                                };
+
+                                // Add the penalty information to the list
+                                penalties.Add(penalty);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching penalty information: {ex.Message}");
+            }
+
+            return penalties;
+        }
+    
+}
 }

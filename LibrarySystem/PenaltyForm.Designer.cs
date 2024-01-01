@@ -43,6 +43,7 @@
             this.penaltyLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.penaltyDG = new System.Windows.Forms.DataGridView();
+            this.penaltyBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,7 +163,7 @@
             this.payBtn.FlatAppearance.BorderSize = 0;
             this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payBtn.ForeColor = System.Drawing.Color.White;
-            this.payBtn.Location = new System.Drawing.Point(601, 605);
+            this.payBtn.Location = new System.Drawing.Point(655, 585);
             this.payBtn.Name = "payBtn";
             this.payBtn.Size = new System.Drawing.Size(150, 40);
             this.payBtn.TabIndex = 8;
@@ -203,12 +204,32 @@
             this.penaltyDG.Size = new System.Drawing.Size(564, 358);
             this.penaltyDG.TabIndex = 28;
             // 
+            // penaltyBtn
+            // 
+            this.penaltyBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.penaltyBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.penaltyBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.penaltyBtn.BorderRadius = 0;
+            this.penaltyBtn.BorderSize = 0;
+            this.penaltyBtn.FlatAppearance.BorderSize = 0;
+            this.penaltyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.penaltyBtn.ForeColor = System.Drawing.Color.White;
+            this.penaltyBtn.Location = new System.Drawing.Point(481, 585);
+            this.penaltyBtn.Name = "penaltyBtn";
+            this.penaltyBtn.Size = new System.Drawing.Size(150, 40);
+            this.penaltyBtn.TabIndex = 29;
+            this.penaltyBtn.Text = "PENALTIES";
+            this.penaltyBtn.TextColor = System.Drawing.Color.White;
+            this.penaltyBtn.UseVisualStyleBackColor = false;
+            this.penaltyBtn.Click += new System.EventHandler(this.penaltyBtn_Click);
+            // 
             // PenaltyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.penaltyBtn);
             this.Controls.Add(this.penaltyDG);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.penaltyLabel);
@@ -251,5 +272,6 @@
         private System.Windows.Forms.Label penaltyLabel;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.DataGridView penaltyDG;
+        private RJButton penaltyBtn;
     }
 }
