@@ -272,12 +272,12 @@ namespace LibrarySystem
             // Check if the borrower is a student and has already borrowed 2 books
             if (identifier == "STUDENT" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 2)
             {
-                MessageBox.Show("Students can only borrow up to 2 books.");
+                MessageBox.Show("Sorry! You have exceeded the number of books to be borrowed. Students can only borrow up to 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (identifier == "TEACHER" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 5)
             {
-                MessageBox.Show("Teachers can only borrow up to 5 books.");
+                MessageBox.Show("Sorry! You have exceeded the number of books to be borrowed. Teachers can only borrow up to 5 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!CanBorrowerBorrow(borrowerId))
