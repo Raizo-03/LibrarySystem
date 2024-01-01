@@ -266,7 +266,7 @@ namespace LibrarySystem
         bool menuExpand = false;
         private void dashboardTransition_Tick_1(object sender, EventArgs e)
         {
-            const int targetExpandedHeight = 420;
+            const int targetExpandedHeight = 508;
             const int targetCollapsedHeight = 65;
             const int step = 500;
 
