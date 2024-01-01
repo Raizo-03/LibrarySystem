@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS borrowers (
 );
 -- Insert students
 INSERT INTO borrowers (user_id, identifier, name) VALUES
-(12043456, 'STUDENT', 'Eduardo Buscato'),
+(12043456, 'STUDENT', 'Lans Villena'),
 (12043710, 'STUDENT', 'Krissa Beringuel'),
 (12042342, 'STUDENT', 'Rod Balaoro'),
 (12042345, 'STUDENT', 'Harvey Hingco'),

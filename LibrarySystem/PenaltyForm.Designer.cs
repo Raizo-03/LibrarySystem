@@ -39,21 +39,21 @@
             this.balanceLabel = new System.Windows.Forms.Label();
             this.balanceL = new System.Windows.Forms.Label();
             this.bLabel = new System.Windows.Forms.Label();
-            this.payBtn = new LibrarySystem.RJButton();
             this.penaltyLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.penaltyDG = new System.Windows.Forms.DataGridView();
             this.penaltyBtn = new LibrarySystem.RJButton();
+            this.payBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyDG)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(111, 563);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.Size = new System.Drawing.Size(152, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Borrower\'s Name:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -61,78 +61,79 @@
             // borrowerLabel
             // 
             this.borrowerLabel.AutoSize = true;
-            this.borrowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerLabel.Location = new System.Drawing.Point(267, 563);
+            this.borrowerLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerLabel.Location = new System.Drawing.Point(278, 563);
             this.borrowerLabel.Name = "borrowerLabel";
-            this.borrowerLabel.Size = new System.Drawing.Size(57, 20);
+            this.borrowerLabel.Size = new System.Drawing.Size(56, 18);
             this.borrowerLabel.TabIndex = 1;
             this.borrowerLabel.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(111, 605);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Amount Due:";
             // 
             // amountDueLabel
             // 
             this.amountDueLabel.AutoSize = true;
-            this.amountDueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountDueLabel.Location = new System.Drawing.Point(267, 605);
+            this.amountDueLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountDueLabel.Location = new System.Drawing.Point(278, 605);
             this.amountDueLabel.Name = "amountDueLabel";
-            this.amountDueLabel.Size = new System.Drawing.Size(47, 20);
+            this.amountDueLabel.Size = new System.Drawing.Size(46, 18);
             this.amountDueLabel.TabIndex = 3;
             this.amountDueLabel.Text = "label";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(111, 653);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.Size = new System.Drawing.Size(114, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Amount Paid:";
             // 
             // amountpaidTb
             // 
-            this.amountpaidTb.Location = new System.Drawing.Point(271, 653);
+            this.amountpaidTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountpaidTb.Location = new System.Drawing.Point(281, 653);
             this.amountpaidTb.Name = "amountpaidTb";
-            this.amountpaidTb.Size = new System.Drawing.Size(100, 20);
+            this.amountpaidTb.Size = new System.Drawing.Size(181, 26);
             this.amountpaidTb.TabIndex = 5;
             this.amountpaidTb.TextChanged += new System.EventHandler(this.amountpaidTb_TextChanged);
             // 
             // changeLabel
             // 
             this.changeLabel.AutoSize = true;
-            this.changeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeLabel.Location = new System.Drawing.Point(111, 739);
             this.changeLabel.Name = "changeLabel";
-            this.changeLabel.Size = new System.Drawing.Size(76, 20);
+            this.changeLabel.Size = new System.Drawing.Size(75, 18);
             this.changeLabel.TabIndex = 6;
             this.changeLabel.Text = "Change:";
             // 
             // cLabel
             // 
             this.cLabel.AutoSize = true;
-            this.cLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cLabel.Location = new System.Drawing.Point(267, 739);
+            this.cLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cLabel.Location = new System.Drawing.Point(277, 739);
             this.cLabel.Name = "cLabel";
-            this.cLabel.Size = new System.Drawing.Size(68, 20);
+            this.cLabel.Size = new System.Drawing.Size(68, 18);
             this.cLabel.TabIndex = 7;
             this.cLabel.Text = "change";
             // 
             // balanceLabel
             // 
             this.balanceLabel.AutoSize = true;
-            this.balanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.balanceLabel.Location = new System.Drawing.Point(111, 698);
             this.balanceLabel.Name = "balanceLabel";
-            this.balanceLabel.Size = new System.Drawing.Size(79, 20);
+            this.balanceLabel.Size = new System.Drawing.Size(79, 18);
             this.balanceLabel.TabIndex = 9;
             this.balanceLabel.Text = "Balance:";
             // 
@@ -146,31 +147,12 @@
             // bLabel
             // 
             this.bLabel.AutoSize = true;
-            this.bLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bLabel.Location = new System.Drawing.Point(267, 698);
+            this.bLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bLabel.Location = new System.Drawing.Point(277, 698);
             this.bLabel.Name = "bLabel";
-            this.bLabel.Size = new System.Drawing.Size(72, 20);
+            this.bLabel.Size = new System.Drawing.Size(72, 18);
             this.bLabel.TabIndex = 10;
             this.bLabel.Text = "balance";
-            // 
-            // payBtn
-            // 
-            this.payBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.payBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.payBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.payBtn.BorderRadius = 0;
-            this.payBtn.BorderSize = 0;
-            this.payBtn.FlatAppearance.BorderSize = 0;
-            this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.payBtn.ForeColor = System.Drawing.Color.White;
-            this.payBtn.Location = new System.Drawing.Point(655, 585);
-            this.payBtn.Name = "payBtn";
-            this.payBtn.Size = new System.Drawing.Size(150, 40);
-            this.payBtn.TabIndex = 8;
-            this.payBtn.Text = "PAY";
-            this.payBtn.TextColor = System.Drawing.Color.White;
-            this.payBtn.UseVisualStyleBackColor = false;
-            this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
             // penaltyLabel
             // 
@@ -206,22 +188,43 @@
             // 
             // penaltyBtn
             // 
-            this.penaltyBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.penaltyBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.penaltyBtn.BackColor = System.Drawing.Color.Olive;
+            this.penaltyBtn.BackgroundColor = System.Drawing.Color.Olive;
             this.penaltyBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.penaltyBtn.BorderRadius = 0;
+            this.penaltyBtn.BorderRadius = 25;
             this.penaltyBtn.BorderSize = 0;
             this.penaltyBtn.FlatAppearance.BorderSize = 0;
             this.penaltyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.penaltyBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltyBtn.ForeColor = System.Drawing.Color.White;
-            this.penaltyBtn.Location = new System.Drawing.Point(481, 585);
+            this.penaltyBtn.Location = new System.Drawing.Point(498, 585);
             this.penaltyBtn.Name = "penaltyBtn";
-            this.penaltyBtn.Size = new System.Drawing.Size(150, 40);
+            this.penaltyBtn.Size = new System.Drawing.Size(179, 55);
             this.penaltyBtn.TabIndex = 29;
             this.penaltyBtn.Text = "PENALTIES";
             this.penaltyBtn.TextColor = System.Drawing.Color.White;
             this.penaltyBtn.UseVisualStyleBackColor = false;
             this.penaltyBtn.Click += new System.EventHandler(this.penaltyBtn_Click);
+            // 
+            // payBtn
+            // 
+            this.payBtn.BackColor = System.Drawing.Color.Olive;
+            this.payBtn.BackgroundColor = System.Drawing.Color.Olive;
+            this.payBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.payBtn.BorderRadius = 25;
+            this.payBtn.BorderSize = 0;
+            this.payBtn.FlatAppearance.BorderSize = 0;
+            this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.payBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payBtn.ForeColor = System.Drawing.Color.White;
+            this.payBtn.Location = new System.Drawing.Point(702, 585);
+            this.payBtn.Name = "payBtn";
+            this.payBtn.Size = new System.Drawing.Size(179, 55);
+            this.payBtn.TabIndex = 8;
+            this.payBtn.Text = "PAY";
+            this.payBtn.TextColor = System.Drawing.Color.White;
+            this.payBtn.UseVisualStyleBackColor = false;
+            this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
             // PenaltyForm
             // 

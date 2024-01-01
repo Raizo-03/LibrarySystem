@@ -163,6 +163,7 @@
             this.borrowedBtn.BorderSize = 0;
             this.borrowedBtn.FlatAppearance.BorderSize = 0;
             this.borrowedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowedBtn.ForeColor = System.Drawing.Color.White;
             this.borrowedBtn.Location = new System.Drawing.Point(264, 680);
             this.borrowedBtn.Name = "borrowedBtn";
@@ -182,6 +183,7 @@
             this.borrowBtn.BorderSize = 0;
             this.borrowBtn.FlatAppearance.BorderSize = 0;
             this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowBtn.ForeColor = System.Drawing.Color.White;
             this.borrowBtn.Location = new System.Drawing.Point(490, 680);
             this.borrowBtn.Name = "borrowBtn";
