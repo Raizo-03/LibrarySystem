@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
@@ -25,11 +26,18 @@ namespace LibrarySystem
             InitializeComponent();
 
 
-        }
 
+            //ApplyRoundedButtonStyle(calendarBtn);
+        }
+        private void ApplyRoundedButtonStyle(Guna2GradientButton button)
+        {
+
+            // Set the border radius to make the button rounded
+            button.BorderRadius = 12; // Adjust the radius to control the roundness
+        }
         private void AddBorrowerCheckBox(int borrowerId, string borrowerName, decimal penaltyAmount, bool paid)
         {
-            int topOffset = 20; // Adjust the initial vertical position as needed
+            int topOffset = 120; // Adjust the initial vertical position to 120
 
             System.Windows.Forms.CheckBox checkBox = new System.Windows.Forms.CheckBox();
             checkBox.Text = borrowerName + " - " + penaltyAmount.ToString("C", CultureInfo.CreateSpecificCulture("en-PH"));
@@ -37,10 +45,10 @@ namespace LibrarySystem
             checkBox.CheckedChanged += BorrowerCheckBox_CheckedChanged;
 
             // Adjust the width based on the length of the text
-            checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 100;
-            checkBox.Location = new Point(440, 100);
-            checkBox.Top = topOffset;
+            checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
+            checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
             topOffset += 25; // Adjust the vertical spacing as needed
+            checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
 
             checkBoxes.Add(checkBox); // Add the checkbox to the list
             Controls.Add(checkBox);
@@ -90,6 +98,8 @@ namespace LibrarySystem
         private void PenaltyForm_Load(object sender, EventArgs e)
         {
             FetchUnpaidPenalties();
+            this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+
 
         }
         private void FetchUnpaidPenalties()
