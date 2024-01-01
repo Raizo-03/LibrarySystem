@@ -721,12 +721,10 @@ namespace LibrarySystem
                 {
                     connection.Open();
 
-                    // SQL query to get the total number of reservations
                     string query = "SELECT COUNT(*) FROM reservations WHERE borrower_id = 12048547";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // ExecuteScalar is used to get a single value from the query result
                         return Convert.ToInt32(command.ExecuteScalar());
                     }
                 }
