@@ -621,6 +621,7 @@ namespace LibrarySystem
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            
             // Check if any row is selected in the DataGridView
             if (reservedbooksDG.SelectedRows.Count > 0)
             {
@@ -656,7 +657,7 @@ namespace LibrarySystem
             }
             else
             {
-                MessageBox.Show("Please select a row to delete.");
+                MessageBox.Show("Input Necessary Details. Please select a row to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void DeleteReservationFromDataGridView(int reservationId)
