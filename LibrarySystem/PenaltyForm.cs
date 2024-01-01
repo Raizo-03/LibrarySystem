@@ -25,9 +25,16 @@ namespace LibrarySystem
         {
             InitializeComponent();
 
+            penaltyDG.ReadOnly = true;
+            penaltyDG.AlternatingRowsDefaultCellStyle = null;
+            penaltyDG.RowHeadersVisible = false;
+            penaltyDG.ScrollBars = ScrollBars.Vertical;
+            penaltyDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
+
 
 
             //ApplyRoundedButtonStyle(calendarBtn);
+
         }
         private void ApplyRoundedButtonStyle(Guna2GradientButton button)
         {
