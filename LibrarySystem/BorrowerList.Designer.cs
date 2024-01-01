@@ -67,7 +67,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.baloroborrowedLabel = new System.Windows.Forms.Label();
+            this.balaoroborrowedLabel = new System.Windows.Forms.Label();
             this.balaororeserveLabel = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -603,17 +603,17 @@
             this.label29.TabIndex = 61;
             this.label29.Text = "ACSAD";
             // 
-            // baloroborrowedLabel
+            // balaoroborrowedLabel
             // 
-            this.baloroborrowedLabel.AutoSize = true;
-            this.baloroborrowedLabel.BackColor = System.Drawing.Color.Bisque;
-            this.baloroborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.baloroborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.baloroborrowedLabel.Location = new System.Drawing.Point(702, 246);
-            this.baloroborrowedLabel.Name = "baloroborrowedLabel";
-            this.baloroborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.baloroborrowedLabel.TabIndex = 62;
-            this.baloroborrowedLabel.Text = "0";
+            this.balaoroborrowedLabel.AutoSize = true;
+            this.balaoroborrowedLabel.BackColor = System.Drawing.Color.Bisque;
+            this.balaoroborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balaoroborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.balaoroborrowedLabel.Location = new System.Drawing.Point(702, 246);
+            this.balaoroborrowedLabel.Name = "balaoroborrowedLabel";
+            this.balaoroborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.balaoroborrowedLabel.TabIndex = 62;
+            this.balaoroborrowedLabel.Text = "0";
             // 
             // balaororeserveLabel
             // 
@@ -1426,7 +1426,7 @@
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.balaororeserveLabel);
-            this.Controls.Add(this.baloroborrowedLabel);
+            this.Controls.Add(this.balaoroborrowedLabel);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
@@ -1521,7 +1521,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label baloroborrowedLabel;
+        private System.Windows.Forms.Label balaoroborrowedLabel;
         private System.Windows.Forms.Label balaororeserveLabel;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
