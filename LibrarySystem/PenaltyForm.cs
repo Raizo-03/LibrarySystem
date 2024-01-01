@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Management;
 using System.Windows.Forms;
 
 namespace LibrarySystem
@@ -19,6 +20,7 @@ namespace LibrarySystem
     {
         private List<System.Windows.Forms.CheckBox> checkBoxes = new List<System.Windows.Forms.CheckBox>();
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+        System.Windows.Forms.CheckBox checkBox = new System.Windows.Forms.CheckBox();
 
         private double amountPaid = 0;
         private double change = 0;
@@ -34,20 +36,12 @@ namespace LibrarySystem
 
 
 
-            //ApplyRoundedButtonStyle(calendarBtn);
-
         }
-        private void ApplyRoundedButtonStyle(Guna2GradientButton button)
-        {
 
-            // Set the border radius to make the button rounded
-            button.BorderRadius = 12; // Adjust the radius to control the roundness
-        }
         private void AddBorrowerCheckBox(int borrowerId, string borrowerName, decimal penaltyAmount, bool paid)
         {
             int topOffset = 120; // Adjust the initial vertical position to 120
 
-            System.Windows.Forms.CheckBox checkBox = new System.Windows.Forms.CheckBox();
             checkBox.Text = borrowerName + " - " + penaltyAmount.ToString("C", CultureInfo.CreateSpecificCulture("en-PH"));
             checkBox.Tag = borrowerId; // Use Tag property to store borrowerId
             checkBox.CheckedChanged += BorrowerCheckBox_CheckedChanged;
@@ -67,8 +61,6 @@ namespace LibrarySystem
 
         private void BorrowerCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            System.Windows.Forms.CheckBox checkBox = sender as System.Windows.Forms.CheckBox;
-
             if (checkBox != null)
             {
                 // Ensure the event is triggered only when the checkbox is checked
@@ -149,7 +141,19 @@ namespace LibrarySystem
 
         private void payBtn_Click(object sender, EventArgs e)
         {
+
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the paying process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (!checkBox.Checked)
+            {
+                MessageBox.Show("Input Necessary Details. Please select atleast one penalty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(amountpaidTb.Text) || !decimal.TryParse(amountpaidTb.Text, out decimal amount))
+            {
+                MessageBox.Show("Invalid Amount! Please enter a valid amount.Please enter a valid amount (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
 
             // Check user's choice
             if (result == DialogResult.No)
