@@ -335,7 +335,8 @@ namespace LibrarySystem
                         }
                         else
                         {
-                            MessageBox.Show("Invalid due date format.");
+                            MessageBox.Show("Invalid due date format. Please enter a valid due date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
 
                         // Update the book availability to 'BORROWED' in the database
