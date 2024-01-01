@@ -462,6 +462,7 @@ namespace LibrarySystem
                 return 0;
             }
         }
+
         private int GetTotalPenalties()
         {
             try
