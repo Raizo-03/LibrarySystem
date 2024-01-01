@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace LibrarySystem
     public partial class BorrowerList : Form
     {
         private List<User> users;  // Assuming User, Student, and Teacher classes are defined as in the previous example
+        private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
 
         public BorrowerList()
         {
@@ -26,27 +28,100 @@ namespace LibrarySystem
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
 
+            //STUDENTS
+
+            //BORROWINGS
+            int beringuelBorrowed = GetTotalBorrowingsBeringuel();
+            beringuelborrowLabel.Text = beringuelBorrowed.ToString();
+
+
+            //RESERVE
+            int beringuelReserve = GetTotalReservationsBeringuel();
+            beringuelreservedLabel.Text = beringuelReserve.ToString();   
+
         }
 
-        //DISPLAYS THE INFO: 
-        /*
-        private void DisplayUserInformation()
-        {
-            // Assuming you have a ListBox named userListListBox in your form
-            userListListBox.Items.Clear();
+        //METHOD FOR FETCHING
 
-            foreach (var user in users)
+        //STUDENTS
+
+        //BORROWINGS
+        private int GetTotalBorrowingsBeringuel()
+        {
+            try
             {
-                if (user is Student student)
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    userListListBox.Items.Add($"Student: {student.Name}, ID: {student.UserId}, Year: {student.YearLevel}, Section: {student.Section}");
-                }
-                else if (user is Teacher teacher)
-                {
-                    userListListBox.Items.Add($"Teacher: {teacher.Name}, ID: {teacher.UserId}, Employee ID: {teacher.EmployeeId}, Department: {teacher.Department}");
+                    connection.Open();
+
+                    // SQL query to get the total number of borrowings
+                    string query = "SELECT COUNT(*) FROM borrowings WHERE user_id = 12043710";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // ExecuteScalar is used to get a single value from the query result
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching total borrowings: {ex.Message}");
+                return 0;
+            }
         }
-        */
+        private int GetTotalBorrowingsVillena()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get the total number of borrowings
+                    string query = "SELECT COUNT(*) FROM borrowings WHERE user_id = 12043710";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // ExecuteScalar is used to get a single value from the query result
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching total borrowings: {ex.Message}");
+                return 0;
+            }
+        }
+
+
+
+
+        //RESERVE
+        private int GetTotalReservationsBeringuel()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get the total number of reservations
+                    string query = "SELECT COUNT(*) FROM reservations WHERE borrower_id = 12043710";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // ExecuteScalar is used to get a single value from the query result
+                        return Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching total reservations: {ex.Message}");
+                return 0;
+            }
+        }
     }
 }
