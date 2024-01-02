@@ -935,8 +935,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "Principia Mathematica\r\n\r\n\r\n Philosophiæ Naturalis Principia Mathematica (English: The Mathematical Principles of Natural Philosophy) often referred to as simply the Principia, is a book by Isaac Newton that expounds Newton's laws of motion and his law of universal gravitation. The Principia is written in Latin and comprises three volumes, and was first published on 5 July 1687.The Principia is considered one of the most important works in the history of science.The French mathematical physicist Alexis Clairaut assessed it in 1747: \"The famous book of Mathematical Principles of Natural Philosophy marked the epoch of a great revolution in physics.";
-       
+            bookinfoLabel.Text = "Principia Mathematica\r\n\r\n\r\n Philosophiæ Naturalis Principia Mathematica (English: The Mathematical Principles of Natural Philosophy) often referred to as simply the Principia, is a book by Isaac Newton that expounds Newton's laws of motion and his law of universal gravitation. The Principia is written in Latin and comprises three volumes, and was first published on 5 July 1687.";
         }
 
         private void structureBtn_Click(object sender, EventArgs e)
