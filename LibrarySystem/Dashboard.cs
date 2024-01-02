@@ -13,12 +13,14 @@ using ReaLTaiizor.Controls;
 using static LibrarySystem.FirstForm;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Org.BouncyCastle.Crmf;
+using System.Web.Configuration;
 
 
 namespace LibrarySystem
 {
     public partial class Dashboard : Form
     {
+        //DECLARES THE FORMS GLOBALLY TO ACCESS IT IN DIFFERENT METHODS
         DashboardForm2 dashboard2;
         BooklistForm booklist;
         BorrowForm borrow;
@@ -34,17 +36,17 @@ namespace LibrarySystem
         private int BOOKLIMIT;
     
 
-
+        //Makes the form hsve round edges
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-    (
+        (
         int nLeftRect,     // x-coordinate of upper-left corner
         int nTopRect,      // y-coordinate of upper-left corner
         int nRightRect,    // x-coordinate of lower-right corner
         int nBottomRect,   // y-coordinate of lower-right corner
         int nWidthEllipse, // height of ellipse
         int nHeightEllipse // width of ellipse
-    );
+         );
 
         public Dashboard(string identifier, string userName, string userId, int bookLimit)
         {
@@ -53,6 +55,8 @@ namespace LibrarySystem
             //make the edges more round
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            
             this.Identifier = identifier;
             this.BOOKLIMIT = bookLimit;
             this.USERName = userName;
@@ -67,12 +71,10 @@ namespace LibrarySystem
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
             this.BackColor = Color.Green;
-            //upperPanel.BackColor = Color.FromArgb(176, 146, 106, 106); // CUSTOM UPPER PANEL #B0926A
 
             //UPPER PANEL COLOR
-            upperPanel.BackColor = Color.FromArgb(0xB1, 0x92, 0x6A);  // Make the upper panel transparent
-            // Attach the Paint event to handle custom painting for the upper panel
-            //upperPanel.Paint += UpperPanel_Paint;
+            upperPanel.BackColor = Color.FromArgb(0xB1, 0x92, 0x6A);  
+ 
 
             //Disable the maximize/Minimize button
             dashboardControlbx.EnableMaximizeButton = false;
