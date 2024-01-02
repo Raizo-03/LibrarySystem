@@ -23,14 +23,17 @@ namespace LibrarySystem
         private String Identifier;
         private String ID;
 
-        //FOR DATABASE
+        //FOR DATABASE Connection
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
         private DateTime currentDate;  // Change to DateTime
         private DateTime futureDate;  // Change to DateTime
 
+
         private int selectedBookId; // Class-level variable to store the selected book ID
         private List<int> selectedBookIds = new List<int>();
         private string Booktitle;
+
+        //Declares new checkboxes globally to be used in different method
         CheckBox checkBox = new CheckBox();
 
         public BorrowForm(String identifier, string username, string id, int booklimit)
@@ -41,22 +44,31 @@ namespace LibrarySystem
             this.bookLimit = booklimit;
             this.userNAME = username;
 
-            //BORROWING DATES
+            //BORROWING DATES FOR THE BORROWING DATE TEXBOX
+            //This also automatically adds 3 days if the user is STUDENT
             currentDate = DateTime.Now;
             futureDate = currentDate.AddDays(3);
 
+            //Reformant borrowdate to month, day, year and removes time
             borrowDate.Text = currentDate.ToString("MM/dd/yyyy");
 
+            //calls the method that populates the checkboxes
             PopulateBookCheckBoxes();
+
+            //Properties for the datagridview
             borrowDG.ReadOnly = true;
             borrowDG.AlternatingRowsDefaultCellStyle = null;
             borrowDG.RowHeadersVisible = false;
             borrowDG.ScrollBars = ScrollBars.Vertical;
 
+            //Calls the method to load the datagridview with the borrowed books
             activateFetching();
      
+            //Calls the method to apply the round button
             ApplyRoundedButtonStyle(calendarBtn);
         }
+        
+        //Method that makes the button round by changing border radius
         private void ApplyRoundedButtonStyle(Guna2GradientButton button)
         {
 
@@ -64,6 +76,7 @@ namespace LibrarySystem
             button.BorderRadius = 12; // Adjust the radius to control the roundness
         }
 
+        //Method that fetches the total reserve count of the borrower and returns a value in int 
         private int GetReservedBooksCount(int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -81,14 +94,16 @@ namespace LibrarySystem
             }
         }
 
+        //Method that is used when the DateTimePicker component is changed, it will automatically sets the borrow date and return date
         private void borrowedDatepicker_ValueChanged(object sender, EventArgs e)
         {
             // Update borrowDate TextBox with the selected date
             borrowDate.Text = borrowedDatepicker.Value.ToString("MM/dd/yyyy");
 
-            // Calculate the future date by adding 3 days to the selected date
+            // Calculate the future date by adding 3 days to the selected date if the user is STUDENT
             futureDate = borrowedDatepicker.Value.AddDays(3);
 
+            //control structure to set the due date to NO DUE DATE if the user is a TEACHER
             string userIdentifier = GetIdentifierFromDatabase();
             if (userIdentifier == "TEACHER")
             {
@@ -100,12 +115,16 @@ namespace LibrarySystem
             }
 
         }
+
+
         private void BorrowForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
             borrowDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
 
+            //Calls the method that fetches the borrowed books
             activateFetching();
+
             borrowerName.Text = userNAME;
         }
 
@@ -146,7 +165,7 @@ namespace LibrarySystem
         }
 
 
-        // GETS THE BOOKID
+        // GETS THE BOOK TITLE WHEN THE CHECKBOX IS CLICKED
         private List<string> selectedBookTitles = new List<string>();
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -169,6 +188,8 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //Method that updates the availability of the book being borrowed to "Borrowed"
         public void UpdateBookAvailability(string title, string availability)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -191,6 +212,7 @@ namespace LibrarySystem
         }
 
 
+        //Gets the book availability of the book from the choses books using the booktitle
         private string GetBookAvailabilityFromDatabase(string bookTitle)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -209,7 +231,7 @@ namespace LibrarySystem
             }
         }
 
-        //GETS THE BOOKS FROM THE DATABASE
+        //GETS THE BOOKS FROM THE DATABASE that has status available and stores it in the list data structure
         private List<Book> GetBooksFromDatabase()
         {
             List<Book> books = new List<Book>();
@@ -237,8 +259,10 @@ namespace LibrarySystem
             return books;
         }
 
+        //This method is used for the borrow button 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+            //Validates if the user really wants to borrow
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the borrowing process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Check user's choice
@@ -248,14 +272,17 @@ namespace LibrarySystem
                 return;
             }
 
-            // Check for unpaid penalties
+            // Check for unpaid penalties; If Yes, the borrowing is not allowed, if No, borrowing proceeds
             if (HasUnpaidPenalties())
             {
                 MessageBox.Show("You have unpaid penalties. Please clear them before borrowing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            //Declares librarydataccess
             LibraryDataAccess library = new LibraryDataAccess();
+
+            //Gets the borrower userID and Identifier and sets them into variables
             int borrowerId = GetBorrowerUserId();
             string identifier = GetIdentifierFromDatabase();
 
@@ -266,7 +293,7 @@ namespace LibrarySystem
                 return;
             }
 
-            // Fetch the number of books reserved by the user
+            // Fetch the number of books reserved by the user and sets them into a variable
             int reservedBooksCount = GetReservedBooksCount(borrowerId);
 
             // Check if the borrower is a student and has already borrowed 2 books
@@ -280,12 +307,14 @@ namespace LibrarySystem
                 MessageBox.Show("Sorry! You have exceeded the number of books to be borrowed. Teachers can only borrow up to 5 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            //Control structure to call the method that checks the number of the user's total reserved and borrowed books and using the borrowerID
             if (!CanBorrowerBorrow(borrowerId))
             {
                 return;
             }
 
-            // Check if any checkboxes are selected
+            // Check if any checkboxes are selected, if users proceed to click the borrow button and no checkbox is clicked, it will show a warning error
             if (selectedBookTitles.Count == 0)
             {
                 MessageBox.Show("Invalid Input. Please select at least one book.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -293,7 +322,7 @@ namespace LibrarySystem
             }
 
   
-            // Check if any selected book is of the "ACADEMIC" genre
+            // Check if any selected book is of the "ACADEMIC" genre, shows warning message when the academic books are being borrowed
             foreach (string bookTitle in selectedBookTitles)
             {
                 string genre = GetBookGenreFromDatabase(bookTitle);
@@ -305,7 +334,7 @@ namespace LibrarySystem
             }
 
             // Continue with the borrowing process for non-academic books
-
+            //Loops to get the selected books from the checkboxes
             foreach (string bookTitle in selectedBookTitles)
             {
                 // Get the book availability from the database
@@ -374,6 +403,7 @@ namespace LibrarySystem
             this.Close();
         }
 
+        //Method to fetch if the borrower has unpaid penalties and returns a bool value 
         private bool HasUnpaidPenalties()
         {
             int borrowerId = GetBorrowerUserId();
@@ -393,6 +423,8 @@ namespace LibrarySystem
             }
         }
 
+
+        //Method to fetch the genre of the books 
         private string GetBookGenreFromDatabase(string bookTitle)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -435,8 +467,7 @@ namespace LibrarySystem
 
 
 
-
-        //GETTING USER INFO FROM DATABASE
+        //GETTING USER INFO FROM DATABASE USING THEIR USER ID AND RETURNS IT IN AN INT VALUE
         private int GetBorrowerUserId()
         {
             // Get the borrower's name from your textbox
@@ -448,6 +479,8 @@ namespace LibrarySystem
             // Return the user ID
             return userId;
         }
+
+        //Method the fetches the borrower using variable borrowerName, and returns an int value for the user_id
         private int GetUserFromDatabase(string borrowerName)
         {
             // Use your data access layer to query the database and retrieve the user ID
@@ -469,6 +502,8 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //Method that fetches the identifier of the user and returns it in a string value
         private string GetIdentifierFromDatabase()
         {
             try
@@ -495,7 +530,7 @@ namespace LibrarySystem
             }
         }
 
-
+        //Method for the borrower Name
         private void borrowerName_TextChanged(object sender, EventArgs e)
         {
             string identifier = GetIdentifierFromDatabase();
@@ -512,6 +547,8 @@ namespace LibrarySystem
 
         }
 
+        //Method that fetches the borrowing info from the borrowings table and sets them in the borrowDG datagridview 
+        //This method also sets the properties of the datagridview
         private void activateFetching()
         {
             try
@@ -564,11 +601,13 @@ namespace LibrarySystem
             }
         }
 
+        //Method for the borrow borrowed books button to call the method that fetches the borrowings from the borrowings table
         private void borrowedBtn_Click(object sender, EventArgs e)
         {
             activateFetching();
         }
 
+        //Method that fetches the borrowings from the borrowings table in the database; Informations including; borrowing ID, book title, borrow date, and due date and stores them into a list structure
         private List<Borrowing> GetBorrowingsFromDatabase()
         {
             List<Borrowing> borrowings = new List<Borrowing>();
@@ -600,6 +639,7 @@ namespace LibrarySystem
         }
 
 
+        //Method that fetches the borrower name in the borrowers table using the userID and returns a string value
         private string GetBorrowerNameFromDatabase(int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -617,6 +657,8 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //Method the calls the method for validate the total borrowed and reserved books using their userID
         private bool CanBorrowerBorrow(int borrowerId)
         {
             // Fetch the number of books already borrowed by the borrower
@@ -642,6 +684,8 @@ namespace LibrarySystem
                 return false;
             }
         }
+
+        //Method that fetches the total reservation count of the borrower using their borrower_id
         private int GetBorrowerReservationCount(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -659,6 +703,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that gets the borrowing limit and returns it as an int value
         private int GetMaxBorrowingLimit(int borrowerId, bool isTeacher)
         {
             // Default maximum borrowing limit
@@ -676,6 +721,8 @@ namespace LibrarySystem
             return Math.Min(defaultMaxBorrowingLimit, adjustedMaxBorrowingLimit);
         }
 
+
+        //Method that checks if the user is a teacher using their user ID and returns a boolean value if true or not
         private bool IsTeacher(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -713,6 +760,8 @@ namespace LibrarySystem
 
    
     }
+
+    //Class for the borrowing info that is used in the list structures as well as their getters and setters
     public class Borrowing
     {
         public int BorrowingId { get; set; }
@@ -721,6 +770,8 @@ namespace LibrarySystem
         public DateTime BorrowDate { get; set; }
         public DateTime DueDate { get; set; }
     }
+    //Class for the book info that is used in the list structures as well as their getters and setters
+
     public class Book
     {
         public int BookId { get; set; }
