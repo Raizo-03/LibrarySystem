@@ -56,6 +56,7 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
+            this.dashboardmainLabel = new System.Windows.Forms.Label();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // upperPanel
             // 
+            this.upperPanel.Controls.Add(this.dashboardmainLabel);
             this.upperPanel.Controls.Add(this.dashboardControlbx);
             this.upperPanel.Controls.Add(this.dashboardburgerIcon);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -112,7 +114,7 @@
             // dashboardburgerIcon
             // 
             this.dashboardburgerIcon.Image = ((System.Drawing.Image)(resources.GetObject("dashboardburgerIcon.Image")));
-            this.dashboardburgerIcon.Location = new System.Drawing.Point(12, 22);
+            this.dashboardburgerIcon.Location = new System.Drawing.Point(12, 2);
             this.dashboardburgerIcon.Name = "dashboardburgerIcon";
             this.dashboardburgerIcon.Size = new System.Drawing.Size(48, 45);
             this.dashboardburgerIcon.TabIndex = 0;
@@ -377,6 +379,16 @@
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
             // 
+            // dashboardmainLabel
+            // 
+            this.dashboardmainLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardmainLabel.ForeColor = System.Drawing.Color.White;
+            this.dashboardmainLabel.Location = new System.Drawing.Point(66, 9);
+            this.dashboardmainLabel.Name = "dashboardmainLabel";
+            this.dashboardmainLabel.Size = new System.Drawing.Size(574, 34);
+            this.dashboardmainLabel.TabIndex = 2;
+            this.dashboardmainLabel.Text = "Eternal Library Management System";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,5 +451,6 @@
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button penaltyBtn;
+        private System.Windows.Forms.Label dashboardmainLabel;
     }
 }
