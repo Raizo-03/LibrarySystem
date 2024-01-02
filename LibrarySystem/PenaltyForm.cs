@@ -18,16 +18,23 @@ namespace LibrarySystem
 {
     public partial class PenaltyForm : Form
     {
+        //DECLARES CHECKBOX GLOBALLY TO BE USED IN ALL THE METHODS 
         private List<System.Windows.Forms.CheckBox> checkBoxes = new List<System.Windows.Forms.CheckBox>();
-        private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
         System.Windows.Forms.CheckBox checkBox = new System.Windows.Forms.CheckBox();
 
+        //For database connection
+        private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+
+        //Global variables for the amount paid and change = set to 0
         private double amountPaid = 0;
         private double change = 0;
+
+
         public PenaltyForm()
         {
             InitializeComponent();
 
+            //Sets the properties of the datagridview
             penaltyDG.ReadOnly = true;
             penaltyDG.AlternatingRowsDefaultCellStyle = null;
             penaltyDG.RowHeadersVisible = false;
@@ -38,6 +45,7 @@ namespace LibrarySystem
 
         }
 
+        //Method that adds the fetched penalties and populates it into the checkboxes
         private void AddBorrowerCheckBox(int borrowerId, string borrowerName, decimal penaltyAmount, bool paid)
         {
             int topOffset = 120; // Adjust the initial vertical position to 120
@@ -59,6 +67,7 @@ namespace LibrarySystem
             borrowerLabel.Tag = borrowerId;
         }
 
+        //Method that gets the values of the penalties and sets it to the labels when the checkbox is clicked
         private void BorrowerCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox != null)
@@ -97,11 +106,17 @@ namespace LibrarySystem
 
         private void PenaltyForm_Load(object sender, EventArgs e)
         {
+            //Calls the method for fetching the unpaid penalties
             FetchUnpaidPenalties();
+
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+
+            //Calls the method for fetching the unpaid penalties and storing it in the tables
             activateFetching();
 
         }
+
+        //Method that fetches the unpaid penalties from the penalties table in the database
         private void FetchUnpaidPenalties()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -139,28 +154,34 @@ namespace LibrarySystem
 
         }
 
+        //Method for the pay button
         private void payBtn_Click(object sender, EventArgs e)
         {
+            //Validates if the user really wants to proceed the payment process
 
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the paying process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (!checkBox.Checked)
-            {
-                MessageBox.Show("Input Necessary Details. Please select atleast one penalty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(amountpaidTb.Text) || !decimal.TryParse(amountpaidTb.Text, out decimal amount))
-            {
-                MessageBox.Show("Invalid Amount! Please enter a valid amount.Please enter a valid amount (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
-            }
-
             // Check user's choice
             if (result == DialogResult.No)
             {
                 // User chose not to continue, so return without executing the borrowing process
                 return;
             }
+
+            //Check if there is no chosen checkboxes, if there are no clicked checkboxes, it will not proceed the payment and shows error message box
+            if (!checkBox.Checked)
+            {
+                MessageBox.Show("Input Necessary Details. Please select atleast one penalty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //Check if the amount paid textbox is empty/null or if its not a numeric value; if there criteria is met, the payment will not proceed and error message is shown
+            if (string.IsNullOrEmpty(amountpaidTb.Text) || !decimal.TryParse(amountpaidTb.Text, out decimal amount))
+            {
+                MessageBox.Show("Invalid Amount! Please enter a valid amount.Please enter a valid amount (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+
+            
             if (int.TryParse(borrowerLabel.Tag?.ToString(), out int borrowerId))
             {
                 string borrowerName = borrowerLabel.Text;
@@ -200,6 +221,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that updates penalty row if the borrower paid not exact amount on the supposed amount that needs to be paid
         private bool UpdatePaymentInDatabase(int borrowerId, decimal amountPaid)
         {
             try
@@ -241,6 +263,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the penalty amount of the user base on the borrower id and returns a value of decimal
         private decimal FetchPenaltyAmountFromDatabase(int borrowerId)
         {
             try
@@ -281,6 +304,7 @@ namespace LibrarySystem
         }
 
 
+        //Method the updates the penalty table if the user paid the exact amount of the supposed penalty amound that needs to be paid
         private void UpdatePenaltyTable(int borrowerId, decimal penaltyAmount, decimal amountPaid)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -319,9 +343,7 @@ namespace LibrarySystem
         }
 
 
-
-
-
+        //Method for the amountpaid textbox, if the user inputted numeric value, it will automatically calculate the change and the balance depending on the penalty amount
         private void amountpaidTb_TextChanged(object sender, EventArgs e)
         {
             // Remove the peso sign from amountDueLabel.Text before parsing
@@ -362,6 +384,8 @@ namespace LibrarySystem
                 bLabel.Text = "Invalid input"; // Update balanceLabel accordingly
             }
         }
+
+        //Method to show if the payment is succesful, it will show, borrower name, borrower id, amount paid, balance, and the change of borrower
         private void ShowPaymentResultMessage(bool paymentSuccessful, string borrowerName, int borrowerId, decimal amountPaid, decimal change, decimal balance)
         {
             string resultMessage;
@@ -377,6 +401,8 @@ namespace LibrarySystem
 
             MessageBox.Show(resultMessage, paymentSuccessful ? "Success" : "Warning", MessageBoxButtons.OK, paymentSuccessful ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
+
+        //Method to remove the checkbox and the labels for the borrower if paid the exact amount
         private void ClearPaymentDetails()
         {
             int borrowerIdToRemove = int.Parse(borrowerLabel.Tag.ToString());
@@ -400,6 +426,7 @@ namespace LibrarySystem
             // Clear any other UI elements as needed
         }
 
+        //Method that deletes entirely the row of the borrower if paid the exact amount
         private void DeletePenaltyFromDatabase(int borrowerId)
         {
             try
@@ -457,6 +484,8 @@ namespace LibrarySystem
             }
         }
 
+        //Method that activates the fetching of the penalties and sets it to the datagridview
+        //It also sets the properties of the datagridview
         private void activateFetching()
         {
             try
@@ -506,12 +535,14 @@ namespace LibrarySystem
             }
         }
 
+        //Method for the penalty button
         private void penaltyBtn_Click(object sender, EventArgs e)
         {
             activateFetching();
            
         }
 
+        //Method that fetches the penalties in the penalties table and store it in a list data structure
         private List<PenaltyInfo> GetPenaltiesInfo()
         {
             List<PenaltyInfo> penalties = new List<PenaltyInfo>();
