@@ -15,7 +15,10 @@ namespace LibrarySystem
 {
     public partial class BorrowerList : Form
     {
-        private List<User> users;  // Assuming User, Student, and Teacher classes are defined as in the previous example
+        //Declaring a list structure for user
+        private List<User> users;  
+
+        //For database connection
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
 
         public BorrowerList()
@@ -32,6 +35,7 @@ namespace LibrarySystem
             //STUDENTS
 
             //BORROWINGS
+            //Calls individual borrowers and their total borrowings and reservings and sets them into corresponding variables to be used in certain labels
             int beringuelBorrowed = GetTotalBorrowingsBeringuel();
             beringuelborrowLabel.Text = beringuelBorrowed.ToString();
             int villenaBorrowed = GetTotalBorrowingsVillena();
@@ -58,6 +62,7 @@ namespace LibrarySystem
 
 
             //RESERVE
+            //Calls individual borrowers and their total borrowings and reservings and sets them into corresponding variables to be used in certain labels
             int beringuelReserve = GetTotalReservationsBeringuel();
             beringuelreservedLabel.Text = beringuelReserve.ToString();
             int villenaReserve = GetTotalReservationsVillena();
@@ -102,7 +107,7 @@ namespace LibrarySystem
 
 
 
-        //METHOD FOR FETCHING VALUES
+        //METHOD FOR FETCHING VALUES FOR EACH BORROWERS
 
 
         //STUDENTS
