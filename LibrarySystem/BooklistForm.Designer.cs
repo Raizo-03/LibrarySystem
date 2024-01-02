@@ -100,6 +100,8 @@
             this.acadTransition = new System.Windows.Forms.Timer(this.components);
             this.acadTransition2 = new System.Windows.Forms.Timer(this.components);
             this.bookinfoflowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.bookinfoImage = new System.Windows.Forms.Label();
+            this.bookinfoLabel = new System.Windows.Forms.Label();
             this.bookinfoTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.booklistLabel = new System.Windows.Forms.Label();
@@ -107,8 +109,6 @@
             this.nonfictionBtn = new LibrarySystem.RJButton();
             this.fictionBtn = new LibrarySystem.RJButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.bookinfoImage = new System.Windows.Forms.Label();
-            this.bookinfoLabel = new System.Windows.Forms.Label();
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -1051,6 +1051,25 @@
             this.bookinfoflowPanel.WrapContents = false;
             this.bookinfoflowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.bookinfoflowPanel_Paint);
             // 
+            // bookinfoImage
+            // 
+            this.bookinfoImage.Location = new System.Drawing.Point(3, 0);
+            this.bookinfoImage.Name = "bookinfoImage";
+            this.bookinfoImage.Size = new System.Drawing.Size(182, 351);
+            this.bookinfoImage.TabIndex = 3;
+            // 
+            // bookinfoLabel
+            // 
+            this.bookinfoLabel.BackColor = System.Drawing.Color.Bisque;
+            this.bookinfoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookinfoLabel.ForeColor = System.Drawing.Color.Black;
+            this.bookinfoLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bookinfoLabel.Location = new System.Drawing.Point(191, 0);
+            this.bookinfoLabel.Name = "bookinfoLabel";
+            this.bookinfoLabel.Size = new System.Drawing.Size(204, 351);
+            this.bookinfoLabel.TabIndex = 2;
+            this.bookinfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bookinfoTransition
             // 
             this.bookinfoTransition.Tick += new System.EventHandler(this.bookinfoTransition_Tick);
@@ -1085,10 +1104,11 @@
             this.acadBtn.BorderSize = 0;
             this.acadBtn.FlatAppearance.BorderSize = 0;
             this.acadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acadBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acadBtn.ForeColor = System.Drawing.Color.White;
-            this.acadBtn.Location = new System.Drawing.Point(608, 3);
+            this.acadBtn.Location = new System.Drawing.Point(664, 40);
             this.acadBtn.Name = "acadBtn";
-            this.acadBtn.Size = new System.Drawing.Size(100, 98);
+            this.acadBtn.Size = new System.Drawing.Size(147, 49);
             this.acadBtn.TabIndex = 9;
             this.acadBtn.Text = "ACADEMIC";
             this.acadBtn.TextColor = System.Drawing.Color.White;
@@ -1104,10 +1124,11 @@
             this.nonfictionBtn.BorderSize = 0;
             this.nonfictionBtn.FlatAppearance.BorderSize = 0;
             this.nonfictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nonfictionBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nonfictionBtn.ForeColor = System.Drawing.Color.White;
-            this.nonfictionBtn.Location = new System.Drawing.Point(486, 3);
+            this.nonfictionBtn.Location = new System.Drawing.Point(516, 38);
             this.nonfictionBtn.Name = "nonfictionBtn";
-            this.nonfictionBtn.Size = new System.Drawing.Size(100, 98);
+            this.nonfictionBtn.Size = new System.Drawing.Size(147, 49);
             this.nonfictionBtn.TabIndex = 8;
             this.nonfictionBtn.Text = "NON - FICTION";
             this.nonfictionBtn.TextColor = System.Drawing.Color.White;
@@ -1123,10 +1144,11 @@
             this.fictionBtn.BorderSize = 0;
             this.fictionBtn.FlatAppearance.BorderSize = 0;
             this.fictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fictionBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fictionBtn.ForeColor = System.Drawing.Color.White;
-            this.fictionBtn.Location = new System.Drawing.Point(363, 3);
+            this.fictionBtn.Location = new System.Drawing.Point(363, 38);
             this.fictionBtn.Name = "fictionBtn";
-            this.fictionBtn.Size = new System.Drawing.Size(100, 98);
+            this.fictionBtn.Size = new System.Drawing.Size(147, 49);
             this.fictionBtn.TabIndex = 2;
             this.fictionBtn.Text = "FICTION";
             this.fictionBtn.TextColor = System.Drawing.Color.White;
@@ -1141,25 +1163,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(320, 5);
             this.guna2GradientPanel1.TabIndex = 25;
-            // 
-            // bookinfoImage
-            // 
-            this.bookinfoImage.Location = new System.Drawing.Point(3, 0);
-            this.bookinfoImage.Name = "bookinfoImage";
-            this.bookinfoImage.Size = new System.Drawing.Size(182, 351);
-            this.bookinfoImage.TabIndex = 3;
-            // 
-            // bookinfoLabel
-            // 
-            this.bookinfoLabel.BackColor = System.Drawing.Color.Bisque;
-            this.bookinfoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookinfoLabel.ForeColor = System.Drawing.Color.Black;
-            this.bookinfoLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bookinfoLabel.Location = new System.Drawing.Point(191, 0);
-            this.bookinfoLabel.Name = "bookinfoLabel";
-            this.bookinfoLabel.Size = new System.Drawing.Size(204, 351);
-            this.bookinfoLabel.TabIndex = 2;
-            this.bookinfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BooklistForm
             // 
