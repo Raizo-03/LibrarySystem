@@ -101,13 +101,16 @@ namespace LibrarySystem
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-
+            
 
         }
 
         private void FirstForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM COLORS #FDF7E4
+
+            //Sets the password of the textbox to set to dot
+            passwordBx.UseSystemPasswordChar = true;
 
         }
 
@@ -123,7 +126,7 @@ namespace LibrarySystem
         {
             // Get the entered username and password
             string enteredUsername = usernameBx.Texts;
-            string enteredPassword = passwordBx.Texts;
+            string enteredPassword = passwordBx.Text;
 
             // Check if the entered username matches a student user, then proceed to pass check
             Stud studentUser = studentUsers.FirstOrDefault(user => user.Username == enteredUsername);
@@ -178,33 +181,15 @@ namespace LibrarySystem
             lblMessage.Text = "Incorrect password or username. Please try again.";
         }
 
-        private void passwordBx__TextChanged(object sender, EventArgs e)
-        {
-     
-        }
-        private string ConvertToText(string maskedPassword)
-        {
-            string textPassword = "";
-
-            foreach (char c in maskedPassword)
-            {
-                // Replace each dot character with the original character
-                if (c == (char)0x2022) // ASCII code for dot (●)
-                {
-                    textPassword += ' '; // Replace with your original character or leave it empty
-                }
-                else
-                {
-                    textPassword += c;
-                }
-            }
-
-            return textPassword;
-        }
-
+        //This method is used for the lock icon to unhide the password
         private void passIcon_Click(object sender, EventArgs e)
         {
-            string textPassword = ConvertToText(passwordBx.Texts);
+            passwordBx.UseSystemPasswordChar = !passwordBx.UseSystemPasswordChar;
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            passwordBx.UseSystemPasswordChar = true;
         }
     }
 
