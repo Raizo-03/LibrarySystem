@@ -839,7 +839,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "Educated\r\n\r\n\r\n Educated (2018) is a memoir by the American author Tara Westover. Westover recounts overcoming her survivalist Mormon family in order to go to college, and emphasizes the importance of education in enlarging her world. She details her journey from her isolated life in the mountains of Idaho to completing a PhD program in history at Cambridge University. She started college at the age of 17 having had no formal education. She explores her struggle to reconcile her desire to learn with the world she inhabited with her father.";
+            bookinfoLabel.Text = "Educated\r\n\r\n\r\n Educated (2018) is a memoir by the American author Tara Westover. Westover recounts overcoming her survivalist Mormon family in order to go to college, and emphasizes the importance of education in enlarging her world.";
         }
 
         //ACADEMIC BOOK BUTTONS
