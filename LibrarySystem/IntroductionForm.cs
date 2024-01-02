@@ -18,7 +18,7 @@ namespace LibrarySystem
     public partial class FirstForm : Form
     {
 
-        //LIST OF 2 ADMINS
+        //LIST OF 2 ADMINS FOR LOG INS
         private List<Stud> studentUsers = new List<Stud>
         {
             new Stud("STUDENT", "ADMIN1", "1234", "Admin 1", "Second Year", "ACSAD",2)
@@ -29,19 +29,24 @@ namespace LibrarySystem
             new Prof("TEACHER", "ADMIN2", "1234", "Admin 2", "CCIS", 5)
          
           };
+
+        //CLASSES FOR USERS
+        //Note: These classes are not used in the overall process.
         public class Stud
         {
             public Stud(string identifier, string studentId, string password, string name, string yearLevel, string section, int bookLimit)
             {
-                Identifier = identifier;
+                Identifier = identifier; //Set Identifier for student
                 Username = studentId;  // Set Username to StudentId
-                Password = password;
-                StudentId = studentId;
-                Name = name;
-                YearLevel = yearLevel;
-                Section = section;
-                BookLimit = bookLimit;
+                Password = password;   //Set password
+                StudentId = studentId; // Set student ID
+                Name = name; // Set the name for the student user
+                YearLevel = yearLevel; // Set the year level for the user
+                Section = section;//Set the section for the user
+                BookLimit = bookLimit; // Set the booklimit
             }
+
+            //GETTERS AND SETTERS
             public string Identifier { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
@@ -55,15 +60,17 @@ namespace LibrarySystem
         {
             public Prof(string identifier, string employeeId, string password, string name, string department, int bookLimit)
             {
-                Identifier = identifier;
+                Identifier = identifier; //Set the identifier to the teachers
                 Username = employeeId;  // Set Username to EmployeeId
-                Password = password;
-                EmployeeId = employeeId;
-                Name = name;
-                Department = department;
-                BookLimit = bookLimit;
+                Password = password; // Set the password for the teachers 
+                EmployeeId = employeeId; // Set the employee ID for the teachers
+                Name = name; //Set the name
+                Department = department; //Set the department
+                BookLimit = bookLimit; //Set the booklimit
 
             }
+
+            //GETTERS AND SETTERS
             public string Identifier { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
@@ -74,6 +81,7 @@ namespace LibrarySystem
 
         }
 
+        //MAKES THE FORM ACQUIRE ROUND EDGES
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -90,7 +98,6 @@ namespace LibrarySystem
             InitializeComponent();
 
             //TO MAKE THE FORM ROUNDED ON EACH SIDE
-
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
@@ -110,27 +117,6 @@ namespace LibrarySystem
             
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /*
-        private void proceedBtn_Click(object sender, EventArgs e)
-        {
-            proceedBtn.BackColor = Color.White;
-
-            //CLOSES THE FIRST FORM
-            FirstForm first = new FirstForm();
-
-            // Assuming FirstFormInstance is an instance of the form you want to close
-            this.Hide();
-            // Open the second form
-            Dashboard secondForm = new Dashboard();
-            secondForm.Show();
-            this.WindowState = FormWindowState.Normal;
-        }
-        */
         private void proceedBtn_Click(object sender, EventArgs e)
         {
             // Get the entered username and password
