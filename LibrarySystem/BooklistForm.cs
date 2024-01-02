@@ -744,7 +744,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Immortal Life of Henrietta Lacks\r\n\r\n The Immortal Life of Henrietta Lacks (2010) is a non-fiction book by American author Rebecca Skloot. It was the 2011 winner of the National Academies Communication Award for best creative work that helps the public understanding of topics in science, engineering or medicine.The book is about Henrietta Lacks and the immortal cell line, known as HeLa, that came from Lacks's cervical cancer cells in 1951. Skloot became interested in Lacks after a biology teacher referenced her but knew little about her. Skloot began conducting extensive research on her and worked with Lacks' family to create the book.";
+            bookinfoLabel.Text = "The Immortal Life of Henrietta Lacks\r\n\r\n The Immortal Life of Henrietta Lacks (2010) is a non-fiction book by American author Rebecca Skloot. It was the 2011 winner of the National Academies Communication Award for best creative work that helps the public understanding of topics in science, engineering or medicine.";
        
         }
 
