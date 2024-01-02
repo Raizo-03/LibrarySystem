@@ -25,7 +25,8 @@ namespace LibrarySystem
     {
         private string identifier, name, id;
 
-        // FOR DATABASE
+        //This method is for the database
+        //Note: This will change according to the Uid and the Pwd on your XAMPP configuration
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
 
         public DashboardForm2(string Identifier, string Name, string Id)
@@ -35,23 +36,32 @@ namespace LibrarySystem
             this.Name = Name;
             this.id = Id;
 
+            //Calls the function to make the buttons round
             ApplyRoundedButtonStyle(availbooksPanel);
             ApplyRoundedButtonStyle(borrowedPanel);
             ApplyRoundedButtonStyle(reservedPanel);
             ApplyRoundedButtonStyle(userPanel);
             ApplyRoundedButtonStyle(usersPanel);
 
+
+            //Added properties to the datagridview of the form
             analyticsDG.ReadOnly = true;
             analyticsDG.AlternatingRowsDefaultCellStyle = null;
             analyticsDG.RowHeadersVisible = false;
             analyticsDG.ScrollBars = ScrollBars.Vertical;
 
+            //This method updates the bargraph chart on the lower part of the form
             UpdateChart();
+            
+            //This is the default method to fetch the available books on the database to load on the datagridview
             ActivateAvailbooks();
 
+            //This method updates the piechart on the lower right part of the form
             UpdatePieChart();
 
         }
+
+        //This method updates the piechart in the form
         private void UpdatePieChart()
         {
             try
@@ -59,11 +69,13 @@ namespace LibrarySystem
                 pieChart1.Series.Clear();
                 pieChart1.Text = "Library Analytics";
 
+                //Gets the values of the avail books, borrowings, reservations, and penalties and sets them into vars
                 int totalAvailableBooks = GetTotalAvailableBooks();
                 int totalBorrowings = GetTotalBorrowings();
                 int totalReservations = GetTotalReservations();
                 int totalPenalties = GetTotalPenalties();
 
+                //Adds the values on specific parts of the chart
                 pieChart1.Series.Add(new PieSeries
                 {
                     Title = "Available Books",
@@ -97,6 +109,8 @@ namespace LibrarySystem
                 MessageBox.Show($"Error updating PieChart: {ex.Message}", "PieChart Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //This method updates the bar graph
         private void UpdateChart()
         {
             try
@@ -149,7 +163,7 @@ namespace LibrarySystem
             }
         }
 
-
+        //This method is used to make the buttons round
         private void ApplyRoundedButtonStyle(Guna2GradientPanel panel)
         {
 
@@ -162,6 +176,7 @@ namespace LibrarySystem
 
         }
 
+        //This method fetches the books in the database with status "Available" and puts them into a messagebox
         private void availableLabel_Click(object sender, EventArgs e)
         {
             try
@@ -181,12 +196,15 @@ namespace LibrarySystem
             }
         }
 
+        //This method is used to fetch all the books in the database that have status "Available" and stores them in a list data structure named Book
         private List<Book> GetAvailableBooks()
         {
+            //Calls the list structure
             List<Book> availableBooks = new List<Book>();
 
             try
             {
+                //Query for fetching in the database
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
@@ -221,6 +239,7 @@ namespace LibrarySystem
 
             return availableBooks;
         }
+        //This method calls the list structure that has books with status of available and stores them into the analyticsDG datagridview
         private void ActivateAvailbooks()
         {
             try
@@ -267,12 +286,14 @@ namespace LibrarySystem
             }
         }
 
+        //This method calls the method that fetches the available books when the button is clicked
         private void availbooksB_Click(object sender, EventArgs e)
         {
             ActivateAvailbooks();
         }
-        
 
+
+        //This method calls the list structure that has books with status of borrowed and stores them into the analyticsDG datagridview
 
         private void borrowedB_Click(object sender, EventArgs e)
         {
@@ -332,23 +353,27 @@ namespace LibrarySystem
             analyticsDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228); // CUSTOM BG COLORS #FDF7E4
             nameLabel.Text = "ADMIN";
 
+            //Calls the method to get the total available books and store it in a variable to be set using a label in the form
             int totalAvailableBooks = GetTotalAvailableBooks();
             availableLabel.Text = $"{totalAvailableBooks}";
 
-
+            //Calls the method to get the total borrowings and store it in a variable to be set using a label in the form
             int totalBorrowings = GetTotalBorrowings();
             borrowinglabel.Text = $"{totalBorrowings}";
 
+            //Calls the method to get the total reservations and store it in a variable to be set using a label in the form
 
             int totalReservations = GetTotalReservations();
             reservinglabel.Text = $"{totalReservations}";
 
+            //Calls the method to get the total penalties and store it in a variable to be set using a label in the form
+
             int totalPenalties = GetTotalPenalties();
             penaltieslabel.Text = $"{totalPenalties}";
 
-
         }
 
+        //This method is the function for the reserve button where it uses the list structure that has reserve books and transfer it to the analyticsDG datagridview
         private void reservedB_Click(object sender, EventArgs e)
         {
             try
@@ -397,6 +422,8 @@ namespace LibrarySystem
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        //This method fetches the total number of borrowings in the database
         private int GetTotalBorrowings()
         {
             try
@@ -422,6 +449,7 @@ namespace LibrarySystem
             }
         }
 
+        //This method fetches the total available books from the database
         private int GetTotalAvailableBooks()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -438,6 +466,9 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //This method fetches the total reserve books from the database
+
         private int GetTotalReservations()
         {
             try
@@ -463,6 +494,7 @@ namespace LibrarySystem
             }
         }
 
+        //This method fetches the total penalties from the database
         private int GetTotalPenalties()
         {
             try
@@ -488,6 +520,7 @@ namespace LibrarySystem
             }
         }
 
+        //This method is used for the penalties button to get the penalties from the list structure that contains the penalties and set it to the analyticsDG datagridview
         private void penaltiesB_Click(object sender, EventArgs e)
         {
             try
@@ -537,6 +570,8 @@ namespace LibrarySystem
             }
         }
 
+        //This method fetches the borrowing info from the borrowing table and stores it in a list structure; infos including: booktitle, borrowerName, borrowDate, dueDate
+        //This method also remove the time of the borrowDate and dueDate to reformat it to (mm-dd--YYY)
         private List<BorrowingInfo> GetBorrowingsInfo()
         {
             List<BorrowingInfo> borrowings = new List<BorrowingInfo>();
@@ -583,6 +618,7 @@ namespace LibrarySystem
 
             return borrowings;
         }
+        //This method fetches the reservation info from the database; reservations table and store it in a list datastructure: informations such as: bookTitle, borrowerName, reservationDate 
         private List<ReservationInfo> GetReservationsInfo()
         {
             List<ReservationInfo> reservations = new List<ReservationInfo>();
@@ -628,6 +664,10 @@ namespace LibrarySystem
 
             return reservations;
         }
+
+        //This method fetches the penalties info from the database; penalties table and store it in a list datastructure: informations such as: penaltyID, borrowerName, amount
+        //This method also gets the penalty amount and concatenante it to make it in Peso 
+
         private List<PenaltyInfo> GetPenaltiesInfo()
         {
             List<PenaltyInfo> penalties = new List<PenaltyInfo>();
@@ -672,6 +712,8 @@ namespace LibrarySystem
             return penalties;
         }
     }
+
+    //Class for borrowing info as well as their getters and setters to be used in different forms and list structure
     public class BorrowingInfo
     {
         public string BookTitle { get; set; }
@@ -679,12 +721,16 @@ namespace LibrarySystem
         public string BorrowDate { get; set; }
         public string DueDate { get; set; }
     }
+    //Class for reservation info as well as their getters and setters to be used in different forms and list structure
+
     public class ReservationInfo
     {
         public string BookTitle { get; set; }
         public string BorrowerName { get; set; }
         public string ReservationDate { get; set; }
     }
+    //Class for penalty info as well as their getters and setters to be used in different forms and list structure
+
     public class PenaltyInfo
     {
         public string PenaltyID { get; set; }
