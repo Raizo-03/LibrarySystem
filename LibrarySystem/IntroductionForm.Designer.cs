@@ -36,7 +36,7 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.userIcon = new System.Windows.Forms.PictureBox();
             this.passIcon = new System.Windows.Forms.PictureBox();
-            this.passwordBx = new CustomControls.RJControls.RJTextBox();
+            this.passwordBx = new Guna.UI2.WinForms.Guna2TextBox();
             this.usernameBx = new CustomControls.RJControls.RJTextBox();
             this.proceedBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
@@ -116,32 +116,33 @@
             // 
             // passwordBx
             // 
-            this.passwordBx.BackColor = System.Drawing.SystemColors.Window;
             this.passwordBx.BorderColor = System.Drawing.Color.Olive;
-            this.passwordBx.BorderFocusColor = System.Drawing.Color.Lime;
-            this.passwordBx.BorderRadius = 15;
-            this.passwordBx.BorderSize = 2;
-            this.passwordBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.passwordBx.BorderRadius = 14;
+            this.passwordBx.BorderThickness = 2;
+            this.passwordBx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordBx.DefaultText = "";
+            this.passwordBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordBx.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.passwordBx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.passwordBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordBx.Location = new System.Drawing.Point(107, 377);
-            this.passwordBx.Margin = new System.Windows.Forms.Padding(4);
-            this.passwordBx.Multiline = false;
             this.passwordBx.Name = "passwordBx";
-            this.passwordBx.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.passwordBx.PasswordChar = false;
-            this.passwordBx.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.passwordBx.PasswordChar = '\0';
             this.passwordBx.PlaceholderText = "";
+            this.passwordBx.SelectedText = "";
             this.passwordBx.Size = new System.Drawing.Size(206, 31);
-            this.passwordBx.TabIndex = 11;
-            this.passwordBx.Texts = "";
-            this.passwordBx.UnderlinedStyle = false;
-            this.passwordBx._TextChanged += new System.EventHandler(this.passwordBx__TextChanged);
+            this.passwordBx.TabIndex = 12;
+            this.passwordBx.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // usernameBx
             // 
             this.usernameBx.BackColor = System.Drawing.SystemColors.Window;
             this.usernameBx.BorderColor = System.Drawing.Color.Olive;
-            this.usernameBx.BorderFocusColor = System.Drawing.Color.Lime;
+            this.usernameBx.BorderFocusColor = System.Drawing.SystemColors.Highlight;
             this.usernameBx.BorderRadius = 15;
             this.usernameBx.BorderSize = 2;
             this.usernameBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,7 +219,7 @@
         private System.Windows.Forms.PictureBox userIcon;
         private System.Windows.Forms.PictureBox passIcon;
         private CustomControls.RJControls.RJTextBox usernameBx;
-        private CustomControls.RJControls.RJTextBox passwordBx;
+        private Guna.UI2.WinForms.Guna2TextBox passwordBx;
     }
 }
 
