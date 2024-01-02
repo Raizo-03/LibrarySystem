@@ -119,7 +119,7 @@
             this.passwordBx.BackColor = System.Drawing.SystemColors.Window;
             this.passwordBx.BorderColor = System.Drawing.Color.Olive;
             this.passwordBx.BorderFocusColor = System.Drawing.Color.Lime;
-            this.passwordBx.BorderRadius = 0;
+            this.passwordBx.BorderRadius = 15;
             this.passwordBx.BorderSize = 2;
             this.passwordBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -142,7 +142,7 @@
             this.usernameBx.BackColor = System.Drawing.SystemColors.Window;
             this.usernameBx.BorderColor = System.Drawing.Color.Olive;
             this.usernameBx.BorderFocusColor = System.Drawing.Color.Lime;
-            this.usernameBx.BorderRadius = 0;
+            this.usernameBx.BorderRadius = 15;
             this.usernameBx.BorderSize = 2;
             this.usernameBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

@@ -101,6 +101,8 @@ namespace LibrarySystem
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
+
+
         }
 
         private void FirstForm_Load(object sender, EventArgs e)
