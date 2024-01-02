@@ -966,8 +966,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Structure of Scientific Revolutions\r\n\r\n\r\n The Structure of Scientific Revolutions is a book about the history of science by philosopher Thomas S. Kuhn. Its publication was a landmark event in the history, philosophy, and sociology of science. Kuhn challenged the then prevailing view of progress in science in which scientific progress was viewed as \"development-by-accumulation\" of accepted facts and theories. Kuhn argued for an episodic model in which periods of conceptual continuity where there is cumulative progress, which Kuhn referred to as periods of \"normal science\", were interrupted by periods of revolutionary science.";
-       
+            bookinfoLabel.Text = "The Structure of Scientific Revolutions\r\n\r\n\r\n The Structure of Scientific Revolutions is a book about the history of science by philosopher Thomas S. Kuhn. Its publication was a landmark event in the history, philosophy, and sociology of science. Kuhn challenged the then prevailing view of progress in science in which scientific progress was viewed as \"development-by-accumulation\" of accepted facts and theories.";
         }
 
         private void originBtn_Click(object sender, EventArgs e)
