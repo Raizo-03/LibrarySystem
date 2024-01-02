@@ -31,32 +31,67 @@
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.villenareserveLabel = new System.Windows.Forms.Label();
+            this.villenaborrowedLabel = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ortegareserveLabel = new System.Windows.Forms.Label();
+            this.ortegaborrowedLabel = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.hingcoreserveLabel = new System.Windows.Forms.Label();
+            this.hingcoborrowedLabel = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
             this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.sicatreserveLabel = new System.Windows.Forms.Label();
+            this.sicatborrowedLabel = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
             this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.caasireserveLabel = new System.Windows.Forms.Label();
+            this.caasiborrowedLabel = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2GradientPanel9 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.diampocreserveLabel = new System.Windows.Forms.Label();
+            this.diampocborrowedLabel = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.guna2GradientPanel8 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -97,42 +132,7 @@
             this.label63 = new System.Windows.Forms.Label();
             this.dellosaborrowedLabel = new System.Windows.Forms.Label();
             this.dellosareserveLabel = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.villenaborrowedLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.villenareserveLabel = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.hingcoborrowedLabel = new System.Windows.Forms.Label();
-            this.hingcoreserveLabel = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.ortegaborrowedLabel = new System.Windows.Forms.Label();
-            this.ortegareserveLabel = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.sicatborrowedLabel = new System.Windows.Forms.Label();
-            this.sicatreserveLabel = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.caasiborrowedLabel = new System.Windows.Forms.Label();
-            this.caasireserveLabel = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label97 = new System.Windows.Forms.Label();
-            this.label98 = new System.Windows.Forms.Label();
-            this.diampocborrowedLabel = new System.Windows.Forms.Label();
-            this.diampocreserveLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
@@ -178,6 +178,78 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel2.TabIndex = 29;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(765, 5);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(85, 18);
+            this.label19.TabIndex = 51;
+            this.label19.Text = "Reserved";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(634, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(87, 18);
+            this.label16.TabIndex = 50;
+            this.label16.Text = "Borrowed";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(519, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 18);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "Section";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(374, 5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 18);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Year Level";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(200, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 18);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "Student ID";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(59, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 18);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Name";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -212,6 +284,78 @@
             this.guna2GradientPanel3.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel3.TabIndex = 30;
             // 
+            // villenareserveLabel
+            // 
+            this.villenareserveLabel.AutoSize = true;
+            this.villenareserveLabel.BackColor = System.Drawing.Color.Transparent;
+            this.villenareserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.villenareserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.villenareserveLabel.Location = new System.Drawing.Point(798, 5);
+            this.villenareserveLabel.Name = "villenareserveLabel";
+            this.villenareserveLabel.Size = new System.Drawing.Size(18, 18);
+            this.villenareserveLabel.TabIndex = 102;
+            this.villenareserveLabel.Text = "0";
+            // 
+            // villenaborrowedLabel
+            // 
+            this.villenaborrowedLabel.AutoSize = true;
+            this.villenaborrowedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.villenaborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.villenaborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.villenaborrowedLabel.Location = new System.Drawing.Point(663, 5);
+            this.villenaborrowedLabel.Name = "villenaborrowedLabel";
+            this.villenaborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.villenaborrowedLabel.TabIndex = 98;
+            this.villenaborrowedLabel.Text = "0";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.BackColor = System.Drawing.Color.Transparent;
+            this.label69.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ForeColor = System.Drawing.Color.Black;
+            this.label69.Location = new System.Drawing.Point(519, 5);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(67, 18);
+            this.label69.TabIndex = 101;
+            this.label69.Text = "ACSAD";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.BackColor = System.Drawing.Color.Transparent;
+            this.label68.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.Color.Black;
+            this.label68.Location = new System.Drawing.Point(367, 5);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(110, 18);
+            this.label68.TabIndex = 100;
+            this.label68.Text = "Second Year";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.BackColor = System.Drawing.Color.Transparent;
+            this.label67.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.Black;
+            this.label67.Location = new System.Drawing.Point(199, 5);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(100, 18);
+            this.label67.TabIndex = 99;
+            this.label67.Text = "K12043456";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.BackColor = System.Drawing.Color.Transparent;
+            this.label66.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.ForeColor = System.Drawing.Color.Black;
+            this.label66.Location = new System.Drawing.Point(17, 5);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(104, 18);
+            this.label66.TabIndex = 98;
+            this.label66.Text = "Lans Villena";
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Bisque;
@@ -243,6 +387,78 @@
             this.guna2GradientPanel4.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel4.TabIndex = 33;
             // 
+            // ortegareserveLabel
+            // 
+            this.ortegareserveLabel.AutoSize = true;
+            this.ortegareserveLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ortegareserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ortegareserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.ortegareserveLabel.Location = new System.Drawing.Point(798, 5);
+            this.ortegareserveLabel.Name = "ortegareserveLabel";
+            this.ortegareserveLabel.Size = new System.Drawing.Size(18, 18);
+            this.ortegareserveLabel.TabIndex = 110;
+            this.ortegareserveLabel.Text = "0";
+            // 
+            // ortegaborrowedLabel
+            // 
+            this.ortegaborrowedLabel.AutoSize = true;
+            this.ortegaborrowedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ortegaborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ortegaborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.ortegaborrowedLabel.Location = new System.Drawing.Point(663, 5);
+            this.ortegaborrowedLabel.Name = "ortegaborrowedLabel";
+            this.ortegaborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.ortegaborrowedLabel.TabIndex = 109;
+            this.ortegaborrowedLabel.Text = "0";
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.BackColor = System.Drawing.Color.Transparent;
+            this.label81.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label81.ForeColor = System.Drawing.Color.Black;
+            this.label81.Location = new System.Drawing.Point(519, 5);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(67, 18);
+            this.label81.TabIndex = 108;
+            this.label81.Text = "ACSAD";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.BackColor = System.Drawing.Color.Transparent;
+            this.label80.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.ForeColor = System.Drawing.Color.Black;
+            this.label80.Location = new System.Drawing.Point(367, 5);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(110, 18);
+            this.label80.TabIndex = 107;
+            this.label80.Text = "Second Year";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.BackColor = System.Drawing.Color.Transparent;
+            this.label79.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.ForeColor = System.Drawing.Color.Black;
+            this.label79.Location = new System.Drawing.Point(199, 5);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(100, 18);
+            this.label79.TabIndex = 106;
+            this.label79.Text = "K12021327";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.BackColor = System.Drawing.Color.Transparent;
+            this.label78.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.ForeColor = System.Drawing.Color.Black;
+            this.label78.Location = new System.Drawing.Point(17, 5);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(127, 18);
+            this.label78.TabIndex = 105;
+            this.label78.Text = "Rhycell Ortega";
+            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Bisque;
@@ -266,6 +482,78 @@
             this.guna2GradientPanel5.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel5.TabIndex = 31;
             // 
+            // hingcoreserveLabel
+            // 
+            this.hingcoreserveLabel.AutoSize = true;
+            this.hingcoreserveLabel.BackColor = System.Drawing.Color.Bisque;
+            this.hingcoreserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hingcoreserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.hingcoreserveLabel.Location = new System.Drawing.Point(798, 5);
+            this.hingcoreserveLabel.Name = "hingcoreserveLabel";
+            this.hingcoreserveLabel.Size = new System.Drawing.Size(18, 18);
+            this.hingcoreserveLabel.TabIndex = 104;
+            this.hingcoreserveLabel.Text = "0";
+            // 
+            // hingcoborrowedLabel
+            // 
+            this.hingcoborrowedLabel.AutoSize = true;
+            this.hingcoborrowedLabel.BackColor = System.Drawing.Color.Bisque;
+            this.hingcoborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hingcoborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.hingcoborrowedLabel.Location = new System.Drawing.Point(663, 5);
+            this.hingcoborrowedLabel.Name = "hingcoborrowedLabel";
+            this.hingcoborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.hingcoborrowedLabel.TabIndex = 98;
+            this.hingcoborrowedLabel.Text = "0";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.BackColor = System.Drawing.Color.Transparent;
+            this.label75.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.ForeColor = System.Drawing.Color.Black;
+            this.label75.Location = new System.Drawing.Point(519, 5);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(67, 18);
+            this.label75.TabIndex = 103;
+            this.label75.Text = "ACSAD";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.BackColor = System.Drawing.Color.Transparent;
+            this.label74.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label74.ForeColor = System.Drawing.Color.Black;
+            this.label74.Location = new System.Drawing.Point(367, 5);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(110, 18);
+            this.label74.TabIndex = 103;
+            this.label74.Text = "Second Year";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.BackColor = System.Drawing.Color.Transparent;
+            this.label73.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.ForeColor = System.Drawing.Color.Black;
+            this.label73.Location = new System.Drawing.Point(200, 5);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(100, 18);
+            this.label73.TabIndex = 103;
+            this.label73.Text = "K12042345";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.BackColor = System.Drawing.Color.Transparent;
+            this.label72.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ForeColor = System.Drawing.Color.Black;
+            this.label72.Location = new System.Drawing.Point(17, 5);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(125, 18);
+            this.label72.TabIndex = 103;
+            this.label72.Text = "Harvey Hingco";
+            // 
             // guna2GradientPanel6
             // 
             this.guna2GradientPanel6.Controls.Add(this.sicatreserveLabel);
@@ -281,6 +569,78 @@
             this.guna2GradientPanel6.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel6.TabIndex = 36;
             // 
+            // sicatreserveLabel
+            // 
+            this.sicatreserveLabel.AutoSize = true;
+            this.sicatreserveLabel.BackColor = System.Drawing.Color.Bisque;
+            this.sicatreserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sicatreserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.sicatreserveLabel.Location = new System.Drawing.Point(798, 5);
+            this.sicatreserveLabel.Name = "sicatreserveLabel";
+            this.sicatreserveLabel.Size = new System.Drawing.Size(18, 18);
+            this.sicatreserveLabel.TabIndex = 115;
+            this.sicatreserveLabel.Text = "0";
+            // 
+            // sicatborrowedLabel
+            // 
+            this.sicatborrowedLabel.AutoSize = true;
+            this.sicatborrowedLabel.BackColor = System.Drawing.Color.Bisque;
+            this.sicatborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sicatborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.sicatborrowedLabel.Location = new System.Drawing.Point(663, 5);
+            this.sicatborrowedLabel.Name = "sicatborrowedLabel";
+            this.sicatborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.sicatborrowedLabel.TabIndex = 98;
+            this.sicatborrowedLabel.Text = "0";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.BackColor = System.Drawing.Color.Transparent;
+            this.label87.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.ForeColor = System.Drawing.Color.Black;
+            this.label87.Location = new System.Drawing.Point(519, 5);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(67, 18);
+            this.label87.TabIndex = 114;
+            this.label87.Text = "ACSAD";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.BackColor = System.Drawing.Color.Transparent;
+            this.label86.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.ForeColor = System.Drawing.Color.Black;
+            this.label86.Location = new System.Drawing.Point(367, 5);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(110, 18);
+            this.label86.TabIndex = 113;
+            this.label86.Text = "Second Year";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.Transparent;
+            this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.ForeColor = System.Drawing.Color.Black;
+            this.label85.Location = new System.Drawing.Point(199, 5);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(100, 18);
+            this.label85.TabIndex = 112;
+            this.label85.Text = "K12032131";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.BackColor = System.Drawing.Color.Transparent;
+            this.label84.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.ForeColor = System.Drawing.Color.Black;
+            this.label84.Location = new System.Drawing.Point(17, 5);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(94, 18);
+            this.label84.TabIndex = 111;
+            this.label84.Text = "Sean Sicat";
+            // 
             // guna2GradientPanel7
             // 
             this.guna2GradientPanel7.Controls.Add(this.caasireserveLabel);
@@ -295,6 +655,78 @@
             this.guna2GradientPanel7.Name = "guna2GradientPanel7";
             this.guna2GradientPanel7.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel7.TabIndex = 37;
+            // 
+            // caasireserveLabel
+            // 
+            this.caasireserveLabel.AutoSize = true;
+            this.caasireserveLabel.BackColor = System.Drawing.Color.Bisque;
+            this.caasireserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caasireserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.caasireserveLabel.Location = new System.Drawing.Point(798, 5);
+            this.caasireserveLabel.Name = "caasireserveLabel";
+            this.caasireserveLabel.Size = new System.Drawing.Size(18, 18);
+            this.caasireserveLabel.TabIndex = 119;
+            this.caasireserveLabel.Text = "0";
+            // 
+            // caasiborrowedLabel
+            // 
+            this.caasiborrowedLabel.AutoSize = true;
+            this.caasiborrowedLabel.BackColor = System.Drawing.Color.Bisque;
+            this.caasiborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caasiborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.caasiborrowedLabel.Location = new System.Drawing.Point(663, 5);
+            this.caasiborrowedLabel.Name = "caasiborrowedLabel";
+            this.caasiborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.caasiborrowedLabel.TabIndex = 98;
+            this.caasiborrowedLabel.Text = "0";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.BackColor = System.Drawing.Color.Bisque;
+            this.label93.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label93.ForeColor = System.Drawing.Color.Black;
+            this.label93.Location = new System.Drawing.Point(519, 5);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(67, 18);
+            this.label93.TabIndex = 118;
+            this.label93.Text = "ACSAD";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.Bisque;
+            this.label92.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.ForeColor = System.Drawing.Color.Black;
+            this.label92.Location = new System.Drawing.Point(367, 5);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(110, 18);
+            this.label92.TabIndex = 117;
+            this.label92.Text = "Second Year";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.BackColor = System.Drawing.Color.Bisque;
+            this.label91.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.ForeColor = System.Drawing.Color.Black;
+            this.label91.Location = new System.Drawing.Point(200, 5);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(100, 18);
+            this.label91.TabIndex = 98;
+            this.label91.Text = "K12043567";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.BackColor = System.Drawing.Color.Transparent;
+            this.label90.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.ForeColor = System.Drawing.Color.Black;
+            this.label90.Location = new System.Drawing.Point(17, 5);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(106, 18);
+            this.label90.TabIndex = 116;
+            this.label90.Text = "Asilito Caasi";
             // 
             // label8
             // 
@@ -329,6 +761,66 @@
             this.guna2GradientPanel9.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel9.TabIndex = 42;
             // 
+            // diampocreserveLabel
+            // 
+            this.diampocreserveLabel.AutoSize = true;
+            this.diampocreserveLabel.BackColor = System.Drawing.Color.Bisque;
+            this.diampocreserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diampocreserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.diampocreserveLabel.Location = new System.Drawing.Point(740, 5);
+            this.diampocreserveLabel.Name = "diampocreserveLabel";
+            this.diampocreserveLabel.Size = new System.Drawing.Size(18, 18);
+            this.diampocreserveLabel.TabIndex = 123;
+            this.diampocreserveLabel.Text = "0";
+            // 
+            // diampocborrowedLabel
+            // 
+            this.diampocborrowedLabel.AutoSize = true;
+            this.diampocborrowedLabel.BackColor = System.Drawing.Color.Bisque;
+            this.diampocborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diampocborrowedLabel.ForeColor = System.Drawing.Color.Black;
+            this.diampocborrowedLabel.Location = new System.Drawing.Point(570, 5);
+            this.diampocborrowedLabel.Name = "diampocborrowedLabel";
+            this.diampocborrowedLabel.Size = new System.Drawing.Size(18, 18);
+            this.diampocborrowedLabel.TabIndex = 98;
+            this.diampocborrowedLabel.Text = "0";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.BackColor = System.Drawing.Color.Transparent;
+            this.label98.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label98.ForeColor = System.Drawing.Color.Black;
+            this.label98.Location = new System.Drawing.Point(396, 5);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(48, 18);
+            this.label98.TabIndex = 122;
+            this.label98.Text = "CCIS";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.BackColor = System.Drawing.Color.Transparent;
+            this.label97.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label97.ForeColor = System.Drawing.Color.Black;
+            this.label97.Location = new System.Drawing.Point(200, 5);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(100, 18);
+            this.label97.TabIndex = 121;
+            this.label97.Text = "K12052385";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.BackColor = System.Drawing.Color.Transparent;
+            this.label96.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.ForeColor = System.Drawing.Color.Black;
+            this.label96.Location = new System.Drawing.Point(17, 5);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(134, 18);
+            this.label96.TabIndex = 120;
+            this.label96.Text = "Lester Diampoc";
+            // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.Bisque;
@@ -336,54 +828,6 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(888, 29);
             this.label10.TabIndex = 44;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(59, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 18);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Name";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(200, 5);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 18);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Student ID";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(374, 5);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 18);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "Year Level";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(519, 5);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 18);
-            this.label14.TabIndex = 49;
-            this.label14.Text = "Section";
             // 
             // guna2GradientPanel8
             // 
@@ -398,6 +842,30 @@
             this.guna2GradientPanel8.Name = "guna2GradientPanel8";
             this.guna2GradientPanel8.Size = new System.Drawing.Size(888, 29);
             this.guna2GradientPanel8.TabIndex = 46;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(706, 5);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(85, 18);
+            this.label21.TabIndex = 51;
+            this.label21.Text = "Reserved";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(535, 5);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(87, 18);
+            this.label20.TabIndex = 50;
+            this.label20.Text = "Borrowed";
             // 
             // label15
             // 
@@ -434,54 +902,6 @@
             this.label18.Size = new System.Drawing.Size(54, 18);
             this.label18.TabIndex = 46;
             this.label18.Text = "Name";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(634, 5);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 18);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Borrowed";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(765, 5);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 18);
-            this.label19.TabIndex = 51;
-            this.label19.Text = "Reserved";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(535, 5);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(87, 18);
-            this.label20.TabIndex = 50;
-            this.label20.Text = "Borrowed";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(706, 5);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(85, 18);
-            this.label21.TabIndex = 51;
-            this.label21.Text = "Reserved";
             // 
             // label22
             // 
@@ -963,66 +1383,6 @@
             this.dellosareserveLabel.TabIndex = 97;
             this.dellosareserveLabel.Text = "0";
             // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.BackColor = System.Drawing.Color.Transparent;
-            this.label66.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.ForeColor = System.Drawing.Color.Black;
-            this.label66.Location = new System.Drawing.Point(17, 5);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(104, 18);
-            this.label66.TabIndex = 98;
-            this.label66.Text = "Lans Villena";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.BackColor = System.Drawing.Color.Transparent;
-            this.label67.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.Black;
-            this.label67.Location = new System.Drawing.Point(199, 5);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(100, 18);
-            this.label67.TabIndex = 99;
-            this.label67.Text = "K12043456";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.BackColor = System.Drawing.Color.Transparent;
-            this.label68.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.ForeColor = System.Drawing.Color.Black;
-            this.label68.Location = new System.Drawing.Point(367, 5);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(110, 18);
-            this.label68.TabIndex = 100;
-            this.label68.Text = "Second Year";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.BackColor = System.Drawing.Color.Transparent;
-            this.label69.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.ForeColor = System.Drawing.Color.Black;
-            this.label69.Location = new System.Drawing.Point(519, 5);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(67, 18);
-            this.label69.TabIndex = 101;
-            this.label69.Text = "ACSAD";
-            // 
-            // villenaborrowedLabel
-            // 
-            this.villenaborrowedLabel.AutoSize = true;
-            this.villenaborrowedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.villenaborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.villenaborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.villenaborrowedLabel.Location = new System.Drawing.Point(663, 5);
-            this.villenaborrowedLabel.Name = "villenaborrowedLabel";
-            this.villenaborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.villenaborrowedLabel.TabIndex = 98;
-            this.villenaborrowedLabel.Text = "0";
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Bisque;
@@ -1030,366 +1390,6 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(888, 29);
             this.label7.TabIndex = 38;
-            // 
-            // villenareserveLabel
-            // 
-            this.villenareserveLabel.AutoSize = true;
-            this.villenareserveLabel.BackColor = System.Drawing.Color.Transparent;
-            this.villenareserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.villenareserveLabel.ForeColor = System.Drawing.Color.Black;
-            this.villenareserveLabel.Location = new System.Drawing.Point(798, 5);
-            this.villenareserveLabel.Name = "villenareserveLabel";
-            this.villenareserveLabel.Size = new System.Drawing.Size(18, 18);
-            this.villenareserveLabel.TabIndex = 102;
-            this.villenareserveLabel.Text = "0";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.BackColor = System.Drawing.Color.Transparent;
-            this.label72.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.ForeColor = System.Drawing.Color.Black;
-            this.label72.Location = new System.Drawing.Point(17, 5);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(125, 18);
-            this.label72.TabIndex = 103;
-            this.label72.Text = "Harvey Hingco";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.BackColor = System.Drawing.Color.Transparent;
-            this.label73.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.ForeColor = System.Drawing.Color.Black;
-            this.label73.Location = new System.Drawing.Point(200, 5);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(100, 18);
-            this.label73.TabIndex = 103;
-            this.label73.Text = "K12042345";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.BackColor = System.Drawing.Color.Transparent;
-            this.label74.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.ForeColor = System.Drawing.Color.Black;
-            this.label74.Location = new System.Drawing.Point(367, 5);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(110, 18);
-            this.label74.TabIndex = 103;
-            this.label74.Text = "Second Year";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.BackColor = System.Drawing.Color.Transparent;
-            this.label75.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.ForeColor = System.Drawing.Color.Black;
-            this.label75.Location = new System.Drawing.Point(519, 5);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(67, 18);
-            this.label75.TabIndex = 103;
-            this.label75.Text = "ACSAD";
-            // 
-            // hingcoborrowedLabel
-            // 
-            this.hingcoborrowedLabel.AutoSize = true;
-            this.hingcoborrowedLabel.BackColor = System.Drawing.Color.Bisque;
-            this.hingcoborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hingcoborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.hingcoborrowedLabel.Location = new System.Drawing.Point(663, 5);
-            this.hingcoborrowedLabel.Name = "hingcoborrowedLabel";
-            this.hingcoborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.hingcoborrowedLabel.TabIndex = 98;
-            this.hingcoborrowedLabel.Text = "0";
-            // 
-            // hingcoreserveLabel
-            // 
-            this.hingcoreserveLabel.AutoSize = true;
-            this.hingcoreserveLabel.BackColor = System.Drawing.Color.Bisque;
-            this.hingcoreserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hingcoreserveLabel.ForeColor = System.Drawing.Color.Black;
-            this.hingcoreserveLabel.Location = new System.Drawing.Point(798, 5);
-            this.hingcoreserveLabel.Name = "hingcoreserveLabel";
-            this.hingcoreserveLabel.Size = new System.Drawing.Size(18, 18);
-            this.hingcoreserveLabel.TabIndex = 104;
-            this.hingcoreserveLabel.Text = "0";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.BackColor = System.Drawing.Color.Transparent;
-            this.label78.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.Black;
-            this.label78.Location = new System.Drawing.Point(17, 5);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(127, 18);
-            this.label78.TabIndex = 105;
-            this.label78.Text = "Rhycell Ortega";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.BackColor = System.Drawing.Color.Transparent;
-            this.label79.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.ForeColor = System.Drawing.Color.Black;
-            this.label79.Location = new System.Drawing.Point(199, 5);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(100, 18);
-            this.label79.TabIndex = 106;
-            this.label79.Text = "K12021327";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.BackColor = System.Drawing.Color.Transparent;
-            this.label80.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.ForeColor = System.Drawing.Color.Black;
-            this.label80.Location = new System.Drawing.Point(367, 5);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(110, 18);
-            this.label80.TabIndex = 107;
-            this.label80.Text = "Second Year";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.BackColor = System.Drawing.Color.Transparent;
-            this.label81.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.ForeColor = System.Drawing.Color.Black;
-            this.label81.Location = new System.Drawing.Point(519, 5);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(67, 18);
-            this.label81.TabIndex = 108;
-            this.label81.Text = "ACSAD";
-            // 
-            // ortegaborrowedLabel
-            // 
-            this.ortegaborrowedLabel.AutoSize = true;
-            this.ortegaborrowedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ortegaborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ortegaborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.ortegaborrowedLabel.Location = new System.Drawing.Point(663, 5);
-            this.ortegaborrowedLabel.Name = "ortegaborrowedLabel";
-            this.ortegaborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.ortegaborrowedLabel.TabIndex = 109;
-            this.ortegaborrowedLabel.Text = "0";
-            // 
-            // ortegareserveLabel
-            // 
-            this.ortegareserveLabel.AutoSize = true;
-            this.ortegareserveLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ortegareserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ortegareserveLabel.ForeColor = System.Drawing.Color.Black;
-            this.ortegareserveLabel.Location = new System.Drawing.Point(798, 5);
-            this.ortegareserveLabel.Name = "ortegareserveLabel";
-            this.ortegareserveLabel.Size = new System.Drawing.Size(18, 18);
-            this.ortegareserveLabel.TabIndex = 110;
-            this.ortegareserveLabel.Text = "0";
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.BackColor = System.Drawing.Color.Transparent;
-            this.label84.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.ForeColor = System.Drawing.Color.Black;
-            this.label84.Location = new System.Drawing.Point(17, 5);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(94, 18);
-            this.label84.TabIndex = 111;
-            this.label84.Text = "Sean Sicat";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.Color.Transparent;
-            this.label85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.ForeColor = System.Drawing.Color.Black;
-            this.label85.Location = new System.Drawing.Point(199, 5);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(100, 18);
-            this.label85.TabIndex = 112;
-            this.label85.Text = "K12032131";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.BackColor = System.Drawing.Color.Transparent;
-            this.label86.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.ForeColor = System.Drawing.Color.Black;
-            this.label86.Location = new System.Drawing.Point(367, 5);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(110, 18);
-            this.label86.TabIndex = 113;
-            this.label86.Text = "Second Year";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.BackColor = System.Drawing.Color.Transparent;
-            this.label87.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.ForeColor = System.Drawing.Color.Black;
-            this.label87.Location = new System.Drawing.Point(519, 5);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(67, 18);
-            this.label87.TabIndex = 114;
-            this.label87.Text = "ACSAD";
-            // 
-            // sicatborrowedLabel
-            // 
-            this.sicatborrowedLabel.AutoSize = true;
-            this.sicatborrowedLabel.BackColor = System.Drawing.Color.Bisque;
-            this.sicatborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sicatborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.sicatborrowedLabel.Location = new System.Drawing.Point(663, 5);
-            this.sicatborrowedLabel.Name = "sicatborrowedLabel";
-            this.sicatborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.sicatborrowedLabel.TabIndex = 98;
-            this.sicatborrowedLabel.Text = "0";
-            // 
-            // sicatreserveLabel
-            // 
-            this.sicatreserveLabel.AutoSize = true;
-            this.sicatreserveLabel.BackColor = System.Drawing.Color.Bisque;
-            this.sicatreserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sicatreserveLabel.ForeColor = System.Drawing.Color.Black;
-            this.sicatreserveLabel.Location = new System.Drawing.Point(798, 5);
-            this.sicatreserveLabel.Name = "sicatreserveLabel";
-            this.sicatreserveLabel.Size = new System.Drawing.Size(18, 18);
-            this.sicatreserveLabel.TabIndex = 115;
-            this.sicatreserveLabel.Text = "0";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.BackColor = System.Drawing.Color.Transparent;
-            this.label90.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.ForeColor = System.Drawing.Color.Black;
-            this.label90.Location = new System.Drawing.Point(17, 5);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(106, 18);
-            this.label90.TabIndex = 116;
-            this.label90.Text = "Asilito Caasi";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.BackColor = System.Drawing.Color.Bisque;
-            this.label91.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.ForeColor = System.Drawing.Color.Black;
-            this.label91.Location = new System.Drawing.Point(200, 5);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(100, 18);
-            this.label91.TabIndex = 98;
-            this.label91.Text = "K12043567";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.Bisque;
-            this.label92.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.ForeColor = System.Drawing.Color.Black;
-            this.label92.Location = new System.Drawing.Point(367, 5);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(110, 18);
-            this.label92.TabIndex = 117;
-            this.label92.Text = "Second Year";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.BackColor = System.Drawing.Color.Bisque;
-            this.label93.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.ForeColor = System.Drawing.Color.Black;
-            this.label93.Location = new System.Drawing.Point(519, 5);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(67, 18);
-            this.label93.TabIndex = 118;
-            this.label93.Text = "ACSAD";
-            // 
-            // caasiborrowedLabel
-            // 
-            this.caasiborrowedLabel.AutoSize = true;
-            this.caasiborrowedLabel.BackColor = System.Drawing.Color.Bisque;
-            this.caasiborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caasiborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.caasiborrowedLabel.Location = new System.Drawing.Point(663, 5);
-            this.caasiborrowedLabel.Name = "caasiborrowedLabel";
-            this.caasiborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.caasiborrowedLabel.TabIndex = 98;
-            this.caasiborrowedLabel.Text = "0";
-            // 
-            // caasireserveLabel
-            // 
-            this.caasireserveLabel.AutoSize = true;
-            this.caasireserveLabel.BackColor = System.Drawing.Color.Bisque;
-            this.caasireserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caasireserveLabel.ForeColor = System.Drawing.Color.Black;
-            this.caasireserveLabel.Location = new System.Drawing.Point(798, 5);
-            this.caasireserveLabel.Name = "caasireserveLabel";
-            this.caasireserveLabel.Size = new System.Drawing.Size(18, 18);
-            this.caasireserveLabel.TabIndex = 119;
-            this.caasireserveLabel.Text = "0";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.BackColor = System.Drawing.Color.Transparent;
-            this.label96.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.ForeColor = System.Drawing.Color.Black;
-            this.label96.Location = new System.Drawing.Point(17, 5);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(134, 18);
-            this.label96.TabIndex = 120;
-            this.label96.Text = "Lester Diampoc";
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.BackColor = System.Drawing.Color.Transparent;
-            this.label97.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label97.ForeColor = System.Drawing.Color.Black;
-            this.label97.Location = new System.Drawing.Point(200, 5);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(100, 18);
-            this.label97.TabIndex = 121;
-            this.label97.Text = "K12052385";
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.BackColor = System.Drawing.Color.Transparent;
-            this.label98.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label98.ForeColor = System.Drawing.Color.Black;
-            this.label98.Location = new System.Drawing.Point(396, 5);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(48, 18);
-            this.label98.TabIndex = 122;
-            this.label98.Text = "CCIS";
-            // 
-            // diampocborrowedLabel
-            // 
-            this.diampocborrowedLabel.AutoSize = true;
-            this.diampocborrowedLabel.BackColor = System.Drawing.Color.Bisque;
-            this.diampocborrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diampocborrowedLabel.ForeColor = System.Drawing.Color.Black;
-            this.diampocborrowedLabel.Location = new System.Drawing.Point(570, 5);
-            this.diampocborrowedLabel.Name = "diampocborrowedLabel";
-            this.diampocborrowedLabel.Size = new System.Drawing.Size(18, 18);
-            this.diampocborrowedLabel.TabIndex = 98;
-            this.diampocborrowedLabel.Text = "0";
-            // 
-            // diampocreserveLabel
-            // 
-            this.diampocreserveLabel.AutoSize = true;
-            this.diampocreserveLabel.BackColor = System.Drawing.Color.Bisque;
-            this.diampocreserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diampocreserveLabel.ForeColor = System.Drawing.Color.Black;
-            this.diampocreserveLabel.Location = new System.Drawing.Point(740, 5);
-            this.diampocreserveLabel.Name = "diampocreserveLabel";
-            this.diampocreserveLabel.Size = new System.Drawing.Size(18, 18);
-            this.diampocreserveLabel.TabIndex = 123;
-            this.diampocreserveLabel.Text = "0";
             // 
             // BorrowerList
             // 
