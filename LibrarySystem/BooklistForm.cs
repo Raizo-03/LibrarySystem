@@ -903,8 +903,8 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Elements Of Style\r\n\r\n\r\n The Elements of Style is a style guide to writing American English, published in numerous editions. The original was written by William Strunk Jr. in 1918, and published by Harcourt in 1920, comprising eight \"elementary rules of usage,\" ten \"elementary principles of composition,\" \"a few matters of form,\" a list of 49 \"words and expressions commonly misused,\" and a list of 57 \"words often misspelled.\" Writer and editor E. B. White greatly enlarged and revised the book for publication by Macmillan in 1959. That was the first edition of the so-called Strunk & White, which Time recognized in 2011 as one of the 100 best and most influential books written in English since 1923";
-       
+            bookinfoLabel.Text = "The Elements Of Style\r\n\r\n\r\n The Elements of Style is a style guide to writing American English, published in numerous editions. The original was written by William Strunk Jr. in 1918, and published by Harcourt in 1920, comprising eight \"elementary rules of usage,\" ten \"elementary principles of composition,\" \"a few matters of form,\" a list of 49 \"words and expressions commonly misused,\" and a list of 57 \".";
+
         }
 
         private void principiaBtn_Click(object sender, EventArgs e)
