@@ -997,7 +997,8 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "On the Origin of Species \r\n\r\n On the Origin of Species (or, more completely, On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life) is a work of scientific literature by Charles Darwin that is considered to be the foundation of evolutionary biology; it was published on 24 November 1859. Darwin's book introduced the scientific theory that populations evolve over the course of generations through a process of natural selection. The book presented a body of evidence that the diversity of life arose by common descent through a branching pattern of evolution. ";
+            bookinfoLabel.Text = "On the Origin of Species \r\n\r\n On the Origin of Species (or, more completely, On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life) is a work of scientific literature by Charles Darwin that is considered to be the foundation of evolutionary biology; it was published on 24 November 1859. ";
+
         }
 
         private void bookinfoflowPanel_Paint(object sender, PaintEventArgs e)
