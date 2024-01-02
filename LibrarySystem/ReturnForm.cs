@@ -11,7 +11,11 @@ namespace LibrarySystem
     {
         //For database connection
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
+
+        //Declares new checkbox globally to be used in different methods
         CheckBox checkBox = new CheckBox();
+
+        //Declares new list structure globally for the borrowedbooks
         List<BorrowedBook> borrowedBooks = new List<BorrowedBook>();
 
         public ReturnForm()
@@ -26,15 +30,23 @@ namespace LibrarySystem
             // Populate borrowed books checkboxes
             PopulateBookCheckBoxes();
 
+            //Function for the return date when the return date is clicked
             returndatePicker.ValueChanged += dateTimePicker1_ValueChanged;
+
+            //Properties for the datagridview
             borrowDG.RowHeadersVisible = false;
             borrowDG.ReadOnly = true;
             borrowDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
-            borrowDG.ScrollBars = ScrollBars.Vertical; 
+            borrowDG.ScrollBars = ScrollBars.Vertical;
+            
+            //Calls the function for the fetching of the borrowed books
             activateFetching();
 
+            //Calls the function to make the buttons round
             ApplyRoundedButtonStyle(calendarBtn);
         }
+
+        //Method to make the buttons round
         private void ApplyRoundedButtonStyle(Guna2GradientButton button)
         {
 
@@ -42,6 +54,9 @@ namespace LibrarySystem
             button.BorderRadius = 12; // Adjust the radius to control the roundness
         }
 
+
+        //Method that populates the checkboxes with list structure and the method that fetches all the borrowed books from the database
+        //Sets the properties of the checkboxes as well
         private void PopulateBookCheckBoxes()
         {
             // Fetch borrowed book data from the database
@@ -68,8 +83,11 @@ namespace LibrarySystem
             }
         }
 
+        //Declares a list structure for the selected books title in the checkboxes
         private List<string> selectedBookTitles = new List<string>();
 
+
+        //Method for the checkboxes when the user click a checkboxes, it will add it on the selectedbooktitle list structure
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             checkBox = sender as CheckBox;
@@ -97,6 +115,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that displays the borrowed book info using the lables for: borrower name, book title, and due date 
         private void DisplayBorrowedBookInfo(string bookTitle)
         {
             // Find the corresponding BorrowedBook
@@ -111,6 +130,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that clears the labels when the checkboxes are not clicked
         private void ClearBorrowedBookInfo()
         {
             // Clear borrower's name and due date
@@ -138,6 +158,7 @@ namespace LibrarySystem
             base.Text = string.Empty;
         }
 
+        //Class for borrowedbooks with getters and setters
         private class BorrowedBook
         {
 
@@ -147,7 +168,7 @@ namespace LibrarySystem
 
         }
 
-        // Gets borrowed books from the database
+        // Method that fetches borrowed books from the borrowings table in the database infos include: book id, book title, user id, and due date
         private List<BorrowedBook> GetBorrowedBooksFromDatabase()
         {
             List<BorrowedBook> borrowedBooks = new List<BorrowedBook>();
@@ -190,7 +211,7 @@ namespace LibrarySystem
         }
 
 
-
+        //Method that fetches the borrower name from the database using their userID and returns it as a string value
         private string GetBorrowerName(int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -209,11 +230,14 @@ namespace LibrarySystem
             }
         }
 
+        //Method that shows the return date when the datetimepicker is clicked
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             returndateTb.Text = returndatePicker.Value.ToString("MM/dd/yyyy");
 
         }
+
+        //Method that calculates the penalty depending on the returndate from the returndate textbox
         private void CalculatePenalty()
         {
             if (dueDateLabel.Text != string.Empty && returndateTb.Text != string.Empty)
@@ -242,6 +266,8 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //Method the fetches the penalty amount from the penalties table according to the borrower id, and penalty amount
         private void InsertPenalty(int borrowerId, decimal penaltyAmount)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -260,6 +286,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method the fetches the borrower id using the booktitle and returns an int value
         private int GetBorrowerId(string bookTitle)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -281,8 +308,10 @@ namespace LibrarySystem
             }
         }
 
+        //Method for the return button
         private void returnBtn_Click(object sender, EventArgs e)
         {
+            //Validates if the user really wants to return the book
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the returning process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Check user's choice
@@ -379,6 +408,8 @@ namespace LibrarySystem
 
             return false; // No penalty found
         }
+
+        //Method the updates the availability of the book whenever the book is return succesfully
         private void UpdateBookAvailability(string bookTitle, string availability)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -396,6 +427,8 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //Method that removes the entire row of the borrower if succesfully returned the book
         private void RemoveFromBorrowings(string bookTitle)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -413,11 +446,13 @@ namespace LibrarySystem
             }
         }
 
+        //Method for the borrow button that calls the method for fetching the borrowed books in the borrowings table from the database
         private void borrowedBtn_Click(object sender, EventArgs e)
         {
             activateFetching();
         }
 
+        //Method that fetches the borrowed books from the borrowings info; infos include: book title, borrower name, borrow date, and due date
         private void activateFetching()
         {
             try
@@ -469,6 +504,8 @@ namespace LibrarySystem
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        //Method that fetches the borrowings from the database and stores it in a list structure
         private List<Borrowing> GetBorrowingsFromDatabase()
         {
             List<Borrowing> borrowings = new List<Borrowing>();
@@ -498,6 +535,8 @@ namespace LibrarySystem
 
             return borrowings;
         }
+
+        //Method that fetches the borrower name from the database using their user id and returns a string value
         private string GetBorrowerNameFromDatabase(int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
