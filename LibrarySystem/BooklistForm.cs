@@ -15,14 +15,11 @@ namespace LibrarySystem
     
     public partial class BooklistForm : Form
     {
+        //Connection for the database
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
         private Timer updateTimer;
 
         // Add properties for user detail
-        public string UserName { get; private set; }
-        public string UserID { get; private set; }
-        public string UserDepartment { get; private set; }
-        public string availability { get; private set; }
 
         private string username;
         private string identifier;
@@ -38,7 +35,7 @@ namespace LibrarySystem
             this.identifier = IDENTIFIER;
             this.username = NAME;
     
-
+            //TRANSITIONS FOR THE DIFFERENT GENRE OF BOOKS
             fictionTransition2.Start();
             nonficTransition2.Start();
             acadTransition2.Start();
@@ -73,22 +70,10 @@ namespace LibrarySystem
             //default visibility for bookinfoflowpanel
             bookinfoflowPanel.Visible = false;
 
-
-            // Load custom font
-            PrivateFontCollection privateFonts = new PrivateFontCollection();
-            //privateFonts.AddFontFile("C://Users//USER//source//repos//LibrarySystem//fonts//titles//playfair-display-font//PlayfairDisplayBold-nRv8g.ttf");
-
-            // Create a Font object
-            //Font customFont = new Font(privateFonts.Families[0], 33); // Use the appropriate size
-
-            // Set the label's font
-            //booklistLabel.Font = customFont;
-            
-
         }
 
 
-        //FETCHES BOOK TITLES
+        //FETCHES BOOK TITLES FROM THE DATABASE
         private void FetchBookInformation(string bookTitle)
         {
             try
@@ -130,6 +115,7 @@ namespace LibrarySystem
             }
         }
 
+        //This method is used to update status of each books depending on their titles
         private void UpdateStatusLabel(string title, string availability)
         {
 
@@ -348,6 +334,7 @@ namespace LibrarySystem
            
         }
 
+        //This method is for the fiction button to only load the fiction books and changes the visibility of other books
         private void fictionButton_Click(object sender, EventArgs e)
         {
             fictionPanel.Location = new Point(36, 106);
@@ -366,9 +353,10 @@ namespace LibrarySystem
         }
 
         bool fictionExpand = false;
-        //FICTION
 
-        //COLLAPSE
+        //FICTION TRANSITION
+
+        //This method is use to collapse the flowpanel of the fiction books
         private void fictionTransition_Tick(object sender, EventArgs e)
         {
             const int targetCollapsedWidth = 1;
@@ -384,7 +372,7 @@ namespace LibrarySystem
                 fictionExpand = false;
             }
         }
-        //EXPAND
+        //This method is use to expand the flowpanel of the fiction books
         private void fictionTransition2_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 856;
@@ -399,6 +387,7 @@ namespace LibrarySystem
             }
         }
 
+        //This method is the function for the non fiction books, changed the position of the panels, changes visibility of other books, calls the function for the fiction transition
         private void nonfictionBtn_Click(object sender, EventArgs e)
         {
             nonfictionPanel.Location = new Point(36, 106);
@@ -410,8 +399,9 @@ namespace LibrarySystem
             bookinfoflowPanel.Visible = false;
             
         }
-        //NONFICTION
-        //COLLAPSE
+
+        //NONFICTION TRANSITON
+        //This method is use to collapse the flowpanel of the non fiction books
 
         bool nonfictionExpand = false;
 
@@ -430,8 +420,8 @@ namespace LibrarySystem
                 nonfictionExpand = false;
             }
         }
-        //EXPAND
 
+        //This method is use to expand the flowpanel of the non fiction books
         private void nonficTransition2_Tick_1(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 856;
@@ -448,9 +438,10 @@ namespace LibrarySystem
 
 
 
-        //ACADEMIC
+        //ACADEMIC TRANSITION
         bool acadExpand = false;
-        //COLLAPSE
+        //This method is use to collapse the flowpanel of the academic books
+
         private void acadTransition_Tick(object sender, EventArgs e)
         {
             const int targetCollapsedWidth = 1;
@@ -466,6 +457,7 @@ namespace LibrarySystem
                 acadExpand = false;
             }
         }
+        //This method is use to expand the flowpanel of the academic books
 
         private void acadTransition2_Tick(object sender, EventArgs e)
         {
@@ -481,6 +473,7 @@ namespace LibrarySystem
             }
         }
 
+        //This method is used for the academic button to reposition the panels, changes the visibility of other books and calls the function for academic transition
         private void acadBtn_Click(object sender, EventArgs e)
         {
             academicPanel.Location = new Point(36, 106);
@@ -494,6 +487,8 @@ namespace LibrarySystem
         }
 
         //BOOKINFO TRANSITION
+        //This method is use to collapse and expand the flowpanel of the bookInfo
+
         bool bookinfoCurtain = false;
         private void bookinfoTransition_Tick(object sender, EventArgs e)
         {
@@ -1006,6 +1001,7 @@ namespace LibrarySystem
 
         }
 
+        //This method is when the user click the main label of the booklist, it will load the default position and properties of lables and transitions
         private void booklistLabel_Click(object sender, EventArgs e)
         {
             fictionPanel.Location = new Point(36, 106);
