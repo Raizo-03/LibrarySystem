@@ -90,7 +90,8 @@ namespace LibrarySystem
             aboutBtn2.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
            
 
-            
+            //COLORS FOR THE PANELS AND BUTTONS ON THE DASHBORD;
+            //These are the buttons that has function to load the different forms
             dashboardbackPnl.BackColor = Color.FromArgb(0xF1, 0xD6, 0xAB);
             booklistBtn.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
             booklistBtn2.BackColor = Color.FromArgb(0xF5, 0xE3, 0xB5);
@@ -160,6 +161,7 @@ namespace LibrarySystem
 
         }
         //RESERVE BUTTON
+        //This loads the reserve form
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (reserve == null)
@@ -181,6 +183,7 @@ namespace LibrarySystem
         }
 
         //RETURN BUTTON
+        //This loads the return form
         private void button2_Click_1(object sender, EventArgs e)
         {
             if (returnForm == null)
@@ -202,6 +205,7 @@ namespace LibrarySystem
         }
 
         //BURGER TRANSITION
+        //This method is for the transition using Timer component that will slide the dashboard to the right showing the options
         bool dashboardExpand = false;
         private void burgerTransition_Tick(object sender, EventArgs e)
         {
@@ -234,6 +238,7 @@ namespace LibrarySystem
         }
 
         //DASHBOARD BUTTON
+        //This method loads the dashboardform2
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             string identifier = Identifier;
@@ -253,8 +258,6 @@ namespace LibrarySystem
             {
                 dashboard2.Activate();
             }
-
-
         }
 
         private void dashboard2_FormClosed(object sender, EventArgs e)
@@ -265,6 +268,7 @@ namespace LibrarySystem
 
 
         //DASHBOARD TRANSITION
+        //This method uses timer component to slide down the options in the dashboard; borrow, return, reserve, penalty form, borrower list
         bool menuExpand = false;
         private void dashboardTransition_Tick_1(object sender, EventArgs e)
         {
@@ -303,6 +307,7 @@ namespace LibrarySystem
         }
 
         //BOOK LIST BUTTON
+        //This method loads the booklist form
         private void booklistBtn_Click_1(object sender, EventArgs e)
         {
             String identifier = Identifier;
@@ -330,6 +335,7 @@ namespace LibrarySystem
         }
 
         //BORROW BUTTON
+        //This method loads the borrow form
         private void borrowBtn_Click(object sender, EventArgs e)
         {
             string identifier = Identifier;
@@ -355,6 +361,8 @@ namespace LibrarySystem
             booklist = null;
         }
 
+        //ABOUT FORM BUTTON
+        //This method loads the about form
         private void aboutBtn_Click_1(object sender, EventArgs e)
         {
             if (about == null)
@@ -379,13 +387,14 @@ namespace LibrarySystem
         {
 
         }
-
         private void dashboardbackPnl_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
 
+        //BORROWER LIST BUTTON
+        //This method loads the borrowerlist form
         private void borrowerlistBtn_Click(object sender, EventArgs e)
         {
             if (borrowerList == null)
@@ -406,6 +415,8 @@ namespace LibrarySystem
             borrowerList = null;
         }
 
+        //LOGOUT BUTTON
+        //This method is the logic for the logout button if the user wants to log out from the dashboard form
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             String name = USERName;
@@ -415,8 +426,7 @@ namespace LibrarySystem
             // Check the user's choice
             if (result == DialogResult.Yes)
             {
-                // Perform logout actions
-                // For example, close the current form and show the login form
+             
                 this.Close();
 
                 // Assuming LoginForm is the name of your login form
@@ -426,6 +436,8 @@ namespace LibrarySystem
             // If the user clicks "No", do nothing and keep the user in the current state
         }
 
+        //PENALTY BUTTON
+        //This method loads the penalty form
         private void button1_Click_2(object sender, EventArgs e)
         {
             if (penalty == null)
