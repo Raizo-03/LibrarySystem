@@ -100,8 +100,6 @@
             this.acadTransition = new System.Windows.Forms.Timer(this.components);
             this.acadTransition2 = new System.Windows.Forms.Timer(this.components);
             this.bookinfoflowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.bookinfoImage = new System.Windows.Forms.Label();
-            this.bookinfoLabel = new System.Windows.Forms.Label();
             this.bookinfoTransition = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.booklistLabel = new System.Windows.Forms.Label();
@@ -109,6 +107,8 @@
             this.nonfictionBtn = new LibrarySystem.RJButton();
             this.fictionBtn = new LibrarySystem.RJButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.bookinfoImage = new System.Windows.Forms.Label();
+            this.bookinfoLabel = new System.Windows.Forms.Label();
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -1042,7 +1042,6 @@
             // bookinfoflowPanel
             // 
             this.bookinfoflowPanel.BackColor = System.Drawing.Color.Transparent;
-            this.bookinfoflowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bookinfoflowPanel.Controls.Add(this.bookinfoImage);
             this.bookinfoflowPanel.Controls.Add(this.bookinfoLabel);
             this.bookinfoflowPanel.Location = new System.Drawing.Point(328, 258);
@@ -1051,23 +1050,6 @@
             this.bookinfoflowPanel.TabIndex = 22;
             this.bookinfoflowPanel.WrapContents = false;
             this.bookinfoflowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.bookinfoflowPanel_Paint);
-            // 
-            // bookinfoImage
-            // 
-            this.bookinfoImage.Location = new System.Drawing.Point(3, 0);
-            this.bookinfoImage.Name = "bookinfoImage";
-            this.bookinfoImage.Size = new System.Drawing.Size(182, 351);
-            this.bookinfoImage.TabIndex = 3;
-            // 
-            // bookinfoLabel
-            // 
-            this.bookinfoLabel.ForeColor = System.Drawing.Color.Black;
-            this.bookinfoLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bookinfoLabel.Location = new System.Drawing.Point(191, 0);
-            this.bookinfoLabel.Name = "bookinfoLabel";
-            this.bookinfoLabel.Size = new System.Drawing.Size(204, 351);
-            this.bookinfoLabel.TabIndex = 2;
-            this.bookinfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bookinfoTransition
             // 
@@ -1159,6 +1141,25 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(320, 5);
             this.guna2GradientPanel1.TabIndex = 25;
+            // 
+            // bookinfoImage
+            // 
+            this.bookinfoImage.Location = new System.Drawing.Point(3, 0);
+            this.bookinfoImage.Name = "bookinfoImage";
+            this.bookinfoImage.Size = new System.Drawing.Size(182, 351);
+            this.bookinfoImage.TabIndex = 3;
+            // 
+            // bookinfoLabel
+            // 
+            this.bookinfoLabel.BackColor = System.Drawing.Color.Bisque;
+            this.bookinfoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookinfoLabel.ForeColor = System.Drawing.Color.Black;
+            this.bookinfoLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bookinfoLabel.Location = new System.Drawing.Point(191, 0);
+            this.bookinfoLabel.Name = "bookinfoLabel";
+            this.bookinfoLabel.Size = new System.Drawing.Size(204, 351);
+            this.bookinfoLabel.TabIndex = 2;
+            this.bookinfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BooklistForm
             // 
@@ -1280,10 +1281,10 @@
         private System.Windows.Forms.Timer acadTransition2;
         private System.Windows.Forms.FlowLayoutPanel bookinfoflowPanel;
         private System.Windows.Forms.Timer bookinfoTransition;
-        private System.Windows.Forms.Label bookinfoImage;
-        private System.Windows.Forms.Label bookinfoLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label booklistLabel;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.Label bookinfoImage;
+        private System.Windows.Forms.Label bookinfoLabel;
     }
 }

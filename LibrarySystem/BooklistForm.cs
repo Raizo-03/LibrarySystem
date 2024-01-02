@@ -556,8 +556,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "To Kill a Mocking Bird\r\n\r\nTo Kill a Mockingbird is a novel by the American author Harper Lee. It was published in 1960 and was instantly successful. In the United States, it is widely read in high schools and middle schools. To Kill a Mockingbird has become a classic of modern American literature; a year after its release, it won the Pulitzer Prize. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was ten.";
-
+            bookinfoLabel.Text = "To Kill a Mocking Bird\r\n\r\nTo Kill a Mockingbird is a novel by the American author Harper Lee. It was published in 1960 and was instantly successful. In the United States, it is widely read in high schools and middle schools. To Kill a Mockingbird has become a classic of modern American literature; a year after its release, it won the Pulitzer Prize. ";
         }
 
         private void prideBtn_Click(object sender, EventArgs e)
@@ -588,9 +587,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "Pride and Prejudice \r\n\r\nPride and Prejudice is the second novel by English author Jane Austen, published in 1813. A novel of manners, it follows the character development of Elizabeth Bennet, the protagonist of the book, who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.";
-
-
+            bookinfoLabel.Text = "Pride and Prejudice \r\n\r\nPride and Prejudice is the second novel by English author Jane Austen, published in 1813. A novel of manners, it follows the character development of Elizabeth Bennet, the protagonist of the book.";
         }
 
         private void Btn1984_Click(object sender, EventArgs e)
@@ -621,8 +618,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "Nineteen Eighty-Four\r\n\r\nNineteen Eighty-Four (also published as 1984) is a dystopian novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime. Thematically, it centres on the consequences of totalitarianism, mass surveillance and repressive regimentation of people and behaviours within society.Orwell, a democratic socialist, modelled the authoritarian state in the novel on the Soviet Union in the era of Stalinism, and Nazi Germany. More broadly, the novel examines the role of truth and facts within societies and the ways in which they can be manipulated.";
-
+            bookinfoLabel.Text = "Nineteen Eighty-Four\r\n\r\nNineteen Eighty-Four (also published as 1984) is a dystopian novel and cautionary tale by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime. Thematically, it centres on the consequences of totalitarianism, mass surveillance and repressive regimentation.";
         }
 
         private void gatsbyBtn_Click(object sender, EventArgs e)
@@ -653,8 +649,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Great Gatsby\r\n\r\nThe Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.\r\n\r\nThe novel was inspired by a youthful romance Fitzgerald had with socialite Ginevra King, and the riotous parties he attended on Long Island's North Shore in 1922. Following a move to the French Riviera, Fitzgerald completed a rough draft of the novel in 1924. He submitted it to editor Maxwell Perkins, who persuaded Fitzgerald to revise the work over the following winter.";
-
+            bookinfoLabel.Text = "The Great Gatsby\r\n\r\nThe Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan. ";
 
         }
 
@@ -686,8 +681,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "One Hundred Years of Solitude\r\n\r\nOne Hundred Years of Solitude is a 1967 novel by Colombian author Gabriel García Márquez that tells the multi-generational story of the Buendía family, whose patriarch, José Arcadio Buendía, founded the fictitious town of Macondo. The novel is often cited as one of the supreme achievements in world literature.\r\n\r\nThe magical realist style and thematic substance of One Hundred Years of Solitude established it as an important representative novel of the literary Latin American Boom of the 1960s and 1970s, which was stylistically influenced by Modernism (European and North American) and the Cuban Vanguardia (Avant-Garde) literary movement.";
-
+            bookinfoLabel.Text = "One Hundred Years of Solitude\r\n\r\nOne Hundred Years of Solitude is a 1967 novel by Colombian author Gabriel García Márquez that tells the multi-generational story of the Buendía family, whose patriarch, José Arcadio Buendía, founded the fictitious town of Macondo. The novel is often cited as one of the supreme achievements in world literature.";
         }
 
         //NON FICTION BOOK BUTTONS
