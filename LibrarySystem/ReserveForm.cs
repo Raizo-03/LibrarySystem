@@ -14,6 +14,7 @@ namespace LibrarySystem
 {
     public partial class ReserveForm : Form
     {
+        //FOR DATABASE CONNECTION
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
 
         public ReserveForm()
@@ -26,23 +27,33 @@ namespace LibrarySystem
             // Populate your UI with checkboxes for available books
             PopulateBookCheckBoxes(availableBooks);
 
-            reservedbooksDG.Visible = false;
+            //Sets the properties for the datagridview
+            reservedbooksDG.Visible = true;
             reservedbooksDG.ReadOnly = true;
             reservedbooksDG.CellClick += reservedbooksDG_CellContentClick;
             reservedbooksDG.ReadOnly = true;
             reservedbooksDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
             reservedbooksDG.ScrollBars = ScrollBars.Vertical;
 
+
+            //Calls the method to make the button round
             ApplyRoundedButtonStyle(calendarBtn);
-            reservedbooksDG.Visible = true;
+
+            //Calls the method to fetch the reservation and bind it to the datagridview
             FetchReservationsAndBindDataGridView();
         }
+
+
+        //Method the makes the button round
         private void ApplyRoundedButtonStyle(Guna2GradientButton button)
         {
 
             // Set the border radius to make the button rounded
             button.BorderRadius = 12; // Adjust the radius to control the roundness
+
         }
+
+        //Method that fetches the user if it has unpaid penalies using their borrower id and returns as boolean value
         private bool HasUnpaidPenalties(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -62,6 +73,9 @@ namespace LibrarySystem
                 }
             }
         }
+
+        //Method the validates if the user can reserve using their borrower id and returns a boolean value 
+        //Calls other method such as getting the total borrowed books, checks if the borrower is teacher, max reservation limit, and number of reservation
         private bool CanBorrowerReserve(int borrowerId)
         {
             // Fetch the number of books already borrowed by the borrower
@@ -88,6 +102,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the total number of borrower that have reserve and returns an int value
         private int GetBorrowerReservationCount(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -105,6 +120,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the total number of books that have borrowed and returns an int value
         private int GetBorrowedBooksCount(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -123,6 +139,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method for getting the maximum reservation limit and returns an int value
         private int GetMaxReservationLimit(int borrowerId, bool isTeacher, int borrowedBooksCount)
         {
             // Define the reservation limits based on the borrower type (student or teacher)
@@ -139,7 +156,7 @@ namespace LibrarySystem
             return applicableLimits[adjustedBorrowedBooksCount];
         }
 
-
+        //Method the fetches the borrowers that has unpaid penalties in the penalties table from the database
         private List<Borrower> FetchPaidBorrowers()
         {
             List<Borrower> paidBorrowers = new List<Borrower>();
@@ -180,8 +197,13 @@ namespace LibrarySystem
         private void ReserveForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+            FetchReservationsAndBindDataGridView();
+
+
         }
 
+        //Method that populates the checkboxes 
+        //Also sets the properties of the checkboxes
         private void PopulateBookCheckBoxes(List<Book> books)
         {
             int topOffset = 120; // Adjust the initial vertical position to 120
@@ -209,6 +231,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that gets the value of the checkbox that was checked by the user
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = sender as CheckBox;
@@ -232,6 +255,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches all the books that has status available and genre normal from the database
         private List<Book> GetAvailableBooksFromDatabase()
         {
             List<Book> availableBooks = new List<Book>();
@@ -262,11 +286,14 @@ namespace LibrarySystem
             return availableBooks;
         }
 
+        //Method for the datetimepicker component if the user clicked it
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             reserveddateTb.Text = reservedatepicker.Value.ToString("MM/dd/yyyy");
         }
 
+
+        //Method that fetches the borrowers reservation count and returns an int value
         private int GetBorrowerReservationCount(int borrowerId, string borrowerIdentifier)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -295,8 +322,10 @@ namespace LibrarySystem
             return paidBorrowers.FirstOrDefault(b => b.BorrowerName == borrowerName);
         }
 
+        //Method for the reserve button
         private void reserveBtn_Click(object sender, EventArgs e)
         {
+            //Validates if the user really wants to reserve the book
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the reserving process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Check if the returndateTb textbox is empty
@@ -407,6 +436,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the borrower id using their borrower name and returns it as an int value
         private int GetBorrowerIdByName(string borrowerName)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -424,6 +454,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that sets the maximum reservation limit and returns the value of int of teacher
         private int GetMaxReservationLimit(int borrowerId, bool isTeacher)
         {
             // Default maximum reservation limit
@@ -441,8 +472,7 @@ namespace LibrarySystem
             return Math.Min(defaultMaxReservationLimit, adjustedMaxReservationLimit);
         }
 
-
-
+        //Method that sets the maximum reservation limit using the identifier of the borrower
         private int GetMaxReservationLimit(string identifier)
         {
             // Default maximum reservation limit
@@ -460,6 +490,7 @@ namespace LibrarySystem
             return defaultMaxReservationLimit;
         }
 
+        //Method that fetches the book id using their book title and returns an int value
         private int GetBookIdByTitle(string title)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -476,6 +507,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that inserts the column if the reservation is succesful
         private void InsertReservation(int bookId, int borrowerId, DateTime reservationDate)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -496,6 +528,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the borrower by its name 
         private Borrower GetBorrowerByName(string borrowerName)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -529,6 +562,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that updates the status of the whenever the reservation is succesful, the book chosen'status is set to RESERVE
         private void UpdateBookAvailability(int bookId, string availability)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -547,12 +581,15 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the reserve books from the reservations table
         private void rbooksBtn_Click(object sender, EventArgs e)
         {
             reservedbooksDG.Visible = true;
             FetchReservationsAndBindDataGridView();
         }
 
+        //Method that fetches the reservation and bind it in the datagridview
+        //Also sets the properties of the datagridview
         private void FetchReservationsAndBindDataGridView()
         {
             try
@@ -614,11 +651,14 @@ namespace LibrarySystem
         }
 
 
+        //Method for the managebutton if the user wants to delete the reservation
+        // Calls the transition method to start
         private void editBtn_Click(object sender, EventArgs e)
         {
             manageTransition.Start();
         }
 
+        //Method that deletes the row of the reservation whenever the button is clicked
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             
@@ -660,6 +700,7 @@ namespace LibrarySystem
                 MessageBox.Show("Input Necessary Details. Please select a row to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        //Method that delete the reservation from the datagridview
         private void DeleteReservationFromDataGridView(int reservationId)
         {
             // Find the row with the specified reservation_id
@@ -681,6 +722,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that delete the reservation from the database
         private void DeleteReservationFromDatabase(int reservationId)
         {
             try
@@ -719,6 +761,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that fetches the book id from the reservation using the reservation ID and returns an int value
         private int GetBookIdFromReservation(int reservationId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -736,6 +779,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that shows the messagebox when a cell of the datagridview is clicked
         private void reservedbooksDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -766,6 +810,7 @@ namespace LibrarySystem
             }
         }
 
+        //Manage button transition for expanding and collapsing
         bool manageCurtain = false;
         private void manageTransition_Tick(object sender, EventArgs e)
         {
@@ -796,6 +841,7 @@ namespace LibrarySystem
                 }
             }
         }
+        //Method that checks if the borrower is a teacher using the borrower id and returns a boolean value
         private bool IsTeacher(int borrowerId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -816,6 +862,7 @@ namespace LibrarySystem
             }
         }
 
+        //Method that gets the maximum reservation limit using the borrower id and returns an int value
         private int GetMaxReservationLimit(int borrowerId)
         {
             // Default maximum reservation limit
@@ -837,7 +884,7 @@ namespace LibrarySystem
 
 
     }
-
+    //Class borrower for the list structure and their getters and setters
     public class Borrower
     {
         public int BorrowerId { get; set; }
