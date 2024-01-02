@@ -9,6 +9,7 @@ namespace LibrarySystem
 {
     public partial class ReturnForm : Form
     {
+        //For database connection
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
         CheckBox checkBox = new CheckBox();
         List<BorrowedBook> borrowedBooks = new List<BorrowedBook>();
