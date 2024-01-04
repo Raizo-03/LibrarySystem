@@ -74,7 +74,7 @@ namespace LibrarySystem
                 checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
                 checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                 topOffset += 25; // Adjust the vertical spacing as needed
-                checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
+                checkBox.Font = new Font("Bookman Old Style", 13); // Set the font
 
                 // Add the event handler for the CheckedChanged event
                 checkBox.CheckedChanged += CheckBox_CheckedChanged;
@@ -470,12 +470,11 @@ namespace LibrarySystem
                 borrowDG.Columns.Add("DueDate", "DUE DATE");
 
                 // Set font size and apply modern style
-                borrowDG.DefaultCellStyle.Font = new Font("Segoe UI", 8); // Adjust font and size
-                borrowDG.ColumnHeadersDefaultCellStyle.Font = new Font("Arial Rounded MT Bold", 10, FontStyle.Regular); // Adjust font, size, and style
+                borrowDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
+                borrowDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 borrowDG.EnableHeadersVisualStyles = false;
-                borrowDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                borrowDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
                 borrowDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
-
                 // Set column widths
                 borrowDG.Columns["BookTitle"].Width = 180; // Adjust width as needed
                 borrowDG.Columns["BorrowerName"].Width = 170; // Adjust width as needed
