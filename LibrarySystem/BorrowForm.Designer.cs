@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowForm));
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.databorrowedLabel = new System.Windows.Forms.Label();
@@ -48,36 +50,36 @@
             // borrowerLabel
             // 
             this.borrowerLabel.AutoSize = true;
-            this.borrowerLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerLabel.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowerLabel.Location = new System.Drawing.Point(216, 563);
             this.borrowerLabel.Name = "borrowerLabel";
-            this.borrowerLabel.Size = new System.Drawing.Size(156, 18);
+            this.borrowerLabel.Size = new System.Drawing.Size(154, 22);
             this.borrowerLabel.TabIndex = 9;
             this.borrowerLabel.Text = "Borrower\'s Name: ";
             // 
             // databorrowedLabel
             // 
             this.databorrowedLabel.AutoSize = true;
-            this.databorrowedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databorrowedLabel.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.databorrowedLabel.Location = new System.Drawing.Point(216, 597);
             this.databorrowedLabel.Name = "databorrowedLabel";
-            this.databorrowedLabel.Size = new System.Drawing.Size(134, 18);
+            this.databorrowedLabel.Size = new System.Drawing.Size(132, 22);
             this.databorrowedLabel.TabIndex = 10;
             this.databorrowedLabel.Text = "Date Borrowed:";
             // 
             // duedateLabel
             // 
             this.duedateLabel.AutoSize = true;
-            this.duedateLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.duedateLabel.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.duedateLabel.Location = new System.Drawing.Point(216, 625);
             this.duedateLabel.Name = "duedateLabel";
-            this.duedateLabel.Size = new System.Drawing.Size(87, 18);
+            this.duedateLabel.Size = new System.Drawing.Size(89, 22);
             this.duedateLabel.TabIndex = 11;
             this.duedateLabel.Text = "Due Date:";
             // 
             // borrowerName
             // 
-            this.borrowerName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerName.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowerName.Location = new System.Drawing.Point(378, 560);
             this.borrowerName.Name = "borrowerName";
             this.borrowerName.Size = new System.Drawing.Size(192, 26);
@@ -86,7 +88,7 @@
             // 
             // borrowDate
             // 
-            this.borrowDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowDate.Location = new System.Drawing.Point(378, 598);
             this.borrowDate.Name = "borrowDate";
             this.borrowDate.Size = new System.Drawing.Size(192, 26);
@@ -95,10 +97,10 @@
             // 
             // dueDate
             // 
-            this.dueDate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dueDate.Font = new System.Drawing.Font("Bookman Old Style", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dueDate.Location = new System.Drawing.Point(378, 630);
             this.dueDate.Name = "dueDate";
-            this.dueDate.Size = new System.Drawing.Size(192, 26);
+            this.dueDate.Size = new System.Drawing.Size(192, 27);
             this.dueDate.TabIndex = 20;
             this.dueDate.TextChanged += new System.EventHandler(this.dueDate_TextChanged);
             // 
@@ -114,11 +116,11 @@
             // borrowLabel
             // 
             this.borrowLabel.AutoSize = true;
-            this.borrowLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowLabel.ForeColor = System.Drawing.Color.Black;
+            this.borrowLabel.Font = new System.Drawing.Font("Book Antiqua", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowLabel.ForeColor = System.Drawing.Color.Sienna;
             this.borrowLabel.Location = new System.Drawing.Point(30, 35);
             this.borrowLabel.Name = "borrowLabel";
-            this.borrowLabel.Size = new System.Drawing.Size(232, 52);
+            this.borrowLabel.Size = new System.Drawing.Size(236, 53);
             this.borrowLabel.TabIndex = 25;
             this.borrowLabel.Text = "BORROW";
             // 
@@ -128,9 +130,25 @@
             this.borrowDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.borrowDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.borrowDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.borrowDG.GridColor = System.Drawing.Color.PeachPuff;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.borrowDG.DefaultCellStyle = dataGridViewCellStyle1;
+            this.borrowDG.GridColor = System.Drawing.Color.DarkKhaki;
             this.borrowDG.Location = new System.Drawing.Point(39, 123);
             this.borrowDG.Name = "borrowDG";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.borrowDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.borrowDG.Size = new System.Drawing.Size(564, 358);
             this.borrowDG.TabIndex = 27;
             this.borrowDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.borrowDG_CellContentClick);
@@ -163,11 +181,11 @@
             this.borrowedBtn.BorderSize = 0;
             this.borrowedBtn.FlatAppearance.BorderSize = 0;
             this.borrowedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowedBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedBtn.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowedBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowedBtn.Location = new System.Drawing.Point(264, 680);
+            this.borrowedBtn.Location = new System.Drawing.Point(220, 680);
             this.borrowedBtn.Name = "borrowedBtn";
-            this.borrowedBtn.Size = new System.Drawing.Size(179, 55);
+            this.borrowedBtn.Size = new System.Drawing.Size(223, 55);
             this.borrowedBtn.TabIndex = 26;
             this.borrowedBtn.Text = "BORROWED BOOKS";
             this.borrowedBtn.TextColor = System.Drawing.Color.White;
@@ -183,11 +201,11 @@
             this.borrowBtn.BorderSize = 0;
             this.borrowBtn.FlatAppearance.BorderSize = 0;
             this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowBtn.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowBtn.ForeColor = System.Drawing.Color.White;
             this.borrowBtn.Location = new System.Drawing.Point(490, 680);
             this.borrowBtn.Name = "borrowBtn";
-            this.borrowBtn.Size = new System.Drawing.Size(179, 55);
+            this.borrowBtn.Size = new System.Drawing.Size(223, 55);
             this.borrowBtn.TabIndex = 15;
             this.borrowBtn.Text = "BORROW";
             this.borrowBtn.TextColor = System.Drawing.Color.White;
@@ -196,10 +214,14 @@
             // 
             // borrowedDatepicker
             // 
-            this.borrowedDatepicker.CalendarForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.borrowedDatepicker.CalendarFont = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedDatepicker.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.borrowedDatepicker.CalendarMonthBackground = System.Drawing.Color.Tan;
+            this.borrowedDatepicker.CalendarTitleBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.borrowedDatepicker.Font = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowedDatepicker.Location = new System.Drawing.Point(618, 609);
             this.borrowedDatepicker.Name = "borrowedDatepicker";
-            this.borrowedDatepicker.Size = new System.Drawing.Size(19, 20);
+            this.borrowedDatepicker.Size = new System.Drawing.Size(19, 21);
             this.borrowedDatepicker.TabIndex = 17;
             this.borrowedDatepicker.CloseUp += new System.EventHandler(this.borrowedDatepicker_CloseUp);
             this.borrowedDatepicker.ValueChanged += new System.EventHandler(this.borrowedDatepicker_ValueChanged);
