@@ -69,20 +69,22 @@
             // hellolabel
             // 
             this.hellolabel.AutoSize = true;
-            this.hellolabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hellolabel.Font = new System.Drawing.Font("Book Antiqua", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hellolabel.ForeColor = System.Drawing.Color.Sienna;
             this.hellolabel.Location = new System.Drawing.Point(12, 81);
             this.hellolabel.Name = "hellolabel";
-            this.hellolabel.Size = new System.Drawing.Size(157, 51);
+            this.hellolabel.Size = new System.Drawing.Size(157, 52);
             this.hellolabel.TabIndex = 1;
             this.hellolabel.Text = "Hello, ";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Font = new System.Drawing.Font("Book Antiqua", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.Sienna;
             this.nameLabel.Location = new System.Drawing.Point(148, 81);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(171, 51);
+            this.nameLabel.Size = new System.Drawing.Size(191, 52);
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "ADMIN";
             // 
@@ -115,8 +117,9 @@
             this.penaltiesB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.penaltiesB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.penaltiesB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.penaltiesB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.penaltiesB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltiesB.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.penaltiesB.FillColor2 = System.Drawing.Color.Tan;
+            this.penaltiesB.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltiesB.ForeColor = System.Drawing.Color.White;
             this.penaltiesB.Image = ((System.Drawing.Image)(resources.GetObject("penaltiesB.Image")));
             this.penaltiesB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -142,7 +145,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.analyticsDG.DefaultCellStyle = dataGridViewCellStyle2;
@@ -157,8 +160,8 @@
             // 
             this.availbooksPanel.Controls.Add(this.availableLabel);
             this.availbooksPanel.Controls.Add(this.availbooksB);
-            this.availbooksPanel.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.availbooksPanel.FillColor2 = System.Drawing.Color.DodgerBlue;
+            this.availbooksPanel.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.availbooksPanel.FillColor2 = System.Drawing.Color.Tan;
             this.availbooksPanel.Location = new System.Drawing.Point(19, 197);
             this.availbooksPanel.Name = "availbooksPanel";
             this.availbooksPanel.Size = new System.Drawing.Size(209, 116);
@@ -166,14 +169,15 @@
             // 
             // availbooksB
             // 
+            this.availbooksB.BackColor = System.Drawing.Color.BurlyWood;
             this.availbooksB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.availbooksB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.availbooksB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.availbooksB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.availbooksB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.availbooksB.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.availbooksB.FillColor2 = System.Drawing.Color.DodgerBlue;
-            this.availbooksB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availbooksB.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.availbooksB.FillColor2 = System.Drawing.Color.Tan;
+            this.availbooksB.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.availbooksB.ForeColor = System.Drawing.Color.White;
             this.availbooksB.Image = ((System.Drawing.Image)(resources.GetObject("availbooksB.Image")));
             this.availbooksB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -193,9 +197,9 @@
             this.borrowedB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.borrowedB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.borrowedB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.borrowedB.FillColor = System.Drawing.Color.LightCoral;
-            this.borrowedB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.borrowedB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedB.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.borrowedB.FillColor2 = System.Drawing.Color.Tan;
+            this.borrowedB.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold);
             this.borrowedB.ForeColor = System.Drawing.Color.White;
             this.borrowedB.Image = ((System.Drawing.Image)(resources.GetObject("borrowedB.Image")));
             this.borrowedB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -212,8 +216,8 @@
             // 
             this.borrowedPanel.Controls.Add(this.borrowinglabel);
             this.borrowedPanel.Controls.Add(this.borrowedB);
-            this.borrowedPanel.FillColor = System.Drawing.Color.LightCoral;
-            this.borrowedPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.borrowedPanel.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.borrowedPanel.FillColor2 = System.Drawing.Color.Tan;
             this.borrowedPanel.Location = new System.Drawing.Point(234, 197);
             this.borrowedPanel.Name = "borrowedPanel";
             this.borrowedPanel.Size = new System.Drawing.Size(209, 116);
@@ -235,8 +239,8 @@
             // 
             this.userPanel.Controls.Add(this.penaltieslabel);
             this.userPanel.Controls.Add(this.penaltiesB);
-            this.userPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.userPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.userPanel.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.userPanel.FillColor2 = System.Drawing.Color.Tan;
             this.userPanel.Location = new System.Drawing.Point(664, 197);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(209, 116);
@@ -261,9 +265,9 @@
             this.reservedB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.reservedB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.reservedB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reservedB.FillColor = System.Drawing.Color.Chartreuse;
-            this.reservedB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.reservedB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedB.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.reservedB.FillColor2 = System.Drawing.Color.Tan;
+            this.reservedB.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold);
             this.reservedB.ForeColor = System.Drawing.Color.White;
             this.reservedB.Image = ((System.Drawing.Image)(resources.GetObject("reservedB.Image")));
             this.reservedB.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -280,8 +284,8 @@
             // 
             this.reservedPanel.Controls.Add(this.reservinglabel);
             this.reservedPanel.Controls.Add(this.reservedB);
-            this.reservedPanel.FillColor = System.Drawing.Color.Chartreuse;
-            this.reservedPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.reservedPanel.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.reservedPanel.FillColor2 = System.Drawing.Color.Tan;
             this.reservedPanel.Location = new System.Drawing.Point(449, 197);
             this.reservedPanel.Name = "reservedPanel";
             this.reservedPanel.Size = new System.Drawing.Size(209, 116);
@@ -319,7 +323,7 @@
             this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2GradientButton1.FillColor = System.Drawing.Color.ForestGreen;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.YellowGreen;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.OliveDrab;
             this.guna2GradientButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
@@ -340,7 +344,7 @@
             this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2GradientButton2.FillColor = System.Drawing.Color.ForestGreen;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.YellowGreen;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.OliveDrab;
             this.guna2GradientButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
@@ -361,7 +365,7 @@
             this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2GradientButton3.FillColor = System.Drawing.Color.ForestGreen;
-            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.YellowGreen;
+            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.OliveDrab;
             this.guna2GradientButton3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton3.Image")));
@@ -384,7 +388,7 @@
             this.usersPanel.Controls.Add(this.guna2GradientButton2);
             this.usersPanel.Controls.Add(this.guna2GradientButton1);
             this.usersPanel.FillColor = System.Drawing.Color.ForestGreen;
-            this.usersPanel.FillColor2 = System.Drawing.Color.Chartreuse;
+            this.usersPanel.FillColor2 = System.Drawing.Color.DarkOliveGreen;
             this.usersPanel.Location = new System.Drawing.Point(673, 350);
             this.usersPanel.Name = "usersPanel";
             this.usersPanel.Size = new System.Drawing.Size(217, 285);
