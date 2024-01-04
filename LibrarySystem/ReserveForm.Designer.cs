@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             this.bnameLabel = new System.Windows.Forms.Label();
             this.btitleLabel = new System.Windows.Forms.Label();
@@ -121,14 +121,14 @@
             this.reservedbooksDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reservedbooksDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle2;
             this.reservedbooksDG.GridColor = System.Drawing.Color.PeachPuff;
             this.reservedbooksDG.Location = new System.Drawing.Point(39, 123);
             this.reservedbooksDG.Name = "reservedbooksDG";
@@ -196,7 +196,7 @@
             this.manageBtn.BorderSize = 0;
             this.manageBtn.FlatAppearance.BorderSize = 0;
             this.manageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.manageBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageBtn.ForeColor = System.Drawing.Color.White;
             this.manageBtn.Location = new System.Drawing.Point(3, 3);
             this.manageBtn.Name = "manageBtn";
@@ -216,7 +216,7 @@
             this.deleteBtn.BorderSize = 0;
             this.deleteBtn.FlatAppearance.BorderSize = 0;
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Location = new System.Drawing.Point(3, 64);
             this.deleteBtn.Name = "deleteBtn";
@@ -236,7 +236,7 @@
             this.rbooksBtn.BorderSize = 0;
             this.rbooksBtn.FlatAppearance.BorderSize = 0;
             this.rbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbooksBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbooksBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbooksBtn.ForeColor = System.Drawing.Color.White;
             this.rbooksBtn.Location = new System.Drawing.Point(465, 711);
             this.rbooksBtn.Name = "rbooksBtn";
@@ -256,7 +256,7 @@
             this.reserveBtn.BorderSize = 0;
             this.reserveBtn.FlatAppearance.BorderSize = 0;
             this.reserveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reserveBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveBtn.ForeColor = System.Drawing.Color.White;
             this.reserveBtn.Location = new System.Drawing.Point(236, 711);
             this.reserveBtn.Name = "reserveBtn";

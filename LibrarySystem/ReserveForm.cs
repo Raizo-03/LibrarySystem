@@ -240,7 +240,7 @@ namespace LibrarySystem
                     checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
                     checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                     topOffset += 25; // Adjust the vertical spacing as needed
-                    checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
+                    checkBox.Font = new Font("Bookman Old Style", 13); // Set the font
 
                     // Add the event handler for the CheckedChanged event
                     checkBox.CheckedChanged += CheckBox_CheckedChanged;
@@ -632,10 +632,10 @@ namespace LibrarySystem
                             // Bind the DataTable to the DataGridView
                             reservedbooksDG.DataSource = reservationsDataTable;
                             // Set font size and apply modern style
-                            reservedbooksDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
-                            reservedbooksDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
+                            reservedbooksDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
+                            reservedbooksDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                             reservedbooksDG.EnableHeadersVisualStyles = false;
-                            reservedbooksDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                            reservedbooksDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
                             reservedbooksDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                             // Disable user resizing of rows and columns
