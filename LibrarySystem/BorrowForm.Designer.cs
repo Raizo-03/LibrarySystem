@@ -42,8 +42,8 @@
             this.borrowDG = new System.Windows.Forms.DataGridView();
             this.calendarBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.borrowedBtn = new LibrarySystem.RJButton();
-            this.borrowBtn = new LibrarySystem.RJButton();
             this.borrowedDatepicker = new System.Windows.Forms.DateTimePicker();
+            this.borrowBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             // 
             this.borrowerLabel.AutoSize = true;
             this.borrowerLabel.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerLabel.Location = new System.Drawing.Point(216, 563);
+            this.borrowerLabel.Location = new System.Drawing.Point(310, 587);
             this.borrowerLabel.Name = "borrowerLabel";
             this.borrowerLabel.Size = new System.Drawing.Size(154, 22);
             this.borrowerLabel.TabIndex = 9;
@@ -61,7 +61,7 @@
             // 
             this.databorrowedLabel.AutoSize = true;
             this.databorrowedLabel.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.databorrowedLabel.Location = new System.Drawing.Point(216, 597);
+            this.databorrowedLabel.Location = new System.Drawing.Point(310, 621);
             this.databorrowedLabel.Name = "databorrowedLabel";
             this.databorrowedLabel.Size = new System.Drawing.Size(132, 22);
             this.databorrowedLabel.TabIndex = 10;
@@ -71,7 +71,7 @@
             // 
             this.duedateLabel.AutoSize = true;
             this.duedateLabel.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duedateLabel.Location = new System.Drawing.Point(216, 625);
+            this.duedateLabel.Location = new System.Drawing.Point(310, 649);
             this.duedateLabel.Name = "duedateLabel";
             this.duedateLabel.Size = new System.Drawing.Size(89, 22);
             this.duedateLabel.TabIndex = 11;
@@ -80,7 +80,7 @@
             // borrowerName
             // 
             this.borrowerName.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerName.Location = new System.Drawing.Point(378, 560);
+            this.borrowerName.Location = new System.Drawing.Point(472, 584);
             this.borrowerName.Name = "borrowerName";
             this.borrowerName.Size = new System.Drawing.Size(192, 26);
             this.borrowerName.TabIndex = 18;
@@ -89,7 +89,7 @@
             // borrowDate
             // 
             this.borrowDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowDate.Location = new System.Drawing.Point(378, 598);
+            this.borrowDate.Location = new System.Drawing.Point(472, 622);
             this.borrowDate.Name = "borrowDate";
             this.borrowDate.Size = new System.Drawing.Size(192, 26);
             this.borrowDate.TabIndex = 19;
@@ -98,7 +98,7 @@
             // dueDate
             // 
             this.dueDate.Font = new System.Drawing.Font("Bookman Old Style", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dueDate.Location = new System.Drawing.Point(378, 630);
+            this.dueDate.Location = new System.Drawing.Point(472, 654);
             this.dueDate.Name = "dueDate";
             this.dueDate.Size = new System.Drawing.Size(192, 27);
             this.dueDate.TabIndex = 20;
@@ -166,7 +166,7 @@
             this.calendarBtn.ForeColor = System.Drawing.Color.White;
             this.calendarBtn.Image = ((System.Drawing.Image)(resources.GetObject("calendarBtn.Image")));
             this.calendarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.calendarBtn.Location = new System.Drawing.Point(585, 597);
+            this.calendarBtn.Location = new System.Drawing.Point(679, 621);
             this.calendarBtn.Name = "calendarBtn";
             this.calendarBtn.Size = new System.Drawing.Size(63, 40);
             this.calendarBtn.TabIndex = 28;
@@ -181,9 +181,9 @@
             this.borrowedBtn.BorderSize = 0;
             this.borrowedBtn.FlatAppearance.BorderSize = 0;
             this.borrowedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowedBtn.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowedBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowedBtn.Location = new System.Drawing.Point(220, 680);
+            this.borrowedBtn.Location = new System.Drawing.Point(268, 711);
             this.borrowedBtn.Name = "borrowedBtn";
             this.borrowedBtn.Size = new System.Drawing.Size(223, 55);
             this.borrowedBtn.TabIndex = 26;
@@ -191,6 +191,20 @@
             this.borrowedBtn.TextColor = System.Drawing.Color.White;
             this.borrowedBtn.UseVisualStyleBackColor = false;
             this.borrowedBtn.Click += new System.EventHandler(this.borrowedBtn_Click);
+            // 
+            // borrowedDatepicker
+            // 
+            this.borrowedDatepicker.CalendarFont = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedDatepicker.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.borrowedDatepicker.CalendarMonthBackground = System.Drawing.Color.Tan;
+            this.borrowedDatepicker.CalendarTitleBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.borrowedDatepicker.Font = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedDatepicker.Location = new System.Drawing.Point(712, 633);
+            this.borrowedDatepicker.Name = "borrowedDatepicker";
+            this.borrowedDatepicker.Size = new System.Drawing.Size(19, 21);
+            this.borrowedDatepicker.TabIndex = 17;
+            this.borrowedDatepicker.CloseUp += new System.EventHandler(this.borrowedDatepicker_CloseUp);
+            this.borrowedDatepicker.ValueChanged += new System.EventHandler(this.borrowedDatepicker_ValueChanged);
             // 
             // borrowBtn
             // 
@@ -201,9 +215,9 @@
             this.borrowBtn.BorderSize = 0;
             this.borrowBtn.FlatAppearance.BorderSize = 0;
             this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowBtn.Font = new System.Drawing.Font("Book Antiqua", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowBtn.Location = new System.Drawing.Point(490, 680);
+            this.borrowBtn.Location = new System.Drawing.Point(566, 711);
             this.borrowBtn.Name = "borrowBtn";
             this.borrowBtn.Size = new System.Drawing.Size(223, 55);
             this.borrowBtn.TabIndex = 15;
@@ -211,20 +225,6 @@
             this.borrowBtn.TextColor = System.Drawing.Color.White;
             this.borrowBtn.UseVisualStyleBackColor = false;
             this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
-            // 
-            // borrowedDatepicker
-            // 
-            this.borrowedDatepicker.CalendarFont = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedDatepicker.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.borrowedDatepicker.CalendarMonthBackground = System.Drawing.Color.Tan;
-            this.borrowedDatepicker.CalendarTitleBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.borrowedDatepicker.Font = new System.Drawing.Font("Book Antiqua", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedDatepicker.Location = new System.Drawing.Point(618, 609);
-            this.borrowedDatepicker.Name = "borrowedDatepicker";
-            this.borrowedDatepicker.Size = new System.Drawing.Size(19, 21);
-            this.borrowedDatepicker.TabIndex = 17;
-            this.borrowedDatepicker.CloseUp += new System.EventHandler(this.borrowedDatepicker_CloseUp);
-            this.borrowedDatepicker.ValueChanged += new System.EventHandler(this.borrowedDatepicker_ValueChanged);
             // 
             // BorrowForm
             // 
@@ -258,7 +258,6 @@
         private System.Windows.Forms.Label borrowerLabel;
         private System.Windows.Forms.Label databorrowedLabel;
         private System.Windows.Forms.Label duedateLabel;
-        private RJButton borrowBtn;
         private System.Windows.Forms.TextBox borrowerName;
         private System.Windows.Forms.TextBox borrowDate;
         private System.Windows.Forms.TextBox dueDate;
@@ -268,5 +267,6 @@
         private System.Windows.Forms.DataGridView borrowDG;
         private Guna.UI2.WinForms.Guna2GradientButton calendarBtn;
         private System.Windows.Forms.DateTimePicker borrowedDatepicker;
+        private RJButton borrowBtn;
     }
 }
