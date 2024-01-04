@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,10 +51,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 563);
+            this.label1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(310, 521);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 18);
+            this.label1.Size = new System.Drawing.Size(140, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Borrower\'s Name:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -61,79 +62,77 @@
             // borrowerLabel
             // 
             this.borrowerLabel.AutoSize = true;
-            this.borrowerLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerLabel.Location = new System.Drawing.Point(278, 563);
+            this.borrowerLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerLabel.Location = new System.Drawing.Point(472, 521);
             this.borrowerLabel.Name = "borrowerLabel";
-            this.borrowerLabel.Size = new System.Drawing.Size(56, 18);
+            this.borrowerLabel.Size = new System.Drawing.Size(0, 20);
             this.borrowerLabel.TabIndex = 1;
-            this.borrowerLabel.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 605);
+            this.label2.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(310, 563);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 18);
+            this.label2.Size = new System.Drawing.Size(109, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Amount Due:";
             // 
             // amountDueLabel
             // 
             this.amountDueLabel.AutoSize = true;
-            this.amountDueLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountDueLabel.Location = new System.Drawing.Point(278, 605);
+            this.amountDueLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountDueLabel.Location = new System.Drawing.Point(472, 563);
             this.amountDueLabel.Name = "amountDueLabel";
-            this.amountDueLabel.Size = new System.Drawing.Size(46, 18);
+            this.amountDueLabel.Size = new System.Drawing.Size(0, 20);
             this.amountDueLabel.TabIndex = 3;
-            this.amountDueLabel.Text = "label";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(111, 653);
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(310, 611);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 18);
+            this.label3.Size = new System.Drawing.Size(111, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Amount Paid:";
             // 
             // amountpaidTb
             // 
-            this.amountpaidTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountpaidTb.Location = new System.Drawing.Point(281, 653);
+            this.amountpaidTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountpaidTb.Location = new System.Drawing.Point(472, 611);
             this.amountpaidTb.Name = "amountpaidTb";
-            this.amountpaidTb.Size = new System.Drawing.Size(181, 26);
+            this.amountpaidTb.Size = new System.Drawing.Size(180, 26);
             this.amountpaidTb.TabIndex = 5;
             this.amountpaidTb.TextChanged += new System.EventHandler(this.amountpaidTb_TextChanged);
             // 
             // changeLabel
             // 
             this.changeLabel.AutoSize = true;
-            this.changeLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(111, 739);
+            this.changeLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLabel.Location = new System.Drawing.Point(310, 697);
             this.changeLabel.Name = "changeLabel";
-            this.changeLabel.Size = new System.Drawing.Size(75, 18);
+            this.changeLabel.Size = new System.Drawing.Size(71, 21);
             this.changeLabel.TabIndex = 6;
             this.changeLabel.Text = "Change:";
             // 
             // cLabel
             // 
             this.cLabel.AutoSize = true;
-            this.cLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cLabel.Location = new System.Drawing.Point(277, 739);
+            this.cLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cLabel.Location = new System.Drawing.Point(472, 697);
             this.cLabel.Name = "cLabel";
-            this.cLabel.Size = new System.Drawing.Size(68, 18);
+            this.cLabel.Size = new System.Drawing.Size(19, 20);
             this.cLabel.TabIndex = 7;
-            this.cLabel.Text = "change";
+            this.cLabel.Text = "0";
             // 
             // balanceLabel
             // 
             this.balanceLabel.AutoSize = true;
-            this.balanceLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.balanceLabel.Location = new System.Drawing.Point(111, 698);
+            this.balanceLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceLabel.Location = new System.Drawing.Point(310, 656);
             this.balanceLabel.Name = "balanceLabel";
-            this.balanceLabel.Size = new System.Drawing.Size(79, 18);
+            this.balanceLabel.Size = new System.Drawing.Size(71, 21);
             this.balanceLabel.TabIndex = 9;
             this.balanceLabel.Text = "Balance:";
             // 
@@ -147,21 +146,21 @@
             // bLabel
             // 
             this.bLabel.AutoSize = true;
-            this.bLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bLabel.Location = new System.Drawing.Point(277, 698);
+            this.bLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bLabel.Location = new System.Drawing.Point(472, 656);
             this.bLabel.Name = "bLabel";
-            this.bLabel.Size = new System.Drawing.Size(72, 18);
+            this.bLabel.Size = new System.Drawing.Size(19, 20);
             this.bLabel.TabIndex = 10;
-            this.bLabel.Text = "balance";
+            this.bLabel.Text = "0";
             // 
             // penaltyLabel
             // 
             this.penaltyLabel.AutoSize = true;
-            this.penaltyLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.penaltyLabel.ForeColor = System.Drawing.Color.Black;
+            this.penaltyLabel.Font = new System.Drawing.Font("Book Antiqua", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltyLabel.ForeColor = System.Drawing.Color.Sienna;
             this.penaltyLabel.Location = new System.Drawing.Point(30, 35);
             this.penaltyLabel.Name = "penaltyLabel";
-            this.penaltyLabel.Size = new System.Drawing.Size(231, 52);
+            this.penaltyLabel.Size = new System.Drawing.Size(236, 53);
             this.penaltyLabel.TabIndex = 26;
             this.penaltyLabel.Text = "PENALTY";
             // 
@@ -180,6 +179,14 @@
             this.penaltyDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.penaltyDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.penaltyDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.penaltyDG.DefaultCellStyle = dataGridViewCellStyle14;
             this.penaltyDG.GridColor = System.Drawing.Color.PeachPuff;
             this.penaltyDG.Location = new System.Drawing.Point(39, 123);
             this.penaltyDG.Name = "penaltyDG";
@@ -198,9 +205,9 @@
             this.penaltyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.penaltyBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltyBtn.ForeColor = System.Drawing.Color.White;
-            this.penaltyBtn.Location = new System.Drawing.Point(498, 585);
+            this.penaltyBtn.Location = new System.Drawing.Point(268, 750);
             this.penaltyBtn.Name = "penaltyBtn";
-            this.penaltyBtn.Size = new System.Drawing.Size(179, 55);
+            this.penaltyBtn.Size = new System.Drawing.Size(223, 55);
             this.penaltyBtn.TabIndex = 29;
             this.penaltyBtn.Text = "PENALTIES";
             this.penaltyBtn.TextColor = System.Drawing.Color.White;
@@ -218,9 +225,9 @@
             this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payBtn.ForeColor = System.Drawing.Color.White;
-            this.payBtn.Location = new System.Drawing.Point(702, 585);
+            this.payBtn.Location = new System.Drawing.Point(566, 750);
             this.payBtn.Name = "payBtn";
-            this.payBtn.Size = new System.Drawing.Size(179, 55);
+            this.payBtn.Size = new System.Drawing.Size(223, 55);
             this.payBtn.TabIndex = 8;
             this.payBtn.Text = "PAY";
             this.payBtn.TextColor = System.Drawing.Color.White;

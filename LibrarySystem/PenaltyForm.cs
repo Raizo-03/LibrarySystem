@@ -58,7 +58,7 @@ namespace LibrarySystem
             checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
             checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
             topOffset += 25; // Adjust the vertical spacing as needed
-            checkBox.Font = new Font("Arial Rounded MT Bold", 13); // Set the font
+            checkBox.Font = new Font("Bookman Old Style", 13); // Set the font
 
             checkBoxes.Add(checkBox); // Add the checkbox to the list
             Controls.Add(checkBox);
@@ -501,11 +501,12 @@ namespace LibrarySystem
                 penaltyDG.Columns.Add("BorrowerName", "BORROWER'S NAME");
                 penaltyDG.Columns.Add("Amount", "AMOUNT");
 
+
                 // Set font size and apply modern style
-                penaltyDG.DefaultCellStyle.Font = new Font("Segoe UI", 10); // Adjust font and size
-                penaltyDG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Adjust font, size, and style
+                penaltyDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
+                penaltyDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 penaltyDG.EnableHeadersVisualStyles = false;
-                penaltyDG.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38); // Header background color
+                penaltyDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
                 penaltyDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
