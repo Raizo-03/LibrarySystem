@@ -78,6 +78,8 @@ namespace LibrarySystem
         //Calls other method such as getting the total borrowed books, checks if the borrower is teacher, max reservation limit, and number of reservation
         private bool CanBorrowerReserve(int borrowerId)
         {
+            string borrowerName = GetBorrowerNameFromDatabase(borrowerId);
+
             // Fetch the number of books already borrowed by the borrower
             int borrowedBooksCount = GetBorrowedBooksCount(borrowerId);
 
@@ -97,8 +99,25 @@ namespace LibrarySystem
             }
             else
             {
-                MessageBox.Show("Borrower has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.");
+                MessageBox.Show($"Borrower {borrowerName} has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+        }
+        private string GetBorrowerNameFromDatabase(int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT name FROM borrowers WHERE user_id = @userId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    var result = command.ExecuteScalar();
+                    return result != null ? result.ToString() : null; // Default value if not found
+                }
             }
         }
 
@@ -412,7 +431,6 @@ namespace LibrarySystem
                             }
                             else
                             {
-                                MessageBox.Show("Borrower has reached the maximum reservation limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             this.bnameLabel = new System.Windows.Forms.Label();
             this.btitleLabel = new System.Windows.Forms.Label();
@@ -54,53 +55,53 @@
             // bnameLabel
             // 
             this.bnameLabel.AutoSize = true;
-            this.bnameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnameLabel.Location = new System.Drawing.Point(303, 624);
+            this.bnameLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnameLabel.Location = new System.Drawing.Point(368, 622);
             this.bnameLabel.Name = "bnameLabel";
-            this.bnameLabel.Size = new System.Drawing.Size(152, 18);
+            this.bnameLabel.Size = new System.Drawing.Size(140, 21);
             this.bnameLabel.TabIndex = 0;
             this.bnameLabel.Text = "Borrower\'s Name:";
             // 
             // btitleLabel
             // 
             this.btitleLabel.AutoSize = true;
-            this.btitleLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btitleLabel.Location = new System.Drawing.Point(303, 585);
+            this.btitleLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btitleLabel.Location = new System.Drawing.Point(368, 583);
             this.btitleLabel.Name = "btitleLabel";
-            this.btitleLabel.Size = new System.Drawing.Size(92, 18);
+            this.btitleLabel.Size = new System.Drawing.Size(91, 21);
             this.btitleLabel.TabIndex = 2;
             this.btitleLabel.Text = "Book Title:";
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(459, 585);
+            this.titleLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(524, 583);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(0, 18);
+            this.titleLabel.Size = new System.Drawing.Size(0, 20);
             this.titleLabel.TabIndex = 3;
             // 
             // reservedateLabel
             // 
             this.reservedateLabel.AutoSize = true;
-            this.reservedateLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedateLabel.Location = new System.Drawing.Point(303, 659);
+            this.reservedateLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservedateLabel.Location = new System.Drawing.Point(368, 657);
             this.reservedateLabel.Name = "reservedateLabel";
-            this.reservedateLabel.Size = new System.Drawing.Size(132, 18);
+            this.reservedateLabel.Size = new System.Drawing.Size(120, 21);
             this.reservedateLabel.TabIndex = 4;
             this.reservedateLabel.Text = "Reserved Date:";
             // 
             // reserveddateTb
             // 
-            this.reserveddateTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reserveddateTb.Location = new System.Drawing.Point(463, 661);
+            this.reserveddateTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveddateTb.Location = new System.Drawing.Point(528, 659);
             this.reserveddateTb.Name = "reserveddateTb";
-            this.reserveddateTb.Size = new System.Drawing.Size(166, 26);
+            this.reserveddateTb.Size = new System.Drawing.Size(180, 26);
             this.reserveddateTb.TabIndex = 5;
             // 
             // reservedatepicker
             // 
-            this.reservedatepicker.Location = new System.Drawing.Point(688, 657);
+            this.reservedatepicker.Location = new System.Drawing.Point(773, 655);
             this.reservedatepicker.Name = "reservedatepicker";
             this.reservedatepicker.Size = new System.Drawing.Size(19, 20);
             this.reservedatepicker.TabIndex = 6;
@@ -108,18 +109,26 @@
             // 
             // borrowernameTb
             // 
-            this.borrowernameTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowernameTb.Location = new System.Drawing.Point(463, 626);
+            this.borrowernameTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowernameTb.Location = new System.Drawing.Point(528, 624);
             this.borrowernameTb.Name = "borrowernameTb";
-            this.borrowernameTb.Size = new System.Drawing.Size(166, 26);
+            this.borrowernameTb.Size = new System.Drawing.Size(180, 26);
             this.borrowernameTb.TabIndex = 7;
             // 
             // reservedbooksDG
             // 
-            this.reservedbooksDG.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.reservedbooksDG.BackgroundColor = System.Drawing.Color.DarkKhaki;
             this.reservedbooksDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reservedbooksDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle1;
             this.reservedbooksDG.GridColor = System.Drawing.Color.PeachPuff;
             this.reservedbooksDG.Location = new System.Drawing.Point(39, 123);
             this.reservedbooksDG.Name = "reservedbooksDG";
@@ -130,11 +139,11 @@
             // reserveLabel
             // 
             this.reserveLabel.AutoSize = true;
-            this.reserveLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reserveLabel.ForeColor = System.Drawing.Color.Black;
+            this.reserveLabel.Font = new System.Drawing.Font("Book Antiqua", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveLabel.ForeColor = System.Drawing.Color.Sienna;
             this.reserveLabel.Location = new System.Drawing.Point(30, 35);
             this.reserveLabel.Name = "reserveLabel";
-            this.reserveLabel.Size = new System.Drawing.Size(237, 52);
+            this.reserveLabel.Size = new System.Drawing.Size(230, 53);
             this.reserveLabel.TabIndex = 29;
             this.reserveLabel.Text = "RESERVE";
             // 
@@ -160,7 +169,7 @@
             this.calendarBtn.ForeColor = System.Drawing.Color.White;
             this.calendarBtn.Image = ((System.Drawing.Image)(resources.GetObject("calendarBtn.Image")));
             this.calendarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.calendarBtn.Location = new System.Drawing.Point(655, 647);
+            this.calendarBtn.Location = new System.Drawing.Point(740, 645);
             this.calendarBtn.Name = "calendarBtn";
             this.calendarBtn.Size = new System.Drawing.Size(63, 40);
             this.calendarBtn.TabIndex = 31;
@@ -173,9 +182,9 @@
             // 
             this.manageFlowPanel.Controls.Add(this.manageBtn);
             this.manageFlowPanel.Controls.Add(this.deleteBtn);
-            this.manageFlowPanel.Location = new System.Drawing.Point(678, 697);
+            this.manageFlowPanel.Location = new System.Drawing.Point(694, 711);
             this.manageFlowPanel.Name = "manageFlowPanel";
-            this.manageFlowPanel.Size = new System.Drawing.Size(185, 62);
+            this.manageFlowPanel.Size = new System.Drawing.Size(232, 63);
             this.manageFlowPanel.TabIndex = 32;
             // 
             // manageBtn
@@ -191,7 +200,7 @@
             this.manageBtn.ForeColor = System.Drawing.Color.White;
             this.manageBtn.Location = new System.Drawing.Point(3, 3);
             this.manageBtn.Name = "manageBtn";
-            this.manageBtn.Size = new System.Drawing.Size(179, 55);
+            this.manageBtn.Size = new System.Drawing.Size(223, 55);
             this.manageBtn.TabIndex = 10;
             this.manageBtn.Text = "MANAGE";
             this.manageBtn.TextColor = System.Drawing.Color.White;
@@ -211,7 +220,7 @@
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Location = new System.Drawing.Point(3, 64);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(179, 40);
+            this.deleteBtn.Size = new System.Drawing.Size(223, 43);
             this.deleteBtn.TabIndex = 13;
             this.deleteBtn.Text = "DELETE";
             this.deleteBtn.TextColor = System.Drawing.Color.White;
@@ -229,9 +238,9 @@
             this.rbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbooksBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.rbooksBtn.Location = new System.Drawing.Point(482, 697);
+            this.rbooksBtn.Location = new System.Drawing.Point(465, 711);
             this.rbooksBtn.Name = "rbooksBtn";
-            this.rbooksBtn.Size = new System.Drawing.Size(179, 55);
+            this.rbooksBtn.Size = new System.Drawing.Size(223, 55);
             this.rbooksBtn.TabIndex = 9;
             this.rbooksBtn.Text = "RESERVED BOOKS";
             this.rbooksBtn.TextColor = System.Drawing.Color.White;
@@ -249,9 +258,9 @@
             this.reserveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reserveBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveBtn.ForeColor = System.Drawing.Color.White;
-            this.reserveBtn.Location = new System.Drawing.Point(287, 697);
+            this.reserveBtn.Location = new System.Drawing.Point(236, 711);
             this.reserveBtn.Name = "reserveBtn";
-            this.reserveBtn.Size = new System.Drawing.Size(179, 55);
+            this.reserveBtn.Size = new System.Drawing.Size(223, 55);
             this.reserveBtn.TabIndex = 8;
             this.reserveBtn.Text = "RESERVE";
             this.reserveBtn.TextColor = System.Drawing.Color.White;
