@@ -586,6 +586,10 @@ namespace LibrarySystem
 
             return penalties;
         }
-    
-}
+
+        private void penaltyDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }
