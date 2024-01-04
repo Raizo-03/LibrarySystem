@@ -555,6 +555,36 @@ namespace LibrarySystem
             }
         }
 
+        private void borrowDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Check if a valid row index and column index are clicked
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    // Get the selected row
+                    DataGridViewRow selectedRow = borrowDG.Rows[e.RowIndex];
+
+                    // Use the exact names of columns
+                    string bookTitle = Convert.ToString(selectedRow.Cells["BookTitle"].Value);
+                    string borrowerName = Convert.ToString(selectedRow.Cells["BorrowerName"].Value);
+                    DateTime borrowDate = Convert.ToDateTime(selectedRow.Cells["BorrowDate"].Value);
+                    DateTime dueDate = Convert.ToDateTime(selectedRow.Cells["DueDate"].Value);
+
+                    MessageBox.Show(
+                        $"Book Title: {bookTitle}\nBorrower Name: {borrowerName}\nBorrow Date: {borrowDate:MM/dd/yyyy}\nDue Date: {dueDate:MM/dd/yyyy}",
+                        "Borrowing Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! {ex.Message}");
+            }
+        }
+
 
     }
 }
