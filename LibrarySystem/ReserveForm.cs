@@ -806,7 +806,7 @@ namespace LibrarySystem
                     );
                 }
             }catch(Exception ex) {
-                MessageBox.Show($"Error! Row must have a reservation in order to edit it.");
+                MessageBox.Show($"Error! Row must have a reservation in order to edit it : {ex.Message}" );
             }
         }
 
