@@ -185,6 +185,7 @@
             this.penaltyDG.Name = "penaltyDG";
             this.penaltyDG.Size = new System.Drawing.Size(564, 358);
             this.penaltyDG.TabIndex = 28;
+            this.penaltyDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.penaltyDG_CellContentClick);
             // 
             // penaltyBtn
             // 
