@@ -309,7 +309,7 @@ namespace LibrarySystem
             }
 
             //Control structure to call the method that checks the number of the user's total reserved and borrowed books and using the borrowerID
-            if (!CanBorrowerBorrow(borrowerId))
+            if (!CanBorrowerBorrow(borrowerId, selectedBookTitles.Count))
             {
                 return;
             }
@@ -638,7 +638,6 @@ namespace LibrarySystem
             return borrowings;
         }
 
-
         //Method that fetches the borrower name in the borrowers table using the userID and returns a string value
         private string GetBorrowerNameFromDatabase(int userId)
         {
@@ -659,7 +658,7 @@ namespace LibrarySystem
         }
 
         //Method the calls the method for validate the total borrowed and reserved books using their userID
-        private bool CanBorrowerBorrow(int borrowerId)
+        private bool CanBorrowerBorrow(int borrowerId, int selectedBooksCount)
         {
             // Fetch the number of books already borrowed by the borrower
             int borrowedBooksCount = CountBorrowedBooks(borrowerId);
@@ -673,8 +672,10 @@ namespace LibrarySystem
             // Fetch the number of reservations made by the borrower
             int reservationCount = GetBorrowerReservationCount(borrowerId);
 
+            int totalBooksCount = borrowedBooksCount + reservationCount + selectedBooksCount;
+
             // Check if the remaining reservation limit is greater than 0
-            if (reservationCount < maxReservationLimit)
+            if (totalBooksCount <= maxReservationLimit)
             {
                 return true;
             }
