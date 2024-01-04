@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.upperPanel = new System.Windows.Forms.Panel();
+            this.dashboardmainLabel = new System.Windows.Forms.Label();
             this.dashboardControlbx = new ReaLTaiizor.Controls.NightControlBox();
             this.dashboardburgerIcon = new System.Windows.Forms.PictureBox();
             this.dashboardFlowPnl = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,7 +57,6 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
-            this.dashboardmainLabel = new System.Windows.Forms.Label();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -84,6 +84,16 @@
             this.upperPanel.Size = new System.Drawing.Size(1100, 47);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dashboardmainLabel
+            // 
+            this.dashboardmainLabel.Font = new System.Drawing.Font("Book Antiqua", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardmainLabel.ForeColor = System.Drawing.Color.White;
+            this.dashboardmainLabel.Location = new System.Drawing.Point(66, 9);
+            this.dashboardmainLabel.Name = "dashboardmainLabel";
+            this.dashboardmainLabel.Size = new System.Drawing.Size(574, 34);
+            this.dashboardmainLabel.TabIndex = 2;
+            this.dashboardmainLabel.Text = "Eternal Library Management System";
             // 
             // dashboardControlbx
             // 
@@ -378,16 +388,6 @@
             // 
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
-            // 
-            // dashboardmainLabel
-            // 
-            this.dashboardmainLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardmainLabel.ForeColor = System.Drawing.Color.White;
-            this.dashboardmainLabel.Location = new System.Drawing.Point(66, 9);
-            this.dashboardmainLabel.Name = "dashboardmainLabel";
-            this.dashboardmainLabel.Size = new System.Drawing.Size(574, 34);
-            this.dashboardmainLabel.TabIndex = 2;
-            this.dashboardmainLabel.Text = "Eternal Library Management System";
             // 
             // Dashboard
             // 
