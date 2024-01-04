@@ -660,6 +660,9 @@ namespace LibrarySystem
         //Method the calls the method for validate the total borrowed and reserved books using their userID
         private bool CanBorrowerBorrow(int borrowerId, int selectedBooksCount)
         {
+            //Fetches the name of the borrower
+            string borrowerName = GetBorrowerNameFromDatabase(borrowerId);
+
             // Fetch the number of books already borrowed by the borrower
             int borrowedBooksCount = CountBorrowedBooks(borrowerId);
 
@@ -681,7 +684,7 @@ namespace LibrarySystem
             }
             else
             {
-                MessageBox.Show("Borrower has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Borrower {borrowerName} has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
