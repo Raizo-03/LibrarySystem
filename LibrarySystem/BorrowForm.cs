@@ -147,6 +147,7 @@ namespace LibrarySystem
                 checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
                 topOffset += 25; // Adjust the vertical spacing as needed
                 checkBox.Font = new Font("Bookman Old Style", 13); // Set the font
+           
 
                 // Get the book availability from the database
                 string availability = GetBookAvailabilityFromDatabase(book.Title);
