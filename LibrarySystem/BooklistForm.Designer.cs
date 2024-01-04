@@ -1061,7 +1061,7 @@
             // bookinfoLabel
             // 
             this.bookinfoLabel.BackColor = System.Drawing.Color.Bisque;
-            this.bookinfoLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookinfoLabel.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookinfoLabel.ForeColor = System.Drawing.Color.Black;
             this.bookinfoLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bookinfoLabel.Location = new System.Drawing.Point(191, 0);
@@ -1086,11 +1086,11 @@
             // booklistLabel
             // 
             this.booklistLabel.AutoSize = true;
-            this.booklistLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booklistLabel.ForeColor = System.Drawing.Color.Black;
+            this.booklistLabel.Font = new System.Drawing.Font("Book Antiqua", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booklistLabel.ForeColor = System.Drawing.Color.Sienna;
             this.booklistLabel.Location = new System.Drawing.Point(27, 38);
             this.booklistLabel.Name = "booklistLabel";
-            this.booklistLabel.Size = new System.Drawing.Size(266, 51);
+            this.booklistLabel.Size = new System.Drawing.Size(270, 52);
             this.booklistLabel.TabIndex = 24;
             this.booklistLabel.Text = "BOOK LIST";
             this.booklistLabel.Click += new System.EventHandler(this.booklistLabel_Click);
@@ -1104,7 +1104,7 @@
             this.acadBtn.BorderSize = 0;
             this.acadBtn.FlatAppearance.BorderSize = 0;
             this.acadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.acadBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acadBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acadBtn.ForeColor = System.Drawing.Color.White;
             this.acadBtn.Location = new System.Drawing.Point(664, 40);
             this.acadBtn.Name = "acadBtn";
@@ -1124,7 +1124,7 @@
             this.nonfictionBtn.BorderSize = 0;
             this.nonfictionBtn.FlatAppearance.BorderSize = 0;
             this.nonfictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nonfictionBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nonfictionBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nonfictionBtn.ForeColor = System.Drawing.Color.White;
             this.nonfictionBtn.Location = new System.Drawing.Point(516, 38);
             this.nonfictionBtn.Name = "nonfictionBtn";
@@ -1144,7 +1144,7 @@
             this.fictionBtn.BorderSize = 0;
             this.fictionBtn.FlatAppearance.BorderSize = 0;
             this.fictionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fictionBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fictionBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fictionBtn.ForeColor = System.Drawing.Color.White;
             this.fictionBtn.Location = new System.Drawing.Point(363, 38);
             this.fictionBtn.Name = "fictionBtn";
