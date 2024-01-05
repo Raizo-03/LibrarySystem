@@ -109,6 +109,8 @@
             this.nonfictionBtn = new LibrarySystem.RJButton();
             this.fictionBtn = new LibrarySystem.RJButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.upperlabelPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             this.mockingbirdPnl.SuspendLayout();
             this.Pnl1984.SuspendLayout();
             this.pridePnl.SuspendLayout();
@@ -129,6 +131,7 @@
             this.originPanel.SuspendLayout();
             this.bookinfoflowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.upperlabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mockingbirdPnl
@@ -1088,9 +1091,9 @@
             this.booklistLabel.AutoSize = true;
             this.booklistLabel.Font = new System.Drawing.Font("Book Antiqua", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booklistLabel.ForeColor = System.Drawing.Color.Sienna;
-            this.booklistLabel.Location = new System.Drawing.Point(27, 38);
+            this.booklistLabel.Location = new System.Drawing.Point(3, 0);
             this.booklistLabel.Name = "booklistLabel";
-            this.booklistLabel.Size = new System.Drawing.Size(270, 52);
+            this.booklistLabel.Size = new System.Drawing.Size(59, 416);
             this.booklistLabel.TabIndex = 24;
             this.booklistLabel.Text = "BOOK LIST";
             this.booklistLabel.Click += new System.EventHandler(this.booklistLabel_Click);
@@ -1164,14 +1167,26 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(320, 5);
             this.guna2GradientPanel1.TabIndex = 25;
             // 
+            // upperlabelPanel
+            // 
+            this.upperlabelPanel.Controls.Add(this.booklistLabel);
+            this.upperlabelPanel.Location = new System.Drawing.Point(36, 21);
+            this.upperlabelPanel.Name = "upperlabelPanel";
+            this.upperlabelPanel.Size = new System.Drawing.Size(10, 58);
+            this.upperlabelPanel.TabIndex = 26;
+            // 
+            // upperlabelTransition
+            // 
+            this.upperlabelTransition.Tick += new System.EventHandler(this.upperlabelTransition_Tick);
+            // 
             // BooklistForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 868);
             this.ControlBox = false;
+            this.Controls.Add(this.upperlabelPanel);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.booklistLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bookinfoflowPanel);
             this.Controls.Add(this.nonfictionPanel);
@@ -1204,8 +1219,9 @@
             this.originPanel.ResumeLayout(false);
             this.bookinfoflowPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.upperlabelPanel.ResumeLayout(false);
+            this.upperlabelPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1289,5 +1305,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label bookinfoImage;
         private System.Windows.Forms.Label bookinfoLabel;
+        private System.Windows.Forms.FlowLayoutPanel upperlabelPanel;
+        private System.Windows.Forms.Timer upperlabelTransition;
     }
 }

@@ -331,7 +331,7 @@ namespace LibrarySystem
         // Add a method to populate the DataGridView with books
         private void BooklistForm_Load(object sender, EventArgs e)
         {
-           
+            upperlabelTransition.Start();
         }
 
         //This method is for the fiction button to only load the fiction books and changes the visibility of other books
@@ -1012,6 +1012,23 @@ namespace LibrarySystem
             acadTransition2.Start();
             bookinfoflowPanel.Visible = false;
 
+        }
+
+        bool upperlabelExpand = false;
+
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 277;
+            const int step = 60;
+
+            // Expanding
+            upperlabelPanel.Width += step;
+            if (upperlabelPanel.Width >= targetExpandedWidth)
+            {
+                upperlabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                upperlabelExpand = true;
+            }
         }
     }
 
