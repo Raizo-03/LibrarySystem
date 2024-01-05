@@ -57,7 +57,8 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.upperLabelPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -72,12 +73,12 @@
             this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             this.logoutBtn2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.upperLabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
             // 
-            this.upperPanel.Controls.Add(this.flowLayoutPanel1);
+            this.upperPanel.Controls.Add(this.upperLabelPanel);
             this.upperPanel.Controls.Add(this.dashboardControlbx);
             this.upperPanel.Controls.Add(this.dashboardburgerIcon);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -391,13 +392,17 @@
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
             // 
-            // flowLayoutPanel1
+            // upperLabelPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.dashboardmainLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(77, 5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(504, 36);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.upperLabelPanel.Controls.Add(this.dashboardmainLabel);
+            this.upperLabelPanel.Location = new System.Drawing.Point(77, 5);
+            this.upperLabelPanel.Name = "upperLabelPanel";
+            this.upperLabelPanel.Size = new System.Drawing.Size(12, 36);
+            this.upperLabelPanel.TabIndex = 4;
+            // 
+            // upperlabelTransition
+            // 
+            this.upperlabelTransition.Tick += new System.EventHandler(this.upperlabelTransition_Tick);
             // 
             // Dashboard
             // 
@@ -430,7 +435,7 @@
             this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             this.logoutBtn2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.upperLabelPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -463,6 +468,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button penaltyBtn;
         private System.Windows.Forms.Label dashboardmainLabel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel upperLabelPanel;
+        private System.Windows.Forms.Timer upperlabelTransition;
     }
 }
