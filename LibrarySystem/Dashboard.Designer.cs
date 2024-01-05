@@ -57,6 +57,7 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.dashboardTransition = new System.Windows.Forms.Timer(this.components);
             this.burgerTransition = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.upperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardburgerIcon)).BeginInit();
             this.dashboardFlowPnl.SuspendLayout();
@@ -71,11 +72,12 @@
             this.borrowerlistBtn2.SuspendLayout();
             this.aboutBtn2.SuspendLayout();
             this.logoutBtn2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
             // 
-            this.upperPanel.Controls.Add(this.dashboardmainLabel);
+            this.upperPanel.Controls.Add(this.flowLayoutPanel1);
             this.upperPanel.Controls.Add(this.dashboardControlbx);
             this.upperPanel.Controls.Add(this.dashboardburgerIcon);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,7 +91,7 @@
             // 
             this.dashboardmainLabel.Font = new System.Drawing.Font("Book Antiqua", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardmainLabel.ForeColor = System.Drawing.Color.White;
-            this.dashboardmainLabel.Location = new System.Drawing.Point(66, 9);
+            this.dashboardmainLabel.Location = new System.Drawing.Point(3, 0);
             this.dashboardmainLabel.Name = "dashboardmainLabel";
             this.dashboardmainLabel.Size = new System.Drawing.Size(574, 34);
             this.dashboardmainLabel.TabIndex = 2;
@@ -124,9 +126,9 @@
             // dashboardburgerIcon
             // 
             this.dashboardburgerIcon.Image = ((System.Drawing.Image)(resources.GetObject("dashboardburgerIcon.Image")));
-            this.dashboardburgerIcon.Location = new System.Drawing.Point(12, 2);
+            this.dashboardburgerIcon.Location = new System.Drawing.Point(21, 9);
             this.dashboardburgerIcon.Name = "dashboardburgerIcon";
-            this.dashboardburgerIcon.Size = new System.Drawing.Size(48, 45);
+            this.dashboardburgerIcon.Size = new System.Drawing.Size(32, 32);
             this.dashboardburgerIcon.TabIndex = 0;
             this.dashboardburgerIcon.TabStop = false;
             this.dashboardburgerIcon.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -139,7 +141,7 @@
             this.dashboardFlowPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.dashboardFlowPnl.Location = new System.Drawing.Point(0, 47);
             this.dashboardFlowPnl.Name = "dashboardFlowPnl";
-            this.dashboardFlowPnl.Size = new System.Drawing.Size(70, 873);
+            this.dashboardFlowPnl.Size = new System.Drawing.Size(65, 873);
             this.dashboardFlowPnl.TabIndex = 2;
             this.dashboardFlowPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.dashboardFlowPnl_Paint);
             // 
@@ -170,7 +172,7 @@
             // 
             // dashboardBtn
             // 
-            this.dashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardBtn.Image = ((System.Drawing.Image)(resources.GetObject("dashboardBtn.Image")));
             this.dashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardBtn.Location = new System.Drawing.Point(-8, -14);
@@ -178,7 +180,7 @@
             this.dashboardBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.dashboardBtn.Size = new System.Drawing.Size(294, 94);
             this.dashboardBtn.TabIndex = 3;
-            this.dashboardBtn.Text = "      Dashboard";
+            this.dashboardBtn.Text = "       Dashboard";
             this.dashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardBtn.UseVisualStyleBackColor = true;
             this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
@@ -205,7 +207,7 @@
             // 
             // booklistBtn
             // 
-            this.booklistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booklistBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booklistBtn.Image = ((System.Drawing.Image)(resources.GetObject("booklistBtn.Image")));
             this.booklistBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.booklistBtn.Location = new System.Drawing.Point(-8, -12);
@@ -214,7 +216,7 @@
             this.booklistBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.booklistBtn.Size = new System.Drawing.Size(294, 95);
             this.booklistBtn.TabIndex = 3;
-            this.booklistBtn.Text = "      Book List";
+            this.booklistBtn.Text = "       Book List";
             this.booklistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.booklistBtn.UseVisualStyleBackColor = true;
             this.booklistBtn.Click += new System.EventHandler(this.booklistBtn_Click_1);
@@ -229,7 +231,7 @@
             // 
             // borrowBtn
             // 
-            this.borrowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowBtn.Image = ((System.Drawing.Image)(resources.GetObject("borrowBtn.Image")));
             this.borrowBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.borrowBtn.Location = new System.Drawing.Point(-8, -14);
@@ -237,7 +239,7 @@
             this.borrowBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.borrowBtn.Size = new System.Drawing.Size(294, 95);
             this.borrowBtn.TabIndex = 3;
-            this.borrowBtn.Text = "      Borrow";
+            this.borrowBtn.Text = "       Borrow";
             this.borrowBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.borrowBtn.UseVisualStyleBackColor = true;
             this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
@@ -252,7 +254,7 @@
             // 
             // returnBtn
             // 
-            this.returnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnBtn.Image")));
             this.returnBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.returnBtn.Location = new System.Drawing.Point(-8, -16);
@@ -260,7 +262,7 @@
             this.returnBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.returnBtn.Size = new System.Drawing.Size(294, 95);
             this.returnBtn.TabIndex = 3;
-            this.returnBtn.Text = "      Return";
+            this.returnBtn.Text = "       Return";
             this.returnBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.returnBtn.UseVisualStyleBackColor = true;
             this.returnBtn.Click += new System.EventHandler(this.button2_Click_1);
@@ -275,7 +277,7 @@
             // 
             // reserveBtn
             // 
-            this.reserveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveBtn.Image = ((System.Drawing.Image)(resources.GetObject("reserveBtn.Image")));
             this.reserveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reserveBtn.Location = new System.Drawing.Point(-8, -21);
@@ -283,7 +285,7 @@
             this.reserveBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.reserveBtn.Size = new System.Drawing.Size(294, 95);
             this.reserveBtn.TabIndex = 3;
-            this.reserveBtn.Text = "      Reserve";
+            this.reserveBtn.Text = "       Reserve";
             this.reserveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reserveBtn.UseVisualStyleBackColor = true;
             this.reserveBtn.Click += new System.EventHandler(this.button1_Click_1);
@@ -298,7 +300,7 @@
             // 
             // penaltyBtn
             // 
-            this.penaltyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penaltyBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltyBtn.Image = ((System.Drawing.Image)(resources.GetObject("penaltyBtn.Image")));
             this.penaltyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.penaltyBtn.Location = new System.Drawing.Point(-8, -21);
@@ -306,7 +308,7 @@
             this.penaltyBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.penaltyBtn.Size = new System.Drawing.Size(294, 95);
             this.penaltyBtn.TabIndex = 3;
-            this.penaltyBtn.Text = "      Penalty Form";
+            this.penaltyBtn.Text = "       Penalty Form";
             this.penaltyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.penaltyBtn.UseVisualStyleBackColor = true;
             this.penaltyBtn.Click += new System.EventHandler(this.button1_Click_2);
@@ -321,7 +323,7 @@
             // 
             // borrowerlistBtn
             // 
-            this.borrowerlistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowerlistBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowerlistBtn.Image = ((System.Drawing.Image)(resources.GetObject("borrowerlistBtn.Image")));
             this.borrowerlistBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.borrowerlistBtn.Location = new System.Drawing.Point(-8, -21);
@@ -329,7 +331,7 @@
             this.borrowerlistBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.borrowerlistBtn.Size = new System.Drawing.Size(294, 95);
             this.borrowerlistBtn.TabIndex = 3;
-            this.borrowerlistBtn.Text = "      Borrower List";
+            this.borrowerlistBtn.Text = "       Borrower List";
             this.borrowerlistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.borrowerlistBtn.UseVisualStyleBackColor = true;
             this.borrowerlistBtn.Click += new System.EventHandler(this.borrowerlistBtn_Click);
@@ -344,7 +346,7 @@
             // 
             // aboutBtn
             // 
-            this.aboutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutBtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutBtn.Image")));
             this.aboutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.aboutBtn.Location = new System.Drawing.Point(-8, -11);
@@ -352,7 +354,7 @@
             this.aboutBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.aboutBtn.Size = new System.Drawing.Size(294, 95);
             this.aboutBtn.TabIndex = 3;
-            this.aboutBtn.Text = "      About";
+            this.aboutBtn.Text = "       About";
             this.aboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.aboutBtn.UseVisualStyleBackColor = true;
             this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click_1);
@@ -367,7 +369,7 @@
             // 
             // logoutBtn
             // 
-            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutBtn.Image")));
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.Location = new System.Drawing.Point(-8, -11);
@@ -375,7 +377,7 @@
             this.logoutBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.logoutBtn.Size = new System.Drawing.Size(294, 95);
             this.logoutBtn.TabIndex = 3;
-            this.logoutBtn.Text = "      Logout";
+            this.logoutBtn.Text = "       Logout";
             this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.UseVisualStyleBackColor = true;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
@@ -388,6 +390,14 @@
             // 
             this.burgerTransition.Interval = 10;
             this.burgerTransition.Tick += new System.EventHandler(this.burgerTransition_Tick);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.dashboardmainLabel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(77, 5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(504, 36);
+            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // Dashboard
             // 
@@ -420,6 +430,7 @@
             this.borrowerlistBtn2.ResumeLayout(false);
             this.aboutBtn2.ResumeLayout(false);
             this.logoutBtn2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -452,5 +463,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button penaltyBtn;
         private System.Windows.Forms.Label dashboardmainLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
