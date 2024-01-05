@@ -31,6 +31,7 @@ namespace LibrarySystem
         private void BorrowerList_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
+            upperlabelTransition.Start();
 
             //STUDENTS
 
@@ -743,6 +744,22 @@ namespace LibrarySystem
             {
                 MessageBox.Show($"Error fetching total reservations: {ex.Message}");
                 return 0;
+            }
+        }
+
+        bool upperlabelExpand = false;
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 418;
+            const int step = 60;
+
+            // Expanding
+            upperlabelPanel.Width += step;
+            if (upperlabelPanel.Width >= targetExpandedWidth)
+            {
+                upperlabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                upperlabelExpand = true;
             }
         }
     }

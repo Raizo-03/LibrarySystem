@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -133,6 +134,8 @@
             this.dellosaborrowedLabel = new System.Windows.Forms.Label();
             this.dellosareserveLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.upperlabelPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
@@ -141,6 +144,7 @@
             this.guna2GradientPanel7.SuspendLayout();
             this.guna2GradientPanel9.SuspendLayout();
             this.guna2GradientPanel8.SuspendLayout();
+            this.upperlabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // borrowerLabel
@@ -148,9 +152,9 @@
             this.borrowerLabel.AutoSize = true;
             this.borrowerLabel.Font = new System.Drawing.Font("Book Antiqua", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowerLabel.ForeColor = System.Drawing.Color.Sienna;
-            this.borrowerLabel.Location = new System.Drawing.Point(30, 35);
+            this.borrowerLabel.Location = new System.Drawing.Point(3, 0);
             this.borrowerLabel.Name = "borrowerLabel";
-            this.borrowerLabel.Size = new System.Drawing.Size(408, 53);
+            this.borrowerLabel.Size = new System.Drawing.Size(68, 583);
             this.borrowerLabel.TabIndex = 27;
             this.borrowerLabel.Text = "BORROWER LIST";
             // 
@@ -1391,12 +1395,25 @@
             this.label7.Size = new System.Drawing.Size(888, 29);
             this.label7.TabIndex = 38;
             // 
+            // upperlabelPanel
+            // 
+            this.upperlabelPanel.Controls.Add(this.borrowerLabel);
+            this.upperlabelPanel.Location = new System.Drawing.Point(39, 30);
+            this.upperlabelPanel.Name = "upperlabelPanel";
+            this.upperlabelPanel.Size = new System.Drawing.Size(12, 54);
+            this.upperlabelPanel.TabIndex = 98;
+            // 
+            // upperlabelTransition
+            // 
+            this.upperlabelTransition.Tick += new System.EventHandler(this.upperlabelTransition_Tick);
+            // 
             // BorrowerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.upperlabelPanel);
             this.Controls.Add(this.dellosareserveLabel);
             this.Controls.Add(this.dellosaborrowedLabel);
             this.Controls.Add(this.label63);
@@ -1455,7 +1472,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.borrowerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BorrowerList";
             this.Load += new System.EventHandler(this.BorrowerList_Load);
@@ -1475,6 +1491,8 @@
             this.guna2GradientPanel9.PerformLayout();
             this.guna2GradientPanel8.ResumeLayout(false);
             this.guna2GradientPanel8.PerformLayout();
+            this.upperlabelPanel.ResumeLayout(false);
+            this.upperlabelPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1587,5 +1605,7 @@
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.FlowLayoutPanel upperlabelPanel;
+        private System.Windows.Forms.Timer upperlabelTransition;
     }
 }
