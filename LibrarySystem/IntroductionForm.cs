@@ -111,7 +111,7 @@ namespace LibrarySystem
 
             //Sets the password of the textbox to set to dot
             passwordBx.UseSystemPasswordChar = true;
-
+            eyeIcon.Visible = false;
         }
 
         private void nightControlBox1_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace LibrarySystem
         private void proceedBtn_Click(object sender, EventArgs e)
         {
             // Get the entered username and password
-            string enteredUsername = usernameBx.Texts;
+            string enteredUsername = usernameBx.Text;
             string enteredPassword = passwordBx.Text;
 
             // Check if the entered username matches a student user, then proceed to pass check
@@ -137,7 +137,7 @@ namespace LibrarySystem
                 if (studentUser.Password == enteredPassword)
                 {
                     // Open the Dashboard form with the authenticated student user information
-                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.BookLimit); 
+                    Dashboard secondForm = new Dashboard(studentUser.Identifier, studentUser.Name, studentUser.StudentId, studentUser.BookLimit);
                     secondForm.Show();
                     this.Hide();
                     this.WindowState = FormWindowState.Normal;
@@ -182,14 +182,16 @@ namespace LibrarySystem
         }
 
         //This method is used for the lock icon to unhide the password
-        private void passIcon_Click(object sender, EventArgs e)
-        {
-            passwordBx.UseSystemPasswordChar = !passwordBx.UseSystemPasswordChar;
-        }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
+            eyeIcon.Visible = true;
             passwordBx.UseSystemPasswordChar = true;
+        }
+
+        private void eyeIcon_Click(object sender, EventArgs e)
+        {
+            passwordBx.UseSystemPasswordChar = !passwordBx.UseSystemPasswordChar;
         }
     }
 
