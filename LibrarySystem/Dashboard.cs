@@ -465,7 +465,7 @@ namespace LibrarySystem
         bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
-            const int targetExpandedWidth = 574;
+            const int targetExpandedWidth = 628;
             const int step = 80;
 
             // Expanding
