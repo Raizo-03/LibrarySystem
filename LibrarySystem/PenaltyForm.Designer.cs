@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,10 @@
             this.penaltyDG = new System.Windows.Forms.DataGridView();
             this.penaltyBtn = new LibrarySystem.RJButton();
             this.payBtn = new LibrarySystem.RJButton();
+            this.upperlabelPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.penaltyDG)).BeginInit();
+            this.upperlabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -158,9 +162,9 @@
             this.penaltyLabel.AutoSize = true;
             this.penaltyLabel.Font = new System.Drawing.Font("Book Antiqua", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltyLabel.ForeColor = System.Drawing.Color.Sienna;
-            this.penaltyLabel.Location = new System.Drawing.Point(30, 35);
+            this.penaltyLabel.Location = new System.Drawing.Point(3, 0);
             this.penaltyLabel.Name = "penaltyLabel";
-            this.penaltyLabel.Size = new System.Drawing.Size(236, 53);
+            this.penaltyLabel.Size = new System.Drawing.Size(60, 371);
             this.penaltyLabel.TabIndex = 26;
             this.penaltyLabel.Text = "PENALTY";
             // 
@@ -179,14 +183,14 @@
             this.penaltyDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.penaltyDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.penaltyDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.penaltyDG.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.penaltyDG.DefaultCellStyle = dataGridViewCellStyle1;
             this.penaltyDG.GridColor = System.Drawing.Color.PeachPuff;
             this.penaltyDG.Location = new System.Drawing.Point(39, 123);
             this.penaltyDG.Name = "penaltyDG";
@@ -234,16 +238,28 @@
             this.payBtn.UseVisualStyleBackColor = false;
             this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
             // 
+            // upperlabelPanel
+            // 
+            this.upperlabelPanel.Controls.Add(this.penaltyLabel);
+            this.upperlabelPanel.Location = new System.Drawing.Point(39, 32);
+            this.upperlabelPanel.Name = "upperlabelPanel";
+            this.upperlabelPanel.Size = new System.Drawing.Size(14, 52);
+            this.upperlabelPanel.TabIndex = 30;
+            // 
+            // upperlabelTransition
+            // 
+            this.upperlabelTransition.Tick += new System.EventHandler(this.upperlabelTransition_Tick);
+            // 
             // PenaltyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.upperlabelPanel);
             this.Controls.Add(this.penaltyBtn);
             this.Controls.Add(this.penaltyDG);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.penaltyLabel);
             this.Controls.Add(this.bLabel);
             this.Controls.Add(this.balanceLabel);
             this.Controls.Add(this.payBtn);
@@ -260,6 +276,8 @@
             this.Text = "PenaltyForm";
             this.Load += new System.EventHandler(this.PenaltyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.penaltyDG)).EndInit();
+            this.upperlabelPanel.ResumeLayout(false);
+            this.upperlabelPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +302,7 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.DataGridView penaltyDG;
         private RJButton penaltyBtn;
+        private System.Windows.Forms.FlowLayoutPanel upperlabelPanel;
+        private System.Windows.Forms.Timer upperlabelTransition;
     }
 }

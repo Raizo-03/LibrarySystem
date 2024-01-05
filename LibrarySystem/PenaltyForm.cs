@@ -108,6 +108,7 @@ namespace LibrarySystem
         {
             //Calls the method for fetching the unpaid penalties
             FetchUnpaidPenalties();
+            upperlabelTransition.Start();
 
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
 
@@ -591,6 +592,22 @@ namespace LibrarySystem
         private void penaltyDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        bool upperlabelExpand = false;
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 247;
+            const int step = 60;
+
+            // Expanding
+            upperlabelPanel.Width += step;
+            if (upperlabelPanel.Width >= targetExpandedWidth)
+            {
+                upperlabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                upperlabelExpand = true;
+            }
         }
     }
 }
