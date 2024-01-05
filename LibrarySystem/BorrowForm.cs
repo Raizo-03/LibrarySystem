@@ -121,6 +121,7 @@ namespace LibrarySystem
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
             borrowDG.BackgroundColor = Color.FromArgb(255, 253, 247, 228);
+            upperlabelTransition.Start();
 
             //Calls the method that fetches the borrowed books
             activateFetching();
@@ -788,7 +789,21 @@ namespace LibrarySystem
                 }
         }
 
-   
+        bool upperlabelExpand = false;
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 247;
+            const int step = 60;
+
+            // Expanding
+            upperlabelPanel.Width += step;
+            if (upperlabelPanel.Width >= targetExpandedWidth)
+            {
+                upperlabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                upperlabelExpand = true;
+            }
+        }
     }
 
     //Class for the borrowing info that is used in the list structures as well as their getters and setters
