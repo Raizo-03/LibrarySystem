@@ -71,6 +71,7 @@ namespace LibrarySystem
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
             this.BackColor = Color.Green;
+            upperlabelTransition.Start();
 
             //UPPER PANEL COLOR
             upperPanel.BackColor = Color.FromArgb(0xB1, 0x92, 0x6A);  
@@ -458,6 +459,23 @@ namespace LibrarySystem
 
         private void dashboardFlowPnl_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        bool upperlabelExpand = false;
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 574;
+            const int step = 80;
+
+            // Expanding
+            upperLabelPanel.Width += step;
+            if (upperLabelPanel.Width >= targetExpandedWidth)
+            {
+                upperLabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                dashboardExpand = true;
+            }
 
         }
     }
