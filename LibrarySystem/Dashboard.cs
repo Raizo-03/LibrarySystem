@@ -210,8 +210,8 @@ namespace LibrarySystem
         private void burgerTransition_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 220;
-            const int targetCollapsedWidth = 71;
-            const int step = 20;
+            const int targetCollapsedWidth = 65;
+            const int step = 100;
 
             if (!dashboardExpand)
             {
