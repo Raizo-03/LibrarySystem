@@ -217,6 +217,7 @@ namespace LibrarySystem
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); //CUSTOM BG COLORS #FDF7E4
             FetchReservationsAndBindDataGridView();
+            upperlabelTransition.Start();
 
 
         }
@@ -898,9 +899,21 @@ namespace LibrarySystem
             return defaultMaxReservationLimit;
         }
 
+        bool upperlabelExpand = false;
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 247;
+            const int step = 60;
 
-
-
+            // Expanding
+            upperlabelPanel.Width += step;
+            if (upperlabelPanel.Width >= targetExpandedWidth)
+            {
+                upperlabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                upperlabelExpand = true;
+            }
+        }
     }
     //Class borrower for the list structure and their getters and setters
     public class Borrower
