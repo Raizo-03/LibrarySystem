@@ -58,12 +58,14 @@
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label4 = new System.Windows.Forms.Label();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.roundPictureBox1 = new LibrarySystem.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).BeginInit();
             this.availbooksPanel.SuspendLayout();
             this.borrowedPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
             this.reservedPanel.SuspendLayout();
             this.usersPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // hellolabel
@@ -458,6 +460,16 @@
             this.pieChart1.TabIndex = 31;
             this.pieChart1.Text = "pieChart1";
             // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.roundPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox1.Image")));
+            this.roundPictureBox1.Location = new System.Drawing.Point(745, 12);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(142, 127);
+            this.roundPictureBox1.TabIndex = 32;
+            this.roundPictureBox1.TabStop = false;
+            // 
             // DashboardForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +477,7 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1053, 920);
             this.ControlBox = false;
+            this.Controls.Add(this.roundPictureBox1);
             this.Controls.Add(this.pieChart1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cartesianChart1);
@@ -486,6 +499,7 @@
             this.userPanel.ResumeLayout(false);
             this.reservedPanel.ResumeLayout(false);
             this.usersPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,5 +533,6 @@
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Label label4;
         private LiveCharts.WinForms.PieChart pieChart1;
+        private RoundPictureBox roundPictureBox1;
     }
 }
