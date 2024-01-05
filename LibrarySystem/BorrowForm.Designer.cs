@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowForm));
             this.borrowerLabel = new System.Windows.Forms.Label();
             this.databorrowedLabel = new System.Windows.Forms.Label();
@@ -44,7 +45,10 @@
             this.borrowedBtn = new LibrarySystem.RJButton();
             this.borrowedDatepicker = new System.Windows.Forms.DateTimePicker();
             this.borrowBtn = new LibrarySystem.RJButton();
+            this.upperlabelPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).BeginInit();
+            this.upperlabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // borrowerLabel
@@ -118,9 +122,9 @@
             this.borrowLabel.AutoSize = true;
             this.borrowLabel.Font = new System.Drawing.Font("Book Antiqua", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowLabel.ForeColor = System.Drawing.Color.Sienna;
-            this.borrowLabel.Location = new System.Drawing.Point(30, 35);
+            this.borrowLabel.Location = new System.Drawing.Point(3, 0);
             this.borrowLabel.Name = "borrowLabel";
-            this.borrowLabel.Size = new System.Drawing.Size(236, 53);
+            this.borrowLabel.Size = new System.Drawing.Size(68, 318);
             this.borrowLabel.TabIndex = 25;
             this.borrowLabel.Text = "BORROW";
             // 
@@ -130,25 +134,25 @@
             this.borrowDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.borrowDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.borrowDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.borrowDG.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.borrowDG.DefaultCellStyle = dataGridViewCellStyle3;
             this.borrowDG.GridColor = System.Drawing.Color.DarkKhaki;
             this.borrowDG.Location = new System.Drawing.Point(39, 123);
             this.borrowDG.Name = "borrowDG";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.borrowDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.borrowDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.borrowDG.Size = new System.Drawing.Size(564, 358);
             this.borrowDG.TabIndex = 27;
             this.borrowDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.borrowDG_CellContentClick);
@@ -226,15 +230,27 @@
             this.borrowBtn.UseVisualStyleBackColor = false;
             this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
             // 
+            // upperlabelPanel
+            // 
+            this.upperlabelPanel.Controls.Add(this.borrowLabel);
+            this.upperlabelPanel.Location = new System.Drawing.Point(39, 31);
+            this.upperlabelPanel.Name = "upperlabelPanel";
+            this.upperlabelPanel.Size = new System.Drawing.Size(15, 53);
+            this.upperlabelPanel.TabIndex = 29;
+            // 
+            // upperlabelTransition
+            // 
+            this.upperlabelTransition.Tick += new System.EventHandler(this.upperlabelTransition_Tick);
+            // 
             // BorrowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.upperlabelPanel);
             this.Controls.Add(this.borrowDG);
             this.Controls.Add(this.borrowedBtn);
-            this.Controls.Add(this.borrowLabel);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.dueDate);
             this.Controls.Add(this.borrowDate);
@@ -249,6 +265,8 @@
             this.Name = "BorrowForm";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).EndInit();
+            this.upperlabelPanel.ResumeLayout(false);
+            this.upperlabelPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +286,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton calendarBtn;
         private System.Windows.Forms.DateTimePicker borrowedDatepicker;
         private RJButton borrowBtn;
+        private System.Windows.Forms.FlowLayoutPanel upperlabelPanel;
+        private System.Windows.Forms.Timer upperlabelTransition;
     }
 }
