@@ -26,6 +26,7 @@ namespace LibrarySystem
         private void ReturnForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(255, 253, 247, 228); // Custom background color
+            upperlabelTransition.Start();
 
             // Populate borrowed books checkboxes
             PopulateBookCheckBoxes();
@@ -584,6 +585,21 @@ namespace LibrarySystem
             }
         }
 
+        bool upperlabelExpand = false;
 
+        private void upperlabelTransition_Tick(object sender, EventArgs e)
+        {
+            const int targetExpandedWidth = 247;
+            const int step = 60;
+
+            // Expanding
+            upperlabelPanel.Width += step;
+            if (upperlabelPanel.Width >= targetExpandedWidth)
+            {
+                upperlabelPanel.Width = targetExpandedWidth;
+                upperlabelTransition.Stop();
+                upperlabelExpand = true;
+            }
+        }
     }
 }
