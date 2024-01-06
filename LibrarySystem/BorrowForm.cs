@@ -69,6 +69,7 @@ namespace LibrarySystem
         }
 
         //Method used for calculating the time
+
         private double GetElapsedMilliseconds(DateTime startTime)
         {
             // Record the end time
@@ -278,6 +279,14 @@ namespace LibrarySystem
         //This method is used for the borrow button 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
+
+            //Declares librarydataccess
+            LibraryDataAccess library = new LibraryDataAccess();
+
+            //Gets the borrower userID and Identifier and sets them into variables
+            int borrowerId = GetBorrowerUserId();
+            string identifier = GetIdentifierFromDatabase();
+
             //Validates if the user really wants to borrow
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the borrowing process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -288,20 +297,14 @@ namespace LibrarySystem
                 return;
             }
 
+            string borrowerName = GetBorrowerNameFromDatabase(borrowerId);
             // Check for unpaid penalties; If Yes, the borrowing is not allowed, if No, borrowing proceeds
             if (HasUnpaidPenalties())
             {
-                MessageBox.Show("You have unpaid penalties. Please clear them before borrowing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"{borrowerName} have unpaid penalties. Please clear them before borrowing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            //Declares librarydataccess
-            LibraryDataAccess library = new LibraryDataAccess();
-
-            //Gets the borrower userID and Identifier and sets them into variables
-            int borrowerId = GetBorrowerUserId();
-            string identifier = GetIdentifierFromDatabase();
-
+ 
             // Check if the borrowerId is valid
             if (borrowerId == -1)
             {
@@ -404,20 +407,7 @@ namespace LibrarySystem
             MessageBox.Show("Borrowing successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Refresh the list of available books after borrowing
-            PopulateBookCheckBoxes();
-
-            // Close the current form and open the Dashboard form
-            Form mdiParent = this.MdiParent;
-            if (mdiParent != null)
-            {
-                mdiParent.Close();
-            }
-            string name = "ADMIN 1";
-            string id = " ";
-            int limit = 0;
-            Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
-            dashboardForm.Show();
-            this.Close();
+            refreshFunction();
         }
 
         //Method to fetch if the borrower has unpaid penalties and returns a bool value 
@@ -852,6 +842,26 @@ namespace LibrarySystem
             // Show the combined message in a single message box
             MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void ClearBookCheckBoxes()
+        {
+            // Remove existing checkboxes from the form
+            foreach (Control control in Controls.OfType<CheckBox>().ToList())
+            {
+                Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+
+        private void refreshFunction()
+        {
+            selectedBookTitles.Clear();
+            borrowerName.Text = string.Empty;
+            borrowDate.Text = string.Empty;
+            dueDate.Text = string.Empty;
+            ClearBookCheckBoxes();
+            PopulateBookCheckBoxes();
         }
     }
 
