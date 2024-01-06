@@ -258,7 +258,7 @@ namespace LibrarySystem
                 analyticsDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                 analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
-                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
@@ -315,7 +315,7 @@ namespace LibrarySystem
                 analyticsDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                 analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
-                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
@@ -393,7 +393,7 @@ namespace LibrarySystem
                 analyticsDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                 analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
-                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
@@ -540,7 +540,7 @@ namespace LibrarySystem
                 analyticsDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                 analyticsDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 analyticsDG.EnableHeadersVisualStyles = false;
-                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                analyticsDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                 analyticsDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
