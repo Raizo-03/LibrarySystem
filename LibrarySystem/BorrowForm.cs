@@ -67,7 +67,21 @@ namespace LibrarySystem
             //Calls the method to apply the round button
             ApplyRoundedButtonStyle(calendarBtn);
         }
-        
+
+        //Method used for calculating the time
+        private double GetElapsedMilliseconds(DateTime startTime)
+        {
+            // Record the end time
+            DateTime endTime = DateTime.Now;
+
+            // Calculate the elapsed time
+            TimeSpan elapsedTime = endTime - startTime;
+
+            // Return the elapsed time in milliseconds
+            return elapsedTime.TotalMilliseconds;
+        }
+
+
         //Method that makes the button round by changing border radius
         private void ApplyRoundedButtonStyle(Guna2GradientButton button)
         {
@@ -294,25 +308,24 @@ namespace LibrarySystem
                 MessageBox.Show("Invalid Input. Please enter a valid borrower's name.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (selectedBookTitles.Count > 1)
+            {
+                MessageBox.Show("Cannot borrow multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Fetch the number of books reserved by the user and sets them into a variable
             int reservedBooksCount = GetReservedBooksCount(borrowerId);
 
             // Check if the borrower is a student and has already borrowed 2 books
-            if (identifier == "STUDENT" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 2)
+            if (identifier == "STUDENT" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count + reservedBooksCount> 2)
             {
                 MessageBox.Show("Sorry! You have exceeded the number of books to be borrowed. Students can only borrow up to 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (identifier == "TEACHER" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count > 5)
+            else if (identifier == "TEACHER" && CountBorrowedBooks(borrowerId) + selectedBookTitles.Count + reservedBooksCount > 5)
             {
                 MessageBox.Show("Sorry! You have exceeded the number of books to be borrowed. Teachers can only borrow up to 5 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            //Control structure to call the method that checks the number of the user's total reserved and borrowed books and using the borrowerID
-            if (!CanBorrowerBorrow(borrowerId, selectedBookTitles.Count))
-            {
                 return;
             }
 
@@ -660,9 +673,9 @@ namespace LibrarySystem
         }
 
         //Method the calls the method for validate the total borrowed and reserved books using their userID
-        private bool CanBorrowerBorrow(int borrowerId, int selectedBooksCount)
+        private bool CanBorrowerBorrow(int borrowerId)
         {
-            //Fetches the name of the borrower
+            // Fetches the name of the borrower
             string borrowerName = GetBorrowerNameFromDatabase(borrowerId);
 
             // Fetch the number of books already borrowed by the borrower
@@ -671,25 +684,29 @@ namespace LibrarySystem
             // Check if the borrower is a teacher
             bool isTeacher = IsTeacher(borrowerId);
 
-            // Get the maximum reservation limit based on the borrower's borrowing history
-            int maxReservationLimit = GetMaxBorrowingLimit(borrowerId, isTeacher);
+            // Get the maximum borrowing limit based on the borrower's borrowing history
+            int maxBorrowingLimit = GetMaxBorrowingLimit(borrowerId, isTeacher);
 
             // Fetch the number of reservations made by the borrower
             int reservationCount = GetBorrowerReservationCount(borrowerId);
 
-            int totalBooksCount = borrowedBooksCount + reservationCount + selectedBooksCount;
+            // Calculate the total number of books including the selected books for borrowing
+            int totalBooksCount = borrowedBooksCount + reservationCount;
 
-            // Check if the remaining reservation limit is greater than 0
-            if (totalBooksCount <= maxReservationLimit)
+            MessageBox.Show($"max borrowing limit = {maxBorrowingLimit}, reservation count: {reservationCount}, total books count: {totalBooksCount}");
+
+            // Check if the remaining borrowing limit is greater than or equal to the selected books count
+            if (totalBooksCount <= maxBorrowingLimit)
             {
                 return true;
             }
             else
             {
-                MessageBox.Show($"Borrower {borrowerName} has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Borrower {borrowerName} has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow a maximum of 5 books.\nStudents can only borrow a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
+
 
         //Method that fetches the total reservation count of the borrower using their borrower_id
         private int GetBorrowerReservationCount(int borrowerId)
@@ -736,18 +753,20 @@ namespace LibrarySystem
                 connection.Open();
 
                 // Query to check if the borrower is a teacher
-                string query = "SELECT COUNT(*) FROM borrowers WHERE user_id = @borrowerId AND identifier = 'TEACHER'";
+                string query = "SELECT identifier FROM borrowers WHERE user_id = @borrowerId";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@borrowerId", borrowerId);
 
-                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    var result = command.ExecuteScalar();
 
-                    return count > 0;
+                    // Check if the result is not null and equals "TEACHER"
+                    return result != null && result.ToString() == "TEACHER";
                 }
             }
         }
+
 
         private void calendarBtn_Click(object sender, EventArgs e)
         {
@@ -803,6 +822,34 @@ namespace LibrarySystem
                 upperlabelTransition.Stop();
                 upperlabelExpand = true;
             }
+        }
+
+        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            // Record the start time for the entire borrowing process
+            DateTime startTimeBorrowingProcess = DateTime.Now;
+
+            // Fetch available books and measure time
+            DateTime startTimeAvailableBooks = DateTime.Now;
+            List<Book> availableBooks = GetBooksFromDatabase();
+            double millisecondsAvailableBooks = GetElapsedMilliseconds(startTimeAvailableBooks);
+
+            // Fetch borrowings and measure time
+            DateTime startTimeBorrowings = DateTime.Now;
+            List<Borrowing> borrowings = GetBorrowingsFromDatabase();
+            double millisecondsBorrowings = GetElapsedMilliseconds(startTimeBorrowings);
+
+            // Display the total time taken for the entire borrowing process
+            double millisecondsBorrowingProcess = GetElapsedMilliseconds(startTimeBorrowingProcess);
+
+            // Combine all the information into a single message
+            string message = $"Time taken for fetching available books: {millisecondsAvailableBooks} milliseconds\n" +
+                             $"Time taken for fetching borrowings: {millisecondsBorrowings} milliseconds\n" +
+                             $"Total time taken for the entire borrowing process: {millisecondsBorrowingProcess} milliseconds";
+
+            // Show the combined message in a single message box
+            MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 
