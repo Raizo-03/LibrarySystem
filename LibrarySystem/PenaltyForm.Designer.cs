@@ -103,10 +103,11 @@
             // 
             // amountpaidTb
             // 
+            this.amountpaidTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amountpaidTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amountpaidTb.Location = new System.Drawing.Point(472, 611);
             this.amountpaidTb.Name = "amountpaidTb";
-            this.amountpaidTb.Size = new System.Drawing.Size(180, 26);
+            this.amountpaidTb.Size = new System.Drawing.Size(180, 19);
             this.amountpaidTb.TabIndex = 5;
             this.amountpaidTb.TextChanged += new System.EventHandler(this.amountpaidTb_TextChanged);
             // 
