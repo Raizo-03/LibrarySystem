@@ -308,6 +308,8 @@ namespace LibrarySystem
                 MessageBox.Show("Invalid Input. Please enter a valid borrower's name.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            //Limits the user to only borrow one book at a time
             if (selectedBookTitles.Count > 1)
             {
                 MessageBox.Show("Cannot borrow multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
