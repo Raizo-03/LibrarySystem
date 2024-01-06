@@ -93,10 +93,11 @@
             // 
             // returndateTb
             // 
+            this.returndateTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.returndateTb.Font = new System.Drawing.Font("Bookman Old Style", 12F);
             this.returndateTb.Location = new System.Drawing.Point(494, 659);
             this.returndateTb.Name = "returndateTb";
-            this.returndateTb.Size = new System.Drawing.Size(180, 26);
+            this.returndateTb.Size = new System.Drawing.Size(180, 19);
             this.returndateTb.TabIndex = 4;
             // 
             // returndatePicker
