@@ -507,7 +507,7 @@ namespace LibrarySystem
                 penaltyDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                 penaltyDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 penaltyDG.EnableHeadersVisualStyles = false;
-                penaltyDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                penaltyDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                 penaltyDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths

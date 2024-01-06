@@ -636,7 +636,7 @@ namespace LibrarySystem
                             reservedbooksDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                             reservedbooksDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                             reservedbooksDG.EnableHeadersVisualStyles = false;
-                            reservedbooksDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                            reservedbooksDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                             reservedbooksDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                             // Disable user resizing of rows and columns
