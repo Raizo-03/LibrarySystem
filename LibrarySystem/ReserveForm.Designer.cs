@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             this.bnameLabel = new System.Windows.Forms.Label();
             this.btitleLabel = new System.Windows.Forms.Label();
@@ -96,10 +96,11 @@
             // 
             // reserveddateTb
             // 
+            this.reserveddateTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reserveddateTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveddateTb.Location = new System.Drawing.Point(528, 659);
             this.reserveddateTb.Name = "reserveddateTb";
-            this.reserveddateTb.Size = new System.Drawing.Size(180, 26);
+            this.reserveddateTb.Size = new System.Drawing.Size(180, 19);
             this.reserveddateTb.TabIndex = 5;
             // 
             // reservedatepicker
@@ -112,10 +113,12 @@
             // 
             // borrowernameTb
             // 
+            this.borrowernameTb.BackColor = System.Drawing.Color.White;
+            this.borrowernameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.borrowernameTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrowernameTb.Location = new System.Drawing.Point(528, 624);
             this.borrowernameTb.Name = "borrowernameTb";
-            this.borrowernameTb.Size = new System.Drawing.Size(180, 26);
+            this.borrowernameTb.Size = new System.Drawing.Size(180, 19);
             this.borrowernameTb.TabIndex = 7;
             // 
             // reservedbooksDG
@@ -124,14 +127,14 @@
             this.reservedbooksDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reservedbooksDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle4;
             this.reservedbooksDG.GridColor = System.Drawing.Color.PeachPuff;
             this.reservedbooksDG.Location = new System.Drawing.Point(39, 123);
             this.reservedbooksDG.Name = "reservedbooksDG";
