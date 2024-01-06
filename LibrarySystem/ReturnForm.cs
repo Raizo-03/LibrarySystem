@@ -1,8 +1,10 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace LibrarySystem
@@ -322,6 +324,13 @@ namespace LibrarySystem
                 return;
             }
 
+            //Limits the user to only borrow one book at a time
+            if (selectedBookTitles.Count > 1)
+            {
+                MessageBox.Show("Cannot return multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Check if the returndateTb textbox is empty
             if (string.IsNullOrWhiteSpace(returndateTb.Text))
             {
@@ -360,24 +369,35 @@ namespace LibrarySystem
 
                 // Clear borrower's information
                 ClearBorrowedBookInfo();
-                // Close the current form and open the Dashboard form
-                Form mdiParent = this.MdiParent;
-                if (mdiParent != null)
-                {
-                    mdiParent.Close();
-                }
-                string identifier = " ";
-                string name = "ADMIN 1";
-                string id = " ";
-                int limit = 0;
-                Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
-                dashboardForm.Show();
-                this.Close();
+
+                // Refreshes the form
+                refreshFunction();
+               
             }
             else
             {
                 MessageBox.Show("Please select at least one book to return.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void ClearBookCheckBoxes()
+        {
+            // Remove existing checkboxes from the form
+            foreach (Control control in Controls.OfType<CheckBox>().ToList())
+            {
+                Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+
+        private void refreshFunction()
+        {
+            selectedBookTitles.Clear();
+            titleLabel.Text = string.Empty;
+            bName.Text = string.Empty;
+            dueDateLabel.Text = string.Empty;
+            returndateTb.Text = string.Empty;
+            ClearBookCheckBoxes();
+            PopulateBookCheckBoxes();
         }
 
         // Check if there is a penalty for the selected book titles

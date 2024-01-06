@@ -73,6 +73,7 @@ namespace LibrarySystem
         }
 
 
+
         //FETCHES BOOK TITLES FROM THE DATABASE
         private void FetchBookInformation(string bookTitle)
         {
@@ -1011,7 +1012,26 @@ namespace LibrarySystem
             nonficTransition2.Start();
             acadTransition2.Start();
             bookinfoflowPanel.Visible = false;
+            // List of book titles
+            List<string> bookTitles = new List<string>
+            {
+                 "To Kill a Mockingbird",
+                 "1984",
+                 "Pride and Prejudice",
+                 "The Great Gatsby",
+                 "One Hundred Years of Solitude",
+                 "Sapiens: A Brief History of Humankind",
+                 "The Immortal Life of Henrietta Lacks",
+                 "Educated",
+                 "The Diary of a Young Girl",
+                 "Thinking, Fast and Slow"
+             };
 
+            // Fetch information for each book title
+            foreach (string bookTitle in bookTitles)
+            {
+                FetchBookInformation(bookTitle);
+            }
         }
 
         bool upperlabelExpand = false;
