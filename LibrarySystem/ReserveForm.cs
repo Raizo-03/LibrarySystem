@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -250,6 +251,7 @@ namespace LibrarySystem
                 }
             }
         }
+        private List<string> selectedBookTitles = new List<string>(); // Declare a list to track selected books
 
         //Method that gets the value of the checkbox that was checked by the user
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -263,6 +265,9 @@ namespace LibrarySystem
                     // Book is selected, update titleLabel.Text
                     titleLabel.Text = checkBox.Text;
 
+                    // Add the selected book to the list
+                    selectedBookTitles.Add(checkBox.Text);
+
                     // Additional actions if needed
                     int bookId = Convert.ToInt32(checkBox.Tag);
                     MessageBox.Show($"Book '{checkBox.Text}' is selected.");
@@ -271,6 +276,10 @@ namespace LibrarySystem
                 {
                     // Book is unchecked, clear titleLabel.Text
                     titleLabel.Text = string.Empty;
+
+                    // Remove the deselected book from the list
+                    selectedBookTitles.Remove(checkBox.Text);
+
                 }
             }
         }
@@ -362,6 +371,13 @@ namespace LibrarySystem
                 return;
             }
 
+            // Check if multiple books are selected
+            if (selectedBookTitles.Count > 1)
+            {
+                MessageBox.Show("Cannot reserve multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Check if a book is selected
             if (!string.IsNullOrEmpty(titleLabel.Text))
             {
@@ -411,19 +427,8 @@ namespace LibrarySystem
                                     titleLabel.Text = string.Empty;
                                     borrowernameTb.Text = string.Empty;
 
-                                    // Close the current form and open the Dashboard form
-                                    Form mdiParent = this.MdiParent;
-                                    if (mdiParent != null)
-                                    {
-                                        mdiParent.Close();
-                                    }
-                                    string identifier = " ";
-                                    string name = " ";
-                                    string id = " ";
-                                    int limit = 0;
-                                    Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
-                                    dashboardForm.Show();
-                                    this.Close();
+                                    // Refreshes the components
+                                    refreshFunction();
                                 }
                                 else
                                 {
@@ -454,7 +459,28 @@ namespace LibrarySystem
                 MessageBox.Show("Input Necessary Details. Please select a book.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void ClearBookCheckBoxes()
+        {
+            // Remove existing checkboxes from the form
+            foreach (Control control in Controls.OfType<CheckBox>().ToList())
+            {
+                Controls.Remove(control);
+                control.Dispose();
+            }
+        }
 
+        private void refreshFunction()
+        {
+            List<Book> books = GetAvailableBooksFromDatabase();
+            selectedBookTitles.Clear();
+            titleLabel.Text = string.Empty;
+            borrowernameTb.Text = string.Empty;
+            reserveddateTb.Text = string.Empty;
+            ClearBookCheckBoxes();
+            PopulateBookCheckBoxes(books);
+            FetchReservationsAndBindDataGridView();
+
+        }
         //Method that fetches the borrower id using their borrower name and returns it as an int value
         private int GetBorrowerIdByName(string borrowerName)
         {
@@ -698,19 +724,8 @@ namespace LibrarySystem
                     // Delete the reservation from the database
                     DeleteReservationFromDatabase(reservationId);
 
-                    // Close the current form and open the Dashboard form
-                    Form mdiParent = this.MdiParent;
-                    if (mdiParent != null)
-                    {
-                        mdiParent.Close();
-                    }
-                    string identifier = " ";
-                    string name = "ADMIN 1";
-                    string id = " ";
-                    int limit = 0;
-                    Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
-                    dashboardForm.Show();
-                    this.Close();
+                    //Refreshes the components
+                    refreshFunction();
 
                 }
             }
