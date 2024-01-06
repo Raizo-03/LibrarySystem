@@ -58,6 +58,7 @@
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label4 = new System.Windows.Forms.Label();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.roundPictureBox1 = new LibrarySystem.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsDG)).BeginInit();
             this.availbooksPanel.SuspendLayout();
@@ -462,11 +463,30 @@
             this.pieChart1.TabIndex = 31;
             this.pieChart1.Text = "pieChart1";
             // 
+            // guna2GradientCircleButton1
+            // 
+            this.guna2GradientCircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientCircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientCircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientCircleButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientCircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientCircleButton1.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.guna2GradientCircleButton1.FillColor2 = System.Drawing.Color.Tan;
+            this.guna2GradientCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientCircleButton1.Image")));
+            this.guna2GradientCircleButton1.Location = new System.Drawing.Point(855, 81);
+            this.guna2GradientCircleButton1.Name = "guna2GradientCircleButton1";
+            this.guna2GradientCircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2GradientCircleButton1.Size = new System.Drawing.Size(35, 32);
+            this.guna2GradientCircleButton1.TabIndex = 33;
+            this.guna2GradientCircleButton1.Click += new System.EventHandler(this.guna2GradientCircleButton1_Click);
+            // 
             // roundPictureBox1
             // 
             this.roundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.roundPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox1.Image")));
-            this.roundPictureBox1.Location = new System.Drawing.Point(745, 12);
+            this.roundPictureBox1.Location = new System.Drawing.Point(701, 12);
             this.roundPictureBox1.Name = "roundPictureBox1";
             this.roundPictureBox1.Size = new System.Drawing.Size(142, 127);
             this.roundPictureBox1.TabIndex = 32;
@@ -479,6 +499,7 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1053, 920);
             this.ControlBox = false;
+            this.Controls.Add(this.guna2GradientCircleButton1);
             this.Controls.Add(this.roundPictureBox1);
             this.Controls.Add(this.pieChart1);
             this.Controls.Add(this.label4);
@@ -536,5 +557,6 @@
         private System.Windows.Forms.Label label4;
         private LiveCharts.WinForms.PieChart pieChart1;
         private RoundPictureBox roundPictureBox1;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton1;
     }
 }
