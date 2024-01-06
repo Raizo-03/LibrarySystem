@@ -571,7 +571,7 @@ namespace LibrarySystem
                 borrowDG.DefaultCellStyle.Font = new Font("Bookman Old Style", 10); // Adjust font and size
                 borrowDG.ColumnHeadersDefaultCellStyle.Font = new Font("Book Antiqua", 10, FontStyle.Bold); // Adjust font, size, and style
                 borrowDG.EnableHeadersVisualStyles = false;
-                borrowDG.ColumnHeadersDefaultCellStyle.BackColor = Color.ForestGreen; // Header background color
+                borrowDG.ColumnHeadersDefaultCellStyle.BackColor = Color.Chocolate; // Header background color
                 borrowDG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // Header text color
 
                 // Set column widths
