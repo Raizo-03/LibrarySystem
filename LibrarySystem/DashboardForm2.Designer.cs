@@ -445,7 +445,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label4.ForeColor = System.Drawing.Color.Olive;
             this.label4.Location = new System.Drawing.Point(337, 638);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(201, 33);
