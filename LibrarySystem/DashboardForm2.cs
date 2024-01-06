@@ -59,6 +59,8 @@ namespace LibrarySystem
             //This method updates the piechart on the lower right part of the form
             UpdatePieChart();
 
+
+           
         }
 
         //This method updates the piechart in the form
@@ -201,7 +203,8 @@ namespace LibrarySystem
         {
             //Calls the list structure
             List<Book> availableBooks = new List<Book>();
-
+            // Record the start time
+            DateTime startTime = DateTime.Now;
             try
             {
                 //Query for fetching in the database
@@ -239,6 +242,22 @@ namespace LibrarySystem
 
             return availableBooks;
         }
+
+        //Method that calculates fetching of available books
+        // Separate method to get the elapsed time in milliseconds
+        private double GetElapsedMilliseconds(DateTime startTime)
+        {
+            // Record the end time
+            DateTime endTime = DateTime.Now;
+
+            // Calculate the elapsed time
+            TimeSpan elapsedTime = endTime - startTime;
+
+            // Return the elapsed time in milliseconds
+            return elapsedTime.TotalMilliseconds;
+        }
+
+
         //This method calls the list structure that has books with status of available and stores them into the analyticsDG datagridview
         private void ActivateAvailbooks()
         {
@@ -618,6 +637,40 @@ namespace LibrarySystem
 
             return borrowings;
         }
+
+        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            StringBuilder messageBuilder = new StringBuilder();
+
+            // Record the start time for fetching available books
+            DateTime startTimeAvailableBooks = DateTime.Now;
+            List<Book> availableBooks = GetAvailableBooks();
+            double millisecondsAvailableBooks = GetElapsedMilliseconds(startTimeAvailableBooks);
+            messageBuilder.AppendLine($"Time taken for fetching available books: {millisecondsAvailableBooks} milliseconds");
+
+            // Record the start time for fetching borrowings
+            DateTime startTimeBorrowings = DateTime.Now;
+            List<BorrowingInfo> borrowings = GetBorrowingsInfo();
+            double millisecondsBorrowings = GetElapsedMilliseconds(startTimeBorrowings);
+            messageBuilder.AppendLine($"Time taken for fetching borrowings: {millisecondsBorrowings} milliseconds");
+
+            // Record the start time for fetching reservations
+            DateTime startTimeReservations = DateTime.Now;
+            List<ReservationInfo> reservations = GetReservationsInfo();
+            double millisecondsReservations = GetElapsedMilliseconds(startTimeReservations);
+            messageBuilder.AppendLine($"Time taken for fetching reservations: {millisecondsReservations} milliseconds");
+
+            // Record the start time for fetching penalties
+            DateTime startTimePenalties = DateTime.Now;
+            List<PenaltyInfo> penalties = GetPenaltiesInfo();
+            double millisecondsPenalties = GetElapsedMilliseconds(startTimePenalties);
+            messageBuilder.AppendLine($"Time taken for fetching penalties: {millisecondsPenalties} milliseconds");
+
+            // Display the accumulated information in a single message box
+            MessageBox.Show(messageBuilder.ToString(), "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
         //This method fetches the reservation info from the database; reservations table and store it in a list datastructure: informations such as: bookTitle, borrowerName, reservationDate 
         private List<ReservationInfo> GetReservationsInfo()
         {
