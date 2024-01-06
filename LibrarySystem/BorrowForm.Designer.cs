@@ -145,7 +145,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.borrowDG.DefaultCellStyle = dataGridViewCellStyle1;
-            this.borrowDG.GridColor = System.Drawing.Color.DarkKhaki;
+            this.borrowDG.GridColor = System.Drawing.Color.PeachPuff;
             this.borrowDG.Location = new System.Drawing.Point(39, 123);
             this.borrowDG.Name = "borrowDG";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
