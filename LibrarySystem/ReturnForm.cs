@@ -471,6 +471,7 @@ namespace LibrarySystem
         private void borrowedBtn_Click(object sender, EventArgs e)
         {
             activateFetching();
+            PopulateBookCheckBoxes();
         }
 
         //Method that fetches the borrowed books from the borrowings info; infos include: book title, borrower name, borrow date, and due date
