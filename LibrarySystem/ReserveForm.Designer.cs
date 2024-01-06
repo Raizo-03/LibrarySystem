@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             this.bnameLabel = new System.Windows.Forms.Label();
             this.btitleLabel = new System.Windows.Forms.Label();
@@ -46,7 +46,6 @@
             this.manageFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.manageBtn = new LibrarySystem.RJButton();
             this.deleteBtn = new LibrarySystem.RJButton();
-            this.rbooksBtn = new LibrarySystem.RJButton();
             this.reserveBtn = new LibrarySystem.RJButton();
             this.upperlabelPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
@@ -127,14 +126,14 @@
             this.reservedbooksDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reservedbooksDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.reservedbooksDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reservedbooksDG.DefaultCellStyle = dataGridViewCellStyle1;
             this.reservedbooksDG.GridColor = System.Drawing.Color.PeachPuff;
             this.reservedbooksDG.Location = new System.Drawing.Point(39, 123);
             this.reservedbooksDG.Name = "reservedbooksDG";
@@ -233,26 +232,6 @@
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // rbooksBtn
-            // 
-            this.rbooksBtn.BackColor = System.Drawing.Color.Olive;
-            this.rbooksBtn.BackgroundColor = System.Drawing.Color.Olive;
-            this.rbooksBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rbooksBtn.BorderRadius = 25;
-            this.rbooksBtn.BorderSize = 0;
-            this.rbooksBtn.FlatAppearance.BorderSize = 0;
-            this.rbooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbooksBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbooksBtn.ForeColor = System.Drawing.Color.White;
-            this.rbooksBtn.Location = new System.Drawing.Point(465, 711);
-            this.rbooksBtn.Name = "rbooksBtn";
-            this.rbooksBtn.Size = new System.Drawing.Size(223, 55);
-            this.rbooksBtn.TabIndex = 9;
-            this.rbooksBtn.Text = "RESERVED BOOKS";
-            this.rbooksBtn.TextColor = System.Drawing.Color.White;
-            this.rbooksBtn.UseVisualStyleBackColor = false;
-            this.rbooksBtn.Click += new System.EventHandler(this.rbooksBtn_Click);
-            // 
             // reserveBtn
             // 
             this.reserveBtn.BackColor = System.Drawing.Color.Olive;
@@ -295,7 +274,6 @@
             this.Controls.Add(this.manageFlowPanel);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.reservedbooksDG);
-            this.Controls.Add(this.rbooksBtn);
             this.Controls.Add(this.reserveBtn);
             this.Controls.Add(this.borrowernameTb);
             this.Controls.Add(this.reservedatepicker);
@@ -327,7 +305,6 @@
         private System.Windows.Forms.DateTimePicker reservedatepicker;
         private System.Windows.Forms.TextBox borrowernameTb;
         private RJButton reserveBtn;
-        private RJButton rbooksBtn;
         private RJButton manageBtn;
         private System.Windows.Forms.DataGridView reservedbooksDG;
         private RJButton deleteBtn;

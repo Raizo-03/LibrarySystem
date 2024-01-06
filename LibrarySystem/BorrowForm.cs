@@ -862,6 +862,7 @@ namespace LibrarySystem
             dueDate.Text = string.Empty;
             ClearBookCheckBoxes();
             PopulateBookCheckBoxes();
+            activateFetching();
         }
     }
 

@@ -398,6 +398,7 @@ namespace LibrarySystem
             returndateTb.Text = string.Empty;
             ClearBookCheckBoxes();
             PopulateBookCheckBoxes();
+            activateFetching();
         }
 
         // Check if there is a penalty for the selected book titles
