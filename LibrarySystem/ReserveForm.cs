@@ -754,7 +754,7 @@ namespace LibrarySystem
                     int bookId = GetBookIdFromReservation(reservationId);
 
                     // Query to update book availability to "Available"
-                    string updateBookAvailabilityQuery = "UPDATE books SET availability = 'AVAILABLE' WHERE book_id = @bookId";
+                    string updateBookAvailabilityQuery = "UPDATE books SET availability = 'Available' WHERE book_id = @bookId";
 
                     using (MySqlCommand updateBookAvailabilityCommand = new MySqlCommand(updateBookAvailabilityQuery, connection))
                     {
