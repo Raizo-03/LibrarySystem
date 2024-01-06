@@ -99,7 +99,7 @@ namespace LibrarySystem
             }
             else
             {
-                MessageBox.Show($"Borrower {borrowerName} has already reached the maximum borrowing limit. Cannot borrow more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Borrower {borrowerName} has already reached the maximum reserving limit. Cannot reserve more books.\n\nTeachers can only borrow and reserve a maximum of 5 books.\nStudents can only borrow and reserve a maximum of 2 books.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
