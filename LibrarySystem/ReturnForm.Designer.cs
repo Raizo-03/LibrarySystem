@@ -48,6 +48,8 @@
             this.returnBtn = new LibrarySystem.RJButton();
             this.upperlabelPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
+            this.timeBtn = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.guna2GradientCircleButton2 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).BeginInit();
             this.upperlabelPanel.SuspendLayout();
             this.SuspendLayout();
@@ -247,12 +249,51 @@
             // 
             this.upperlabelTransition.Tick += new System.EventHandler(this.upperlabelTransition_Tick);
             // 
+            // timeBtn
+            // 
+            this.timeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.timeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.timeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.timeBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.timeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.timeBtn.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.timeBtn.FillColor2 = System.Drawing.Color.Tan;
+            this.timeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.timeBtn.ForeColor = System.Drawing.Color.White;
+            this.timeBtn.Image = ((System.Drawing.Image)(resources.GetObject("timeBtn.Image")));
+            this.timeBtn.Location = new System.Drawing.Point(875, 12);
+            this.timeBtn.Name = "timeBtn";
+            this.timeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.timeBtn.Size = new System.Drawing.Size(35, 32);
+            this.timeBtn.TabIndex = 35;
+            this.timeBtn.Click += new System.EventHandler(this.timeBtn_Click);
+            // 
+            // guna2GradientCircleButton2
+            // 
+            this.guna2GradientCircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientCircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientCircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientCircleButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientCircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientCircleButton2.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.guna2GradientCircleButton2.FillColor2 = System.Drawing.Color.Tan;
+            this.guna2GradientCircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientCircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientCircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientCircleButton2.Image")));
+            this.guna2GradientCircleButton2.Location = new System.Drawing.Point(875, 50);
+            this.guna2GradientCircleButton2.Name = "guna2GradientCircleButton2";
+            this.guna2GradientCircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2GradientCircleButton2.Size = new System.Drawing.Size(35, 32);
+            this.guna2GradientCircleButton2.TabIndex = 36;
+            // 
             // ReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.guna2GradientCircleButton2);
+            this.Controls.Add(this.timeBtn);
             this.Controls.Add(this.upperlabelPanel);
             this.Controls.Add(this.borrowedBtn);
             this.Controls.Add(this.borrowDG);
@@ -298,5 +339,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton calendarBtn;
         private System.Windows.Forms.FlowLayoutPanel upperlabelPanel;
         private System.Windows.Forms.Timer upperlabelTransition;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton timeBtn;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton2;
     }
 }
