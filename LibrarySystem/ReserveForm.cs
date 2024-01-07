@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -441,12 +442,12 @@ namespace LibrarySystem
                         }
                         else
                         {
-                            MessageBox.Show("Borrower not found. Reservation not allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"{borrowerName} not found. Reservation not allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Borrower has unpaid penalties or not found. Reservation not allowed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"{borrowerName} has unpaid penalties. Reservation not allowed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -935,6 +936,52 @@ namespace LibrarySystem
             refreshFunction();
             FetchReservationsAndBindDataGridView();
         }
+
+        private void timeBtn_Click(object sender, EventArgs e)
+        {
+            // Record the start time for the entire reservation process
+            Stopwatch stopwatch = Stopwatch.StartNew();
+
+            // Fetch available books and measure time
+            DateTime startTimeAvailableBooks = DateTime.Now;
+            List<Book> availableBooks = GetAvailableBooksFromDatabase();
+            double millisecondsAvailableBooks = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Fetch additional data if needed, and measure time
+            DateTime startTimeAdditionalFetch = DateTime.Now;
+            // Perform additional fetch operations here
+            double millisecondsAdditionalFetch = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Validate borrower for reservation and measure time
+            DateTime startTimeCanBorrowerReserve = DateTime.Now;
+            bool canBorrowerReserve = CanBorrowerReserve(1); // Replace '1' with the actual borrower ID
+            double millisecondsCanBorrowerReserve = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Get maximum reservation limit and measure time
+            DateTime startTimeGetMaxReservationLimit = DateTime.Now;
+            int maxReservationLimit = GetMaxReservationLimit(1, true); // Replace '1' with the actual borrower ID and 'true' with the actual teacher status
+            double millisecondsGetMaxReservationLimit = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Perform the reservation and measure time
+            DateTime startTimeReservationProcess = DateTime.Now;
+            // Perform the actual reservation process here
+            double millisecondsReservationProcess = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Display the total time taken for the entire reservation process
+            double millisecondsTotalReservationProcess = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Combine all the information into a single message
+            string message = $"Time taken for fetching available books: {millisecondsAvailableBooks} milliseconds\n" +
+                             $"Time taken for additional fetch operations: {millisecondsAdditionalFetch} milliseconds\n" +
+                             $"Time taken for validating borrower for reservation: {millisecondsCanBorrowerReserve} milliseconds\n" +
+                             $"Time taken for getting maximum reservation limit: {millisecondsGetMaxReservationLimit} milliseconds\n" +
+                             $"Time taken for the entire reservation process: {millisecondsReservationProcess} milliseconds\n" +
+                             $"Total time taken for the entire reservation process: {millisecondsTotalReservationProcess} milliseconds";
+
+            // Show the combined message in a single message box
+            MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
     //Class borrower for the list structure and their getters and setters
     public class Borrower
