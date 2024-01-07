@@ -309,6 +309,8 @@ namespace LibrarySystem
         private void availbooksB_Click(object sender, EventArgs e)
         {
             ActivateAvailbooks();
+            int totalAvailableBooks = GetTotalAvailableBooks();
+            availableLabel.Text = totalAvailableBooks.ToString();
         }
 
 
@@ -316,6 +318,8 @@ namespace LibrarySystem
 
         private void borrowedB_Click(object sender, EventArgs e)
         {
+            int totalBorrowings = GetTotalBorrowings();
+            borrowinglabel.Text = totalBorrowings.ToString();
             try
             {
                 // Clear existing columns in the DataGridView
@@ -395,6 +399,9 @@ namespace LibrarySystem
         //This method is the function for the reserve button where it uses the list structure that has reserve books and transfer it to the analyticsDG datagridview
         private void reservedB_Click(object sender, EventArgs e)
         {
+            int totalReservations = GetTotalReservations();
+            reservinglabel.Text = totalReservations.ToString();
+
             try
             {
                 // Clear existing columns in the DataGridView
@@ -542,6 +549,9 @@ namespace LibrarySystem
         //This method is used for the penalties button to get the penalties from the list structure that contains the penalties and set it to the analyticsDG datagridview
         private void penaltiesB_Click(object sender, EventArgs e)
         {
+            int totalPenalties = GetTotalPenalties();
+            penaltieslabel.Text = totalPenalties.ToString();
+
             try
             {
                 // Clear existing columns in the DataGridView
@@ -668,6 +678,21 @@ namespace LibrarySystem
 
             // Display the accumulated information in a single message box
             MessageBox.Show(messageBuilder.ToString(), "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void nameLabel_Click(object sender, EventArgs e)
+        {
+            int totalAvailableBooks = GetTotalAvailableBooks();
+            int totalBorrowings = GetTotalBorrowings();
+            int totalReservations = GetTotalReservations();
+            int totalPenalties = GetTotalPenalties();
+            availableLabel.Text = totalAvailableBooks.ToString();
+            borrowinglabel.Text = totalBorrowings.ToString();
+            reservinglabel.Text = totalReservations.ToString();
+            penaltieslabel.Text = totalPenalties.ToString();
+            UpdateChart();
+            UpdatePieChart();
+            ActivateAvailbooks();
         }
 
 

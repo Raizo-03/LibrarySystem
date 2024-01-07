@@ -90,6 +90,7 @@
             this.nameLabel.Size = new System.Drawing.Size(191, 52);
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "ADMIN";
+            this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
             // 
             // availableLabel
             // 
