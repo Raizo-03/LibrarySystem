@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using Google.Protobuf.WellKnownTypes;
+using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
 using ReaLTaiizor.Controls;
 using System;
@@ -48,36 +49,41 @@ namespace LibrarySystem
         //Method that adds the fetched penalties and populates it into the checkboxes
         private void AddBorrowerCheckBox(int borrowerId, string borrowerName, decimal penaltyAmount, bool paid)
         {
-            int topOffset = 120; // Adjust the initial vertical position to 120
+            // Adjust the initial vertical position
+            int topOffset = 120 + checkBoxes.Count * 25;
 
+            System.Windows.Forms.CheckBox checkBox = new System.Windows.Forms.CheckBox();
             checkBox.Text = borrowerName + " - " + penaltyAmount.ToString("C", CultureInfo.CreateSpecificCulture("en-PH"));
-            checkBox.Tag = borrowerId; // Use Tag property to store borrowerId
+            checkBox.Tag = borrowerId;
             checkBox.CheckedChanged += BorrowerCheckBox_CheckedChanged;
-
-            // Adjust the width based on the length of the text
             checkBox.Width = TextRenderer.MeasureText(checkBox.Text, checkBox.Font).Width + 250;
-            checkBox.Location = new Point(609, topOffset); // Set the location with the adjusted topOffset
-            topOffset += 25; // Adjust the vertical spacing as needed
-            checkBox.Font = new Font("Bookman Old Style", 13); // Set the font
+            checkBox.Location = new Point(609, topOffset);
+            topOffset += 25;
+            checkBox.Font = new Font("Bookman Old Style", 13);
 
-            checkBoxes.Add(checkBox); // Add the checkbox to the list
+            checkBoxes.Add(checkBox);
             Controls.Add(checkBox);
 
-            // Set the Tag property for the borrowerLabel
-            borrowerLabel.Tag = borrowerId;
+            borrowerLabel.Tag = borrowerId; // Set the Tag property for the borrowerLabel
         }
+
+
+
+
 
         //Method that gets the values of the penalties and sets it to the labels when the checkbox is clicked
         private void BorrowerCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox != null)
+            System.Windows.Forms.CheckBox clickedCheckBox = sender as System.Windows.Forms.CheckBox;
+
+            if (clickedCheckBox != null)
             {
                 // Ensure the event is triggered only when the checkbox is checked
-                if (checkBox.Checked)
+                if (clickedCheckBox.Checked)
                 {
-                    int borrowerId = (int)checkBox.Tag; // Retrieve borrowerId from Tag property
-                    string borrowerName = checkBox.Text.Split('-')[0].Trim(); // Extract borrowerName from checkbox text
-                    string penaltyAmountText = checkBox.Text.Split('-')[1].Trim();
+                    int borrowerId = (int)clickedCheckBox.Tag; // Retrieve borrowerId from Tag property
+                    string borrowerName = clickedCheckBox.Text.Split('-')[0].Trim(); // Extract borrowerName from checkbox text
+                    string penaltyAmountText = clickedCheckBox.Text.Split('-')[1].Trim();
 
                     // Try to parse the penalty amount from the checkbox text
                     if (decimal.TryParse(penaltyAmountText, NumberStyles.Currency, CultureInfo.CreateSpecificCulture("en-PH"), out decimal penaltyAmount))
@@ -93,6 +99,9 @@ namespace LibrarySystem
                     {
                         MessageBox.Show("Failed to parse penalty amount.");
                     }
+
+                    // Update the global checkBox variable
+                    checkBox = clickedCheckBox;
                 }
                 else
                 {
@@ -155,75 +164,84 @@ namespace LibrarySystem
 
         }
 
-        //Method for the pay button
+        // Method for the pay button
         private void payBtn_Click(object sender, EventArgs e)
         {
-            //Validates if the user really wants to proceed the payment process
-
+            // Validates if the user really wants to proceed with the payment process
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the paying process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             // Check user's choice
             if (result == DialogResult.No)
             {
-                // User chose not to continue, so return without executing the borrowing process
+                // User chose not to continue, so return without executing the payment process
+                return;
+            }
+            int checkedCount = checkBoxes.Count(cb => cb.Checked);
+            if (checkedCount != 1)
+            {
+                MessageBox.Show("Cannot borrow multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //Check if there is no chosen checkboxes, if there are no clicked checkboxes, it will not proceed the payment and shows error message box
-            if (!checkBox.Checked)
+            // Check if the amount paid textbox is empty/null or if it's not a numeric value; if these criteria are met, the payment will not proceed, and an error message is shown
+            if (string.IsNullOrEmpty(amountpaidTb.Text) || !decimal.TryParse(amountpaidTb.Text, out decimal amountPaid))
             {
-                MessageBox.Show("Input Necessary Details. Please select atleast one penalty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid Amount! Please enter a valid amount (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //Check if the amount paid textbox is empty/null or if its not a numeric value; if there criteria is met, the payment will not proceed and error message is shown
-            if (string.IsNullOrEmpty(amountpaidTb.Text) || !decimal.TryParse(amountpaidTb.Text, out decimal amount))
+            // Find the checked checkbox from the list
+            System.Windows.Forms.CheckBox checkedCheckBox = checkBoxes.FirstOrDefault(cb => cb.Checked);
+
+            if (checkedCheckBox != null)
             {
-                MessageBox.Show("Invalid Amount! Please enter a valid amount.Please enter a valid amount (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
-            }
+                // Process payment for the checked checkbox
+                int borrowerId = (int)checkedCheckBox.Tag; // Retrieve borrowerId from Tag property
+                string borrowerName = checkedCheckBox.Text.Split('-')[0].Trim(); // Extract borrowerName from checkbox text
+                string penaltyAmountText = checkedCheckBox.Text.Split('-')[1].Trim();
 
-            
-            if (int.TryParse(borrowerLabel.Tag?.ToString(), out int borrowerId))
-            {
-                string borrowerName = borrowerLabel.Text;
-                decimal amountPaid = decimal.TryParse(amountpaidTb.Text, out decimal paidAmount) ? paidAmount : 0;
-                decimal change = decimal.TryParse(cLabel.Text.Replace("₱", ""), out decimal changeAmount) ? changeAmount : 0;
-                decimal balance = decimal.TryParse(bLabel.Text.Replace("₱", ""), out decimal balanceAmount) ? balanceAmount : 0;
-
-                // Perform the payment update in the database (you may need to implement this)
-                bool paymentSuccessful = UpdatePaymentInDatabase(borrowerId, amountPaid);
-
-                // Show a message box based on the payment result
-                ShowPaymentResultMessage(paymentSuccessful, borrowerName, borrowerId, amountPaid, change, balance);
-                if (paymentSuccessful)
+                // Try to parse the penalty amount from the checkbox text
+                if (decimal.TryParse(penaltyAmountText, NumberStyles.Currency, CultureInfo.CreateSpecificCulture("en-PH"), out decimal penaltyAmount))
                 {
-                    // Refresh the form or update UI as needed
-                    // For example, you may want to clear checkboxes and labels after successful payment
-                    ClearPaymentDetails();
+                    // Update labels with fetched details
+                    borrowerLabel.Text = borrowerName;
+                    amountDueLabel.Text = $"₱{penaltyAmount:N2}";
+                  
 
-                    // Close the current form and open the Dashboard form
-                    Form mdiParent = this.MdiParent;
-                    if (mdiParent != null)
+                    // Continue with the payment processing logic (update database, show payment result, etc.)
+                    bool paymentSuccessful = UpdatePaymentInDatabase(borrowerId, amountPaid, penaltyAmount, out decimal change, out decimal balance);
+
+                    // Show a message box based on the payment result
+                    ShowPaymentResultMessage(paymentSuccessful, borrowerName, borrowerId, amountPaid, change, balance);
+
+                    if (paymentSuccessful)
                     {
-                        mdiParent.Close();
+                        // Clear the checkbox after processing payment
+                        checkedCheckBox.Checked = false;
+
+                        // Refresh the form or update UI as needed
+                        // For example, you may want to clear checkboxes and labels after successful payment
+                        ClearPaymentDetails();
+                        RefreshCheckboxes();
+                        activateFetching();
+                   
                     }
-                    string identifier = " ";
-                    string name = "ADMIN 1";
-                    string id = " ";
-                    int limit = 0;
-                    Dashboard dashboardForm = new Dashboard(identifier, name, id, limit);
-                    dashboardForm.Show();
-                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to parse penalty amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Invalid borrower ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a borrower before proceeding with the payment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+
         //Method that updates penalty row if the borrower paid not exact amount on the supposed amount that needs to be paid
-        private bool UpdatePaymentInDatabase(int borrowerId, decimal amountPaid)
+        private bool UpdatePaymentInDatabase(int borrowerId, decimal amountPaid, decimal penaltyAmount, out decimal change, out decimal balance)
         {
             try
             {
@@ -231,38 +249,78 @@ namespace LibrarySystem
                 {
                     connection.Open();
 
-                    // Implement your database update logic here
-                    string updateQuery = "UPDATE penalties SET paid = 1 WHERE borrower_id = @BorrowerId";
+                    // Fetch penalty amount from the database
+                    decimal fetchedPenaltyAmount = FetchPenaltyAmountFromDatabase(borrowerId);
 
-                    using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
+                    // Calculate change and balance
+                    change = amountPaid - fetchedPenaltyAmount;
+                    balance = fetchedPenaltyAmount - amountPaid;
+
+                    if (balance <= 0)
                     {
-                        command.Parameters.AddWithValue("@BorrowerId", borrowerId);
-
-                        // Execute the update query
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        // If the update was successful (at least one row affected), call UpdatePenaltyTable
-                        if (rowsAffected > 0)
-                        {
-                            // Fetch penalty amount from the database or use a stored value
-                            decimal penaltyAmount = FetchPenaltyAmountFromDatabase(borrowerId);
-
-                            // Call UpdatePenaltyTable with the fetched penalty amount
-                            UpdatePenaltyTable(borrowerId, penaltyAmount, amountPaid);
-                        }
-
-                        // Return true if the update was successful
-                        return rowsAffected > 0;
+                        balance = 0;
+                        // If the balance is zero, delete the entire row
+                        DeletePenaltyFromDatabase1(borrowerId);
                     }
+                    else
+                    {
+                        // If the balance is not zero, update the penalty table
+                        UpdatePenaltyTable(borrowerId, fetchedPenaltyAmount, amountPaid);
+                    }
+
+                    // Return true to indicate success
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 // Log the exception or handle it according to your application's requirements
                 Console.WriteLine($"Error updating payment in the database: {ex.Message}");
+
+                // Set change and balance to zero in case of an exception
+                change = 0;
+                balance = 0;
+
                 return false;
             }
         }
+
+        private void DeletePenaltyFromDatabase1(int borrowerId)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                        // If fully paid, delete the row from the penalties table
+                        string deleteQuery = "DELETE FROM penalties WHERE borrower_id = @BorrowerId";
+
+                        using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@BorrowerId", borrowerId);
+
+                            // Execute the delete query
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine($"Penalty for borrower ID {borrowerId} deleted successfully.");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Penalty for borrower ID {borrowerId} not found in the database.");
+                            }
+                        }
+          
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it according to your application's requirements
+                Console.WriteLine($"Error deleting/updating penalty from the database: {ex.Message}");
+            }
+        }
+
 
         //Method that fetches the penalty amount of the user base on the borrower id and returns a value of decimal
         private decimal FetchPenaltyAmountFromDatabase(int borrowerId)
@@ -376,7 +434,7 @@ namespace LibrarySystem
                 string balanceText = balance.ToString("C2", CultureInfo.CreateSpecificCulture("en-PH")); // C2 format specifier for currency with two decimal places, using Philippines culture
 
                 cLabel.Text = changeText; // Update cLabel
-                bLabel.Text = balanceText; // Update balanceLabel
+                bLabel.Text = balanceText; // Update balanceLabe
             }
             else
             {
@@ -387,13 +445,26 @@ namespace LibrarySystem
         }
 
         //Method to show if the payment is succesful, it will show, borrower name, borrower id, amount paid, balance, and the change of borrower
+        // Method to show if the payment is successful
         private void ShowPaymentResultMessage(bool paymentSuccessful, string borrowerName, int borrowerId, decimal amountPaid, decimal change, decimal balance)
         {
             string resultMessage;
 
             if (paymentSuccessful)
             {
-                resultMessage = $"Payment Successful!\n\nName: {borrowerName}\nBorrower ID: {borrowerId}\nAmount Paid: ₱{amountPaid:N2}\nChange: ₱{change:N2}\nBalance: ₱{balance:N2}";
+                if (balance <= 0)
+                {
+                    resultMessage = $"Payment Successful!\n\nName: {borrowerName}\nBorrower ID: {borrowerId}\nAmount Paid: ₱{amountPaid:N2}\nChange: ₱{change:N2}\nBalance: ₱ 0.00";
+                }
+                else if(change <= 0)
+                {
+                    resultMessage = $"Payment Successful!\n\nName: {borrowerName}\nBorrower ID: {borrowerId}\nAmount Paid: ₱{amountPaid:N2}\nChange:  ₱ 0.00 \nBalance: ₱{balance:N2}";
+
+                }
+                else
+                {
+                    resultMessage = $"Payment Successful!\n\nName: {borrowerName}\nBorrower ID: {borrowerId}\nAmount Paid: ₱{amountPaid:N2}\nChange: ₱{change:N2}\nBalance: ₱{balance:N2}";
+                }
             }
             else
             {
@@ -402,6 +473,7 @@ namespace LibrarySystem
 
             MessageBox.Show(resultMessage, paymentSuccessful ? "Success" : "Warning", MessageBoxButtons.OK, paymentSuccessful ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
+
 
         //Method to remove the checkbox and the labels for the borrower if paid the exact amount
         private void ClearPaymentDetails()
@@ -442,9 +514,9 @@ namespace LibrarySystem
                     // Determine if the penalty is fully paid or not
                     bool isFullyPaid = penaltyAmount <= 0;
 
-                    // Implement your database deletion logic only if fully paid
                     if (isFullyPaid)
                     {
+                        // If fully paid, delete the row from the penalties table
                         string deleteQuery = "DELETE FROM penalties WHERE borrower_id = @BorrowerId";
 
                         using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
@@ -484,6 +556,7 @@ namespace LibrarySystem
                 Console.WriteLine($"Error deleting/updating penalty from the database: {ex.Message}");
             }
         }
+
 
         //Method that activates the fetching of the penalties and sets it to the datagridview
         //It also sets the properties of the datagridview
@@ -541,7 +614,8 @@ namespace LibrarySystem
         private void penaltyBtn_Click(object sender, EventArgs e)
         {
             activateFetching();
-           
+            RefreshCheckboxes();
+
         }
 
         //Method that fetches the penalties in the penalties table and store it in a list data structure
@@ -593,6 +667,19 @@ namespace LibrarySystem
         {
 
         }
+        private void RefreshCheckboxes()
+        {
+            // Clear existing checkboxes
+            foreach (var checkBox in checkBoxes)
+            {
+                Controls.Remove(checkBox);
+            }
+
+            checkBoxes.Clear();
+
+            // Fetch updated penalties and recreate checkboxes
+            FetchUnpaidPenalties();
+        }
 
         bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
@@ -611,3 +698,4 @@ namespace LibrarySystem
         }
     }
 }
+     
