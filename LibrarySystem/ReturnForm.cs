@@ -3,6 +3,7 @@ using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -55,6 +56,17 @@ namespace LibrarySystem
 
             // Set the border radius to make the button rounded
             button.BorderRadius = 12; // Adjust the radius to control the roundness
+        }
+        private double GetElapsedMilliseconds(DateTime startTime)
+        {
+            // Record the end time
+            DateTime endTime = DateTime.Now;
+
+            // Calculate the elapsed time
+            TimeSpan elapsedTime = endTime - startTime;
+
+            // Return the elapsed time in milliseconds
+            return elapsedTime.TotalMilliseconds;
         }
 
 
@@ -623,5 +635,63 @@ namespace LibrarySystem
                 upperlabelExpand = true;
             }
         }
+
+        private void timeBtn_Click(object sender, EventArgs e)
+        {
+            // Record the start time for the entire returning process
+            Stopwatch stopwatch = Stopwatch.StartNew();
+
+            // Fetch borrowed books and measure time
+            DateTime startTimeBorrowedBooks = DateTime.Now;
+            List<BorrowedBook> borrowedBooks = GetBorrowedBooksFromDatabase();
+            double millisecondsBorrowedBooks = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Fetch additional data if needed, and measure time
+            // DateTime startTimeAdditionalFetch = DateTime.Now;
+            // Perform additional fetch operations here
+            // double millisecondsAdditionalFetch = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Calculate penalty and measure time
+            DateTime startTimeCalculatePenalty = DateTime.Now;
+            CalculatePenalty();
+            double millisecondsCalculatePenalty = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Check penalty and measure time
+            DateTime startTimeCheckPenalty = DateTime.Now;
+            bool hasPenalty = CheckPenalty();
+            double millisecondsCheckPenalty = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Update book availability and measure time
+            DateTime startTimeUpdateBookAvailability = DateTime.Now;
+            foreach (var bookTitle in selectedBookTitles)
+            {
+                UpdateBookAvailability(bookTitle, "Available");
+            }
+            double millisecondsUpdateBookAvailability = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Remove from borrowings and measure time
+            DateTime startTimeRemoveFromBorrowings = DateTime.Now;
+            foreach (var bookTitle in selectedBookTitles)
+            {
+                RemoveFromBorrowings(bookTitle);
+            }
+            double millisecondsRemoveFromBorrowings = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Display the total time taken for the entire returning process
+            double millisecondsReturningProcess = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Combine all the information into a single message
+            string message = $"Time taken for fetching borrowed books: {millisecondsBorrowedBooks} milliseconds\n" +
+                             //$"Time taken for additional fetch operations: {millisecondsAdditionalFetch} milliseconds\n" +
+                             $"Time taken for calculating penalty: {millisecondsCalculatePenalty} milliseconds\n" +
+                             $"Time taken for checking penalty: {millisecondsCheckPenalty} milliseconds\n" +
+                             $"Time taken for updating book availability: {millisecondsUpdateBookAvailability} milliseconds\n" +
+                             $"Time taken for removing from borrowings: {millisecondsRemoveFromBorrowings} milliseconds\n" +
+                             $"Total time taken for the entire returning process: {millisecondsReturningProcess} milliseconds";
+
+            // Show the combined message in a single message box
+            MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
