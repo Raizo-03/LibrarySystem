@@ -929,6 +929,12 @@ namespace LibrarySystem
                 upperlabelExpand = true;
             }
         }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            refreshFunction();
+            FetchReservationsAndBindDataGridView();
+        }
     }
     //Class borrower for the list structure and their getters and setters
     public class Borrower

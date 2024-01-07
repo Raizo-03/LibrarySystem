@@ -157,6 +157,7 @@
             this.borrowerLabel.Size = new System.Drawing.Size(68, 583);
             this.borrowerLabel.TabIndex = 27;
             this.borrowerLabel.Text = "BORROWER LIST";
+            this.borrowerLabel.Click += new System.EventHandler(this.borrowerLabel_Click);
             // 
             // guna2GradientPanel1
             // 
@@ -1400,7 +1401,7 @@
             this.upperlabelPanel.Controls.Add(this.borrowerLabel);
             this.upperlabelPanel.Location = new System.Drawing.Point(39, 30);
             this.upperlabelPanel.Name = "upperlabelPanel";
-            this.upperlabelPanel.Size = new System.Drawing.Size(12, 54);
+            this.upperlabelPanel.Size = new System.Drawing.Size(13, 54);
             this.upperlabelPanel.TabIndex = 98;
             // 
             // upperlabelTransition

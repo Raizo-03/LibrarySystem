@@ -762,5 +762,76 @@ namespace LibrarySystem
                 upperlabelExpand = true;
             }
         }
+
+        private void borrowerLabel_Click(object sender, EventArgs e)
+        {
+            //BORROWINGS
+            //Calls individual borrowers and their total borrowings and reservings and sets them into corresponding variables to be used in certain labels
+            int beringuelBorrowed = GetTotalBorrowingsBeringuel();
+            beringuelborrowLabel.Text = beringuelBorrowed.ToString();
+            int villenaBorrowed = GetTotalBorrowingsVillena();
+            villenaborrowedLabel.Text = villenaBorrowed.ToString();
+            int balaoroBorrowed = GetTotalBorrowingsBalaoro();
+            balaoroborrowedLabel.Text = balaoroBorrowed.ToString();
+            int hingcoBorrowed = GetTotalBorrowingsHingco();
+            hingcoborrowedLabel.Text = hingcoBorrowed.ToString();
+            int faustinoBorrowed = GetTotalBorrowingsFaustino();
+            faustinoborrowedLabel.Text = faustinoBorrowed.ToString();
+            int ortegaBorrowed = GetTotalBorrowingsOrtega();
+            ortegaborrowedLabel.Text = ortegaBorrowed.ToString();
+            int fernandezBorrowed = GetTotalBorrowingsFernandez();
+            fernandezborrowedLabel.Text = fernandezBorrowed.ToString();
+            int sicatBorrowed = GetTotalBorrowingsSicat();
+            sicatborrowedLabel.Text = sicatBorrowed.ToString();
+            int colarinaBorrowed = GetTotalReservationsColarina();
+            colarinaborrowedLabel.Text = colarinaBorrowed.ToString();
+            int caasiBorrowed = GetTotalReservationsCassi();
+            caasiborrowedLabel.Text = caasiBorrowed.ToString();
+
+
+
+
+
+            //RESERVE
+            //Calls individual borrowers and their total borrowings and reservings and sets them into corresponding variables to be used in certain labels
+            int beringuelReserve = GetTotalReservationsBeringuel();
+            beringuelreservedLabel.Text = beringuelReserve.ToString();
+            int villenaReserve = GetTotalReservationsVillena();
+            villenareserveLabel.Text = villenaReserve.ToString();
+            int balaoroReserve = GetTotalReservationsBalaoro();
+            balaororeserveLabel.Text = balaoroReserve.ToString();
+            int hingcoReserve = GetTotalReservationsHingco();
+            hingcoreserveLabel.Text = hingcoReserve.ToString();
+            int faustinoReserve = GetTotalReservationsFaustino();
+            faustinoreserveLabel.Text = faustinoReserve.ToString();
+            int ortegaReserve = GetTotalReservationsOrtega();
+            ortegareserveLabel.Text = ortegaReserve.ToString();
+            int fernandezReserve = GetTotalReservationsFernandez();
+            fernandezreserveLabel.Text = fernandezReserve.ToString();
+            int sicatReserve = GetTotalReservationsSicat();
+            sicatreserveLabel.Text = sicatReserve.ToString();
+            int colarinaReserve = GetTotalReservationsColarina();
+            colarinareserveLabel.Text = colarinaReserve.ToString();
+            int caasiReserve = GetTotalReservationsCassi();
+            caasireserveLabel.Text = caasiReserve.ToString();
+
+
+            //TEACHERS
+            //BORROWED
+            int planBorrowed = GetTotalBorrowingsPlan();
+            planborrowedLabel.Text = planBorrowed.ToString();
+            int diampocBorrowed = GetTotalBorrowingsDiampoc();
+            diampocborrowedLabel.Text = diampocBorrowed.ToString();
+            int dellosaBorrowed = GetTotalBorrowingsDellosa();
+            dellosaborrowedLabel.Text = dellosaBorrowed.ToString();
+
+            //RESERVE
+            int planReserve = GetTotalReservationsPlan();
+            planreserveLabel.Text = planReserve.ToString();
+            int diampocReserve = GetTotalReservationsDiampoc();
+            diampocreserveLabel.Text = diampocReserve.ToString();
+            int dellosaReserve = GetTotalReservationsDellosa();
+            dellosareserveLabel.Text = dellosaReserve.ToString();
+        }
     }
 }
