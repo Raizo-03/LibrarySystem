@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -698,5 +699,39 @@ namespace LibrarySystem
                 upperlabelExpand = true;
             }
         }
+
+        private void timeBtn_Click(object sender, EventArgs e)
+        {
+            // Record the start time for the entire process
+            Stopwatch stopwatch = Stopwatch.StartNew();
+
+            // Fetch unpaid penalties and measure time
+            DateTime startTimeFetchUnpaidPenalties = DateTime.Now;
+            FetchUnpaidPenalties();
+            double millisecondsFetchUnpaidPenalties = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Fetch additional data if needed, and measure time
+            DateTime startTimeAdditionalFetch = DateTime.Now;
+            // Perform additional fetch operations here
+            double millisecondsAdditionalFetch = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Perform the reservation and measure time
+            DateTime startTimeReservationProcess = DateTime.Now;
+            // Perform the actual reservation process here
+            double millisecondsReservationProcess = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Display the total time taken for the entire process
+            double millisecondsTotalProcess = stopwatch.Elapsed.TotalMilliseconds;
+
+            // Combine all the information into a single message
+            string message = $"Time taken for fetching unpaid penalties: {millisecondsFetchUnpaidPenalties} milliseconds\n" +
+                             $"Time taken for additional fetch operations: {millisecondsAdditionalFetch} milliseconds\n" +
+                             $"Time taken for the entire paying process: {millisecondsReservationProcess} milliseconds\n" +
+                             $"Total time taken for the entire process: {millisecondsTotalProcess} milliseconds";
+
+            // Show the combined message in a single message box
+            MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
