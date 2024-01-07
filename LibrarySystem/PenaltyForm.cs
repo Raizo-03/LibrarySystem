@@ -177,6 +177,13 @@ namespace LibrarySystem
                 return;
             }
             int checkedCount = checkBoxes.Count(cb => cb.Checked);
+
+            if (checkedCount == 0)
+            {
+                MessageBox.Show("There are no selected penalties. Please select one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (checkedCount != 1)
             {
                 MessageBox.Show("Cannot borrow multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
