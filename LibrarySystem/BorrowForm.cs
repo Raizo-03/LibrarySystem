@@ -612,6 +612,7 @@ namespace LibrarySystem
         private void borrowedBtn_Click(object sender, EventArgs e)
         {
             activateFetching();
+            refreshFunction();
         }
 
         //Method that fetches the borrowings from the borrowings table in the database; Informations including; borrowing ID, book title, borrow date, and due date and stores them into a list structure
