@@ -817,7 +817,7 @@ namespace LibrarySystem
             }
         }
 
-        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        private void timeBtn_Click(object sender, EventArgs e)
         {
             // Record the start time for the entire borrowing process
             DateTime startTimeBorrowingProcess = DateTime.Now;
