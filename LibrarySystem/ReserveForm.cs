@@ -499,6 +499,12 @@ namespace LibrarySystem
             //Validates if the user really wants to reserve the book
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the reserving process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            // Check if the borrowernameTb textbox is empty
+            if (string.IsNullOrWhiteSpace(borrowernameTb.Text))
+            {
+                MessageBox.Show("Input Necessary Details. Please enter the borrower name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Stop further processing if the textbox is empty
+            }
             // Check if the returndateTb textbox is empty
             if (string.IsNullOrWhiteSpace(reserveddateTb.Text))
             {
@@ -510,6 +516,12 @@ namespace LibrarySystem
             if (result == DialogResult.No)
             {
                 // User chose not to continue, so return without executing the borrowing process
+                return;
+            }
+            // Check if the reserveddateTb contains a valid date format
+            if (!DateTime.TryParse(reserveddateTb.Text, out _))
+            {
+                MessageBox.Show("Invalid date format. Please enter a valid reservation date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
