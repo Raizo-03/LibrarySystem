@@ -52,16 +52,25 @@
             this.rjButton1 = new LibrarySystem.RJButton();
             this.timeBtn = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.guna2GradientCircleButton2 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.category = new System.Windows.Forms.Label();
+            this.bID = new System.Windows.Forms.Label();
+            this.bnameInfo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reservedbooksDG)).BeginInit();
             this.manageFlowPanel.SuspendLayout();
             this.upperlabelPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // bnameLabel
             // 
             this.bnameLabel.AutoSize = true;
             this.bnameLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnameLabel.Location = new System.Drawing.Point(368, 622);
+            this.bnameLabel.Location = new System.Drawing.Point(424, 633);
             this.bnameLabel.Name = "bnameLabel";
             this.bnameLabel.Size = new System.Drawing.Size(140, 21);
             this.bnameLabel.TabIndex = 0;
@@ -71,7 +80,7 @@
             // 
             this.btitleLabel.AutoSize = true;
             this.btitleLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btitleLabel.Location = new System.Drawing.Point(368, 583);
+            this.btitleLabel.Location = new System.Drawing.Point(424, 594);
             this.btitleLabel.Name = "btitleLabel";
             this.btitleLabel.Size = new System.Drawing.Size(91, 21);
             this.btitleLabel.TabIndex = 2;
@@ -81,7 +90,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(524, 583);
+            this.titleLabel.Location = new System.Drawing.Point(580, 594);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 20);
             this.titleLabel.TabIndex = 3;
@@ -90,7 +99,7 @@
             // 
             this.reservedateLabel.AutoSize = true;
             this.reservedateLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservedateLabel.Location = new System.Drawing.Point(368, 657);
+            this.reservedateLabel.Location = new System.Drawing.Point(424, 668);
             this.reservedateLabel.Name = "reservedateLabel";
             this.reservedateLabel.Size = new System.Drawing.Size(120, 21);
             this.reservedateLabel.TabIndex = 4;
@@ -100,14 +109,14 @@
             // 
             this.reserveddateTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reserveddateTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reserveddateTb.Location = new System.Drawing.Point(528, 659);
+            this.reserveddateTb.Location = new System.Drawing.Point(584, 670);
             this.reserveddateTb.Name = "reserveddateTb";
             this.reserveddateTb.Size = new System.Drawing.Size(180, 19);
             this.reserveddateTb.TabIndex = 5;
             // 
             // reservedatepicker
             // 
-            this.reservedatepicker.Location = new System.Drawing.Point(773, 655);
+            this.reservedatepicker.Location = new System.Drawing.Point(829, 666);
             this.reservedatepicker.Name = "reservedatepicker";
             this.reservedatepicker.Size = new System.Drawing.Size(19, 20);
             this.reservedatepicker.TabIndex = 6;
@@ -118,10 +127,11 @@
             this.borrowernameTb.BackColor = System.Drawing.Color.White;
             this.borrowernameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.borrowernameTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowernameTb.Location = new System.Drawing.Point(528, 624);
+            this.borrowernameTb.Location = new System.Drawing.Point(584, 635);
             this.borrowernameTb.Name = "borrowernameTb";
             this.borrowernameTb.Size = new System.Drawing.Size(180, 19);
             this.borrowernameTb.TabIndex = 7;
+            this.borrowernameTb.TextChanged += new System.EventHandler(this.borrowernameTb_TextChanged);
             // 
             // reservedbooksDG
             // 
@@ -177,7 +187,7 @@
             this.calendarBtn.ForeColor = System.Drawing.Color.White;
             this.calendarBtn.Image = ((System.Drawing.Image)(resources.GetObject("calendarBtn.Image")));
             this.calendarBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.calendarBtn.Location = new System.Drawing.Point(740, 645);
+            this.calendarBtn.Location = new System.Drawing.Point(796, 656);
             this.calendarBtn.Name = "calendarBtn";
             this.calendarBtn.Size = new System.Drawing.Size(63, 40);
             this.calendarBtn.TabIndex = 31;
@@ -190,7 +200,7 @@
             // 
             this.manageFlowPanel.Controls.Add(this.manageBtn);
             this.manageFlowPanel.Controls.Add(this.deleteBtn);
-            this.manageFlowPanel.Location = new System.Drawing.Point(694, 708);
+            this.manageFlowPanel.Location = new System.Drawing.Point(750, 719);
             this.manageFlowPanel.Name = "manageFlowPanel";
             this.manageFlowPanel.Size = new System.Drawing.Size(232, 63);
             this.manageFlowPanel.TabIndex = 32;
@@ -246,7 +256,7 @@
             this.reserveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reserveBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reserveBtn.ForeColor = System.Drawing.Color.White;
-            this.reserveBtn.Location = new System.Drawing.Point(465, 711);
+            this.reserveBtn.Location = new System.Drawing.Point(521, 722);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(223, 55);
             this.reserveBtn.TabIndex = 8;
@@ -278,7 +288,7 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(236, 708);
+            this.rjButton1.Location = new System.Drawing.Point(292, 719);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(223, 55);
             this.rjButton1.TabIndex = 34;
@@ -324,12 +334,101 @@
             this.guna2GradientCircleButton2.Size = new System.Drawing.Size(35, 32);
             this.guna2GradientCircleButton2.TabIndex = 37;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 498);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 26);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "BORROWER INFO";
+            // 
+            // profilePic
+            // 
+            this.profilePic.Image = ((System.Drawing.Image)(resources.GetObject("profilePic.Image")));
+            this.profilePic.ImageRotate = 0F;
+            this.profilePic.Location = new System.Drawing.Point(62, 532);
+            this.profilePic.Name = "profilePic";
+            this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profilePic.Size = new System.Drawing.Size(166, 159);
+            this.profilePic.TabIndex = 39;
+            this.profilePic.TabStop = false;
+            // 
+            // category
+            // 
+            this.category.AutoSize = true;
+            this.category.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category.Location = new System.Drawing.Point(148, 792);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(18, 20);
+            this.category.TabIndex = 55;
+            this.category.Text = "n";
+            // 
+            // bID
+            // 
+            this.bID.AutoSize = true;
+            this.bID.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bID.Location = new System.Drawing.Point(148, 755);
+            this.bID.Name = "bID";
+            this.bID.Size = new System.Drawing.Size(18, 20);
+            this.bID.TabIndex = 54;
+            this.bID.Text = "n";
+            // 
+            // bnameInfo
+            // 
+            this.bnameInfo.AutoSize = true;
+            this.bnameInfo.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnameInfo.Location = new System.Drawing.Point(146, 718);
+            this.bnameInfo.Name = "bnameInfo";
+            this.bnameInfo.Size = new System.Drawing.Size(18, 20);
+            this.bnameInfo.TabIndex = 53;
+            this.bnameInfo.Text = "n";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(47, 755);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 21);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Student ID:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 792);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "Category:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(47, 719);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 21);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Name:";
+            // 
             // ReserveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.category);
+            this.Controls.Add(this.bID);
+            this.Controls.Add(this.bnameInfo);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.profilePic);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2GradientCircleButton2);
             this.Controls.Add(this.timeBtn);
             this.Controls.Add(this.rjButton1);
@@ -353,6 +452,7 @@
             this.manageFlowPanel.ResumeLayout(false);
             this.upperlabelPanel.ResumeLayout(false);
             this.upperlabelPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +481,13 @@
         private RJButton rjButton1;
         private Guna.UI2.WinForms.Guna2GradientCircleButton timeBtn;
         private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox profilePic;
+        private System.Windows.Forms.Label category;
+        private System.Windows.Forms.Label bID;
+        private System.Windows.Forms.Label bnameInfo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

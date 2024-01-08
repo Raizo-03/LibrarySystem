@@ -251,7 +251,6 @@ namespace LibrarySystem
             {
                 profilePic.Visible = false; // Make sure to set the visibility to true
                 bnameInfo.Text = "Not Found";
-                label4.Text = "Not Found";
                 bID.Text = "Not Found";
                 category.Text = "Not Found";
 
