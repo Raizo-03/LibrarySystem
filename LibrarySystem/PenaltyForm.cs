@@ -874,5 +874,15 @@ namespace LibrarySystem
             MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void guna2GradientCircleButton2_Click(object sender, EventArgs e)
+        {
+            string guidelines =
+                      "Only 1 penalty/checkbox is allowed per paying process.\n" +
+                      "Penalties accumulate at a rate of 20 per day after the due date has passed.\n" +
+                      "If a student does not pay the exact amount, there will still be a balance, and the student cannot borrow as long as they have a record of penalty.";
+
+            MessageBox.Show(guidelines, "Penalty Paying Guidelines", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+        }
     }
 }

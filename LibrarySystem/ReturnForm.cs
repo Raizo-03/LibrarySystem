@@ -836,5 +836,16 @@ namespace LibrarySystem
             MessageBox.Show(message, "Time Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void guna2GradientCircleButton2_Click(object sender, EventArgs e)
+        {
+            string guidelines = 
+                        "Only 1 book/checkbox per returning process.\n" +
+                        "Students have a maximum due date of 3 days.\n" +
+                        "Students will accumulate a penalty of 20 pesos per day starting after the due date.\n" +
+                        "Teachers don't have a due date for book returning.";
+
+            MessageBox.Show(guidelines, "Returning Guidelines", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    
     }
 }
