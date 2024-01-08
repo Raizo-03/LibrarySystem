@@ -67,7 +67,146 @@ namespace LibrarySystem
 
             borrowerLabel.Tag = borrowerId; // Set the Tag property for the borrowerLabel
         }
+        private void refreshInfo()
+        {
+            if (borrowerLabel.Text.Equals("Krissa Beringuel"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentGirl.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Krissa Beringuel";
+                bID.Text = "K12043710";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Lans Villena"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Lans Villena";
+                bID.Text = "K12043456";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Rod Balaoro"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Rod Balaoro";
+                bID.Text = "K12042342";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Harvey Hingco"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Harvey Hingco";
+                bID.Text = "K12042345";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("April Faustino"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentGirl.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "April Faustino";
+                bID.Text = "K12021321";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Rhycell Ortega"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Rhycell Ortega";
+                bID.Text = "K12021327";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Joshua Fernandez"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Joshua Fernandez";
+                bID.Text = "K12042469";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Sean Sicat"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Sean Sicat";
+                bID.Text = "K12032131";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Ricardo Colarina"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Ricardo Colarina";
+                bID.Text = "K12042346";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Asilito Caasi"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/studentBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Asilito Caasi";
+                bID.Text = "K12043567";
+                category.Text = "STUDENT";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Jomariss Plan"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/teacherGirl.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Jomariss Plan";
+                label4.Text = "Employee ID";
+                bID.Text = "K12052345";
+                category.Text = "TEACHER";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Lester Diampoc"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/teacherBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Lester Diampoc";
+                label4.Text = "Employee ID";
+                bID.Text = "K12052385";
+                category.Text = "TEACHER";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else if (borrowerLabel.Text.Equals("Daniel Dellosa"))
+            {
+                string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/teacherBoy.png";
+                profilePic.Image = Image.FromFile(imagePath);
+                bnameInfo.Text = "Daniel Dellosa";
+                label4.Text = "Employee ID";
+                bID.Text = "K12048547";
+                category.Text = "TEACHER";
+                profilePic.Visible = true; // Make sure to set the visibility to true
+            }
+            else
+            {
+                profilePic.Visible = false; // Make sure to set the visibility to true
+                bnameInfo.Text = "Not Found";
+                bID.Text = "Not Found";
+                category.Text = "Not Found";
 
+            }
+
+        }
+
+        private void clearInfo()
+        {
+            profilePic.Visible = false; // Make sure to set the visibility to true
+            bnameInfo.Text = "";
+            bID.Text = "";
+            category.Text = "";
+        }
 
 
 
@@ -113,6 +252,7 @@ namespace LibrarySystem
                 borrowerLabel.Text = string.Empty;
                 amountDueLabel.Text = string.Empty;
             }
+            refreshInfo();
         }
 
 
@@ -229,6 +369,7 @@ namespace LibrarySystem
                         ClearPaymentDetails();
                         RefreshCheckboxes();
                         activateFetching();
+                        clearInfo();
                     }
                 }
                 else

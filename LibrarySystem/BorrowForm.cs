@@ -266,8 +266,6 @@ namespace LibrarySystem
 
             //Calls the method that fetches the borrowed books
             activateFetching();
-
-            borrowerName.Text = userNAME;
         }
 
         //POPULATE THE CHECKBOXES

@@ -24,7 +24,6 @@ namespace LibrarySystem
         public ReturnForm()
         {
             InitializeComponent();
-            refreshInfo();
         }
 
         private void refreshInfo()

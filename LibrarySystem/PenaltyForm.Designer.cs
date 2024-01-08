@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PenaltyForm));
             this.label1 = new System.Windows.Forms.Label();
             this.borrowerLabel = new System.Windows.Forms.Label();
@@ -51,15 +51,24 @@
             this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             this.timeBtn = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.guna2GradientCircleButton2 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.category = new System.Windows.Forms.Label();
+            this.bID = new System.Windows.Forms.Label();
+            this.bnameInfo = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.penaltyDG)).BeginInit();
             this.upperlabelPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(310, 521);
+            this.label1.Location = new System.Drawing.Point(365, 516);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 21);
             this.label1.TabIndex = 0;
@@ -70,7 +79,7 @@
             // 
             this.borrowerLabel.AutoSize = true;
             this.borrowerLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowerLabel.Location = new System.Drawing.Point(472, 521);
+            this.borrowerLabel.Location = new System.Drawing.Point(527, 516);
             this.borrowerLabel.Name = "borrowerLabel";
             this.borrowerLabel.Size = new System.Drawing.Size(0, 20);
             this.borrowerLabel.TabIndex = 1;
@@ -79,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(310, 563);
+            this.label2.Location = new System.Drawing.Point(365, 558);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 21);
             this.label2.TabIndex = 2;
@@ -89,7 +98,7 @@
             // 
             this.amountDueLabel.AutoSize = true;
             this.amountDueLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountDueLabel.Location = new System.Drawing.Point(472, 563);
+            this.amountDueLabel.Location = new System.Drawing.Point(527, 558);
             this.amountDueLabel.Name = "amountDueLabel";
             this.amountDueLabel.Size = new System.Drawing.Size(0, 20);
             this.amountDueLabel.TabIndex = 3;
@@ -98,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(310, 611);
+            this.label3.Location = new System.Drawing.Point(365, 606);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 21);
             this.label3.TabIndex = 4;
@@ -108,7 +117,7 @@
             // 
             this.amountpaidTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amountpaidTb.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountpaidTb.Location = new System.Drawing.Point(472, 611);
+            this.amountpaidTb.Location = new System.Drawing.Point(527, 606);
             this.amountpaidTb.Name = "amountpaidTb";
             this.amountpaidTb.Size = new System.Drawing.Size(180, 19);
             this.amountpaidTb.TabIndex = 5;
@@ -118,7 +127,7 @@
             // 
             this.changeLabel.AutoSize = true;
             this.changeLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(310, 697);
+            this.changeLabel.Location = new System.Drawing.Point(365, 692);
             this.changeLabel.Name = "changeLabel";
             this.changeLabel.Size = new System.Drawing.Size(71, 21);
             this.changeLabel.TabIndex = 6;
@@ -128,7 +137,7 @@
             // 
             this.cLabel.AutoSize = true;
             this.cLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cLabel.Location = new System.Drawing.Point(472, 697);
+            this.cLabel.Location = new System.Drawing.Point(527, 692);
             this.cLabel.Name = "cLabel";
             this.cLabel.Size = new System.Drawing.Size(19, 20);
             this.cLabel.TabIndex = 7;
@@ -138,7 +147,7 @@
             // 
             this.balanceLabel.AutoSize = true;
             this.balanceLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.balanceLabel.Location = new System.Drawing.Point(310, 656);
+            this.balanceLabel.Location = new System.Drawing.Point(365, 651);
             this.balanceLabel.Name = "balanceLabel";
             this.balanceLabel.Size = new System.Drawing.Size(71, 21);
             this.balanceLabel.TabIndex = 9;
@@ -155,7 +164,7 @@
             // 
             this.bLabel.AutoSize = true;
             this.bLabel.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bLabel.Location = new System.Drawing.Point(472, 656);
+            this.bLabel.Location = new System.Drawing.Point(527, 651);
             this.bLabel.Name = "bLabel";
             this.bLabel.Size = new System.Drawing.Size(19, 20);
             this.bLabel.TabIndex = 10;
@@ -187,14 +196,14 @@
             this.penaltyDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.penaltyDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.penaltyDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.penaltyDG.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGoldenrod;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.penaltyDG.DefaultCellStyle = dataGridViewCellStyle4;
             this.penaltyDG.GridColor = System.Drawing.Color.PeachPuff;
             this.penaltyDG.Location = new System.Drawing.Point(39, 123);
             this.penaltyDG.Name = "penaltyDG";
@@ -213,7 +222,7 @@
             this.penaltyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.penaltyBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penaltyBtn.ForeColor = System.Drawing.Color.White;
-            this.penaltyBtn.Location = new System.Drawing.Point(268, 750);
+            this.penaltyBtn.Location = new System.Drawing.Point(323, 745);
             this.penaltyBtn.Name = "penaltyBtn";
             this.penaltyBtn.Size = new System.Drawing.Size(223, 55);
             this.penaltyBtn.TabIndex = 29;
@@ -233,7 +242,7 @@
             this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payBtn.ForeColor = System.Drawing.Color.White;
-            this.payBtn.Location = new System.Drawing.Point(566, 750);
+            this.payBtn.Location = new System.Drawing.Point(621, 745);
             this.payBtn.Name = "payBtn";
             this.payBtn.Size = new System.Drawing.Size(223, 55);
             this.payBtn.TabIndex = 8;
@@ -291,12 +300,101 @@
             this.guna2GradientCircleButton2.Size = new System.Drawing.Size(35, 32);
             this.guna2GradientCircleButton2.TabIndex = 38;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Book Antiqua", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(46, 498);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(202, 26);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "BORROWER INFO";
+            // 
+            // profilePic
+            // 
+            this.profilePic.Image = ((System.Drawing.Image)(resources.GetObject("profilePic.Image")));
+            this.profilePic.ImageRotate = 0F;
+            this.profilePic.Location = new System.Drawing.Point(62, 532);
+            this.profilePic.Name = "profilePic";
+            this.profilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profilePic.Size = new System.Drawing.Size(166, 159);
+            this.profilePic.TabIndex = 40;
+            this.profilePic.TabStop = false;
+            // 
+            // category
+            // 
+            this.category.AutoSize = true;
+            this.category.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category.Location = new System.Drawing.Point(148, 777);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(18, 20);
+            this.category.TabIndex = 61;
+            this.category.Text = "n";
+            // 
+            // bID
+            // 
+            this.bID.AutoSize = true;
+            this.bID.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bID.Location = new System.Drawing.Point(148, 740);
+            this.bID.Name = "bID";
+            this.bID.Size = new System.Drawing.Size(18, 20);
+            this.bID.TabIndex = 60;
+            this.bID.Text = "n";
+            // 
+            // bnameInfo
+            // 
+            this.bnameInfo.AutoSize = true;
+            this.bnameInfo.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnameInfo.Location = new System.Drawing.Point(146, 703);
+            this.bnameInfo.Name = "bnameInfo";
+            this.bnameInfo.Size = new System.Drawing.Size(18, 20);
+            this.bnameInfo.TabIndex = 59;
+            this.bnameInfo.Text = "n";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 740);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 21);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Student ID:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(47, 777);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 21);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Category:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(47, 704);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 21);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Name:";
+            // 
             // PenaltyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 880);
             this.ControlBox = false;
+            this.Controls.Add(this.category);
+            this.Controls.Add(this.bID);
+            this.Controls.Add(this.bnameInfo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.profilePic);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2GradientCircleButton2);
             this.Controls.Add(this.timeBtn);
             this.Controls.Add(this.upperlabelPanel);
@@ -321,6 +419,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.penaltyDG)).EndInit();
             this.upperlabelPanel.ResumeLayout(false);
             this.upperlabelPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +448,13 @@
         private System.Windows.Forms.Timer upperlabelTransition;
         private Guna.UI2.WinForms.Guna2GradientCircleButton timeBtn;
         private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton2;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox profilePic;
+        private System.Windows.Forms.Label category;
+        private System.Windows.Forms.Label bID;
+        private System.Windows.Forms.Label bnameInfo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
