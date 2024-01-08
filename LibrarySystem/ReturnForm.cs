@@ -165,6 +165,7 @@ namespace LibrarySystem
             bnameInfo.Text = "";
             bID.Text = "";
             category.Text = "";
+            dueDateLabel.Text = " ";
         }
 
         private void ReturnForm_Load(object sender, EventArgs e)
@@ -267,6 +268,7 @@ namespace LibrarySystem
 
                     // Clear borrower's name, due date, and book title when checkbox is unchecked
                     ClearBorrowedBookInfo();
+                    clearInfo();
                 }
             }
 
@@ -469,7 +471,7 @@ namespace LibrarySystem
         //Method for the return button
         private void returnBtn_Click(object sender, EventArgs e)
         {
-            //Validates if the user really wants to return the book
+            // Validates if the user really wants to return the book
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the returning process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Check user's choice
@@ -479,7 +481,7 @@ namespace LibrarySystem
                 return;
             }
 
-            //Limits the user to only borrow one book at a time
+            // Limits the user to only borrow one book at a time
             if (selectedBookTitles.Count > 1)
             {
                 MessageBox.Show("Cannot return multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -491,6 +493,13 @@ namespace LibrarySystem
             {
                 MessageBox.Show("Input Necessary Details. Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Stop further processing if the textbox is empty
+            }
+
+            // Check if the returndateTb contains a valid date format
+            if (!DateTime.TryParse(returndateTb.Text, out _))
+            {
+                MessageBox.Show("Invalid date format. Please enter a valid date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             // Calculate penalty before returning
@@ -534,6 +543,7 @@ namespace LibrarySystem
                 MessageBox.Show("Please select at least one book to return.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void ClearBookCheckBoxes()
         {
             // Remove existing checkboxes from the form

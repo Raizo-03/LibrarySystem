@@ -523,7 +523,7 @@ namespace LibrarySystem
                 }
                 else
                 {
-                    MessageBox.Show("Invalid borrow date format.");
+                    MessageBox.Show("Invalid borrow date format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
