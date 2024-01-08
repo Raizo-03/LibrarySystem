@@ -833,5 +833,10 @@ namespace LibrarySystem
             int dellosaReserve = GetTotalReservationsDellosa();
             dellosareserveLabel.Text = dellosaReserve.ToString();
         }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
