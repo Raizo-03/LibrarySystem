@@ -772,7 +772,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Diary of a Young Girl\r\n\r\n\r\n The Diary of a Young Girl, often referred to as The Diary of Anne Frank, is a book of the writings from the Dutch-language diary kept by Anne Frank while she was in hiding for two years with her family during the Nazi occupation of the Netherlands. The family was apprehended in 1944, and Anne Frank died of typhus in the Bergen-Belsen concentration camp in 1945.";
+            bookinfoLabel.Text = "The Diary of a Young Girl\r\n\r\n\r\n The Diary of a Young Girl, often referred to as The Diary of Anne Frank, is a book of the writings from the Dutch-language diary kept by Anne Frank while she was in hiding for two years with her family during the Nazi occupation of the Netherlands.";
         }
 
 
@@ -899,8 +899,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Elements Of Style\r\n\r\n\r\n The Elements of Style is a style guide to writing American English, published in numerous editions. The original was written by William Strunk Jr. in 1918, and published by Harcourt in 1920, comprising eight \"elementary rules of usage,\" ten \"elementary principles of composition,\" \"a few matters of form,\" a list of 49 \"words and expressions commonly misused,\" and a list of 57 \".";
-
+            bookinfoLabel.Text = "The Elements Of Style\r\n\r\n\r\n The Elements of Style is a style guide to writing American English, published in numerous editions. The original was written by William Strunk Jr.";
         }
 
         private void principiaBtn_Click(object sender, EventArgs e)
@@ -931,7 +930,7 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "Principia Mathematica\r\n\r\n\r\n Philosophiæ Naturalis Principia Mathematica (English: The Mathematical Principles of Natural Philosophy) often referred to as simply the Principia, is a book by Isaac Newton that expounds Newton's laws of motion and his law of universal gravitation. The Principia is written in Latin and comprises three volumes, and was first published on 5 July 1687.";
+            bookinfoLabel.Text = "Principia Mathematica\r\n\r\n\r\n Philosophiæ Naturalis Principia Mathematica (English: The Mathematical Principles of Natural Philosophy) often referred to as simply the Principia, is a book by Isaac Newton that expounds Newton's laws of motion and his law of universal gravitation. ";
         }
 
         private void structureBtn_Click(object sender, EventArgs e)
@@ -962,7 +961,8 @@ namespace LibrarySystem
             }
 
             // Text for the label
-            bookinfoLabel.Text = "The Structure of Scientific Revolutions\r\n\r\n\r\n The Structure of Scientific Revolutions is a book about the history of science by philosopher Thomas S. Kuhn. Its publication was a landmark event in the history, philosophy, and sociology of science. Kuhn challenged the then prevailing view of progress in science in which scientific progress was viewed as \"development-by-accumulation\" of accepted facts and theories.";
+            bookinfoLabel.Text = "The Structure of Scientific Revolutions\r\n\r\n\r\n The Structure of Scientific Revolutions is a book about the history of science by philosopher Thomas S. Kuhn. Its publication was a landmark event in the history, philosophy, and sociology of science. .";
+        
         }
 
         private void originBtn_Click(object sender, EventArgs e)
