@@ -766,12 +766,12 @@
             // briefstatsLabel
             // 
             this.briefstatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.briefstatsLabel.ForeColor = System.Drawing.Color.Red;
+            this.briefstatsLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.briefstatsLabel.Location = new System.Drawing.Point(0, 218);
             this.briefstatsLabel.Name = "briefstatsLabel";
             this.briefstatsLabel.Size = new System.Drawing.Size(149, 23);
             this.briefstatsLabel.TabIndex = 15;
-            this.briefstatsLabel.Text = "NOT AVAILABLE";
+            this.briefstatsLabel.Text = "AVAILABLE";
             this.briefstatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // briefLabel
@@ -823,12 +823,12 @@
             // elementsstatsLabel
             // 
             this.elementsstatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elementsstatsLabel.ForeColor = System.Drawing.Color.Red;
+            this.elementsstatsLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.elementsstatsLabel.Location = new System.Drawing.Point(0, 218);
             this.elementsstatsLabel.Name = "elementsstatsLabel";
             this.elementsstatsLabel.Size = new System.Drawing.Size(149, 23);
             this.elementsstatsLabel.TabIndex = 15;
-            this.elementsstatsLabel.Text = "NOT AVAILABLE";
+            this.elementsstatsLabel.Text = "AVAILABLE";
             this.elementsstatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // elementsLabel
@@ -880,12 +880,12 @@
             // principiastatsLabel
             // 
             this.principiastatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principiastatsLabel.ForeColor = System.Drawing.Color.Red;
+            this.principiastatsLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.principiastatsLabel.Location = new System.Drawing.Point(0, 218);
             this.principiastatsLabel.Name = "principiastatsLabel";
             this.principiastatsLabel.Size = new System.Drawing.Size(149, 23);
             this.principiastatsLabel.TabIndex = 15;
-            this.principiastatsLabel.Text = "NOT AVAILABLE";
+            this.principiastatsLabel.Text = "AVAILABLE";
             this.principiastatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // principiaLabel
@@ -936,12 +936,12 @@
             // structurestatsLabel
             // 
             this.structurestatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.structurestatsLabel.ForeColor = System.Drawing.Color.Red;
+            this.structurestatsLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.structurestatsLabel.Location = new System.Drawing.Point(0, 218);
             this.structurestatsLabel.Name = "structurestatsLabel";
             this.structurestatsLabel.Size = new System.Drawing.Size(149, 23);
             this.structurestatsLabel.TabIndex = 15;
-            this.structurestatsLabel.Text = "NOT AVAILABLE";
+            this.structurestatsLabel.Text = "AVAILABLE";
             this.structurestatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // structureLabel
@@ -992,12 +992,12 @@
             // originstatsLabel
             // 
             this.originstatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.originstatsLabel.ForeColor = System.Drawing.Color.Red;
+            this.originstatsLabel.ForeColor = System.Drawing.Color.DodgerBlue;
             this.originstatsLabel.Location = new System.Drawing.Point(0, 218);
             this.originstatsLabel.Name = "originstatsLabel";
             this.originstatsLabel.Size = new System.Drawing.Size(149, 23);
             this.originstatsLabel.TabIndex = 15;
-            this.originstatsLabel.Text = "NOT AVAILABLE";
+            this.originstatsLabel.Text = "AVAILABLE";
             this.originstatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // originLabel
