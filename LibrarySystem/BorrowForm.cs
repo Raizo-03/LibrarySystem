@@ -1006,6 +1006,16 @@ namespace LibrarySystem
             PopulateBookCheckBoxes();
             activateFetching();
         }
+
+        private void guna2GradientCircleButton2_Click(object sender, EventArgs e)
+        {
+            string guidelines =    "Students can both borrow and reserve a maximum of 2 books only.\n" +
+                                   "Teachers can both borrow and reserve a maximum of 5 books only.\n" +
+                                   "Academic books are only allowed inside the library.\n" +
+                                   "Only 1 book/checkbox per borrowing process.";
+
+            MessageBox.Show(guidelines, "Borrowing Guidelines", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 
     //Class for the borrowing info that is used in the list structures as well as their getters and setters

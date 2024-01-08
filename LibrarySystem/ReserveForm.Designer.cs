@@ -333,6 +333,7 @@
             this.guna2GradientCircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2GradientCircleButton2.Size = new System.Drawing.Size(35, 32);
             this.guna2GradientCircleButton2.TabIndex = 37;
+            this.guna2GradientCircleButton2.Click += new System.EventHandler(this.guna2GradientCircleButton2_Click);
             // 
             // label1
             // 

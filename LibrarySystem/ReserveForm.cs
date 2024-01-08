@@ -1143,6 +1143,18 @@ namespace LibrarySystem
                 category.Text = "";
             }
         }
+
+        private void guna2GradientCircleButton2_Click(object sender, EventArgs e)
+        {
+            string guidelines = 
+                      "Students can borrow or reserve a maximum of 2 books only.\n" +
+                      "Teachers can borrow or reserve a maximum of 5 books only.\n" +
+                      "Academic books are only allowed inside the library.\n" +
+                      "Only 1 book/checkbox is allowed per reserving process.";
+
+            MessageBox.Show(guidelines, "Reserving Guidelines", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+    }
     }
     //Class borrower for the list structure and their getters and setters
     public class Borrower
