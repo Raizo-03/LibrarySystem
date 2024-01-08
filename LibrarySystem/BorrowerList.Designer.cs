@@ -933,6 +933,7 @@
             this.label23.Size = new System.Drawing.Size(101, 20);
             this.label23.TabIndex = 53;
             this.label23.Text = "K12043710";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label24
             // 
