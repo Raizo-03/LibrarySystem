@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -495,10 +496,13 @@ namespace LibrarySystem
                 return; // Stop further processing if the textbox is empty
             }
 
+            // Specify the expected date format
+            string expectedDateFormat = "MM/dd/yyyy"; // Change this based on your desired format
+
             // Check if the returndateTb contains a valid date format
-            if (!DateTime.TryParse(returndateTb.Text, out _))
+            if (!DateTime.TryParseExact(returndateTb.Text, expectedDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
-                MessageBox.Show("Invalid date format. Please enter a valid date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Invalid date format. Please enter a valid date in the format {expectedDateFormat}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
