@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -491,8 +492,10 @@ namespace LibrarySystem
                     continue; // Skip to the next book
                 }
 
+                string expectedDateFormat = "MM/dd/yyyy"; // Change this based on your desired format
+
                 // Parse borrowDate and dueDate TextBox values to DateTime
-                if (DateTime.TryParse(borrowDate.Text, out DateTime borrowDateTime))
+                if (DateTime.TryParseExact(borrowDate.Text, expectedDateFormat, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime borrowDateTime))
                 {
                     if (!string.IsNullOrEmpty(dueDate.Text))  // Check if dueDate.Text is not null or empty
                     {
