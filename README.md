@@ -23,3 +23,5 @@ Penalty Notifications for Overdue Borrowed Books:Automated alerts for overdue bo
 Dashboard Tools for Library Analytics:Insights and analytics tools for administrators to monitor transactions and trends.
 
 Key Accomplishments
+
+Login System: Dynamic login for enhanced security and accessibility.
