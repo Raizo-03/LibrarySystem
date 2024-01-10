@@ -27,3 +27,5 @@ Key Accomplishments
 Login System: Dynamic login for enhanced security and accessibility.
 
 Dashboard System: Integrated dynamic counters and visually enriched tables for analytics.
+
+Booklist System: User-friendly interface showcasing book metadata and genre filters.
