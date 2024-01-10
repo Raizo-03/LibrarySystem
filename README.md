@@ -24,7 +24,7 @@ The **Eternal Library System** is a comprehensive library management solution de
 - **Booklist System:** 📖 User-friendly interface showcasing book metadata and genre filters.
 - **Borrowing System:** 📚 Optimized book selection process with intuitive design.
 - **Returning System:** 🔄 Organized display of processed book returns for streamlined handling.
-- **Reservation System:** Comprehensive view of reserved books with efficient editing options.
+- **Reservation System:** 📋 Comprehensive view of reserved books with efficient editing options.
 - **Penalty Paying System:** Transparent insights into penalties with streamlined payment processes.
 
 The *Eternal Library System's* core framework is complete, laying the foundation for further development and tailored enhancements to serve educational institutions.
