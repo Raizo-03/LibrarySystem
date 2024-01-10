@@ -14,3 +14,5 @@ Features
 User Authentication and Authorization:Librarians, teachers, and students have secure access tailored to their roles.
 
 Intuitive Book Category Search, Borrowing, and Reservation: Streamlined processes for finding, borrowing, and reserving books across various categories.
+
+Penalty Notifications for Overdue Borrowed Books:Automated alerts for overdue books to ensure timely returns.
