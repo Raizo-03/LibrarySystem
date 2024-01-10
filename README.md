@@ -1,6 +1,6 @@
-# A Dynamic Library System using C# Windows Form Application and SQL Database
+# 🚀 A Dynamic Library System using C# Windows Form Application and SQL Database 🚀
 
-## Project Overview
+## 📚 Project Overview 📚
 
 The **Eternal Library System** is a comprehensive library management solution designed for educational institutions. It streamlines the borrowing and management of fiction, non-fiction, and academic books, empowering librarians and enhancing the academic experience.
 
