@@ -37,3 +37,6 @@ Returning System: Organized display of processed book returns for streamlined ha
 Reservation System: Comprehensive view of reserved books with efficient editing options.
 
 Penalty Paying System: Transparent insights into penalties with streamlined payment processes.
+
+The Eternal Library System's core framework is complete, laying the foundation for further development and tailored enhancements to serve educational institutions.
+
