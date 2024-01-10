@@ -9,3 +9,8 @@ Enhancing Academic Experience: Focus on user-friendly interfaces and efficient b
 Elevating Administrative Efficiency: Automate routine tasks like book borrowing, returning, reservations, penalty notifications, and inventory management.
 
 Promoting Learning and Collaboration: Facilitate communication and resource-sharing among librarians, teachers, and students.
+
+Features
+User Authentication and Authorization:Librarians, teachers, and students have secure access tailored to their roles.
+
+Intuitive Book Category Search, Borrowing, and Reservation: Streamlined processes for finding, borrowing, and reserving books across various categories.
