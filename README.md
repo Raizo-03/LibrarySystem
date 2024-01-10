@@ -33,3 +33,5 @@ Booklist System: User-friendly interface showcasing book metadata and genre filt
 Borrowing System: Optimized book selection process with intuitive design.
 
 Returning System: Organized display of processed book returns for streamlined handling.
+
+Reservation System: Comprehensive view of reserved books with efficient editing options.
