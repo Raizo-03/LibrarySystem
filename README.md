@@ -25,3 +25,5 @@ Dashboard Tools for Library Analytics:Insights and analytics tools for administr
 Key Accomplishments
 
 Login System: Dynamic login for enhanced security and accessibility.
+
+Dashboard System: Integrated dynamic counters and visually enriched tables for analytics.
