@@ -8,7 +8,7 @@ The **Eternal Library System** is a comprehensive library management solution de
 
 - **Enhancing Academic Experience:** 📚 Focus on user-friendly interfaces and efficient book management.
 - **Elevating Administrative Efficiency:** 📊 Automate routine tasks like book borrowing, returning, reservations, penalty notifications, and inventory management.
-- **Promoting Learning and Collaboration:** Facilitate communication and resource-sharing among librarians, teachers, and students.
+- **Promoting Learning and Collaboration:** 🤝 Facilitate communication and resource-sharing among librarians, teachers, and students.
 
 ### Features
 
