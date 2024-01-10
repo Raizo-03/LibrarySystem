@@ -35,3 +35,5 @@ Borrowing System: Optimized book selection process with intuitive design.
 Returning System: Organized display of processed book returns for streamlined handling.
 
 Reservation System: Comprehensive view of reserved books with efficient editing options.
+
+Penalty Paying System: Transparent insights into penalties with streamlined payment processes.
