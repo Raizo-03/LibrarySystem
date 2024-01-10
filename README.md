@@ -20,7 +20,7 @@ The **Eternal Library System** is a comprehensive library management solution de
 ### Key Accomplishments
 
 - **Login System:** 🔐 Dynamic login for enhanced security and accessibility.
-- **Dashboard System:** Integrated dynamic counters and visually enriched tables for analytics.
+- **Dashboard System:** 📈 Integrated dynamic counters and visually enriched tables for analytics.
 - **Booklist System:** User-friendly interface showcasing book metadata and genre filters.
 - **Borrowing System:** Optimized book selection process with intuitive design.
 - **Returning System:** Organized display of processed book returns for streamlined handling.
