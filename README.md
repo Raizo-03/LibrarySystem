@@ -13,7 +13,7 @@ The **Eternal Library System** is a comprehensive library management solution de
 ### Features
 
 1. **User Authentication and Authorization:** 🔒 Librarians, teachers, and students have secure access tailored to their roles.
-2. **Intuitive Book Category Search, Borrowing, and Reservation:** Streamlined processes for finding, borrowing, and reserving books across various categories.
+2. **Intuitive Book Category Search, Borrowing, and Reservation:** 🔍 Streamlined processes for finding, borrowing, and reserving books across various categories.
 3. **Penalty Notifications for Overdue Borrowed Books:** Automated alerts for overdue books to ensure timely returns.
 4. **Dashboard Tools for Library Analytics:** Insights and analytics tools for administrators to monitor transactions and trends.
 
