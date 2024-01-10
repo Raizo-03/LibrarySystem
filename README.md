@@ -16,3 +16,5 @@ User Authentication and Authorization:Librarians, teachers, and students have se
 Intuitive Book Category Search, Borrowing, and Reservation: Streamlined processes for finding, borrowing, and reserving books across various categories.
 
 Penalty Notifications for Overdue Borrowed Books:Automated alerts for overdue books to ensure timely returns.
+
+Dashboard Tools for Library Analytics:Insights and analytics tools for administrators to monitor transactions and trends.
