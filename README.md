@@ -31,3 +31,5 @@ Dashboard System: Integrated dynamic counters and visually enriched tables for a
 Booklist System: User-friendly interface showcasing book metadata and genre filters.
 
 Borrowing System: Optimized book selection process with intuitive design.
+
+Returning System: Organized display of processed book returns for streamlined handling.
