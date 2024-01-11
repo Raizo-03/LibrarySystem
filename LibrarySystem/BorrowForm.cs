@@ -1019,6 +1019,7 @@ namespace LibrarySystem
 
             MessageBox.Show(guidelines, "Borrowing Guidelines", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
     }
 
     //Class for the borrowing info that is used in the list structures as well as their getters and setters
