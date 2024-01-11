@@ -47,8 +47,6 @@
             this.upperlabelTransition = new System.Windows.Forms.Timer(this.components);
             this.timeBtn = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.guna2GradientCircleButton2 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
-            this.borrowedBtn = new LibrarySystem.RJButton();
-            this.borrowBtn = new LibrarySystem.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.profilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +55,8 @@
             this.bnameInfo = new System.Windows.Forms.Label();
             this.bID = new System.Windows.Forms.Label();
             this.category = new System.Windows.Forms.Label();
+            this.borrowedBtn = new LibrarySystem.RJButton();
+            this.borrowBtn = new LibrarySystem.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.borrowDG)).BeginInit();
             this.upperlabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -254,46 +254,6 @@
             this.guna2GradientCircleButton2.TabIndex = 35;
             this.guna2GradientCircleButton2.Click += new System.EventHandler(this.guna2GradientCircleButton2_Click);
             // 
-            // borrowedBtn
-            // 
-            this.borrowedBtn.BackColor = System.Drawing.Color.Olive;
-            this.borrowedBtn.BackgroundColor = System.Drawing.Color.Olive;
-            this.borrowedBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borrowedBtn.BorderRadius = 25;
-            this.borrowedBtn.BorderSize = 0;
-            this.borrowedBtn.FlatAppearance.BorderSize = 0;
-            this.borrowedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowedBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowedBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowedBtn.Location = new System.Drawing.Point(381, 759);
-            this.borrowedBtn.Name = "borrowedBtn";
-            this.borrowedBtn.Size = new System.Drawing.Size(223, 55);
-            this.borrowedBtn.TabIndex = 26;
-            this.borrowedBtn.Text = "BORROWED BOOKS";
-            this.borrowedBtn.TextColor = System.Drawing.Color.White;
-            this.borrowedBtn.UseVisualStyleBackColor = false;
-            this.borrowedBtn.Click += new System.EventHandler(this.borrowedBtn_Click);
-            // 
-            // borrowBtn
-            // 
-            this.borrowBtn.BackColor = System.Drawing.Color.Olive;
-            this.borrowBtn.BackgroundColor = System.Drawing.Color.Olive;
-            this.borrowBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.borrowBtn.BorderRadius = 25;
-            this.borrowBtn.BorderSize = 0;
-            this.borrowBtn.FlatAppearance.BorderSize = 0;
-            this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowBtn.ForeColor = System.Drawing.Color.White;
-            this.borrowBtn.Location = new System.Drawing.Point(679, 759);
-            this.borrowBtn.Name = "borrowBtn";
-            this.borrowBtn.Size = new System.Drawing.Size(223, 55);
-            this.borrowBtn.TabIndex = 15;
-            this.borrowBtn.Text = "BORROW";
-            this.borrowBtn.TextColor = System.Drawing.Color.White;
-            this.borrowBtn.UseVisualStyleBackColor = false;
-            this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -374,6 +334,46 @@
             this.category.Size = new System.Drawing.Size(18, 20);
             this.category.TabIndex = 43;
             this.category.Text = "n";
+            // 
+            // borrowedBtn
+            // 
+            this.borrowedBtn.BackColor = System.Drawing.Color.Olive;
+            this.borrowedBtn.BackgroundColor = System.Drawing.Color.Olive;
+            this.borrowedBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borrowedBtn.BorderRadius = 25;
+            this.borrowedBtn.BorderSize = 0;
+            this.borrowedBtn.FlatAppearance.BorderSize = 0;
+            this.borrowedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowedBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowedBtn.ForeColor = System.Drawing.Color.White;
+            this.borrowedBtn.Location = new System.Drawing.Point(381, 759);
+            this.borrowedBtn.Name = "borrowedBtn";
+            this.borrowedBtn.Size = new System.Drawing.Size(223, 55);
+            this.borrowedBtn.TabIndex = 26;
+            this.borrowedBtn.Text = "BORROWED BOOKS";
+            this.borrowedBtn.TextColor = System.Drawing.Color.White;
+            this.borrowedBtn.UseVisualStyleBackColor = false;
+            this.borrowedBtn.Click += new System.EventHandler(this.borrowedBtn_Click);
+            // 
+            // borrowBtn
+            // 
+            this.borrowBtn.BackColor = System.Drawing.Color.Olive;
+            this.borrowBtn.BackgroundColor = System.Drawing.Color.Olive;
+            this.borrowBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.borrowBtn.BorderRadius = 25;
+            this.borrowBtn.BorderSize = 0;
+            this.borrowBtn.FlatAppearance.BorderSize = 0;
+            this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowBtn.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowBtn.ForeColor = System.Drawing.Color.White;
+            this.borrowBtn.Location = new System.Drawing.Point(679, 759);
+            this.borrowBtn.Name = "borrowBtn";
+            this.borrowBtn.Size = new System.Drawing.Size(223, 55);
+            this.borrowBtn.TabIndex = 15;
+            this.borrowBtn.Text = "BORROW";
+            this.borrowBtn.TextColor = System.Drawing.Color.White;
+            this.borrowBtn.UseVisualStyleBackColor = false;
+            this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
             // 
             // BorrowForm
             // 
