@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -625,124 +626,110 @@ namespace LibrarySystem
         //Method for the reserve button
         private void reserveBtn_Click(object sender, EventArgs e)
         {
-            //Validates if the user really wants to reserve the book
             DialogResult result = MessageBox.Show("Are you sure you want to continue with the reserving process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Check if the borrowernameTb textbox is empty
             if (string.IsNullOrWhiteSpace(borrowernameTb.Text))
             {
                 MessageBox.Show("Input Necessary Details. Please enter the borrower name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Stop further processing if the textbox is empty
+                return;
             }
-            // Check if the returndateTb textbox is empty
+
             if (string.IsNullOrWhiteSpace(reserveddateTb.Text))
             {
                 MessageBox.Show("Input Necessary Details. Please enter the return date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Stop further processing if the textbox is empty
-            }
-
-            // Check user's choice
-            if (result == DialogResult.No)
-            {
-                // User chose not to continue, so return without executing the borrowing process
                 return;
             }
-            // Check if the reserveddateTb contains a valid date format
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
             if (!DateTime.TryParse(reserveddateTb.Text, out _))
             {
                 MessageBox.Show("Invalid date format. Please enter a valid reservation date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Check if multiple books are selected
-            if (selectedBookTitles.Count > 1)
-            {
-                MessageBox.Show("Cannot reserve multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            DateTime today = DateTime.Today;
+            string expectedDateFormat = "MM/dd/yyyy";
 
-            // Check if a book is selected
-            if (!string.IsNullOrEmpty(titleLabel.Text))
+            if (DateTime.TryParseExact(reserveddateTb.Text, expectedDateFormat, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime reservationDateTime))
             {
-                // Get book information
-                int bookId = GetBookIdByTitle(titleLabel.Text);
-
-                // Check if a borrower is entered
-                if (!string.IsNullOrEmpty(borrowernameTb.Text))
+                if (reservationDateTime.Date < today)
                 {
-                    // Get borrower information
-                    string borrowerName = borrowernameTb.Text;
+                    MessageBox.Show("Can only reserve from today onwards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                    // Check if the borrower has unpaid penalties
-                    int borrowerId = GetBorrowerIdByName(borrowerName);
+                if (selectedBookTitles.Count > 1)
+                {
+                    MessageBox.Show("Cannot reserve multiple books at once. Please select only one book at a time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                    if (borrowerId != -1 && !HasUnpaidPenalties(borrowerId))
+                if (!string.IsNullOrEmpty(titleLabel.Text))
+                {
+                    int bookId = GetBookIdByTitle(titleLabel.Text);
+
+                    if (!string.IsNullOrEmpty(borrowernameTb.Text))
                     {
-                        // Continue with the reservation process
+                        string borrowerName = borrowernameTb.Text;
+                        int borrowerId = GetBorrowerIdByName(borrowerName);
 
-                        // Get borrower information
-                        Borrower borrower = GetBorrowerByName(borrowerName);
-
-                        if (borrower != null)
+                        if (borrowerId != -1 && !HasUnpaidPenalties(borrowerId))
                         {
-                            // Check if the borrower can reserve based on penalties and borrowed books
-                            if (CanBorrowerReserve(borrower.BorrowerId))
+                            Borrower borrower = GetBorrowerByName(borrowerName);
+
+                            if (borrower != null)
                             {
-                                // Check the maximum reservation limit based on the borrower's identifier
-                                int maxReservationLimit = GetMaxReservationLimit(borrower.Identifier);
-
-                                // Check if the borrower has exceeded the reservation limit
-                                if (GetBorrowerReservationCount(borrower.BorrowerId, borrower.Identifier) < maxReservationLimit)
+                                if (CanBorrowerReserve(borrower.BorrowerId))
                                 {
-                                    // Get reservation date
-                                    DateTime reservationDate = reservedatepicker.Value;
+                                    int maxReservationLimit = GetMaxReservationLimit(borrower.Identifier);
 
-                                    // Insert reservation into the reservations table
-                                    InsertReservation(bookId, borrower.BorrowerId, reservationDate);
-
-                                    // Update book availability to "RESERVED"
-                                    UpdateBookAvailability(bookId, "RESERVED");
-
-                                    // Display success message
-                                    MessageBox.Show("Reservation successful!");
-
-                                    // Clear selected book and borrower
-                                    titleLabel.Text = string.Empty;
-                                    borrowernameTb.Text = string.Empty;
-
-                                    // Refreshes the components
-                                    refreshFunction();
-                                    clearInfo();
-                                }
-                                else
-                                {
-                                    MessageBox.Show($"Sorry! You have exceeded the number of books to be reserve. The borrower '{borrowerName}' has reached the maximum reservation limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    if (GetBorrowerReservationCount(borrower.BorrowerId, borrower.Identifier) < maxReservationLimit)
+                                    {
+                                        InsertReservation(bookId, borrower.BorrowerId, reservationDateTime);
+                                        UpdateBookAvailability(bookId, "RESERVED");
+                                        MessageBox.Show("Reservation successful!");
+                                        titleLabel.Text = string.Empty;
+                                        borrowernameTb.Text = string.Empty;
+                                        refreshFunction();
+                                        clearInfo();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show($"Sorry! You have exceeded the number of books to be reserved. The borrower '{borrowerName}' has reached the maximum reservation limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
                             }
                             else
                             {
+                                MessageBox.Show($"{borrowerName} not found. Reservation not allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show($"{borrowerName} not found. Reservation not allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"{borrowerName} has unpaid penalties. Reservation not allowed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show($"{borrowerName} has unpaid penalties. Reservation not allowed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Input Necessary Details. Please enter a borrower name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Input Necessary Details. Please enter a borrower name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Input Necessary Details. Please select a book.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Input Necessary Details. Please select a book.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid reservation date format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
+
         private void ClearBookCheckBoxes()
         {
             // Remove existing checkboxes from the form

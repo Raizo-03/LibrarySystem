@@ -641,47 +641,67 @@ namespace LibrarySystem
                 return;
             }
 
-            // Calculate penalty before returning
-            CalculatePenalty();
-
-            // Check if there is a penalty
-            bool hasPenalty = CheckPenalty();
-
-            // Update book availability to "AVAILABLE" and remove from borrowings
-            if (selectedBookTitles.Count > 0)
+            // Get the borrowed date from the label and subtract 3 days
+            if (DateTime.TryParse(dueDateLabel.Text, out DateTime borrowedDate))
             {
-                foreach (var bookTitle in selectedBookTitles)
+                DateTime dueDateMinus3Days = borrowedDate.AddDays(-3);
+
+                // Check if the return date is on or after the due date minus 3 days
+                if (DateTime.TryParseExact(returndateTb.Text, expectedDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime returnDate) && returnDate >= dueDateMinus3Days)
                 {
-                    // Update book availability to "Available"
-                    UpdateBookAvailability(bookTitle, "Available");
+                    // Calculate penalty before returning
+                    CalculatePenalty();
 
-                    // Remove entry from borrowings table
-                    RemoveFromBorrowings(bookTitle);
+                    // Check if there is a penalty
+                    bool hasPenalty = CheckPenalty();
+
+                    // Update book availability to "AVAILABLE" and remove from borrowings
+                    if (selectedBookTitles.Count > 0)
+                    {
+                        foreach (var bookTitle in selectedBookTitles)
+                        {
+                            // Update book availability to "Available"
+                            UpdateBookAvailability(bookTitle, "Available");
+
+                            // Remove entry from borrowings table
+                            RemoveFromBorrowings(bookTitle);
+                        }
+
+                        string successMessage = "Book(s) returned successfully. Availability updated.";
+                        if (hasPenalty)
+                        {
+                            successMessage += "\nPlease note that there is a penalty for the returned book(s).";
+                        }
+
+                        MessageBox.Show(successMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Clear selected book titles
+                        selectedBookTitles.Clear();
+
+                        // Clear borrower's information
+                        ClearBorrowedBookInfo();
+
+                        // Refreshes the form
+                        refreshFunction();
+                        clearInfo();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select at least one book to return.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-
-                string successMessage = "Book(s) returned successfully. Availability updated.";
-                if (hasPenalty)
+                else
                 {
-                    successMessage += "\nPlease note that there is a penalty for the returned book(s).";
+                    MessageBox.Show($"Return date must be on or after {dueDateMinus3Days.ToShortDateString()} (borrowed date - 3 days).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                MessageBox.Show(successMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Clear selected book titles
-                selectedBookTitles.Clear();
-
-                // Clear borrower's information
-                ClearBorrowedBookInfo();
-
-                // Refreshes the form
-                refreshFunction();
-                clearInfo();
             }
             else
             {
-                MessageBox.Show("Please select at least one book to return.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Handle the case where dueDateLabel.Text is not a valid DateTime
+                MessageBox.Show("Invalid due date format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void ClearBookCheckBoxes()
         {
