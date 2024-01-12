@@ -143,7 +143,8 @@
             this.analyticsDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.analyticsDG.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.analyticsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.analyticsDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.analyticsDG.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.analyticsDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.analyticsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;

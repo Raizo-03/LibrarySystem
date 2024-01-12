@@ -281,4 +281,33 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABwAAAAdCAYAAAC5UQwxAAAABGdBTUEAALGPC/xhBQAAAcFJREFUSEu9
+        liFywzAQRQ0KzMpzglzCJKQkLEfIBUrCYxIemBPkHKE+QWkvUFqY/qfRdraqHCszssGr3dX6f+1KltO8
+        vW8XJRuck/DneGzavm/WunZiU5kO7dOpeQmG+udVwb0YxLe4VwZNtPd4UR1mX+JTXMWlMmiijcceQ9wJ
+        hBno2tbEdRCPAUPKHhjwi1uTaEphdzO82aLmYIyH4FHeGDyDR5GhTFYaP4uPyCXGsi00vF6xYUzcCb97
+        uT8IP4mUmya1TnSmDWmhxhA2M4OHe8HOS2FCmHam84whrQuJDhOkcirNEXa86RQbKs7J480MTINoDo21
+        XueZCjnuwnZOsAppKy1P6fXsynSKDWMiwry0ZsY60TZOEYulkLNJdKYNXTKVmNiZ2cdYrjo4PF1hTGIN
+        OZY4D82QeyrcISrqrKFiiLJWttXNkHtijLFWrDPVeqiwfJcqmZYhaCZjkMPE7NNmEC9/D0kWfqOMQaVU
+        xAbC1LhSebFhbBMJmD6CnE0U/HOWmlaRIdBWjCf43YmPyBku+j3khvYs9sVf9jeNmwGV+vetFmiijUcb
+        esyiynjW36W6hp37b4HnJhucj23zA3S9WRzt5rCyAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJtSURBVEhLnZYtXgNBDMVraipxmJ6gsh6JqeQEyCocEhSeA3ADDsn7h7whu7+Z3S7idecjeS+T
+        TWa7e3y5dPH+vtsL98JJON8IbPHZ9zhBdxHI6Si8Ct8bgc+xxwniRwYHoUWW8ycBZ6LmtLcAW3zwPSQX
+        63DH3IKc5ipc2Hx7293p+QwYY3ML5n5wCXDCHaeuhkT1kQYE0BXUmrPRojaqoAAHXHA+mcck+zT2y+8K
+        ak56HgTSBhi3AukIBl+uh51JyD1GnBIjou8JYkfEpAgwPg0E4YALTuZRC3NBsCToFBE9iFewIuj5r2AS
+        +b1ECoRRSknPZ+4fc3weCLaUCnD/VWkarhYNY+FL60HEeL5vPwGOYdGw2doiQVFcK6HmFBenIjhIGHeL
+        JsfwwDltC01a4+cYp7g15oKCiwUwHgoWn2lKDRYFIidVpM6R4uRb6FT2W4WCtJ0IztEGMrKYU0aPGW4X
+        bIDXh42/KIijcEkxcu408A5Z+9CTE7GHnU/YWgJobV1Qm5C73EOsOPKe4iQ5p5B4tyZdLJoqZFQjyA8d
+        MQJCkAKhiBDx1Qa2CWrTLYAhxO7HKsbJvcaNgXgrdWOrIEKMo2DY1LOK8ZwUyRz/EfSJ5idjb1EMpCAn
+        v02wbmj+ICcqEUFuIuxoDdI6gl9HFF/lM5YEIXeRQACwg/C7BDMHKb2vXBVLgqSUvRo1BeMWwoegYi2f
+        3ELdVBpV8LlnoHWEIyAhejQF22dpC+qLvvYMAORCfEAFX3/DtC0BMkh8rQ0rMe38eRoWxRriR85ET9qG
+        f2ABIik4+UpsQfyIwAWyGrVsaJHVnuzjsvsBIOmRwpSECTwAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
