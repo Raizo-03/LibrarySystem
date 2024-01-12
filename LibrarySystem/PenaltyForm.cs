@@ -198,6 +198,29 @@ namespace LibrarySystem
 
             }
 
+            //For penalty days
+            string amountDue = amountDueLabel.Text;
+
+            // Remove non-numeric characters (leaving only digits and decimal point)
+            amountDue = new string(amountDue.Where(char.IsDigit).ToArray());
+
+            if (!string.IsNullOrEmpty(amountDue))
+            {
+                if (double.TryParse(amountDue, out double aVal))
+                {
+                    double days = aVal / 2000; // Adjust the division to get the correct value
+                    pDays.Text = days.ToString();
+                }
+                else
+                {
+                    pDays.Text = "Invalid input";
+                }
+            }
+            else
+            {
+                pDays.Text = "Empty input";
+            }
+
         }
 
         private void clearInfo()
