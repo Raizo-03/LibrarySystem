@@ -413,6 +413,135 @@ namespace LibrarySystem
                     // Additional actions if needed
                     int bookId = Convert.ToInt32(checkBox.Tag);
                     MessageBox.Show($"Book '{checkBox.Text}' is selected.");
+                    if (titleLabel.Text.Equals("1984"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/1984book.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "1984";
+                        bookA.Text = "George Orwell";
+                        bookG.Text = "FICTION";
+
+
+                    }
+                    else if (titleLabel.Text.Equals("To Kill a Mockingbird"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/mockingbirdbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "To Kill a Mockingbird";
+                        bookA.Text = "Harper Lee";
+                        bookG.Text = "FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("Pride and Prejudice"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/pridebook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "Pride and Prejudice";
+                        bookA.Text = "Jane Austen";
+                        bookG.Text = "FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("The Great Gatsby"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/gatsbybook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "The Great Gatsby";
+                        bookA.Text = "Scott Fitzgerald";
+                        bookG.Text = "FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("One Hundred Years of Solitude"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/solitudebook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "One Hundred Years of Solitude";
+                        bookA.Text = "Gabriel Marquez";
+                        bookG.Text = "FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("Sapiens: A Brief History of Humankind"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/sapiensbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "Sapiens: A Brief History of Humankind";
+                        bookA.Text = "Yuval Noah Harari";
+                        bookG.Text = "NON-FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("The Immortal Life of Henrietta Lacks"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/immortalbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "The Immortal Life of Henrietta Lacks";
+                        bookA.Text = "Rebecca Skloot";
+                        bookG.Text = "NON-FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("The Diary of a Young Girl"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/diarybook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "The Diary of a Young Girl";
+                        bookA.Text = "Anne Frank";
+                        bookG.Text = "NON-FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("Thinking, Fast and Slow"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/thinkingbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "Thinking, Fast and Slow";
+                        bookA.Text = "Daniel Kahneman";
+                        bookG.Text = "NON-FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("Educated"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/educatedbook.png";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "Educated";
+                        bookA.Text = "Tara Westover";
+                        bookG.Text = "NON-FICTION";
+                    }
+                    else if (titleLabel.Text.Equals("A Brief History of Time"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/briefbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "A Brief History of Time";
+                        bookA.Text = "Stephen Hawking";
+                        bookG.Text = "ACADEMIC";
+                    }
+                    else if (titleLabel.Text.Equals("The Elements of Style"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/elementsbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "The Elements of Style";
+                        bookA.Text = "William Strunk";
+                        bookG.Text = "ACADEMIC";
+                    }
+                    else if (titleLabel.Text.Equals("Principia Mathematica"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/principiabook.png";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "Principia Mathematica";
+                        bookA.Text = "Isaac Newton";
+                        bookG.Text = "ACADEMIC";
+                    }
+                    else if (titleLabel.Text.Equals("The Structure of Scientific Revolutions"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/structurebook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "The Structure of Scientific Revolutions";
+                        bookA.Text = "Thomas Kuhn";
+                        bookG.Text = "ACADEMIC";
+                    }
+                    else if (titleLabel.Text.Equals("The Origin of Species"))
+                    {
+                        string imagePath = "C:/Users/USER/source/repos/LibrarySystem/images/originbook.jpg";
+                        bookImage.Image = Image.FromFile(imagePath);
+                        bookT.Text = "The Origin of Species";
+                        bookA.Text = "Charles Darwin";
+                        bookG.Text = "ACADEMIC";
+                    }
+                    else
+                    {
+                        // Clear the text if the selected book is not "1984"
+                        bookT.Text = "";
+                        bookA.Text = "";
+                        bookG.Text = "";
+                    }
                 }
                 else
                 {
