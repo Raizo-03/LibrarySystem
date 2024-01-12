@@ -635,11 +635,19 @@ namespace LibrarySystem
                     continue; // Skip to the next book
                 }
 
+                DateTime today = DateTime.Today;
                 string expectedDateFormat = "MM/dd/yyyy"; // Change this based on your desired format
 
                 // Parse borrowDate and dueDate TextBox values to DateTime
                 if (DateTime.TryParseExact(borrowDate.Text, expectedDateFormat, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime borrowDateTime))
                 {
+                    //Function thae makes the code only chooses the date today
+                    if (borrowDateTime.Date != today)
+                    {
+                        MessageBox.Show("Can only borrow for the current date today.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     if (!string.IsNullOrEmpty(dueDate.Text))  // Check if dueDate.Text is not null or empty
                     {
                         if (dueDate.Text.Equals("NO DUE DATE"))
