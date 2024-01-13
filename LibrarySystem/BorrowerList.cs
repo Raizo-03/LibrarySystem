@@ -15,8 +15,6 @@ namespace LibrarySystem
 {
     public partial class BorrowerList : Form
     {
-        //Declaring a list structure for user
-        private List<User> users;  
 
         //For database connection
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
