@@ -931,7 +931,6 @@ namespace LibrarySystem
             }
         }
 
-        bool upperlabelExpand = false;
 
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
@@ -944,7 +943,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
 

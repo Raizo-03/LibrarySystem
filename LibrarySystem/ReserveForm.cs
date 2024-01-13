@@ -1185,7 +1185,6 @@ namespace LibrarySystem
             return defaultMaxReservationLimit;
         }
 
-        bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 247;
@@ -1197,7 +1196,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
 
