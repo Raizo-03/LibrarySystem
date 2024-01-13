@@ -744,8 +744,6 @@ namespace LibrarySystem
                 return 0;
             }
         }
-
-        bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 418;
@@ -757,7 +755,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
 
