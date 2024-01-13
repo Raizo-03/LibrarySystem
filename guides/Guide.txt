@@ -3,7 +3,9 @@
 
 Requirements:
 
-
+.NET Framework version: 4.8
+XAMPP: Cross-Platform, Apache, MySQL, PHP, and Perl
+Timezone: UTC + 8:00 - Beijing, Chongqing, Hong Kong, Urumqi
 
 🚀 1. Fork the repository in Visual Studio 🚀
 Open Visual Studio.
