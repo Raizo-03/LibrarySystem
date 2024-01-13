@@ -400,8 +400,6 @@ namespace LibrarySystem
         //NONFICTION TRANSITON
         //This method is use to collapse the flowpanel of the non fiction books
 
-        bool nonfictionExpand = false;
-
         private void nonficTransition_Tick_1(object sender, EventArgs e)
         {
             const int targetCollapsedWidth = 1;
@@ -414,7 +412,6 @@ namespace LibrarySystem
             {
                 nonfictionPanel.Width = targetCollapsedWidth;
                 nonficTransition.Stop();
-                nonfictionExpand = false;
             }
         }
 
@@ -429,7 +426,6 @@ namespace LibrarySystem
             {
                 nonfictionPanel.Width = targetExpandedWidth;
                 nonficTransition2.Stop();
-                nonfictionExpand = true;
             }
         }
 
