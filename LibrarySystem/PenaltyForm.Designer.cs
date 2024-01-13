@@ -524,7 +524,6 @@
         private System.Windows.Forms.Label cLabel;
         private RJButton payBtn;
         private System.Windows.Forms.Label balanceLabel;
-        private System.Windows.Forms.Label balance;
         private System.Windows.Forms.Label bLabel;
         private System.Windows.Forms.Label balanceL;
         private System.Windows.Forms.Label penaltyLabel;
