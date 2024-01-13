@@ -381,7 +381,6 @@ namespace LibrarySystem
             {
                 fictionPanel.Width = targetExpandedWidth;
                 fictionTransition2.Stop();
-                //fictionExpand = true;
             }
         }
 
