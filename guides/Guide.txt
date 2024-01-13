@@ -1,1 +1,5 @@
 Guide for the whole program
+
+Requirements:
+.NET Framework version: 4.8
+
