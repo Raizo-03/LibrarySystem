@@ -23,3 +23,14 @@ Start both the MySQL service (SQL) and Apache service.
 🏗️4. Run the code 🏗️
 Open the project in Visual Studio.
 Build and run the application.
+
+
+Possible Errors and Solutions:
+
+1. Error on SQL porting: gssp_auth
+
+🚧 Solution: Specify the port in your SQL configuration.
+Default port: 3306
+2. Error on image paths:
+
+📷 Solution: Rewrite the string image paths in the forms that require images.
