@@ -432,7 +432,6 @@ namespace LibrarySystem
 
 
         //ACADEMIC TRANSITION
-        bool acadExpand = false;
         //This method is use to collapse the flowpanel of the academic books
 
         private void acadTransition_Tick(object sender, EventArgs e)
@@ -447,7 +446,6 @@ namespace LibrarySystem
             {
                 academicPanel.Width = targetCollapsedWidth;
                 acadTransition.Stop();
-                acadExpand = false;
             }
         }
         //This method is use to expand the flowpanel of the academic books
@@ -462,7 +460,6 @@ namespace LibrarySystem
             {
                 academicPanel.Width = targetExpandedWidth;
                 acadTransition2.Stop();
-                acadExpand = true;
             }
         }
 
