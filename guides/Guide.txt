@@ -1,4 +1,4 @@
-Guide for the whole program
+Guide for to run program
 
 Requirements:
 .NET Framework version: 4.8
