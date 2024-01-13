@@ -3,3 +3,6 @@ Guide for the whole program
 Requirements:
 .NET Framework version: 4.8
 XAMPP(Cross-Platform, Apache, MySQL, PHP, and Perl)
+Timezone: UTC + 8:00-Beijing, Chongqing, Hong Kong, Urumqi
+
+DIRECTIONS
