@@ -352,7 +352,6 @@ namespace LibrarySystem
 
         }
 
-        bool fictionExpand = false;
 
         //FICTION TRANSITION
 
@@ -369,7 +368,6 @@ namespace LibrarySystem
             {
                 fictionPanel.Width = targetCollapsedWidth;
                 fictionTransition.Stop();
-                fictionExpand = false;
             }
         }
         //This method is use to expand the flowpanel of the fiction books
@@ -383,7 +381,7 @@ namespace LibrarySystem
             {
                 fictionPanel.Width = targetExpandedWidth;
                 fictionTransition2.Stop();
-                fictionExpand = true;
+                //fictionExpand = true;
             }
         }
 
