@@ -23,7 +23,6 @@ namespace LibrarySystem
 
         private string username;
         private string identifier;
-        private int limit;
 
         
 
