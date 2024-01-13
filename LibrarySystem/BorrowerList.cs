@@ -15,8 +15,6 @@ namespace LibrarySystem
 {
     public partial class BorrowerList : Form
     {
-        //Declaring a list structure for user
-        private List<User> users;  
 
         //For database connection
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
@@ -746,8 +744,6 @@ namespace LibrarySystem
                 return 0;
             }
         }
-
-        bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 418;
@@ -759,7 +755,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
 

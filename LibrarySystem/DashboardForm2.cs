@@ -23,7 +23,7 @@ namespace LibrarySystem
 {
     public partial class DashboardForm2 : Form
     {
-        private string identifier, name, id;
+        private string identifier, id;
 
         //This method is for the database
         //Note: This will change according to the Uid and the Pwd on your XAMPP configuration

@@ -28,8 +28,6 @@ namespace LibrarySystem
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
 
         //Global variables for the amount paid and change = set to 0
-        private double amountPaid = 0;
-        private double change = 0;
 
 
         public PenaltyForm()
@@ -848,7 +846,6 @@ namespace LibrarySystem
             FetchUnpaidPenalties();
         }
 
-        bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 247;
@@ -860,7 +857,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
 

@@ -23,7 +23,6 @@ namespace LibrarySystem
 
         private string username;
         private string identifier;
-        private int limit;
 
         
 
@@ -353,7 +352,6 @@ namespace LibrarySystem
 
         }
 
-        bool fictionExpand = false;
 
         //FICTION TRANSITION
 
@@ -370,7 +368,6 @@ namespace LibrarySystem
             {
                 fictionPanel.Width = targetCollapsedWidth;
                 fictionTransition.Stop();
-                fictionExpand = false;
             }
         }
         //This method is use to expand the flowpanel of the fiction books
@@ -384,7 +381,6 @@ namespace LibrarySystem
             {
                 fictionPanel.Width = targetExpandedWidth;
                 fictionTransition2.Stop();
-                fictionExpand = true;
             }
         }
 
@@ -404,8 +400,6 @@ namespace LibrarySystem
         //NONFICTION TRANSITON
         //This method is use to collapse the flowpanel of the non fiction books
 
-        bool nonfictionExpand = false;
-
         private void nonficTransition_Tick_1(object sender, EventArgs e)
         {
             const int targetCollapsedWidth = 1;
@@ -418,7 +412,6 @@ namespace LibrarySystem
             {
                 nonfictionPanel.Width = targetCollapsedWidth;
                 nonficTransition.Stop();
-                nonfictionExpand = false;
             }
         }
 
@@ -433,14 +426,12 @@ namespace LibrarySystem
             {
                 nonfictionPanel.Width = targetExpandedWidth;
                 nonficTransition2.Stop();
-                nonfictionExpand = true;
             }
         }
 
 
 
         //ACADEMIC TRANSITION
-        bool acadExpand = false;
         //This method is use to collapse the flowpanel of the academic books
 
         private void acadTransition_Tick(object sender, EventArgs e)
@@ -455,7 +446,6 @@ namespace LibrarySystem
             {
                 academicPanel.Width = targetCollapsedWidth;
                 acadTransition.Stop();
-                acadExpand = false;
             }
         }
         //This method is use to expand the flowpanel of the academic books
@@ -470,7 +460,6 @@ namespace LibrarySystem
             {
                 academicPanel.Width = targetExpandedWidth;
                 acadTransition2.Stop();
-                acadExpand = true;
             }
         }
 
@@ -1034,7 +1023,6 @@ namespace LibrarySystem
             }
         }
 
-        bool upperlabelExpand = false;
 
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
@@ -1047,7 +1035,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
     }

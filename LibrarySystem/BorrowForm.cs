@@ -30,9 +30,7 @@ namespace LibrarySystem
         private DateTime futureDate;  // Change to DateTime
 
 
-        private int selectedBookId; // Class-level variable to store the selected book ID
         private List<int> selectedBookIds = new List<int>();
-        private string Booktitle;
 
         //Declares new checkboxes globally to be used in different method
         CheckBox checkBox = new CheckBox();
@@ -1099,7 +1097,6 @@ namespace LibrarySystem
                 }
         }
 
-        bool upperlabelExpand = false;
         private void upperlabelTransition_Tick(object sender, EventArgs e)
         {
             const int targetExpandedWidth = 247;
@@ -1111,7 +1108,6 @@ namespace LibrarySystem
             {
                 upperlabelPanel.Width = targetExpandedWidth;
                 upperlabelTransition.Stop();
-                upperlabelExpand = true;
             }
         }
 
