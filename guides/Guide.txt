@@ -8,3 +8,4 @@ Timezone: UTC + 8:00-Beijing, Chongqing, Hong Kong, Urumqi
 DIRECTIONS
 Clone the repository in Visual Studio 
 Import the database file from the database folder
+Run SQL and Apache in the XAMPP
