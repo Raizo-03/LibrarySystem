@@ -30,9 +30,7 @@ namespace LibrarySystem
         private DateTime futureDate;  // Change to DateTime
 
 
-        private int selectedBookId; // Class-level variable to store the selected book ID
         private List<int> selectedBookIds = new List<int>();
-        private string Booktitle;
 
         //Declares new checkboxes globally to be used in different method
         CheckBox checkBox = new CheckBox();
