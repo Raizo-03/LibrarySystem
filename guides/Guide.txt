@@ -1,1 +1,25 @@
-Guide for the whole program
+
+📚🚀 Guide for the whole program 🚀📚
+
+Requirements:
+
+.NET Framework version: 4.8
+XAMPP: Cross-Platform, Apache, MySQL, PHP, and Perl
+Timezone: UTC + 8:00 - Beijing, Chongqing, Hong Kong, Urumqi
+
+🚀 1. Fork the repository in Visual Studio 🚀
+Open Visual Studio.
+Click on "File" in the top-left corner.
+Select "Clone Repository" and choose your forked repository.
+
+📂2. Import the database file from the database folder 📂
+Navigate to the "database" folder in the repository.
+Locate the database file (e.g., .sql file) and import it into your MySQL database.
+
+⚙️3. Run SQL and Apache in XAMPP ⚙️
+Open XAMPP control panel.
+Start both the MySQL service (SQL) and Apache service.
+
+🏗️4. Run the code 🏗️
+Open the project in Visual Studio.
+Build and run the application.
