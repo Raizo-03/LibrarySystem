@@ -28,7 +28,6 @@ namespace LibrarySystem
         private string connectionString = "Server=localhost;Database=librarysystem;Uid=root;Pwd='';";
 
         //Global variables for the amount paid and change = set to 0
-        private double change = 0;
 
 
         public PenaltyForm()
