@@ -1,4 +1,6 @@
-# 🚀 A Dynamic Library System using C# Windows Form Application and SQL Database 🚀
+# 🚀 ** Eternal Library System ** 🚀
+
+🧮 *Dynamic Library System using C# Windows Form Application and SQL Database*🧮
 
 ## 📚 Project Overview 📚
 
