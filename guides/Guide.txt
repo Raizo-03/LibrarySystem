@@ -26,6 +26,7 @@ Start both the MySQL service (SQL) and Apache service.
 🏗️4. Run the code 🏗️
 Open the project in Visual Studio.
 Build and run the application.
+Test Username and Password: ADMIN1: 1234, ADMIN2: 1234
 
 
 Possible Errors and Solutions:
@@ -37,3 +38,5 @@ Default port: 3306
 2. Error on image paths:
 
 📷 Solution: Rewrite the string image paths in the forms that require images.
+
+
